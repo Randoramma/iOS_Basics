@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Basic Timer View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="basicTimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZ4-Ja-b7K">
+                                <rect key="frame" x="231" y="436" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="RXs-r9-3xM"/>
+                                    <constraint firstAttribute="height" constant="30" id="xff-56-5VY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Start Timer"/>
+                                <connections>
+                                    <action selector="startStopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOc-fM-hBu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9Y-Xh-zXl">
+                                <rect key="frame" x="95" y="98" width="410" height="248"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IbH-lB-6Sh">
+                                <rect key="frame" x="188" y="508" width="51" height="31"/>
+                                <connections>
+                                    <action selector="countdownValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Whh-AM-H73"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-EZ-T2p">
+                                <rect key="frame" x="245" y="506" width="157" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="CYy-ng-nV3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ae1-EZ-T2p" firstAttribute="centerY" secondItem="IbH-lB-6Sh" secondAttribute="centerY" id="CVv-8y-yvK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ae1-EZ-T2p" secondAttribute="bottom" constant="59" id="Fhb-2c-S9F"/>
+                            <constraint firstItem="Ae1-EZ-T2p" firstAttribute="leading" secondItem="IbH-lB-6Sh" secondAttribute="trailing" constant="8" symbolic="YES" id="FyN-uU-R4x"/>
+                            <constraint firstItem="h9Y-Xh-zXl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="GSg-nv-KEs"/>
+                            <constraint firstItem="Ae1-EZ-T2p" firstAttribute="top" secondItem="BZ4-Ja-b7K" secondAttribute="bottom" constant="40" id="H2q-05-Wxq"/>
+                            <constraint firstItem="h9Y-Xh-zXl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="78" id="VGL-Ek-q7T"/>
+                            <constraint firstItem="IbH-lB-6Sh" firstAttribute="top" secondItem="BZ4-Ja-b7K" secondAttribute="bottom" constant="42" id="bTz-8k-JQG"/>
+                            <constraint firstItem="h9Y-Xh-zXl" firstAttribute="centerX" secondItem="BZ4-Ja-b7K" secondAttribute="centerX" id="bvb-VL-DMj"/>
+                            <constraint firstItem="IbH-lB-6Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="188" id="gg9-HD-mm7"/>
+                            <constraint firstItem="BZ4-Ja-b7K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hjA-mU-jcw"/>
+                            <constraint firstItem="BZ4-Ja-b7K" firstAttribute="top" secondItem="h9Y-Xh-zXl" secondAttribute="bottom" constant="90" id="qmc-h0-nhs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="isCountdownTimerSwitch" destination="IbH-lB-6Sh" id="VF7-ZW-dP3"/>
+                        <outlet property="startStopTimerButton" destination="BZ4-Ja-b7K" id="SeA-ff-o2H"/>
+                        <outlet property="timeLabel" destination="h9Y-Xh-zXl" id="tt7-00-p2L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429" y="593"/>
+        </scene>
+    </scenes>
+</document>

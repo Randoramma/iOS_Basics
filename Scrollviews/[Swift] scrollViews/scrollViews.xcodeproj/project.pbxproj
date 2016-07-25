@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE0B76DC1C09036F00439A10 /* scrollviewWithActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B76DB1C09036F00439A10 /* scrollviewWithActionsViewController.swift */; };
+		DE0B76F01C09050800439A10 /* add_topic.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76DE1C09050800439A10 /* add_topic.png */; };
+		DE0B76F11C09050800439A10 /* Fantasy Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76DF1C09050800439A10 /* Fantasy Sports.png */; };
+		DE0B76F21C09050800439A10 /* Latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E01C09050800439A10 /* Latest.png */; };
+		DE0B76F31C09050800439A10 /* ATP World Tour.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E11C09050800439A10 /* ATP World Tour.png */; };
+		DE0B76F41C09050800439A10 /* FIFA.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E21C09050800439A10 /* FIFA.png */; };
+		DE0B76F51C09050800439A10 /* La Liga.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E31C09050800439A10 /* La Liga.png */; };
+		DE0B76F61C09050800439A10 /* MLB.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E41C09050800439A10 /* MLB.png */; };
+		DE0B76F71C09050800439A10 /* MLS.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E51C09050800439A10 /* MLS.png */; };
+		DE0B76F81C09050800439A10 /* Nascar.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E61C09050800439A10 /* Nascar.png */; };
+		DE0B76F91C09050800439A10 /* NBA.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E71C09050800439A10 /* NBA.png */; };
+		DE0B76FA1C09050800439A10 /* NCAA.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E81C09050800439A10 /* NCAA.png */; };
+		DE0B76FB1C09050800439A10 /* NFL.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76E91C09050800439A10 /* NFL.png */; };
+		DE0B76FC1C09050800439A10 /* NHL.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76EA1C09050800439A10 /* NHL.png */; };
+		DE0B76FD1C09050800439A10 /* Olympics.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76EB1C09050800439A10 /* Olympics.png */; };
+		DE0B76FE1C09050800439A10 /* PGA Tour.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76EC1C09050800439A10 /* PGA Tour.png */; };
+		DE0B76FF1C09050800439A10 /* Premier League.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76ED1C09050800439A10 /* Premier League.png */; };
+		DE0B77001C09050800439A10 /* UFC.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76EE1C09050800439A10 /* UFC.png */; };
+		DE0B77011C09050800439A10 /* WTA.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0B76EF1C09050800439A10 /* WTA.png */; };
+		DE45B17A1B65BAAC003FFBCD /* RightScrollWithLabelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45B1791B65BAAC003FFBCD /* RightScrollWithLabelsViewController.swift */; };
+		DE4C9A531B59793D00FA3116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A521B59793D00FA3116 /* AppDelegate.swift */; };
+		DE4C9A561B59793D00FA3116 /* scrollViews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A541B59793D00FA3116 /* scrollViews.xcdatamodeld */; };
+		DE4C9A581B59793D00FA3116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A571B59793D00FA3116 /* ViewController.swift */; };
+		DE4C9A5B1B59793D00FA3116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A591B59793D00FA3116 /* Main.storyboard */; };
+		DE4C9A5D1B59793D00FA3116 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A5C1B59793D00FA3116 /* Images.xcassets */; };
+		DE4C9A601B59793D00FA3116 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A5E1B59793D00FA3116 /* LaunchScreen.xib */; };
+		DE4C9A6C1B59793D00FA3116 /* scrollViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A6B1B59793D00FA3116 /* scrollViewsTests.swift */; };
+		DE4C9A7B1B5979B800FA3116 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A751B5979B800FA3116 /* photo1.png */; };
+		DE4C9A7C1B5979B800FA3116 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A761B5979B800FA3116 /* photo2.png */; };
+		DE4C9A7D1B5979B800FA3116 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A771B5979B800FA3116 /* photo3.png */; };
+		DE4C9A7E1B5979B800FA3116 /* photo4.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A781B5979B800FA3116 /* photo4.png */; };
+		DE4C9A7F1B5979B800FA3116 /* photo5.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A791B5979B800FA3116 /* photo5.png */; };
+		DE4C9A801B5979B800FA3116 /* slow.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4C9A7A1B5979B800FA3116 /* slow.png */; };
+		DE4C9A831B59948400FA3116 /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A821B59948400FA3116 /* CustomScrollViewController.swift */; };
+		DE4C9A851B599F5300FA3116 /* PagedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C9A841B599F5300FA3116 /* PagedScrollViewController.swift */; };
+		DE64F93E1B5B75DD00ECF152 /* InfiniteVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64F93D1B5B75DD00ECF152 /* InfiniteVerticalViewController.swift */; };
+		DE64F9401B5B78AF00ECF152 /* InfiteHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64F93F1B5B78AF00ECF152 /* InfiteHorizontalViewController.swift */; };
+		DE6F33F71B59B97B00A535B4 /* PeekPagedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F33F61B59B97B00A535B4 /* PeekPagedScrollViewController.swift */; };
+		DE6F33F91B59CD2500A535B4 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F33F81B59CD2500A535B4 /* ScrollViewContainer.swift */; };
+		DE905BA01C026AD500F4F299 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE905B9F1C026AD500F4F299 /* TableViewController.swift */; };
+		DE905BA21C026B7400F4F299 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE905BA11C026B7400F4F299 /* TableViewCell.swift */; };
+		DE905BA41C02795C00F4F299 /* scrollviewImagesContinuosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE905BA31C02795C00F4F299 /* scrollviewImagesContinuosViewController.swift */; };
+		DE9245FA1B5D42CE00879299 /* InfiteHorizontalRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9245F91B5D42CE00879299 /* InfiteHorizontalRightViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE4C9A661B59793D00FA3116 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4C9A451B59793D00FA3116 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE4C9A4C1B59793D00FA3116;
+			remoteInfo = scrollViews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE0B76DB1C09036F00439A10 /* scrollviewWithActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollviewWithActionsViewController.swift; sourceTree = "<group>"; };
+		DE0B76DE1C09050800439A10 /* add_topic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_topic.png; sourceTree = "<group>"; };
+		DE0B76DF1C09050800439A10 /* Fantasy Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fantasy Sports.png"; sourceTree = "<group>"; };
+		DE0B76E01C09050800439A10 /* Latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Latest.png; sourceTree = "<group>"; };
+		DE0B76E11C09050800439A10 /* ATP World Tour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ATP World Tour.png"; sourceTree = "<group>"; };
+		DE0B76E21C09050800439A10 /* FIFA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FIFA.png; sourceTree = "<group>"; };
+		DE0B76E31C09050800439A10 /* La Liga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "La Liga.png"; sourceTree = "<group>"; };
+		DE0B76E41C09050800439A10 /* MLB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLB.png; sourceTree = "<group>"; };
+		DE0B76E51C09050800439A10 /* MLS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLS.png; sourceTree = "<group>"; };
+		DE0B76E61C09050800439A10 /* Nascar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nascar.png; sourceTree = "<group>"; };
+		DE0B76E71C09050800439A10 /* NBA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NBA.png; sourceTree = "<group>"; };
+		DE0B76E81C09050800439A10 /* NCAA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NCAA.png; sourceTree = "<group>"; };
+		DE0B76E91C09050800439A10 /* NFL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NFL.png; sourceTree = "<group>"; };
+		DE0B76EA1C09050800439A10 /* NHL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NHL.png; sourceTree = "<group>"; };
+		DE0B76EB1C09050800439A10 /* Olympics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Olympics.png; sourceTree = "<group>"; };
+		DE0B76EC1C09050800439A10 /* PGA Tour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PGA Tour.png"; sourceTree = "<group>"; };
+		DE0B76ED1C09050800439A10 /* Premier League.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Premier League.png"; sourceTree = "<group>"; };
+		DE0B76EE1C09050800439A10 /* UFC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UFC.png; sourceTree = "<group>"; };
+		DE0B76EF1C09050800439A10 /* WTA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WTA.png; sourceTree = "<group>"; };
+		DE45B1791B65BAAC003FFBCD /* RightScrollWithLabelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightScrollWithLabelsViewController.swift; sourceTree = "<group>"; };
+		DE4C9A4D1B59793D00FA3116 /* scrollViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4C9A511B59793D00FA3116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE4C9A521B59793D00FA3116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE4C9A551B59793D00FA3116 /* scrollViews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = scrollViews.xcdatamodel; sourceTree = "<group>"; };
+		DE4C9A571B59793D00FA3116 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE4C9A5A1B59793D00FA3116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE4C9A5C1B59793D00FA3116 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE4C9A5F1B59793D00FA3116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DE4C9A651B59793D00FA3116 /* scrollViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrollViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4C9A6A1B59793D00FA3116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE4C9A6B1B59793D00FA3116 /* scrollViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollViewsTests.swift; sourceTree = "<group>"; };
+		DE4C9A751B5979B800FA3116 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
+		DE4C9A761B5979B800FA3116 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
+		DE4C9A771B5979B800FA3116 /* photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo3.png; sourceTree = "<group>"; };
+		DE4C9A781B5979B800FA3116 /* photo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo4.png; sourceTree = "<group>"; };
+		DE4C9A791B5979B800FA3116 /* photo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo5.png; sourceTree = "<group>"; };
+		DE4C9A7A1B5979B800FA3116 /* slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slow.png; sourceTree = "<group>"; };
+		DE4C9A821B59948400FA3116 /* CustomScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
+		DE4C9A841B599F5300FA3116 /* PagedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedScrollViewController.swift; sourceTree = "<group>"; };
+		DE64F93A1B5B411000ECF152 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		DE64F93D1B5B75DD00ECF152 /* InfiniteVerticalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteVerticalViewController.swift; sourceTree = "<group>"; };
+		DE64F93F1B5B78AF00ECF152 /* InfiteHorizontalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiteHorizontalViewController.swift; sourceTree = "<group>"; };
+		DE6F33F61B59B97B00A535B4 /* PeekPagedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekPagedScrollViewController.swift; sourceTree = "<group>"; };
+		DE6F33F81B59CD2500A535B4 /* ScrollViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewContainer.swift; sourceTree = "<group>"; };
+		DE905B9F1C026AD500F4F299 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DE905BA11C026B7400F4F299 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DE905BA31C02795C00F4F299 /* scrollviewImagesContinuosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scrollviewImagesContinuosViewController.swift; sourceTree = "<group>"; };
+		DE9245F91B5D42CE00879299 /* InfiteHorizontalRightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiteHorizontalRightViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE4C9A4A1B59793D00FA3116 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4C9A621B59793D00FA3116 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE0B76DD1C0904EB00439A10 /* topics */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B76DE1C09050800439A10 /* add_topic.png */,
+				DE0B76DF1C09050800439A10 /* Fantasy Sports.png */,
+				DE0B76E01C09050800439A10 /* Latest.png */,
+				DE0B76E11C09050800439A10 /* ATP World Tour.png */,
+				DE0B76E21C09050800439A10 /* FIFA.png */,
+				DE0B76E31C09050800439A10 /* La Liga.png */,
+				DE0B76E41C09050800439A10 /* MLB.png */,
+				DE0B76E51C09050800439A10 /* MLS.png */,
+				DE0B76E61C09050800439A10 /* Nascar.png */,
+				DE0B76E71C09050800439A10 /* NBA.png */,
+				DE0B76E81C09050800439A10 /* NCAA.png */,
+				DE0B76E91C09050800439A10 /* NFL.png */,
+				DE0B76EA1C09050800439A10 /* NHL.png */,
+				DE0B76EB1C09050800439A10 /* Olympics.png */,
+				DE0B76EC1C09050800439A10 /* PGA Tour.png */,
+				DE0B76ED1C09050800439A10 /* Premier League.png */,
+				DE0B76EE1C09050800439A10 /* UFC.png */,
+				DE0B76EF1C09050800439A10 /* WTA.png */,
+			);
+			name = topics;
+			sourceTree = "<group>";
+		};
+		DE4C9A441B59793D00FA3116 = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A4F1B59793D00FA3116 /* scrollViews */,
+				DE4C9A681B59793D00FA3116 /* scrollViewsTests */,
+				DE4C9A4E1B59793D00FA3116 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE4C9A4E1B59793D00FA3116 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A4D1B59793D00FA3116 /* scrollViews.app */,
+				DE4C9A651B59793D00FA3116 /* scrollViewsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE4C9A4F1B59793D00FA3116 /* scrollViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE905B9D1C026A7500F4F299 /* Views */,
+				DE905B9C1C026A6B00F4F299 /* Application */,
+				DE4C9A591B59793D00FA3116 /* Main.storyboard */,
+				DE4C9A811B5979BD00FA3116 /* Images */,
+				DE4C9A5C1B59793D00FA3116 /* Images.xcassets */,
+				DE4C9A5E1B59793D00FA3116 /* LaunchScreen.xib */,
+				DE4C9A541B59793D00FA3116 /* scrollViews.xcdatamodeld */,
+				DE4C9A501B59793D00FA3116 /* Supporting Files */,
+				DE64F93A1B5B411000ECF152 /* MyPlayground.playground */,
+			);
+			path = scrollViews;
+			sourceTree = "<group>";
+		};
+		DE4C9A501B59793D00FA3116 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A511B59793D00FA3116 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE4C9A681B59793D00FA3116 /* scrollViewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A6B1B59793D00FA3116 /* scrollViewsTests.swift */,
+				DE4C9A691B59793D00FA3116 /* Supporting Files */,
+			);
+			path = scrollViewsTests;
+			sourceTree = "<group>";
+		};
+		DE4C9A691B59793D00FA3116 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A6A1B59793D00FA3116 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE4C9A811B5979BD00FA3116 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B76DD1C0904EB00439A10 /* topics */,
+				DE4C9A751B5979B800FA3116 /* photo1.png */,
+				DE4C9A761B5979B800FA3116 /* photo2.png */,
+				DE4C9A771B5979B800FA3116 /* photo3.png */,
+				DE4C9A781B5979B800FA3116 /* photo4.png */,
+				DE4C9A791B5979B800FA3116 /* photo5.png */,
+				DE4C9A7A1B5979B800FA3116 /* slow.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DE905B9C1C026A6B00F4F299 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C9A521B59793D00FA3116 /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		DE905B9D1C026A7500F4F299 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE905B9E1C026AC100F4F299 /* Tableview */,
+				DE4C9A571B59793D00FA3116 /* ViewController.swift */,
+				DE4C9A821B59948400FA3116 /* CustomScrollViewController.swift */,
+				DE4C9A841B599F5300FA3116 /* PagedScrollViewController.swift */,
+				DE6F33F61B59B97B00A535B4 /* PeekPagedScrollViewController.swift */,
+				DE6F33F81B59CD2500A535B4 /* ScrollViewContainer.swift */,
+				DE64F93D1B5B75DD00ECF152 /* InfiniteVerticalViewController.swift */,
+				DE64F93F1B5B78AF00ECF152 /* InfiteHorizontalViewController.swift */,
+				DE9245F91B5D42CE00879299 /* InfiteHorizontalRightViewController.swift */,
+				DE45B1791B65BAAC003FFBCD /* RightScrollWithLabelsViewController.swift */,
+				DE905BA31C02795C00F4F299 /* scrollviewImagesContinuosViewController.swift */,
+				DE0B76DB1C09036F00439A10 /* scrollviewWithActionsViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE905B9E1C026AC100F4F299 /* Tableview */ = {
+			isa = PBXGroup;
+			children = (
+				DE905B9F1C026AD500F4F299 /* TableViewController.swift */,
+				DE905BA11C026B7400F4F299 /* TableViewCell.swift */,
+			);
+			name = Tableview;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE4C9A4C1B59793D00FA3116 /* scrollViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE4C9A6F1B59793D00FA3116 /* Build configuration list for PBXNativeTarget "scrollViews" */;
+			buildPhases = (
+				DE4C9A491B59793D00FA3116 /* Sources */,
+				DE4C9A4A1B59793D00FA3116 /* Frameworks */,
+				DE4C9A4B1B59793D00FA3116 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = scrollViews;
+			productName = scrollViews;
+			productReference = DE4C9A4D1B59793D00FA3116 /* scrollViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE4C9A641B59793D00FA3116 /* scrollViewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE4C9A721B59793D00FA3116 /* Build configuration list for PBXNativeTarget "scrollViewsTests" */;
+			buildPhases = (
+				DE4C9A611B59793D00FA3116 /* Sources */,
+				DE4C9A621B59793D00FA3116 /* Frameworks */,
+				DE4C9A631B59793D00FA3116 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE4C9A671B59793D00FA3116 /* PBXTargetDependency */,
+			);
+			name = scrollViewsTests;
+			productName = scrollViewsTests;
+			productReference = DE4C9A651B59793D00FA3116 /* scrollViewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE4C9A451B59793D00FA3116 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = ninestack;
+				TargetAttributes = {
+					DE4C9A4C1B59793D00FA3116 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					DE4C9A641B59793D00FA3116 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = DE4C9A4C1B59793D00FA3116;
+					};
+				};
+			};
+			buildConfigurationList = DE4C9A481B59793D00FA3116 /* Build configuration list for PBXProject "scrollViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE4C9A441B59793D00FA3116;
+			productRefGroup = DE4C9A4E1B59793D00FA3116 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE4C9A4C1B59793D00FA3116 /* scrollViews */,
+				DE4C9A641B59793D00FA3116 /* scrollViewsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE4C9A4B1B59793D00FA3116 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0B76F11C09050800439A10 /* Fantasy Sports.png in Resources */,
+				DE0B76F41C09050800439A10 /* FIFA.png in Resources */,
+				DE0B76FA1C09050800439A10 /* NCAA.png in Resources */,
+				DE0B76FF1C09050800439A10 /* Premier League.png in Resources */,
+				DE4C9A7E1B5979B800FA3116 /* photo4.png in Resources */,
+				DE0B76F01C09050800439A10 /* add_topic.png in Resources */,
+				DE0B76F91C09050800439A10 /* NBA.png in Resources */,
+				DE0B76FC1C09050800439A10 /* NHL.png in Resources */,
+				DE0B76F51C09050800439A10 /* La Liga.png in Resources */,
+				DE0B76F61C09050800439A10 /* MLB.png in Resources */,
+				DE0B76FE1C09050800439A10 /* PGA Tour.png in Resources */,
+				DE4C9A7C1B5979B800FA3116 /* photo2.png in Resources */,
+				DE0B77011C09050800439A10 /* WTA.png in Resources */,
+				DE4C9A801B5979B800FA3116 /* slow.png in Resources */,
+				DE4C9A7B1B5979B800FA3116 /* photo1.png in Resources */,
+				DE4C9A5B1B59793D00FA3116 /* Main.storyboard in Resources */,
+				DE0B76FB1C09050800439A10 /* NFL.png in Resources */,
+				DE4C9A7F1B5979B800FA3116 /* photo5.png in Resources */,
+				DE0B76F81C09050800439A10 /* Nascar.png in Resources */,
+				DE4C9A601B59793D00FA3116 /* LaunchScreen.xib in Resources */,
+				DE0B76F71C09050800439A10 /* MLS.png in Resources */,
+				DE4C9A7D1B5979B800FA3116 /* photo3.png in Resources */,
+				DE0B76F31C09050800439A10 /* ATP World Tour.png in Resources */,
+				DE0B77001C09050800439A10 /* UFC.png in Resources */,
+				DE0B76FD1C09050800439A10 /* Olympics.png in Resources */,
+				DE0B76F21C09050800439A10 /* Latest.png in Resources */,
+				DE4C9A5D1B59793D00FA3116 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4C9A631B59793D00FA3116 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE4C9A491B59793D00FA3116 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE905BA21C026B7400F4F299 /* TableViewCell.swift in Sources */,
+				DE9245FA1B5D42CE00879299 /* InfiteHorizontalRightViewController.swift in Sources */,
+				DE4C9A831B59948400FA3116 /* CustomScrollViewController.swift in Sources */,
+				DE4C9A581B59793D00FA3116 /* ViewController.swift in Sources */,
+				DE64F93E1B5B75DD00ECF152 /* InfiniteVerticalViewController.swift in Sources */,
+				DE6F33F91B59CD2500A535B4 /* ScrollViewContainer.swift in Sources */,
+				DE6F33F71B59B97B00A535B4 /* PeekPagedScrollViewController.swift in Sources */,
+				DE64F9401B5B78AF00ECF152 /* InfiteHorizontalViewController.swift in Sources */,
+				DE905BA01C026AD500F4F299 /* TableViewController.swift in Sources */,
+				DE45B17A1B65BAAC003FFBCD /* RightScrollWithLabelsViewController.swift in Sources */,
+				DE4C9A531B59793D00FA3116 /* AppDelegate.swift in Sources */,
+				DE0B76DC1C09036F00439A10 /* scrollviewWithActionsViewController.swift in Sources */,
+				DE4C9A851B599F5300FA3116 /* PagedScrollViewController.swift in Sources */,
+				DE4C9A561B59793D00FA3116 /* scrollViews.xcdatamodeld in Sources */,
+				DE905BA41C02795C00F4F299 /* scrollviewImagesContinuosViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4C9A611B59793D00FA3116 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4C9A6C1B59793D00FA3116 /* scrollViewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE4C9A671B59793D00FA3116 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE4C9A4C1B59793D00FA3116 /* scrollViews */;
+			targetProxy = DE4C9A661B59793D00FA3116 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE4C9A591B59793D00FA3116 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4C9A5A1B59793D00FA3116 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE4C9A5E1B59793D00FA3116 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4C9A5F1B59793D00FA3116 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE4C9A6D1B59793D00FA3116 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE4C9A6E1B59793D00FA3116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE4C9A701B59793D00FA3116 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = scrollViews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ninestack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE4C9A711B59793D00FA3116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = scrollViews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ninestack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE4C9A731B59793D00FA3116 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = scrollViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ninestack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrollViews.app/scrollViews";
+			};
+			name = Debug;
+		};
+		DE4C9A741B59793D00FA3116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = scrollViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ninestack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrollViews.app/scrollViews";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE4C9A481B59793D00FA3116 /* Build configuration list for PBXProject "scrollViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4C9A6D1B59793D00FA3116 /* Debug */,
+				DE4C9A6E1B59793D00FA3116 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE4C9A6F1B59793D00FA3116 /* Build configuration list for PBXNativeTarget "scrollViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4C9A701B59793D00FA3116 /* Debug */,
+				DE4C9A711B59793D00FA3116 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE4C9A721B59793D00FA3116 /* Build configuration list for PBXNativeTarget "scrollViewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4C9A731B59793D00FA3116 /* Debug */,
+				DE4C9A741B59793D00FA3116 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE4C9A541B59793D00FA3116 /* scrollViews.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE4C9A551B59793D00FA3116 /* scrollViews.xcdatamodel */,
+			);
+			currentVersion = DE4C9A551B59793D00FA3116 /* scrollViews.xcdatamodel */;
+			path = scrollViews.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE4C9A451B59793D00FA3116 /* Project object */;
+}

@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8196585E145B8CBB00522A28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196585D145B8CBB00522A28 /* UIKit.framework */; };
+		81965860145B8CBB00522A28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196585F145B8CBB00522A28 /* Foundation.framework */; };
+		81965862145B8CBB00522A28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81965861145B8CBB00522A28 /* CoreGraphics.framework */; };
+		81965868145B8CBB00522A28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81965866145B8CBB00522A28 /* InfoPlist.strings */; };
+		8196586B145B8CBB00522A28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196586A145B8CBB00522A28 /* main.m */; };
+		8196586E145B8CBB00522A28 /* Accel1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8196586D145B8CBB00522A28 /* Accel1AppDelegate.m */; };
+		81965871145B8CBB00522A28 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8196586F145B8CBB00522A28 /* MainWindow.xib */; };
+		81965874145B8CBB00522A28 /* Accel1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81965873145B8CBB00522A28 /* Accel1ViewController.m */; };
+		81965877145B8CBB00522A28 /* Accel1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81965875145B8CBB00522A28 /* Accel1ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81965859145B8CBB00522A28 /* Accel1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accel1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8196585D145B8CBB00522A28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8196585F145B8CBB00522A28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		81965861145B8CBB00522A28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		81965865145B8CBB00522A28 /* Accel1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Accel1-Info.plist"; sourceTree = "<group>"; };
+		81965867145B8CBB00522A28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		81965869145B8CBB00522A28 /* Accel1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Accel1-Prefix.pch"; sourceTree = "<group>"; };
+		8196586A145B8CBB00522A28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8196586C145B8CBB00522A28 /* Accel1AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Accel1AppDelegate.h; sourceTree = "<group>"; };
+		8196586D145B8CBB00522A28 /* Accel1AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Accel1AppDelegate.m; sourceTree = "<group>"; };
+		81965870145B8CBB00522A28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		81965872145B8CBB00522A28 /* Accel1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Accel1ViewController.h; sourceTree = "<group>"; };
+		81965873145B8CBB00522A28 /* Accel1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Accel1ViewController.m; sourceTree = "<group>"; };
+		81965876145B8CBB00522A28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Accel1ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81965856145B8CBB00522A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8196585E145B8CBB00522A28 /* UIKit.framework in Frameworks */,
+				81965860145B8CBB00522A28 /* Foundation.framework in Frameworks */,
+				81965862145B8CBB00522A28 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8196584E145B8CBB00522A28 = {
+			isa = PBXGroup;
+			children = (
+				81965863145B8CBB00522A28 /* Accel1 */,
+				8196585C145B8CBB00522A28 /* Frameworks */,
+				8196585A145B8CBB00522A28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8196585A145B8CBB00522A28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81965859145B8CBB00522A28 /* Accel1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8196585C145B8CBB00522A28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8196585D145B8CBB00522A28 /* UIKit.framework */,
+				8196585F145B8CBB00522A28 /* Foundation.framework */,
+				81965861145B8CBB00522A28 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81965863145B8CBB00522A28 /* Accel1 */ = {
+			isa = PBXGroup;
+			children = (
+				8196586C145B8CBB00522A28 /* Accel1AppDelegate.h */,
+				8196586D145B8CBB00522A28 /* Accel1AppDelegate.m */,
+				8196586F145B8CBB00522A28 /* MainWindow.xib */,
+				81965872145B8CBB00522A28 /* Accel1ViewController.h */,
+				81965873145B8CBB00522A28 /* Accel1ViewController.m */,
+				81965875145B8CBB00522A28 /* Accel1ViewController.xib */,
+				81965864145B8CBB00522A28 /* Supporting Files */,
+			);
+			path = Accel1;
+			sourceTree = "<group>";
+		};
+		81965864145B8CBB00522A28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81965865145B8CBB00522A28 /* Accel1-Info.plist */,
+				81965866145B8CBB00522A28 /* InfoPlist.strings */,
+				81965869145B8CBB00522A28 /* Accel1-Prefix.pch */,
+				8196586A145B8CBB00522A28 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81965858145B8CBB00522A28 /* Accel1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8196587A145B8CBB00522A28 /* Build configuration list for PBXNativeTarget "Accel1" */;
+			buildPhases = (
+				81965855145B8CBB00522A28 /* Sources */,
+				81965856145B8CBB00522A28 /* Frameworks */,
+				81965857145B8CBB00522A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Accel1;
+			productName = Accel1;
+			productReference = 81965859145B8CBB00522A28 /* Accel1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81965850145B8CBB00522A28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = FIU;
+			};
+			buildConfigurationList = 81965853145B8CBB00522A28 /* Build configuration list for PBXProject "Accel1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8196584E145B8CBB00522A28;
+			productRefGroup = 8196585A145B8CBB00522A28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81965858145B8CBB00522A28 /* Accel1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81965857145B8CBB00522A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81965868145B8CBB00522A28 /* InfoPlist.strings in Resources */,
+				81965871145B8CBB00522A28 /* MainWindow.xib in Resources */,
+				81965877145B8CBB00522A28 /* Accel1ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81965855145B8CBB00522A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8196586B145B8CBB00522A28 /* main.m in Sources */,
+				8196586E145B8CBB00522A28 /* Accel1AppDelegate.m in Sources */,
+				81965874145B8CBB00522A28 /* Accel1ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81965866145B8CBB00522A28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81965867145B8CBB00522A28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8196586F145B8CBB00522A28 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81965870145B8CBB00522A28 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		81965875145B8CBB00522A28 /* Accel1ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81965876145B8CBB00522A28 /* en */,
+			);
+			name = Accel1ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81965878145B8CBB00522A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		81965879145B8CBB00522A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		8196587B145B8CBB00522A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Accel1/Accel1-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Accel1/Accel1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8196587C145B8CBB00522A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Accel1/Accel1-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Accel1/Accel1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81965853145B8CBB00522A28 /* Build configuration list for PBXProject "Accel1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81965878145B8CBB00522A28 /* Debug */,
+				81965879145B8CBB00522A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8196587A145B8CBB00522A28 /* Build configuration list for PBXNativeTarget "Accel1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8196587B145B8CBB00522A28 /* Debug */,
+				8196587C145B8CBB00522A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81965850145B8CBB00522A28 /* Project object */;
+}

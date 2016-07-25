@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LHN-Qb-OSz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="2dz-iQ-fds">
+            <objects>
+                <viewController id="LHN-Qb-OSz" customClass="ViewController" customModule="NSOperations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v60-CR-Wgn"/>
+                        <viewControllerLayoutGuide type="bottom" id="IAb-LQ-Kov"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0xq-oY-qjD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X3P-LD-5yf">
+                                <rect key="frame" x="0.0" y="238" width="600" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VR7-Ui-Zun">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="YNq-up-7hf"/>
+                                        </constraints>
+                                        <state key="normal" title="Example 1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exampleOne:" destination="LHN-Qb-OSz" eventType="touchUpInside" id="ESz-FY-dGg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shw-cP-ceG">
+                                        <rect key="frame" x="0.0" y="45" width="600" height="35"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Example 2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exampleTwo:" destination="LHN-Qb-OSz" eventType="touchUpInside" id="l0K-7C-ehZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alf-pH-GfQ">
+                                        <rect key="frame" x="0.0" y="90" width="600" height="35"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Example 3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exampleThree:" destination="LHN-Qb-OSz" eventType="touchUpInside" id="Y7a-fl-7Rf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Shw-cP-ceG" firstAttribute="width" secondItem="VR7-Ui-Zun" secondAttribute="width" id="BDV-ki-sc0"/>
+                                    <constraint firstItem="alf-pH-GfQ" firstAttribute="width" secondItem="VR7-Ui-Zun" secondAttribute="width" id="ZUY-T9-DhQ"/>
+                                    <constraint firstItem="alf-pH-GfQ" firstAttribute="height" secondItem="VR7-Ui-Zun" secondAttribute="height" id="wUl-LR-h3F"/>
+                                    <constraint firstItem="Shw-cP-ceG" firstAttribute="height" secondItem="VR7-Ui-Zun" secondAttribute="height" id="zud-Jv-ZFM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X3P-LD-5yf" firstAttribute="centerY" secondItem="0xq-oY-qjD" secondAttribute="centerY" id="1YQ-wH-Tr6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X3P-LD-5yf" secondAttribute="trailing" id="Bct-zK-4gE"/>
+                            <constraint firstItem="X3P-LD-5yf" firstAttribute="centerX" secondItem="0xq-oY-qjD" secondAttribute="centerX" id="HE7-rD-Hem"/>
+                            <constraint firstItem="X3P-LD-5yf" firstAttribute="leading" secondItem="0xq-oY-qjD" secondAttribute="leadingMargin" id="TKH-Zc-XRw"/>
+                            <constraint firstAttribute="trailing" secondItem="X3P-LD-5yf" secondAttribute="trailing" id="iKw-92-Ohf"/>
+                            <constraint firstItem="X3P-LD-5yf" firstAttribute="leading" secondItem="0xq-oY-qjD" secondAttribute="leading" id="xNJ-nR-fde"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bct-zK-4gE"/>
+                                <exclude reference="TKH-Zc-XRw"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XoZ-ZS-5vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="776"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D4AE8519-E52D-46EC-9135-B8FC6F50977A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CD2EB3DA71049A53CA410806679E891D43F1BDCC</key>
+		<string>https://github.com/LuAndreCast/IOS_BasicApps.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PostJSONDataToServeSwift/PostJSONDataToServeSwift.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CD2EB3DA71049A53CA410806679E891D43F1BDCC</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LuAndreCast/IOS_BasicApps.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CD2EB3DA71049A53CA410806679E891D43F1BDCC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CD2EB3DA71049A53CA410806679E891D43F1BDCC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS%20Basic%20Apps</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Indicators" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="m9H-gU-Fba">
+                                <rect key="frame" x="142" y="168" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVU-Ez-flA">
+                                <rect key="frame" x="111" y="269" width="98" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Start Indicator">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="startIndicator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0f-Pn-C1I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XW-Nm-sRg">
+                                <rect key="frame" x="112" y="333" width="97" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Stop Indicator">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopIndicator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0G-bt-cPC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8XW-Nm-sRg" firstAttribute="top" secondItem="BVU-Ez-flA" secondAttribute="bottom" constant="34" id="GeN-3Z-RZN"/>
+                            <constraint firstItem="BVU-Ez-flA" firstAttribute="top" secondItem="m9H-gU-Fba" secondAttribute="bottom" constant="64" id="GzD-gI-W93"/>
+                            <constraint firstItem="BVU-Ez-flA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QL7-1f-A5d"/>
+                            <constraint firstItem="BVU-Ez-flA" firstAttribute="trailing" secondItem="8XW-Nm-sRg" secondAttribute="trailing" id="lHo-nQ-30s"/>
+                            <constraint firstItem="BVU-Ez-flA" firstAttribute="centerX" secondItem="m9H-gU-Fba" secondAttribute="centerX" id="o5K-Yr-r5L"/>
+                            <constraint firstItem="8XW-Nm-sRg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oR4-6d-iuC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="m9H-gU-Fba" id="ffG-pX-2vn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="406"/>
+        </scene>
+    </scenes>
+</document>

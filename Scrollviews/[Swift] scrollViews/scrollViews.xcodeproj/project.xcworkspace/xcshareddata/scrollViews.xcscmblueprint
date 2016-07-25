@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BCC0DA79FBA398D2AA42B479055C5697A546ADC9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BCC0DA79FBA398D2AA42B479055C5697A546ADC9" : 0,
+    "389A5DFD1F8C4DECFA3DF3EEA20F946AB2708934" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DA4D189E-F6A2-45DB-BA22-A568A128BB12",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BCC0DA79FBA398D2AA42B479055C5697A546ADC9" : "Swift_Projects\/",
+    "389A5DFD1F8C4DECFA3DF3EEA20F946AB2708934" : "IOS%20View%20Apps"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "scrollViews",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "scrollViews\/scrollViews.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LuAndreCast\/IOS_Views.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "389A5DFD1F8C4DECFA3DF3EEA20F946AB2708934"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LuAndreCast\/Swift_Projects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BCC0DA79FBA398D2AA42B479055C5697A546ADC9"
+    }
+  ]
+}

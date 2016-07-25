@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sending SMS from Application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-uh-z4e">
+                                <rect key="frame" x="25" y="56" width="275" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZTc-K1-UAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB7-Fu-Wcw">
+                                <rect key="frame" x="20" y="422" width="280" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Send SMS with Image"/>
+                                <connections>
+                                    <action selector="sendSMSWithImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="law-UT-zG7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ax0-JM-p3g">
+                                <rect key="frame" x="20" y="257" width="280" height="157"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="Ngv-dx-bx4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFH-b7-0Fe">
+                                <rect key="frame" x="20" y="90" width="280" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Send SMS"/>
+                                <connections>
+                                    <action selector="sendSMS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dMb-ft-3Pb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jFH-b7-0Fe" firstAttribute="trailing" secondItem="Ax0-JM-p3g" secondAttribute="trailing" id="1Tq-mY-ehw"/>
+                            <constraint firstItem="jFH-b7-0Fe" firstAttribute="top" secondItem="lBq-uh-z4e" secondAttribute="bottom" constant="13" id="J0n-Fd-65q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pB7-Fu-Wcw" secondAttribute="bottom" constant="116" id="SJc-0F-dtz"/>
+                            <constraint firstItem="Ax0-JM-p3g" firstAttribute="leading" secondItem="pB7-Fu-Wcw" secondAttribute="leading" id="aHt-2d-iv4"/>
+                            <constraint firstItem="jFH-b7-0Fe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cJn-Zs-IlM"/>
+                            <constraint firstItem="pB7-Fu-Wcw" firstAttribute="trailing" secondItem="Ax0-JM-p3g" secondAttribute="trailing" id="clE-kj-9oX"/>
+                            <constraint firstItem="Ax0-JM-p3g" firstAttribute="leading" secondItem="jFH-b7-0Fe" secondAttribute="leading" id="dSg-ig-qlj"/>
+                            <constraint firstItem="jFH-b7-0Fe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="pla-1n-ZVo"/>
+                            <constraint firstItem="pB7-Fu-Wcw" firstAttribute="top" secondItem="Ax0-JM-p3g" secondAttribute="bottom" constant="8" symbolic="YES" id="qop-o8-Mcy"/>
+                            <constraint firstItem="lBq-uh-z4e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="sGc-2x-YEY"/>
+                            <constraint firstItem="lBq-uh-z4e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="sOu-CH-pqf"/>
+                            <constraint firstItem="jFH-b7-0Fe" firstAttribute="trailing" secondItem="lBq-uh-z4e" secondAttribute="trailing" id="y9m-jN-Rpd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageSelected" destination="Ax0-JM-p3g" id="8Gg-mJ-pHC"/>
+                        <outlet property="messageLabel" destination="lBq-uh-z4e" id="OpD-hJ-t8d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="622"/>
+        </scene>
+    </scenes>
+</document>

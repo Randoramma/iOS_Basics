@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TakePictureWithCustomOverlayViewController" customModule="cameraApp" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraView" destination="uuT-5E-zYK" id="L5d-hq-Szq"/>
+                <outlet property="cancelButton" destination="Djs-Or-mx3" id="pvy-Hx-S80"/>
+                <outlet property="takePictureButton" destination="CKD-xa-p5L" id="7tB-MQ-o7S"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuT-5E-zYK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKD-xa-p5L">
+                    <rect key="frame" x="203" y="510" width="109" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="90G-ek-UQ8"/>
+                        <constraint firstAttribute="height" constant="50" id="Uvq-Xw-if3"/>
+                    </constraints>
+                    <state key="normal" title="Take Picture"/>
+                    <connections>
+                        <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="WcQ-uG-579"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djs-Or-mx3">
+                    <rect key="frame" x="8" y="510" width="109" height="50"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="I5z-OC-O4P"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uuT-5E-zYK" secondAttribute="trailing" id="5PV-8h-4ef"/>
+                <constraint firstItem="CKD-xa-p5L" firstAttribute="width" secondItem="Djs-Or-mx3" secondAttribute="width" id="75a-XJ-4EP"/>
+                <constraint firstItem="uuT-5E-zYK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Qu-Pd-PjT"/>
+                <constraint firstItem="uuT-5E-zYK" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" id="OF2-Rj-wSG"/>
+                <constraint firstAttribute="bottom" secondItem="Djs-Or-mx3" secondAttribute="bottom" constant="8" id="S8a-fG-yNq"/>
+                <constraint firstAttribute="trailing" secondItem="CKD-xa-p5L" secondAttribute="trailing" constant="8" id="U6v-Qv-pUc"/>
+                <constraint firstItem="uuT-5E-zYK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xyv-L2-pXR"/>
+                <constraint firstAttribute="bottom" secondItem="CKD-xa-p5L" secondAttribute="bottom" constant="8" id="ZV2-kN-dOf"/>
+                <constraint firstItem="uuT-5E-zYK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bBp-kZ-JLK"/>
+                <constraint firstItem="uuT-5E-zYK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="d28-1P-PvD"/>
+                <constraint firstItem="CKD-xa-p5L" firstAttribute="height" secondItem="Djs-Or-mx3" secondAttribute="height" id="eKd-Lv-EQD"/>
+                <constraint firstItem="Djs-Or-mx3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ugl-20-PTO"/>
+            </constraints>
+            <point key="canvasLocation" x="313" y="367"/>
+        </view>
+        <view contentMode="scaleToFill" id="flc-Kf-Z7M">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="965" y="367"/>
+        </view>
+    </objects>
+</document>

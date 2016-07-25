@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE483D051C34E72C00F46E4B /* VCThatCallsPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE483D041C34E72C00F46E4B /* VCThatCallsPopOverViewController.m */; };
+		DE483D091C34E74B00F46E4B /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE483D071C34E74B00F46E4B /* PopOverViewController.m */; };
+		DE483D0A1C34E74B00F46E4B /* PopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE483D081C34E74B00F46E4B /* PopOverViewController.xib */; };
+		DE86E1671C2C5619004D676F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1661C2C5619004D676F /* main.m */; };
+		DE86E16A1C2C5619004D676F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1691C2C5619004D676F /* AppDelegate.m */; };
+		DE86E1701C2C5619004D676F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE86E16E1C2C5619004D676F /* Main.storyboard */; };
+		DE86E1731C2C5619004D676F /* LoadingViews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1711C2C5619004D676F /* LoadingViews.xcdatamodeld */; };
+		DE86E1751C2C5619004D676F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE86E1741C2C5619004D676F /* Assets.xcassets */; };
+		DE86E1781C2C5619004D676F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE86E1761C2C5619004D676F /* LaunchScreen.storyboard */; };
+		DE86E1851C2C56CE004D676F /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1841C2C56CE004D676F /* MainTableViewCell.m */; };
+		DE86E1881C2C56E7004D676F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1871C2C56E7004D676F /* MainTableViewController.m */; };
+		DE86E18C1C2C9B04004D676F /* MenuVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E18B1C2C9B04004D676F /* MenuVCViewController.m */; };
+		DE86E18F1C2C9B17004D676F /* ContainerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E18E1C2C9B17004D676F /* ContainerVCViewController.m */; };
+		DE86E1921C2C9B23004D676F /* ProfileVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1911C2C9B23004D676F /* ProfileVCViewController.m */; };
+		DE86E1951C2C9B36004D676F /* ShareSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1941C2C9B36004D676F /* ShareSetting.m */; };
+		DE86E1981C2C9B58004D676F /* MainVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1971C2C9B58004D676F /* MainVCViewController.m */; };
+		DE86E19D1C2CB026004D676F /* SegmentedMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E19C1C2CB026004D676F /* SegmentedMainViewController.m */; };
+		DE86E1A01C2CB03B004D676F /* SegmentedFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E19F1C2CB03B004D676F /* SegmentedFirstViewController.m */; };
+		DE86E1A31C2CB05B004D676F /* SegmentedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1A21C2CB05B004D676F /* SegmentedTableViewController.m */; };
+		DE86E1A61C2CB069004D676F /* SegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1A51C2CB069004D676F /* SegmentedTableViewCell.m */; };
+		DE86E1AB1C2DD32F004D676F /* SegmentedControlSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1AA1C2DD32F004D676F /* SegmentedControlSettings.m */; };
+		DEEFB9DB1C34F7F40066354B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEFB9DA1C34F7F40066354B /* QuartzCore.framework */; };
+		DEEFB9DD1C34F7FE0066354B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEFB9DC1C34F7FE0066354B /* CoreGraphics.framework */; };
+		DEEFB9DF1C34F8050066354B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEFB9DE1C34F8040066354B /* UIKit.framework */; };
+		DEEFB9E11C34F80C0066354B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEFB9E01C34F80C0066354B /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE483D031C34E72C00F46E4B /* VCThatCallsPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCThatCallsPopOverViewController.h; sourceTree = "<group>"; };
+		DE483D041C34E72C00F46E4B /* VCThatCallsPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCThatCallsPopOverViewController.m; sourceTree = "<group>"; };
+		DE483D061C34E74B00F46E4B /* PopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopOverViewController.h; sourceTree = "<group>"; };
+		DE483D071C34E74B00F46E4B /* PopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopOverViewController.m; sourceTree = "<group>"; };
+		DE483D081C34E74B00F46E4B /* PopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverViewController.xib; sourceTree = "<group>"; };
+		DE86E1621C2C5619004D676F /* LoadingViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE86E1661C2C5619004D676F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE86E1681C2C5619004D676F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE86E1691C2C5619004D676F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DE86E16F1C2C5619004D676F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE86E1721C2C5619004D676F /* LoadingViews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoadingViews.xcdatamodel; sourceTree = "<group>"; };
+		DE86E1741C2C5619004D676F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE86E1771C2C5619004D676F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE86E1791C2C5619004D676F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE86E1831C2C56CE004D676F /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		DE86E1841C2C56CE004D676F /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		DE86E1861C2C56E7004D676F /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		DE86E1871C2C56E7004D676F /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		DE86E18A1C2C9B04004D676F /* MenuVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVCViewController.h; sourceTree = "<group>"; };
+		DE86E18B1C2C9B04004D676F /* MenuVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVCViewController.m; sourceTree = "<group>"; };
+		DE86E18D1C2C9B17004D676F /* ContainerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerVCViewController.h; sourceTree = "<group>"; };
+		DE86E18E1C2C9B17004D676F /* ContainerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerVCViewController.m; sourceTree = "<group>"; };
+		DE86E1901C2C9B23004D676F /* ProfileVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVCViewController.h; sourceTree = "<group>"; };
+		DE86E1911C2C9B23004D676F /* ProfileVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVCViewController.m; sourceTree = "<group>"; };
+		DE86E1931C2C9B36004D676F /* ShareSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSetting.h; sourceTree = "<group>"; };
+		DE86E1941C2C9B36004D676F /* ShareSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSetting.m; sourceTree = "<group>"; };
+		DE86E1961C2C9B58004D676F /* MainVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVCViewController.h; sourceTree = "<group>"; };
+		DE86E1971C2C9B58004D676F /* MainVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVCViewController.m; sourceTree = "<group>"; };
+		DE86E19B1C2CB026004D676F /* SegmentedMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedMainViewController.h; sourceTree = "<group>"; };
+		DE86E19C1C2CB026004D676F /* SegmentedMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedMainViewController.m; sourceTree = "<group>"; };
+		DE86E19E1C2CB03B004D676F /* SegmentedFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedFirstViewController.h; sourceTree = "<group>"; };
+		DE86E19F1C2CB03B004D676F /* SegmentedFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedFirstViewController.m; sourceTree = "<group>"; };
+		DE86E1A11C2CB05B004D676F /* SegmentedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedTableViewController.h; sourceTree = "<group>"; };
+		DE86E1A21C2CB05B004D676F /* SegmentedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedTableViewController.m; sourceTree = "<group>"; };
+		DE86E1A41C2CB069004D676F /* SegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedTableViewCell.h; sourceTree = "<group>"; };
+		DE86E1A51C2CB069004D676F /* SegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedTableViewCell.m; sourceTree = "<group>"; };
+		DE86E1A91C2DD32F004D676F /* SegmentedControlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControlSettings.h; sourceTree = "<group>"; };
+		DE86E1AA1C2DD32F004D676F /* SegmentedControlSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControlSettings.m; sourceTree = "<group>"; };
+		DEEFB9DA1C34F7F40066354B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DEEFB9DC1C34F7FE0066354B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEEFB9DE1C34F8040066354B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEEFB9E01C34F80C0066354B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE86E15F1C2C5619004D676F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEFB9E11C34F80C0066354B /* Foundation.framework in Frameworks */,
+				DEEFB9DF1C34F8050066354B /* UIKit.framework in Frameworks */,
+				DEEFB9DD1C34F7FE0066354B /* CoreGraphics.framework in Frameworks */,
+				DEEFB9DB1C34F7F40066354B /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE483CFF1C34E6E000F46E4B /* Pop Over */ = {
+			isa = PBXGroup;
+			children = (
+				DE483D031C34E72C00F46E4B /* VCThatCallsPopOverViewController.h */,
+				DE483D041C34E72C00F46E4B /* VCThatCallsPopOverViewController.m */,
+				DE483D061C34E74B00F46E4B /* PopOverViewController.h */,
+				DE483D071C34E74B00F46E4B /* PopOverViewController.m */,
+			);
+			name = "Pop Over";
+			sourceTree = "<group>";
+		};
+		DE86E1591C2C5619004D676F = {
+			isa = PBXGroup;
+			children = (
+				DEEFB9E01C34F80C0066354B /* Foundation.framework */,
+				DEEFB9DE1C34F8040066354B /* UIKit.framework */,
+				DEEFB9DC1C34F7FE0066354B /* CoreGraphics.framework */,
+				DEEFB9DA1C34F7F40066354B /* QuartzCore.framework */,
+				DE86E1641C2C5619004D676F /* LoadingViews */,
+				DE86E1631C2C5619004D676F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE86E1631C2C5619004D676F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1621C2C5619004D676F /* LoadingViews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE86E1641C2C5619004D676F /* LoadingViews */ = {
+			isa = PBXGroup;
+			children = (
+				DEEFB9D91C34F05F0066354B /* Images */,
+				DE86E17F1C2C5646004D676F /* Application */,
+				DE86E1801C2C564F004D676F /* Controllers */,
+				DE86E1821C2C5666004D676F /* Models */,
+				DE86E1811C2C5658004D676F /* Views */,
+				DE86E1741C2C5619004D676F /* Assets.xcassets */,
+				DE86E1791C2C5619004D676F /* Info.plist */,
+				DE86E1711C2C5619004D676F /* LoadingViews.xcdatamodeld */,
+				DE86E1651C2C5619004D676F /* Supporting Files */,
+			);
+			path = LoadingViews;
+			sourceTree = "<group>";
+		};
+		DE86E1651C2C5619004D676F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1661C2C5619004D676F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE86E17F1C2C5646004D676F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1681C2C5619004D676F /* AppDelegate.h */,
+				DE86E1691C2C5619004D676F /* AppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		DE86E1801C2C564F004D676F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1861C2C56E7004D676F /* MainTableViewController.h */,
+				DE86E1871C2C56E7004D676F /* MainTableViewController.m */,
+				DE86E1831C2C56CE004D676F /* MainTableViewCell.h */,
+				DE86E1841C2C56CE004D676F /* MainTableViewCell.m */,
+				DE86E1891C2C9AE2004D676F /* VC with Containers */,
+				DE86E19A1C2CAFBE004D676F /* Views from Segmented Control  */,
+				DE483CFF1C34E6E000F46E4B /* Pop Over */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DE86E1811C2C5658004D676F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E16E1C2C5619004D676F /* Main.storyboard */,
+				DE483D081C34E74B00F46E4B /* PopOverViewController.xib */,
+				DE86E1761C2C5619004D676F /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE86E1821C2C5666004D676F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1931C2C9B36004D676F /* ShareSetting.h */,
+				DE86E1941C2C9B36004D676F /* ShareSetting.m */,
+				DE86E1A91C2DD32F004D676F /* SegmentedControlSettings.h */,
+				DE86E1AA1C2DD32F004D676F /* SegmentedControlSettings.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DE86E1891C2C9AE2004D676F /* VC with Containers */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E18D1C2C9B17004D676F /* ContainerVCViewController.h */,
+				DE86E18E1C2C9B17004D676F /* ContainerVCViewController.m */,
+				DE86E1991C2C9BAF004D676F /* VC inside containers */,
+			);
+			name = "VC with Containers";
+			sourceTree = "<group>";
+		};
+		DE86E1991C2C9BAF004D676F /* VC inside containers */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1961C2C9B58004D676F /* MainVCViewController.h */,
+				DE86E1971C2C9B58004D676F /* MainVCViewController.m */,
+				DE86E18A1C2C9B04004D676F /* MenuVCViewController.h */,
+				DE86E18B1C2C9B04004D676F /* MenuVCViewController.m */,
+				DE86E1901C2C9B23004D676F /* ProfileVCViewController.h */,
+				DE86E1911C2C9B23004D676F /* ProfileVCViewController.m */,
+			);
+			name = "VC inside containers";
+			sourceTree = "<group>";
+		};
+		DE86E19A1C2CAFBE004D676F /* Views from Segmented Control  */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E19B1C2CB026004D676F /* SegmentedMainViewController.h */,
+				DE86E19C1C2CB026004D676F /* SegmentedMainViewController.m */,
+				DE86E1A71C2CB236004D676F /* First */,
+				DE86E1A81C2CB244004D676F /* Second */,
+			);
+			name = "Views from Segmented Control ";
+			sourceTree = "<group>";
+		};
+		DE86E1A71C2CB236004D676F /* First */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E19E1C2CB03B004D676F /* SegmentedFirstViewController.h */,
+				DE86E19F1C2CB03B004D676F /* SegmentedFirstViewController.m */,
+			);
+			name = First;
+			sourceTree = "<group>";
+		};
+		DE86E1A81C2CB244004D676F /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1A11C2CB05B004D676F /* SegmentedTableViewController.h */,
+				DE86E1A21C2CB05B004D676F /* SegmentedTableViewController.m */,
+				DE86E1A41C2CB069004D676F /* SegmentedTableViewCell.h */,
+				DE86E1A51C2CB069004D676F /* SegmentedTableViewCell.m */,
+			);
+			name = Second;
+			sourceTree = "<group>";
+		};
+		DEEFB9D91C34F05F0066354B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE86E1611C2C5619004D676F /* LoadingViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE86E17C1C2C5619004D676F /* Build configuration list for PBXNativeTarget "LoadingViews" */;
+			buildPhases = (
+				DE86E15E1C2C5619004D676F /* Sources */,
+				DE86E15F1C2C5619004D676F /* Frameworks */,
+				DE86E1601C2C5619004D676F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoadingViews;
+			productName = LoadingViews;
+			productReference = DE86E1621C2C5619004D676F /* LoadingViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE86E15A1C2C5619004D676F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = DevBros;
+				TargetAttributes = {
+					DE86E1611C2C5619004D676F = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = DE86E15D1C2C5619004D676F /* Build configuration list for PBXProject "LoadingViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE86E1591C2C5619004D676F;
+			productRefGroup = DE86E1631C2C5619004D676F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE86E1611C2C5619004D676F /* LoadingViews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE86E1601C2C5619004D676F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE483D0A1C34E74B00F46E4B /* PopOverViewController.xib in Resources */,
+				DE86E1781C2C5619004D676F /* LaunchScreen.storyboard in Resources */,
+				DE86E1751C2C5619004D676F /* Assets.xcassets in Resources */,
+				DE86E1701C2C5619004D676F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE86E15E1C2C5619004D676F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE86E1A61C2CB069004D676F /* SegmentedTableViewCell.m in Sources */,
+				DE86E1A01C2CB03B004D676F /* SegmentedFirstViewController.m in Sources */,
+				DE86E1951C2C9B36004D676F /* ShareSetting.m in Sources */,
+				DE86E1A31C2CB05B004D676F /* SegmentedTableViewController.m in Sources */,
+				DE86E1731C2C5619004D676F /* LoadingViews.xcdatamodeld in Sources */,
+				DE86E19D1C2CB026004D676F /* SegmentedMainViewController.m in Sources */,
+				DE86E1981C2C9B58004D676F /* MainVCViewController.m in Sources */,
+				DE86E1881C2C56E7004D676F /* MainTableViewController.m in Sources */,
+				DE483D051C34E72C00F46E4B /* VCThatCallsPopOverViewController.m in Sources */,
+				DE86E16A1C2C5619004D676F /* AppDelegate.m in Sources */,
+				DE86E1671C2C5619004D676F /* main.m in Sources */,
+				DE86E1AB1C2DD32F004D676F /* SegmentedControlSettings.m in Sources */,
+				DE483D091C34E74B00F46E4B /* PopOverViewController.m in Sources */,
+				DE86E18F1C2C9B17004D676F /* ContainerVCViewController.m in Sources */,
+				DE86E1921C2C9B23004D676F /* ProfileVCViewController.m in Sources */,
+				DE86E18C1C2C9B04004D676F /* MenuVCViewController.m in Sources */,
+				DE86E1851C2C56CE004D676F /* MainTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE86E16E1C2C5619004D676F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE86E16F1C2C5619004D676F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE86E1761C2C5619004D676F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE86E1771C2C5619004D676F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE86E17A1C2C5619004D676F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE86E17B1C2C5619004D676F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE86E17D1C2C5619004D676F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DevBros.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE86E17E1C2C5619004D676F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DevBros.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE86E15D1C2C5619004D676F /* Build configuration list for PBXProject "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE86E17A1C2C5619004D676F /* Debug */,
+				DE86E17B1C2C5619004D676F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE86E17C1C2C5619004D676F /* Build configuration list for PBXNativeTarget "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE86E17D1C2C5619004D676F /* Debug */,
+				DE86E17E1C2C5619004D676F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE86E1711C2C5619004D676F /* LoadingViews.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE86E1721C2C5619004D676F /* LoadingViews.xcdatamodel */,
+			);
+			currentVersion = DE86E1721C2C5619004D676F /* LoadingViews.xcdatamodel */;
+			path = LoadingViews.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE86E15A1C2C5619004D676F /* Project object */;
+}

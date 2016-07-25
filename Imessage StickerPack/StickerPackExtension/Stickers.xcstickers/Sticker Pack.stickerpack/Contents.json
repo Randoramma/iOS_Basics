@@ -1,0 +1,23 @@
+{
+  "stickers" : [
+    {
+      "filename" : "office1.sticker"
+    },
+    {
+      "filename" : "office2.sticker"
+    },
+    {
+      "filename" : "office3.sticker"
+    },
+    {
+      "filename" : "office4.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}

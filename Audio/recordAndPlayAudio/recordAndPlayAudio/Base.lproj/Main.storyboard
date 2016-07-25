@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ty9-IV-Pcg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="4xP-hH-Aed">
+            <objects>
+                <tableViewController id="QTY-cf-zl6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NBu-d5-eIa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="ryi-yi-FzV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="avfoundation" textLabel="DKM-f4-P38" style="IBUITableViewCellStyleDefault" id="Vcm-pT-fHS">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vcm-pT-fHS" id="chG-rk-uZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="AVFoundation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DKM-f4-P38">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="esF-wW-L7H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioToolBoxAndAvFoundation" textLabel="pbr-k3-FsN" style="IBUITableViewCellStyleDefault" id="Lir-6U-Pb2">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lir-6U-Pb2" id="C2T-cu-vy3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Audio Tool Box And AVFoundation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pbr-k3-FsN">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cAW-rU-o0R" kind="show" id="CIa-fE-P9O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioToolBox" textLabel="a7I-sr-TbT" style="IBUITableViewCellStyleDefault" id="a9x-zW-w7q">
+                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9x-zW-w7q" id="6m3-PV-lAf">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Audio Tool Box" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7I-sr-TbT">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tWY-Xu-tem" kind="show" id="I9x-qT-AQ6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="QTY-cf-zl6" id="Vgu-Ei-AEr"/>
+                            <outlet property="delegate" destination="QTY-cf-zl6" id="iVi-Eo-ynz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FDg-8B-qJt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tm-TA-q85" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="349"/>
+        </scene>
+        <!--Foundation View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AVFoundationViewController" customModule="recordAndPlayAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-0y-4Av">
+                                <rect key="frame" x="140" y="400" width="320" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fnB-sd-VXi">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Y94-Eh-r85"/>
+                                            <constraint firstAttribute="width" constant="100" id="jkG-1h-MWz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Play Audio">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JgK-Qn-Vte"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-Ja-DzY">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="xBc-6q-Em4"/>
+                                            <constraint firstAttribute="width" constant="100" id="zZu-NY-e16"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Pause Audio">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pauseAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXz-Tz-Ss4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qF2-on-xOz">
+                                        <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Hem-cy-dmi"/>
+                                            <constraint firstAttribute="width" constant="100" id="dFh-8d-xlU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Stop Audio">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="stopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mr0-eZ-w8i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="csT-cf-l2i">
+                                <rect key="frame" x="195" y="100" width="210" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="v5f-zX-k8d">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="7Gz-fJ-9As"/>
+                                            <constraint firstAttribute="height" constant="100" id="8zX-B5-cdh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Start Recording">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" title="Stop Recording">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startOrStopRecordingAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QDZ-BY-yYY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-tS-jDe">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="0kP-zc-AC1"/>
+                                            <constraint firstAttribute="height" constant="100" id="6KC-18-dGy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Pause Recording">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pauseRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kwl-RP-CwB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lCp-tS-jDe" firstAttribute="height" secondItem="csT-cf-l2i" secondAttribute="height" id="NTv-mY-4c9"/>
+                                    <constraint firstItem="v5f-zX-k8d" firstAttribute="height" secondItem="csT-cf-l2i" secondAttribute="height" id="YcS-wd-PqQ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xmB-Q1-hAe">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="AYi-aj-g0F"/>
+                                    <constraint firstAttribute="width" constant="120" id="HuB-tg-trs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Play Sound Effect">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playSoundEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vlp-UG-Xfa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="csT-cf-l2i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="16J-Jl-tWQ"/>
+                            <constraint firstItem="xmB-Q1-hAe" firstAttribute="centerX" secondItem="M4r-0y-4Av" secondAttribute="centerX" id="3KU-sT-S1a"/>
+                            <constraint firstItem="xmB-Q1-hAe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9DA-4S-dUb"/>
+                            <constraint firstItem="M4r-0y-4Av" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BgO-RV-rqA"/>
+                            <constraint firstItem="xmB-Q1-hAe" firstAttribute="top" secondItem="v5f-zX-k8d" secondAttribute="bottom" priority="750" constant="10" id="E3W-yb-wuc"/>
+                            <constraint firstItem="csT-cf-l2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FIU-ZE-Kgo"/>
+                            <constraint firstItem="xmB-Q1-hAe" firstAttribute="centerY" secondItem="M4r-0y-4Av" secondAttribute="centerY" id="Ljt-me-Xaz"/>
+                            <constraint firstItem="xmB-Q1-hAe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PCV-ev-t72"/>
+                            <constraint firstItem="uIQ-Ja-DzY" firstAttribute="top" secondItem="xmB-Q1-hAe" secondAttribute="bottom" constant="10" id="QBp-kA-AZj"/>
+                            <constraint firstItem="uIQ-Ja-DzY" firstAttribute="top" secondItem="xmB-Q1-hAe" secondAttribute="bottom" priority="750" constant="10" id="erY-0d-RLZ"/>
+                            <constraint firstItem="M4r-0y-4Av" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="lIa-5X-nF4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3KU-sT-S1a"/>
+                                <exclude reference="Ljt-me-Xaz"/>
+                                <exclude reference="QBp-kA-AZj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pauseAudioButton" destination="uIQ-Ja-DzY" id="0dD-XD-UpY"/>
+                        <outlet property="pauseRecordAudioButton" destination="lCp-tS-jDe" id="8n8-n9-WEi"/>
+                        <outlet property="playAudioButton" destination="fnB-sd-VXi" id="m4N-YC-aTK"/>
+                        <outlet property="recordAudioButton" destination="v5f-zX-k8d" id="Gff-Bn-QEt"/>
+                        <outlet property="stopAudioButton" destination="qF2-on-xOz" id="HN0-Op-4lG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="-92"/>
+        </scene>
+        <!--Audio Tool Box AndAV Foundation View Controller-->
+        <scene sceneID="j1v-Px-rDO">
+            <objects>
+                <viewController id="cAW-rU-o0R" customClass="AudioToolBoxAndAVFoundationViewController" customModule="recordAndPlayAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aH0-dm-e4s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z2a-dR-7pS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WzM-Qj-ppp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-85-enh">
+                                <rect key="frame" x="400" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Mi5-jO-rfW"/>
+                                    <constraint firstAttribute="width" constant="100" id="jJx-bK-aLb"/>
+                                </constraints>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startOrStopRecordingAudio:" destination="cAW-rU-o0R" eventType="touchUpInside" id="GdG-6o-t6T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3z-so-58i">
+                                <rect key="frame" x="100" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="cAW-rU-o0R" eventType="touchUpInside" id="9Qi-0g-nAA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G3z-so-58i" firstAttribute="width" secondItem="h0o-85-enh" secondAttribute="width" id="1aM-CX-ksq"/>
+                            <constraint firstItem="G3z-so-58i" firstAttribute="height" secondItem="h0o-85-enh" secondAttribute="height" id="4wV-pH-jgW"/>
+                            <constraint firstItem="h0o-85-enh" firstAttribute="centerY" secondItem="WzM-Qj-ppp" secondAttribute="centerY" id="7yA-A0-xzS"/>
+                            <constraint firstItem="G3z-so-58i" firstAttribute="centerX" secondItem="WzM-Qj-ppp" secondAttribute="centerX" multiplier="0.5" id="ReG-TI-Jvr"/>
+                            <constraint firstItem="h0o-85-enh" firstAttribute="centerX" secondItem="WzM-Qj-ppp" secondAttribute="centerX" multiplier="1.5" id="dnn-Ec-1IL"/>
+                            <constraint firstItem="G3z-so-58i" firstAttribute="centerY" secondItem="WzM-Qj-ppp" secondAttribute="centerY" id="ovt-6T-9tY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="G3z-so-58i" id="Fjz-4s-9Ok"/>
+                        <outlet property="recordingButton" destination="h0o-85-enh" id="bCf-mi-i73"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHR-tx-cgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fF8-w9-cvy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ty9-IV-Pcg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zs-IB-gyp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QTY-cf-zl6" kind="relationship" relationship="rootViewController" id="c7f-Lj-HMr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycs-rx-8tW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="349"/>
+        </scene>
+        <!--Audio Tool Box View Controller-->
+        <scene sceneID="a1J-2s-uvD">
+            <objects>
+                <viewController id="tWY-Xu-tem" customClass="AudioToolBoxViewController" customModule="recordAndPlayAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8le-ve-2wr"/>
+                        <viewControllerLayoutGuide type="bottom" id="UfQ-EE-wqT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gst-r0-NsP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGL-3h-AKp">
+                                <rect key="frame" x="400" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aZP-m1-TH1"/>
+                                    <constraint firstAttribute="height" constant="100" id="zAY-Xh-p1I"/>
+                                </constraints>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startOrStopRecordingAudio:" destination="tWY-Xu-tem" eventType="touchUpInside" id="mW9-L1-BKo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VC-js-K5Q">
+                                <rect key="frame" x="100" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="tWY-Xu-tem" eventType="touchUpInside" id="nHd-3a-hJq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LGL-3h-AKp" firstAttribute="centerY" secondItem="gst-r0-NsP" secondAttribute="centerY" id="78H-Qf-fAp"/>
+                            <constraint firstItem="7VC-js-K5Q" firstAttribute="height" secondItem="LGL-3h-AKp" secondAttribute="height" id="QpH-fv-kCY"/>
+                            <constraint firstItem="7VC-js-K5Q" firstAttribute="centerY" secondItem="gst-r0-NsP" secondAttribute="centerY" id="etQ-cE-Ym0"/>
+                            <constraint firstItem="LGL-3h-AKp" firstAttribute="centerX" secondItem="gst-r0-NsP" secondAttribute="centerX" multiplier="1.5" id="f5R-Lz-Ob1"/>
+                            <constraint firstItem="7VC-js-K5Q" firstAttribute="width" secondItem="LGL-3h-AKp" secondAttribute="width" id="guv-JL-9hz"/>
+                            <constraint firstItem="7VC-js-K5Q" firstAttribute="centerX" secondItem="gst-r0-NsP" secondAttribute="centerX" multiplier="0.5" id="iYl-2I-VkJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="7VC-js-K5Q" id="azM-yZ-EFe"/>
+                        <outlet property="recordingButton" destination="LGL-3h-AKp" id="75v-bI-qjy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxM-sW-tvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="847"/>
+        </scene>
+    </scenes>
+</document>

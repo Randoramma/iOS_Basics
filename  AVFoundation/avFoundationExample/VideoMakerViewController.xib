@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoMakerViewController" customModule="avFoundationExample" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraOverLayView" destination="FyD-gt-guz" id="Pi5-UJ-D0v"/>
+                <outlet property="cancelButton" destination="CtV-Qh-3yJ" id="ycF-HL-Xt6"/>
+                <outlet property="recordingGesture" destination="D9i-g1-XoH" id="LAu-uN-0NP"/>
+                <outlet property="recordingTimeLabel" destination="8bq-w9-GnZ" id="kgd-7n-hjb"/>
+                <outlet property="saveVideoButton" destination="ghh-WC-CwJ" id="imx-QR-vjD"/>
+                <outlet property="startStopRecordingButton" destination="rT7-dN-9S1" id="vQr-zR-TYG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+        </view>
+        <view contentMode="scaleToFill" id="FyD-gt-guz">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT7-dN-9S1">
+                    <rect key="frame" x="250" y="457" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="31U-oz-8eq"/>
+                        <constraint firstAttribute="height" constant="100" id="BzD-BJ-hqF"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="D9i-g1-XoH" appends="YES" id="BbS-m9-ETc"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-w9-GnZ">
+                    <rect key="frame" x="250" y="378" width="100" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="62" id="MRB-pM-uWL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghh-WC-CwJ">
+                    <rect key="frame" x="192" y="482" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_checkmark"/>
+                    <connections>
+                        <action selector="saveVideo:" destination="-1" eventType="touchUpInside" id="or5-ok-CjE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtV-Qh-3yJ">
+                    <rect key="frame" x="517" y="28" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="UGz-W2-UNl"/>
+                        <constraint firstAttribute="width" constant="50" id="ead-1K-GTr"/>
+                    </constraints>
+                    <state key="normal" image="ic_cancel_media"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="evB-U1-kVV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rT7-dN-9S1" secondAttribute="bottom" constant="43" id="8ic-bu-zmv"/>
+                <constraint firstItem="rT7-dN-9S1" firstAttribute="top" secondItem="8bq-w9-GnZ" secondAttribute="bottom" constant="17" id="B5O-J9-NbY"/>
+                <constraint firstItem="8bq-w9-GnZ" firstAttribute="width" secondItem="rT7-dN-9S1" secondAttribute="width" id="V7S-9Y-jPs"/>
+                <constraint firstItem="ghh-WC-CwJ" firstAttribute="width" secondItem="rT7-dN-9S1" secondAttribute="width" multiplier="0.5" id="VQA-yv-ldd"/>
+                <constraint firstItem="ghh-WC-CwJ" firstAttribute="height" secondItem="rT7-dN-9S1" secondAttribute="height" multiplier="0.5" id="Ykp-Ib-cpB"/>
+                <constraint firstItem="rT7-dN-9S1" firstAttribute="leading" secondItem="ghh-WC-CwJ" secondAttribute="trailing" constant="8" id="Yri-oj-6Rm"/>
+                <constraint firstItem="rT7-dN-9S1" firstAttribute="centerX" secondItem="FyD-gt-guz" secondAttribute="centerX" id="ZG6-QV-kGV"/>
+                <constraint firstAttribute="trailingMargin" secondItem="CtV-Qh-3yJ" secondAttribute="trailing" constant="25" id="c8J-zZ-Z7I"/>
+                <constraint firstItem="CtV-Qh-3yJ" firstAttribute="top" secondItem="FyD-gt-guz" secondAttribute="topMargin" constant="20" id="ese-VT-AKS"/>
+                <constraint firstItem="8bq-w9-GnZ" firstAttribute="leading" secondItem="rT7-dN-9S1" secondAttribute="leading" id="lXo-uC-9ji"/>
+                <constraint firstItem="ghh-WC-CwJ" firstAttribute="centerY" secondItem="rT7-dN-9S1" secondAttribute="centerY" id="yXT-fe-F7q"/>
+            </constraints>
+            <point key="canvasLocation" x="885" y="1281"/>
+        </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="D9i-g1-XoH">
+            <connections>
+                <action selector="recording:" destination="-1" id="EFz-de-yXk"/>
+                <outlet property="delegate" destination="-1" id="C2O-6b-tsd"/>
+            </connections>
+        </pongPressGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ic_cancel_media" width="24" height="24"/>
+        <image name="ic_checkmark" width="24" height="24"/>
+    </resources>
+</document>

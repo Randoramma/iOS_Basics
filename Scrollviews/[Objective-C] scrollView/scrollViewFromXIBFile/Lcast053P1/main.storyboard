@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ycw-mV-9c1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller InSB View Controller-->
+        <scene sceneID="mCa-Kr-asr">
+            <objects>
+                <viewController storyboardIdentifier="aViewControllerInSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ycw-mV-9c1" customClass="aViewControllerInSBViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CQM-XN-CCE"/>
+                        <viewControllerLayoutGuide type="bottom" id="usX-hF-ZlC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hG5-Q4-qGy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A view controller in Storyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlv-03-x9e">
+                                <rect key="frame" x="20" y="80" width="280" height="170"/>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="usX-hF-ZlC" firstAttribute="top" secondItem="dlv-03-x9e" secondAttribute="bottom" constant="318" id="Ph7-Fj-eFi"/>
+                            <constraint firstItem="dlv-03-x9e" firstAttribute="leading" secondItem="hG5-Q4-qGy" secondAttribute="leadingMargin" constant="4" id="SQ5-Ug-PYu"/>
+                            <constraint firstItem="dlv-03-x9e" firstAttribute="top" secondItem="CQM-XN-CCE" secondAttribute="bottom" constant="60" id="Uox-kf-jMC"/>
+                            <constraint firstItem="dlv-03-x9e" firstAttribute="centerX" secondItem="hG5-Q4-qGy" secondAttribute="centerX" id="ybv-0X-mA3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Orv-RV-0zR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="159"/>
+        </scene>
+    </scenes>
+</document>

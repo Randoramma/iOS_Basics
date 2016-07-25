@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LNq-uN-LhG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Project1 Main View Controller-->
+        <scene sceneID="Ef9-qc-j4B">
+            <objects>
+                <viewController storyboardIdentifier="p1Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LNq-uN-LhG" customClass="project1MainViewController" customModule="AutoLayoutConstraits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hB9-MK-vgH"/>
+                        <viewControllerLayoutGuide type="bottom" id="zU2-3U-p8k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p0D-PG-ekx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a label in the right place, right? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCB-Wi-xOj">
+                                <rect key="frame" x="162" y="28" width="276" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-q1-aIR">
+                                <rect key="frame" x="180" y="172" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FJ7-gP-LP5"/>
+                                    <constraint firstAttribute="height" constant="128" id="U4i-RZ-fgZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wP9-q1-aIR" firstAttribute="centerX" secondItem="p0D-PG-ekx" secondAttribute="centerX" id="8IY-sl-mob"/>
+                            <constraint firstItem="fCB-Wi-xOj" firstAttribute="centerX" secondItem="p0D-PG-ekx" secondAttribute="centerX" id="Jhi-PQ-vs8"/>
+                            <constraint firstItem="wP9-q1-aIR" firstAttribute="centerX" secondItem="fCB-Wi-xOj" secondAttribute="centerX" id="XEr-R4-XyV"/>
+                            <constraint firstItem="fCB-Wi-xOj" firstAttribute="top" secondItem="hB9-MK-vgH" secondAttribute="bottom" constant="8" id="dt8-nD-zfe"/>
+                            <constraint firstItem="wP9-q1-aIR" firstAttribute="top" secondItem="fCB-Wi-xOj" secondAttribute="bottom" constant="123" id="h4z-nO-GFT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9e-r1-UsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="627"/>
+        </scene>
+    </scenes>
+</document>

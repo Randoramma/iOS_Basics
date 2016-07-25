@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE483CF51C34DDA400F46E4B /* starWars.jpg */; };
+		DE483CFD1C34E4FE00F46E4B /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE483CFB1C34E4FE00F46E4B /* PopOverViewController.swift */; };
+		DE483CFE1C34E4FE00F46E4B /* PopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE483CFC1C34E4FE00F46E4B /* PopOverViewController.xib */; };
+		DE624FDA1C379262005F69BA /* PopOverViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE624FD91C379262005F69BA /* PopOverViewController_iPhone6.xib */; };
+		DE624FDC1C379288005F69BA /* PopOverViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE624FDB1C379288005F69BA /* PopOverViewController_iPhone6Plus.xib */; };
+		DE624FE01C3796C5005F69BA /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE624FDF1C3796C5005F69BA /* PopUpViewController_iPad.xib */; };
+		DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78646B1BFC403C00FFE21B /* AppDelegate.swift */; };
+		DE78646E1BFC403C00FFE21B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78646D1BFC403C00FFE21B /* ViewController.swift */; };
+		DE7864711BFC403C00FFE21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE78646F1BFC403C00FFE21B /* Main.storyboard */; };
+		DE7864731BFC403C00FFE21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7864721BFC403C00FFE21B /* Assets.xcassets */; };
+		DE7864761BFC403C00FFE21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */; };
+		DE7864811BFC403C00FFE21B /* LoadingViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864801BFC403C00FFE21B /* LoadingViewsTests.swift */; };
+		DE7864911BFC40C700FFE21B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78648F1BFC40C700FFE21B /* TableViewController.swift */; };
+		DE7864921BFC40C700FFE21B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7864901BFC40C700FFE21B /* TableViewController.xib */; };
+		DE7864951BFC40F800FFE21B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864931BFC40F800FFE21B /* TableViewCell.swift */; };
+		DE7864961BFC40F800FFE21B /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7864941BFC40F800FFE21B /* TableViewCell.xib */; };
+		DE78649B1BFC414800FFE21B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78649A1BFC414800FFE21B /* MainTableViewController.swift */; };
+		DE78649D1BFC46EF00FFE21B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78649C1BFC46EF00FFE21B /* MainTableViewCell.swift */; };
+		DE7DA7761C372F9500359127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7751C372F9500359127 /* UIKit.framework */; };
+		DE7DA7781C372F9F00359127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7771C372F9F00359127 /* Foundation.framework */; };
+		DE7DA77A1C372FA600359127 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7791C372FA600359127 /* QuartzCore.framework */; };
+		DE7DA77C1C372FFF00359127 /* VCThatCallsPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DA77B1C372FFF00359127 /* VCThatCallsPopOverViewController.swift */; };
+		DE86E1521C2BA055004D676F /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1511C2BA055004D676F /* MainContainerViewController.swift */; };
+		DE86E1541C2BA06C004D676F /* ContainerChildTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1531C2BA06C004D676F /* ContainerChildTableViewController.swift */; };
+		DE86E1561C2BA07D004D676F /* ContainerChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1551C2BA07D004D676F /* ContainerChildViewController.swift */; };
+		DE86E1581C2BA08E004D676F /* ContainerChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86E1571C2BA08E004D676F /* ContainerChildTableViewCell.swift */; };
+		DEB936D71BFFD0BF00DF223E /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB936D61BFFD0BF00DF223E /* AViewController.swift */; };
+		DEB936D91BFFD0D000DF223E /* ViewInUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB936D81BFFD0D000DF223E /* ViewInUIViewViewController.swift */; };
+		DEB936DE1BFFD78300DF223E /* ViewInNIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB936DC1BFFD78300DF223E /* ViewInNIBViewController.swift */; };
+		DEB936DF1BFFD78300DF223E /* ViewInNIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB936DD1BFFD78300DF223E /* ViewInNIBViewController.xib */; };
+		DEB937A71C00ABDD00DF223E /* StoryboardTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB937A61C00ABDD00DF223E /* StoryboardTwo.storyboard */; };
+		DEB937AA1C00AD4400DF223E /* ADiffSBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB937A91C00AD4400DF223E /* ADiffSBViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE78647D1BFC403C00FFE21B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE7864601BFC403C00FFE21B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE7864671BFC403C00FFE21B;
+			remoteInfo = LoadingViews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE483CF51C34DDA400F46E4B /* starWars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starWars.jpg; sourceTree = "<group>"; };
+		DE483CFB1C34E4FE00F46E4B /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		DE483CFC1C34E4FE00F46E4B /* PopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverViewController.xib; sourceTree = "<group>"; };
+		DE624FD91C379262005F69BA /* PopOverViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverViewController_iPhone6.xib; sourceTree = "<group>"; };
+		DE624FDB1C379288005F69BA /* PopOverViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
+		DE624FDF1C3796C5005F69BA /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPad.xib; sourceTree = "<group>"; };
+		DE7864681BFC403C00FFE21B /* LoadingViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE78646B1BFC403C00FFE21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE78646D1BFC403C00FFE21B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE7864701BFC403C00FFE21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE7864721BFC403C00FFE21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE7864751BFC403C00FFE21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE7864771BFC403C00FFE21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE78647C1BFC403C00FFE21B /* LoadingViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoadingViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7864801BFC403C00FFE21B /* LoadingViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewsTests.swift; sourceTree = "<group>"; };
+		DE7864821BFC403C00FFE21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE78648F1BFC40C700FFE21B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DE7864901BFC40C700FFE21B /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		DE7864931BFC40F800FFE21B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DE7864941BFC40F800FFE21B /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		DE78649A1BFC414800FFE21B /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		DE78649C1BFC46EF00FFE21B /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		DE7DA7751C372F9500359127 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DE7DA7771C372F9F00359127 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DE7DA7791C372FA600359127 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DE7DA77B1C372FFF00359127 /* VCThatCallsPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCThatCallsPopOverViewController.swift; sourceTree = "<group>"; };
+		DE86E1511C2BA055004D676F /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		DE86E1531C2BA06C004D676F /* ContainerChildTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChildTableViewController.swift; sourceTree = "<group>"; };
+		DE86E1551C2BA07D004D676F /* ContainerChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChildViewController.swift; sourceTree = "<group>"; };
+		DE86E1571C2BA08E004D676F /* ContainerChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChildTableViewCell.swift; sourceTree = "<group>"; };
+		DEB936D61BFFD0BF00DF223E /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		DEB936D81BFFD0D000DF223E /* ViewInUIViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInUIViewViewController.swift; sourceTree = "<group>"; };
+		DEB936DC1BFFD78300DF223E /* ViewInNIBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInNIBViewController.swift; sourceTree = "<group>"; };
+		DEB936DD1BFFD78300DF223E /* ViewInNIBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewInNIBViewController.xib; sourceTree = "<group>"; };
+		DEB937A61C00ABDD00DF223E /* StoryboardTwo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardTwo.storyboard; sourceTree = "<group>"; };
+		DEB937A91C00AD4400DF223E /* ADiffSBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADiffSBViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE7864651BFC403C00FFE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7DA77A1C372FA600359127 /* QuartzCore.framework in Frameworks */,
+				DE7DA7781C372F9F00359127 /* Foundation.framework in Frameworks */,
+				DE7DA7761C372F9500359127 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE7864791BFC403C00FFE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE483CF31C34DC3700F46E4B /* 5 Pop Up Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE7DA77B1C372FFF00359127 /* VCThatCallsPopOverViewController.swift */,
+				DE483CFB1C34E4FE00F46E4B /* PopOverViewController.swift */,
+			);
+			name = "5 Pop Up Controller";
+			sourceTree = "<group>";
+		};
+		DE483CF41C34DD9400F46E4B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CF51C34DDA400F46E4B /* starWars.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DE624FE11C379AC2005F69BA /* 5 Pop Over */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CFC1C34E4FE00F46E4B /* PopOverViewController.xib */,
+				DE624FD91C379262005F69BA /* PopOverViewController_iPhone6.xib */,
+				DE624FDB1C379288005F69BA /* PopOverViewController_iPhone6Plus.xib */,
+				DE624FDF1C3796C5005F69BA /* PopUpViewController_iPad.xib */,
+			);
+			name = "5 Pop Over";
+			sourceTree = "<group>";
+		};
+		DE624FF01C38877D005F69BA /* 3 */ = {
+			isa = PBXGroup;
+			children = (
+				DEB937A61C00ABDD00DF223E /* StoryboardTwo.storyboard */,
+			);
+			name = 3;
+			sourceTree = "<group>";
+		};
+		DE624FF11C388792005F69BA /* 2  */ = {
+			isa = PBXGroup;
+			children = (
+				DEB936DD1BFFD78300DF223E /* ViewInNIBViewController.xib */,
+			);
+			name = "2 ";
+			sourceTree = "<group>";
+		};
+		DE78645F1BFC403C00FFE21B = {
+			isa = PBXGroup;
+			children = (
+				DE7DA7791C372FA600359127 /* QuartzCore.framework */,
+				DE7DA7771C372F9F00359127 /* Foundation.framework */,
+				DE7DA7751C372F9500359127 /* UIKit.framework */,
+				DE78646A1BFC403C00FFE21B /* LoadingViews */,
+				DE78647F1BFC403C00FFE21B /* LoadingViewsTests */,
+				DE7864691BFC403C00FFE21B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE7864691BFC403C00FFE21B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE7864681BFC403C00FFE21B /* LoadingViews.app */,
+				DE78647C1BFC403C00FFE21B /* LoadingViewsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE78646A1BFC403C00FFE21B /* LoadingViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CF41C34DD9400F46E4B /* Images */,
+				DE78648E1BFC407300FFE21B /* Controllers */,
+				DE78648D1BFC406E00FFE21B /* Models */,
+				DE78648C1BFC406800FFE21B /* Views */,
+				DE78648B1BFC406400FFE21B /* App */,
+				DE7864721BFC403C00FFE21B /* Assets.xcassets */,
+				DE7864771BFC403C00FFE21B /* Info.plist */,
+			);
+			path = LoadingViews;
+			sourceTree = "<group>";
+		};
+		DE78647F1BFC403C00FFE21B /* LoadingViewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE7864801BFC403C00FFE21B /* LoadingViewsTests.swift */,
+				DE7864821BFC403C00FFE21B /* Info.plist */,
+			);
+			path = LoadingViewsTests;
+			sourceTree = "<group>";
+		};
+		DE78648B1BFC406400FFE21B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE78646B1BFC403C00FFE21B /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		DE78648C1BFC406800FFE21B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */,
+				DE78646F1BFC403C00FFE21B /* Main.storyboard */,
+				DE7864901BFC40C700FFE21B /* TableViewController.xib */,
+				DE7864941BFC40F800FFE21B /* TableViewCell.xib */,
+				DE624FF11C388792005F69BA /* 2  */,
+				DE624FF01C38877D005F69BA /* 3 */,
+				DE624FE11C379AC2005F69BA /* 5 Pop Over */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE78648D1BFC406E00FFE21B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DE78648E1BFC407300FFE21B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE78649A1BFC414800FFE21B /* MainTableViewController.swift */,
+				DE78649C1BFC46EF00FFE21B /* MainTableViewCell.swift */,
+				DE78648F1BFC40C700FFE21B /* TableViewController.swift */,
+				DE7864931BFC40F800FFE21B /* TableViewCell.swift */,
+				DEB936D41BFFD02700DF223E /* 1 Push to NIB Tableview */,
+				DEB936D51BFFD05200DF223E /* 2 Load a viewinside a view */,
+				DEB937A81C00AD0D00DF223E /* 3 Loading View in A diff SB */,
+				DE86E1501C2BA030004D676F /* 4 Loading Container Views */,
+				DE483CF31C34DC3700F46E4B /* 5 Pop Up Controller */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DE86E1501C2BA030004D676F /* 4 Loading Container Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE86E1511C2BA055004D676F /* MainContainerViewController.swift */,
+				DE86E1551C2BA07D004D676F /* ContainerChildViewController.swift */,
+				DE86E1531C2BA06C004D676F /* ContainerChildTableViewController.swift */,
+				DE86E1571C2BA08E004D676F /* ContainerChildTableViewCell.swift */,
+			);
+			name = "4 Loading Container Views";
+			sourceTree = "<group>";
+		};
+		DEB936D41BFFD02700DF223E /* 1 Push to NIB Tableview */ = {
+			isa = PBXGroup;
+			children = (
+				DE78646D1BFC403C00FFE21B /* ViewController.swift */,
+			);
+			name = "1 Push to NIB Tableview";
+			sourceTree = "<group>";
+		};
+		DEB936D51BFFD05200DF223E /* 2 Load a viewinside a view */ = {
+			isa = PBXGroup;
+			children = (
+				DEB936D61BFFD0BF00DF223E /* AViewController.swift */,
+				DEB936D81BFFD0D000DF223E /* ViewInUIViewViewController.swift */,
+				DEB936DC1BFFD78300DF223E /* ViewInNIBViewController.swift */,
+			);
+			name = "2 Load a viewinside a view";
+			sourceTree = "<group>";
+		};
+		DEB937A81C00AD0D00DF223E /* 3 Loading View in A diff SB */ = {
+			isa = PBXGroup;
+			children = (
+				DEB937A91C00AD4400DF223E /* ADiffSBViewController.swift */,
+			);
+			name = "3 Loading View in A diff SB";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE7864671BFC403C00FFE21B /* LoadingViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE7864851BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViews" */;
+			buildPhases = (
+				DE7864641BFC403C00FFE21B /* Sources */,
+				DE7864651BFC403C00FFE21B /* Frameworks */,
+				DE7864661BFC403C00FFE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoadingViews;
+			productName = LoadingViews;
+			productReference = DE7864681BFC403C00FFE21B /* LoadingViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE78647B1BFC403C00FFE21B /* LoadingViewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE7864881BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViewsTests" */;
+			buildPhases = (
+				DE7864781BFC403C00FFE21B /* Sources */,
+				DE7864791BFC403C00FFE21B /* Frameworks */,
+				DE78647A1BFC403C00FFE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE78647E1BFC403C00FFE21B /* PBXTargetDependency */,
+			);
+			name = LoadingViewsTests;
+			productName = LoadingViewsTests;
+			productReference = DE78647C1BFC403C00FFE21B /* LoadingViewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE7864601BFC403C00FFE21B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = devbros;
+				TargetAttributes = {
+					DE7864671BFC403C00FFE21B = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					DE78647B1BFC403C00FFE21B = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DE7864671BFC403C00FFE21B;
+					};
+				};
+			};
+			buildConfigurationList = DE7864631BFC403C00FFE21B /* Build configuration list for PBXProject "LoadingViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE78645F1BFC403C00FFE21B;
+			productRefGroup = DE7864691BFC403C00FFE21B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE7864671BFC403C00FFE21B /* LoadingViews */,
+				DE78647B1BFC403C00FFE21B /* LoadingViewsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE7864661BFC403C00FFE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7864761BFC403C00FFE21B /* LaunchScreen.storyboard in Resources */,
+				DE624FE01C3796C5005F69BA /* PopUpViewController_iPad.xib in Resources */,
+				DE7864961BFC40F800FFE21B /* TableViewCell.xib in Resources */,
+				DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */,
+				DE624FDC1C379288005F69BA /* PopOverViewController_iPhone6Plus.xib in Resources */,
+				DEB937A71C00ABDD00DF223E /* StoryboardTwo.storyboard in Resources */,
+				DE7864731BFC403C00FFE21B /* Assets.xcassets in Resources */,
+				DE7864711BFC403C00FFE21B /* Main.storyboard in Resources */,
+				DE624FDA1C379262005F69BA /* PopOverViewController_iPhone6.xib in Resources */,
+				DE483CFE1C34E4FE00F46E4B /* PopOverViewController.xib in Resources */,
+				DE7864921BFC40C700FFE21B /* TableViewController.xib in Resources */,
+				DEB936DF1BFFD78300DF223E /* ViewInNIBViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE78647A1BFC403C00FFE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE7864641BFC403C00FFE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE483CFD1C34E4FE00F46E4B /* PopOverViewController.swift in Sources */,
+				DE78646E1BFC403C00FFE21B /* ViewController.swift in Sources */,
+				DE7864951BFC40F800FFE21B /* TableViewCell.swift in Sources */,
+				DEB936D91BFFD0D000DF223E /* ViewInUIViewViewController.swift in Sources */,
+				DE7DA77C1C372FFF00359127 /* VCThatCallsPopOverViewController.swift in Sources */,
+				DE7864911BFC40C700FFE21B /* TableViewController.swift in Sources */,
+				DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */,
+				DE78649D1BFC46EF00FFE21B /* MainTableViewCell.swift in Sources */,
+				DEB936D71BFFD0BF00DF223E /* AViewController.swift in Sources */,
+				DEB936DE1BFFD78300DF223E /* ViewInNIBViewController.swift in Sources */,
+				DE86E1541C2BA06C004D676F /* ContainerChildTableViewController.swift in Sources */,
+				DE86E1521C2BA055004D676F /* MainContainerViewController.swift in Sources */,
+				DEB937AA1C00AD4400DF223E /* ADiffSBViewController.swift in Sources */,
+				DE78649B1BFC414800FFE21B /* MainTableViewController.swift in Sources */,
+				DE86E1581C2BA08E004D676F /* ContainerChildTableViewCell.swift in Sources */,
+				DE86E1561C2BA07D004D676F /* ContainerChildViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE7864781BFC403C00FFE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7864811BFC403C00FFE21B /* LoadingViewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE78647E1BFC403C00FFE21B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE7864671BFC403C00FFE21B /* LoadingViews */;
+			targetProxy = DE78647D1BFC403C00FFE21B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE78646F1BFC403C00FFE21B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7864701BFC403C00FFE21B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7864751BFC403C00FFE21B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE7864831BFC403D00FFE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE7864841BFC403D00FFE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE7864861BFC403D00FFE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = devbros.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE7864871BFC403D00FFE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = devbros.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE7864891BFC403D00FFE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LoadingViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = devbros.LoadingViewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoadingViews.app/LoadingViews";
+			};
+			name = Debug;
+		};
+		DE78648A1BFC403D00FFE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LoadingViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = devbros.LoadingViewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoadingViews.app/LoadingViews";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE7864631BFC403C00FFE21B /* Build configuration list for PBXProject "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7864831BFC403D00FFE21B /* Debug */,
+				DE7864841BFC403D00FFE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE7864851BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7864861BFC403D00FFE21B /* Debug */,
+				DE7864871BFC403D00FFE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE7864881BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7864891BFC403D00FFE21B /* Debug */,
+				DE78648A1BFC403D00FFE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE7864601BFC403C00FFE21B /* Project object */;
+}
