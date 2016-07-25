@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechSynthesizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:  en-US" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-fo-lGo">
+                                <rect key="frame" x="40" y="559" width="520" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="heY-hg-cPh">
+                                <rect key="frame" x="40" y="120" width="520" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VPS-ad-Zzh"/>
+                                </constraints>
+                                <mutableString key="text">The Alexa Voice Service API allows developers to add voice-enabled experiences to connected devices. Once integrated with the API, your product will have access to Alexa's built-in capabilities and third-party skills developed using the Alexa Skills Kit.
+
+Each of the interfaces you'll encounter below is composed of logically grouped messages called directives and events. Directives are messages sent from the cloud instructing your client to take action. Events are messages sent from your client to the cloud notifying Alexa something has occurred.
+
+The Alexa Voice Service API leverages Login with Amazon for authorization and requires an access token to be sent in the header of each event.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VPS-ad-Zzh"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SE-XA-2UI">
+                                <rect key="frame" x="40" y="507" width="520" height="30"/>
+                                <state key="normal" title="Speak Text"/>
+                                <connections>
+                                    <action selector="speakTextNow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pQ-Vc-ZnI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="heY-hg-cPh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hn-A1-TRG"/>
+                            <constraint firstItem="heY-hg-cPh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5Hd-ak-Uqn"/>
+                            <constraint firstItem="4SE-XA-2UI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="9KA-r2-TaP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4SE-XA-2UI" secondAttribute="trailing" constant="20" id="GOr-Ra-wZU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2lH-fo-lGo" secondAttribute="bottom" constant="20" id="OWa-5d-YRA"/>
+                            <constraint firstItem="2lH-fo-lGo" firstAttribute="top" secondItem="4SE-XA-2UI" secondAttribute="bottom" constant="22" id="Svr-f4-Y4y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="heY-hg-cPh" secondAttribute="trailing" constant="20" id="U0X-jt-rxi"/>
+                            <constraint firstItem="heY-hg-cPh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="900" id="Z4H-t0-h2j"/>
+                            <constraint firstItem="2lH-fo-lGo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="mdh-eY-xFh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2lH-fo-lGo" secondAttribute="trailing" constant="20" id="zJM-Eh-vEY"/>
+                            <constraint firstItem="heY-hg-cPh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="zwI-Fc-Yuw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textTospeakTextView" destination="heY-hg-cPh" id="eTU-N8-t4Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="545"/>
+        </scene>
+    </scenes>
+</document>
