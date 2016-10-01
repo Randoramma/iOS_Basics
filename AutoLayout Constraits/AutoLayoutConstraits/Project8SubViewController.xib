@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Project8SubViewController" customModule="AutoLayoutConstraits" customModuleProvider="target">
@@ -16,24 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="465" height="111"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-ew-CcA">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-ew-CcA">
                     <rect key="frame" x="8" y="63" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="0.49989468920000002" blue="0.15016303140000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="GVj-V2-ojZ"/>
-                        <constraint firstAttribute="height" constant="40" id="hxV-tQ-3Wk"/>
-                    </constraints>
                     <state key="normal" title="IMG">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egy-He-Vj8">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egy-He-Vj8">
                     <rect key="frame" x="417" y="63" width="40" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="WAd-uA-EM5"/>
-                        <constraint firstAttribute="width" constant="40" id="cqL-7a-Paf"/>
-                        <constraint firstAttribute="height" constant="40" id="ujs-4C-vSD"/>
                     </constraints>
                     <state key="normal" title="IMG">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,13 +38,11 @@
                         </mask>
                     </variation>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRg-R9-x62">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRg-R9-x62">
                     <rect key="frame" x="212" y="63" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ckg-Tx-5M7"/>
-                        <constraint firstAttribute="width" constant="40" id="XOM-z4-26n"/>
-                        <constraint firstAttribute="height" constant="40" id="Ymi-US-nUW"/>
                     </constraints>
                     <state key="normal" title="IMG">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,12 +53,9 @@
                         </mask>
                     </variation>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-Zc-dMH">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-Zc-dMH">
                     <rect key="frame" x="8" y="8" width="449" height="47"/>
                     <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="47" id="h4j-0m-jsD"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -74,18 +63,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="h9A-ew-CcA" firstAttribute="leading" secondItem="pY4-Zc-dMH" secondAttribute="leading" id="2K2-9f-oQX"/>
-                <constraint firstItem="pY4-Zc-dMH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="3KU-KG-e1Y"/>
-                <constraint firstItem="pY4-Zc-dMH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="5Ij-Tn-7yK"/>
-                <constraint firstItem="YRg-R9-x62" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" constant="8" id="IJA-Eg-ynL"/>
-                <constraint firstItem="pY4-Zc-dMH" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="IWE-MD-OmW"/>
-                <constraint firstItem="egy-He-Vj8" firstAttribute="trailing" secondItem="pY4-Zc-dMH" secondAttribute="trailing" id="QzQ-Vk-lky"/>
-                <constraint firstItem="YRg-R9-x62" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="Snz-hX-f9q"/>
-                <constraint firstItem="YRg-R9-x62" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VUd-Np-GnN"/>
-                <constraint firstItem="egy-He-Vj8" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="YNn-Tb-5j8"/>
-                <constraint firstItem="h9A-ew-CcA" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="ee6-Kw-toX"/>
-                <constraint firstItem="h9A-ew-CcA" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" constant="8" id="eiE-ps-ex4"/>
-                <constraint firstItem="egy-He-Vj8" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" constant="8" id="vAE-HP-EmB"/>
+                <constraint firstAttribute="trailing" secondItem="pY4-Zc-dMH" secondAttribute="trailing" constant="8" id="5DG-CL-SNB"/>
+                <constraint firstItem="pY4-Zc-dMH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="6Rv-lF-u71"/>
+                <constraint firstItem="pY4-Zc-dMH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="BaF-ci-100"/>
+                <constraint firstItem="pY4-Zc-dMH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="VGz-ic-SgS"/>
+                <constraint firstItem="h9A-ew-CcA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="ggf-lp-ImR"/>
+                <constraint firstItem="h9A-ew-CcA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="v5u-hA-m4H"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -24,6 +24,7 @@
 		DE6B29421C640CB000B0F3FA /* project2MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6B29411C640CB000B0F3FA /* project2MainViewController.swift */; };
 		DE6B294C1C641B7900B0F3FA /* Project8SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6B294A1C641B7900B0F3FA /* Project8SubViewController.swift */; };
 		DE6B294D1C641B7900B0F3FA /* Project8SubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6B294B1C641B7900B0F3FA /* Project8SubViewController.xib */; };
+		DED01F421D5ACE9A003BCEE9 /* ProjectNine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED01F411D5ACE9A003BCEE9 /* ProjectNine.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DE6B29411C640CB000B0F3FA /* project2MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = project2MainViewController.swift; sourceTree = "<group>"; };
 		DE6B294A1C641B7900B0F3FA /* Project8SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project8SubViewController.swift; sourceTree = "<group>"; };
 		DE6B294B1C641B7900B0F3FA /* Project8SubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Project8SubViewController.xib; sourceTree = "<group>"; };
+		DED01F411D5ACE9A003BCEE9 /* ProjectNine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProjectNine.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				DE27D6401C60526B0047F1A1 /* ProjectSeven.storyboard */,
 				DE6B29381C64063500B0F3FA /* ProjectEight.storyboard */,
 				DE6B294B1C641B7900B0F3FA /* Project8SubViewController.xib */,
+				DED01F411D5ACE9A003BCEE9 /* ProjectNine.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				DE27D6301C5EF8240047F1A1 /* ProjectTwo.storyboard in Resources */,
 				DE27D62E1C5EF8170047F1A1 /* ProjectOne.storyboard in Resources */,
 				DE6B29391C64063500B0F3FA /* ProjectEight.storyboard in Resources */,
+				DED01F421D5ACE9A003BCEE9 /* ProjectNine.storyboard in Resources */,
 				DE6B294D1C641B7900B0F3FA /* Project8SubViewController.xib in Resources */,
 				DE27D6391C6050B10047F1A1 /* ProjectThree.storyboard in Resources */,
 				DE27D61F1C5EF6C10047F1A1 /* Assets.xcassets in Resources */,

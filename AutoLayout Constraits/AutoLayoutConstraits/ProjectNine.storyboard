@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="grj-N3-Psr">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="sU7-CD-vyv">
+            <objects>
+                <viewController id="grj-N3-Psr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gCR-5w-xEs"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJz-nJ-D1Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W23-3o-Epp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it Prime?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icN-k7-CR3">
+                                <rect key="frame" x="20" y="134" width="560" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a number in the box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73U-gt-bhD">
+                                <rect key="frame" x="40" y="187" width="520" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vku-XQ-Kr5">
+                                <rect key="frame" x="279" y="405" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kq-ri-56n">
+                                <rect key="frame" x="262" y="355" width="76" height="30"/>
+                                <state key="normal" title="Is it Prime?"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. 17" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zj-mX-lYU">
+                                <rect key="frame" x="250" y="285" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eUc-0p-jXQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6zj-mX-lYU" firstAttribute="centerY" secondItem="W23-3o-Epp" secondAttribute="centerY" id="13A-tA-lHM"/>
+                            <constraint firstItem="6zj-mX-lYU" firstAttribute="centerX" secondItem="W23-3o-Epp" secondAttribute="centerX" id="2bz-W0-S2c"/>
+                            <constraint firstItem="73U-gt-bhD" firstAttribute="centerX" secondItem="W23-3o-Epp" secondAttribute="centerX" id="3gm-xZ-iHd"/>
+                            <constraint firstItem="icN-k7-CR3" firstAttribute="leading" secondItem="W23-3o-Epp" secondAttribute="leadingMargin" id="BoA-az-zWi"/>
+                            <constraint firstItem="vku-XQ-Kr5" firstAttribute="top" secondItem="9Kq-ri-56n" secondAttribute="bottom" constant="20" id="IZl-Ja-EXg"/>
+                            <constraint firstItem="6zj-mX-lYU" firstAttribute="top" secondItem="73U-gt-bhD" secondAttribute="bottom" priority="750" constant="60" id="JHD-OR-8jl"/>
+                            <constraint firstItem="9Kq-ri-56n" firstAttribute="centerX" secondItem="W23-3o-Epp" secondAttribute="centerX" id="KfS-Pe-8y7"/>
+                            <constraint firstItem="icN-k7-CR3" firstAttribute="trailing" secondItem="W23-3o-Epp" secondAttribute="trailingMargin" id="OOF-Ox-pIW"/>
+                            <constraint firstItem="9Kq-ri-56n" firstAttribute="top" secondItem="6zj-mX-lYU" secondAttribute="bottom" priority="750" constant="40" id="R6K-2C-g9M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="73U-gt-bhD" secondAttribute="trailing" constant="20" id="hR7-X8-NVf"/>
+                            <constraint firstItem="73U-gt-bhD" firstAttribute="leading" secondItem="W23-3o-Epp" secondAttribute="leadingMargin" constant="20" id="jMt-lC-jsT"/>
+                            <constraint firstItem="icN-k7-CR3" firstAttribute="centerX" secondItem="W23-3o-Epp" secondAttribute="centerX" id="ktm-XY-Ukq"/>
+                            <constraint firstItem="icN-k7-CR3" firstAttribute="centerY" secondItem="W23-3o-Epp" secondAttribute="centerY" multiplier="0.5" id="tYv-Mi-YbU"/>
+                            <constraint firstItem="icN-k7-CR3" firstAttribute="top" secondItem="gCR-5w-xEs" secondAttribute="bottom" constant="20" id="v9g-2l-pgg"/>
+                            <constraint firstItem="vku-XQ-Kr5" firstAttribute="centerX" secondItem="W23-3o-Epp" secondAttribute="centerX" id="wOY-1V-BR0"/>
+                            <constraint firstItem="73U-gt-bhD" firstAttribute="top" secondItem="icN-k7-CR3" secondAttribute="bottom" constant="20" id="wsT-ik-GCf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="v9g-2l-pgg"/>
+                                <exclude reference="JHD-OR-8jl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Imh-H2-ErL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="591"/>
+        </scene>
+    </scenes>
+</document>

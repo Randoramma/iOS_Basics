@@ -89,7 +89,7 @@ class PopOverViewController: UIViewController {
 //        self.view .addGestureRecognizer(tap)
         
         //swipes
-        let swipe = UISwipeGestureRecognizer.init(target: self, action: "closeView")
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(PopOverViewController.closeView as (PopOverViewController) -> () -> ()))
         swipe.direction = UISwipeGestureRecognizerDirection.Right
         
         self.view .addGestureRecognizer(swipe)

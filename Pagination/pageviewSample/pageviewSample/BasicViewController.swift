@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UIPageViewControllerDataSource {
+class BasicViewController: UIViewController, UIPageViewControllerDataSource {
 
     private var pageViewController:UIPageViewController? = nil
     private var _pageTitles:[String] = []
     private var _pageImages:[String] = []
+    
+    
+    @IBOutlet weak var gotItButton: UIButton!
+    @IBOutlet weak var startAgainButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
         
         self.pageViewController?.dataSource = self
         
-        if let startingPageController:PageContentViewController = self.viewControllerAtIndex(0)
+        if let startingPageController:BasicPageContentViewController = self.viewControllerAtIndex(0)
         {
             self.pageViewController?.setViewControllers([startingPageController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             
@@ -42,9 +46,10 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
     }//eom
+    
 
     @IBAction func startPageView(sender: UIButton) {
-        if let startingPageController:PageContentViewController = self.viewControllerAtIndex(0)
+        if let startingPageController:BasicPageContentViewController = self.viewControllerAtIndex(0)
         {
             self.pageViewController?.setViewControllers([startingPageController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
@@ -55,10 +60,14 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
 
     }//eo-a
     
+    @IBAction func gotIt(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     //MARK: - Delegates
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
-        guard let controller:PageContentViewController = viewController as? PageContentViewController else {
+        guard let controller:BasicPageContentViewController = viewController as? BasicPageContentViewController else {
             return nil
         }
         
@@ -75,7 +84,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
     {
-        guard let controller:PageContentViewController = viewController as? PageContentViewController else {
+        guard let controller:BasicPageContentViewController = viewController as? BasicPageContentViewController else {
             return nil
         }
         
@@ -99,7 +108,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
         Checks if the current index its valid.
         returns a new pageContentViewController with its data
      */
-    func viewControllerAtIndex(index:NSInteger)->PageContentViewController?
+    func viewControllerAtIndex(index:NSInteger)->BasicPageContentViewController?
     {
         //invalid index
         if ( (self._pageTitles.count == 0) || (index >= self._pageTitles.count) ) {
@@ -107,7 +116,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         //creating new controller & updating its data
-        guard let controller:PageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentVC") as? PageContentViewController else
+        guard let controller:BasicPageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BasicPageContentVC") as? BasicPageContentViewController else
         {
             return nil
         }
@@ -121,14 +130,16 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource {
     
     //MARK: shows the page indicator for pagecontentviewcontroller
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        
         return self._pageTitles.count
     }//eom
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        
         return 0
     }//eom
     
-    
+    //MARK: -Memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
