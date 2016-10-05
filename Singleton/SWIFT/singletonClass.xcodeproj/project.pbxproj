@@ -12,21 +12,8 @@
 		DE7864241BFBE80200FFE21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7864221BFBE80200FFE21B /* Main.storyboard */; };
 		DE7864261BFBE80200FFE21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7864251BFBE80200FFE21B /* Assets.xcassets */; };
 		DE7864291BFBE80200FFE21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7864271BFBE80200FFE21B /* LaunchScreen.storyboard */; };
-		DE7864341BFBE80200FFE21B /* singletonClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864331BFBE80200FFE21B /* singletonClassTests.swift */; };
-		DE78643F1BFBE86200FFE21B /* LongWaySingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78643E1BFBE86200FFE21B /* LongWaySingleton.swift */; };
-		DE7864451BFBEAD900FFE21B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864441BFBEAD900FFE21B /* User.swift */; };
-		DE7864491BFC062A00FFE21B /* SharedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864481BFC062A00FFE21B /* SharedUser.swift */; };
+		DE7864451BFBEAD900FFE21B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7864441BFBEAD900FFE21B /* AppModel.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DE7864301BFBE80200FFE21B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE7864131BFBE80200FFE21B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE78641A1BFBE80200FFE21B;
-			remoteInfo = singletonClass;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DE78641B1BFBE80200FFE21B /* singletonClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = singletonClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,23 +23,11 @@
 		DE7864251BFBE80200FFE21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7864281BFBE80200FFE21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE78642A1BFBE80200FFE21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE78642F1BFBE80200FFE21B /* singletonClassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = singletonClassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE7864331BFBE80200FFE21B /* singletonClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singletonClassTests.swift; sourceTree = "<group>"; };
-		DE7864351BFBE80200FFE21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE78643E1BFBE86200FFE21B /* LongWaySingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongWaySingleton.swift; sourceTree = "<group>"; };
-		DE7864441BFBEAD900FFE21B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DE7864481BFC062A00FFE21B /* SharedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUser.swift; sourceTree = "<group>"; };
+		DE7864441BFBEAD900FFE21B /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DE7864181BFBE80200FFE21B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE78642C1BFBE80200FFE21B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				DE78641D1BFBE80200FFE21B /* singletonClass */,
-				DE7864321BFBE80200FFE21B /* singletonClassTests */,
 				DE78641C1BFBE80200FFE21B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				DE78641B1BFBE80200FFE21B /* singletonClass.app */,
-				DE78642F1BFBE80200FFE21B /* singletonClassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,23 +56,14 @@
 		DE78641D1BFBE80200FFE21B /* singletonClass */ = {
 			isa = PBXGroup;
 			children = (
+				DE7864411BFBE88700FFE21B /* Model */,
 				DE7864431BFBE89C00FFE21B /* Controller */,
 				DE7864421BFBE88F00FFE21B /* View */,
-				DE7864411BFBE88700FFE21B /* Model */,
 				DE7864401BFBE87C00FFE21B /* Application */,
 				DE7864251BFBE80200FFE21B /* Assets.xcassets */,
 				DE78642A1BFBE80200FFE21B /* Info.plist */,
 			);
 			path = singletonClass;
-			sourceTree = "<group>";
-		};
-		DE7864321BFBE80200FFE21B /* singletonClassTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE7864331BFBE80200FFE21B /* singletonClassTests.swift */,
-				DE7864351BFBE80200FFE21B /* Info.plist */,
-			);
-			path = singletonClassTests;
 			sourceTree = "<group>";
 		};
 		DE7864401BFBE87C00FFE21B /* Application */ = {
@@ -113,9 +77,7 @@
 		DE7864411BFBE88700FFE21B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE78643E1BFBE86200FFE21B /* LongWaySingleton.swift */,
-				DE7864441BFBEAD900FFE21B /* User.swift */,
-				DE7864481BFC062A00FFE21B /* SharedUser.swift */,
+				DE7864441BFBEAD900FFE21B /* AppModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,24 +119,6 @@
 			productReference = DE78641B1BFBE80200FFE21B /* singletonClass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE78642E1BFBE80200FFE21B /* singletonClassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE78643B1BFBE80200FFE21B /* Build configuration list for PBXNativeTarget "singletonClassTests" */;
-			buildPhases = (
-				DE78642B1BFBE80200FFE21B /* Sources */,
-				DE78642C1BFBE80200FFE21B /* Frameworks */,
-				DE78642D1BFBE80200FFE21B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE7864311BFBE80200FFE21B /* PBXTargetDependency */,
-			);
-			name = singletonClassTests;
-			productName = singletonClassTests;
-			productReference = DE78642F1BFBE80200FFE21B /* singletonClassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,15 +126,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = devbros;
 				TargetAttributes = {
 					DE78641A1BFBE80200FFE21B = {
 						CreatedOnToolsVersion = 7.1.1;
-					};
-					DE78642E1BFBE80200FFE21B = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = DE78641A1BFBE80200FFE21B;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -208,7 +149,6 @@
 			projectRoot = "";
 			targets = (
 				DE78641A1BFBE80200FFE21B /* singletonClass */,
-				DE78642E1BFBE80200FFE21B /* singletonClassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +164,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE78642D1BFBE80200FFE21B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -238,31 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7864491BFC062A00FFE21B /* SharedUser.swift in Sources */,
-				DE7864451BFBEAD900FFE21B /* User.swift in Sources */,
+				DE7864451BFBEAD900FFE21B /* AppModel.swift in Sources */,
 				DE7864211BFBE80200FFE21B /* ViewController.swift in Sources */,
-				DE78643F1BFBE86200FFE21B /* LongWaySingleton.swift in Sources */,
 				DE78641F1BFBE80200FFE21B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE78642B1BFBE80200FFE21B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE7864341BFBE80200FFE21B /* singletonClassTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DE7864311BFBE80200FFE21B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE78641A1BFBE80200FFE21B /* singletonClass */;
-			targetProxy = DE7864301BFBE80200FFE21B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE7864221BFBE80200FFE21B /* Main.storyboard */ = {
@@ -297,8 +212,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -341,8 +258,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -361,6 +280,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -369,10 +289,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = singletonClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = devbros.singletonClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -380,34 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = singletonClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = devbros.singletonClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		DE78643C1BFBE80200FFE21B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = singletonClassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = devbros.singletonClassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/singletonClass.app/singletonClass";
-			};
-			name = Debug;
-		};
-		DE78643D1BFBE80200FFE21B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = singletonClassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = devbros.singletonClassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/singletonClass.app/singletonClass";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -430,14 +330,7 @@
 				DE78643A1BFBE80200FFE21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		DE78643B1BFBE80200FFE21B /* Build configuration list for PBXNativeTarget "singletonClassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE78643C1BFBE80200FFE21B /* Debug */,
-				DE78643D1BFBE80200FFE21B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
