@@ -6,9 +6,10 @@
 
 
 ######Swizzling
-*allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. 
-*allows you to write code that can be executed before and/or after the original method.
+ * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. 
+ * allows you to write code that can be executed before and/or after the original method.
 
+``` 
 #import "UIViewController+Log.h"
 @implementation UIViewController (Log)
     + (void)load {
@@ -26,15 +27,16 @@
         NSLog(@"viewDidAppear executed for %@", [self class]);
     }
 @end
+```
 
 
 
 ######Atomic vs Non-Atomic
 __Atomic__
-*is the default behavior
-*will ensure the present process is completed by the CPU, before another process accesses the variable
-*is not fast, as it ensures the process is completed entirely
-*use where if the instance variable is gonna be accessed in a multithreaded environment
+ * is the default behavior
+ * will ensure the present process is completed by the CPU, before another process accesses the variable
+ * is not fast, as it ensures the process is completed entirely
+ * use where if the instance variable is gonna be accessed in a multithreaded environment
 
 __Non-Atomic__
 *is NOT the default behavior
