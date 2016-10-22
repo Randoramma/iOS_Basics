@@ -3,34 +3,6 @@
 
 #Notes
 
-
-
-:black_large_square: Swizzling
- * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. 
- * allows you to write code that can be executed before and/or after the original method.
-
-```objective-c
-#import "UIViewController+Log.h"
-@implementation UIViewController (Log)
-    + (void)load {
-        static dispatch_once_t once_token;
-        dispatch_once(&once_token,  ^{
-            SEL viewWillAppearSelector = @selector(viewDidAppear:);
-            SEL viewWillAppearLoggerSelector = @selector(log_viewDidAppear:);
-            Method originalMethod = class_getInstanceMethod(self, viewWillAppearSelector);
-            Method extendedMethod = class_getInstanceMethod(self, viewWillAppearLoggerSelector);
-            method_exchangeImplementations(originalMethod, extendedMethod);
-        });
-    }
-    - (void) log_viewDidAppear:(BOOL)animated {
-        [self log_viewDidAppear:animated];
-        NSLog(@"viewDidAppear executed for %@", [self class]);
-    }
-@end
-```
-
-
-
 :black_large_square:  Atomic vs Non-Atomic 
 
 __Atomic__
@@ -96,7 +68,62 @@ int a;
 a = fooFunction();
 ```
 
+:black_large_square: Swizzling
+ * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table.
+ * allows you to write code that can be executed before and/or after the original method.
 
+```objective-c
+#import "UIViewController+Log.h"
+@implementation UIViewController (Log)
+    + (void)load {
+        static dispatch_once_t once_token;
+        dispatch_once(&once_token,  ^{
+            SEL viewWillAppearSelector = @selector(viewDidAppear:);
+            SEL viewWillAppearLoggerSelector = @selector(log_viewDidAppear:);
+            Method originalMethod = class_getInstanceMethod(self, viewWillAppearSelector);
+            Method extendedMethod = class_getInstanceMethod(self, viewWillAppearLoggerSelector);
+            method_exchangeImplementations(originalMethod, extendedMethod);
+        });
+    }
+    - (void) log_viewDidAppear:(BOOL)animated {
+        [self log_viewDidAppear:animated];
+        NSLog(@"viewDidAppear executed for %@", [self class]);
+    }
+@end
+```
+
+
+:black_large_square:  Multi-Threading
+
+__NSThread__ -  creates a new low-level thread which can be started by calling the start method.
+
+```objective-c
+NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                        selector:@selector(myThreadMainMethod:)
+                                        object:nil];
+[myThread start];
+```
+
+
+
+__NSOperationQueue__ - allows a pool of threads to be created and used to execute NSOperations in parallel. NSOperations can also be run on the main thread by asking NSOperationQueue for the mainQueue.
+
+```objective-c
+NSOperationQueue* myQueue = [[NSOperationQueue alloc] init];
+[myQueue addOperation:anOperation]; 
+[myQueue addOperationWithBlock:^{
+   /* Do something. */
+}];
+```
+
+__GCD or Grand Central Dispatch__ - is a modern feature of Objective-C that provides a rich set of methods and API's to use in order to support common multi-threading tasks. GCD provides a way to queue tasks for dispatch on either the main thread, a concurrent queue (tasks are run in parallel) or a serial queue (tasks are run in FIFO order).
+
+```objective-c
+dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_async(myQueue, ^{
+    printf("Do some work here.\n");
+});
+```
 ####Core Data
 
 
