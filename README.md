@@ -56,18 +56,17 @@ __Retain__
  * The property will store a reference to this instance and will share the same instance with anyone else who retained it too.
 
 __Assign__
- *
+ 
 
 __Strong__
-* 
+  
 
 __Weak__
-*
+
 
 
 ######Methods vs Functions
-__Methods__
- * are attached to class / instance (object) and you have to tell the class / object to perform them
+__Methods__ -  are attached to class / instance (object) and you have to tell the class / object to perform them
 
 ```
 // declaration
@@ -80,8 +79,7 @@ int a;
 a = [someObjectOfThisClass fooMethod];
 ```
 
-__Functions__ 
- * are code blocks that are unrelated to an object / class
+__Functions__ - are code blocks that are unrelated to an object / class
 
 ```
 // declaration
