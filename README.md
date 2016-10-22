@@ -106,7 +106,7 @@ __Weak__
 ```objective-c
 @property (weak, nonatomic) IBOutlet UIButton *myButton;
 @synthesize myButton;
-``
+```
 
 
 :black_large_square:  Methods vs Functions 
