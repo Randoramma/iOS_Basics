@@ -101,7 +101,7 @@ __Weak__
  * We generally use weak for IBOutlets (UIViewController's Childs).This works because the child object only needs to exist as long as the parent object does.
  * a weak reference is a reference that does not protect the referenced object from collection by a garbage collector.
  * Weak is essentially assign, a unretained property. Except the when the object is deallocated the weak pointer is automatically set to nil
- *__When to use?__ If you wanted to avoid retain cycles (e.g. the parent retains the child and the child retains the parent so neither is ever released)
+ * __When to use?__ If you wanted to avoid retain cycles (e.g. the parent retains the child and the child retains the parent so neither is ever released)
 
 ```objective-c
 @property (weak, nonatomic) IBOutlet UIButton *myButton;
