@@ -65,10 +65,10 @@ __Weak__
 
 
 
-####Methods vs Functions
+:black_large_square: Methods vs Functions
 __Methods__ -  are attached to class / instance (object) and you have to tell the class / object to perform them
 
-```
+```objective-c
 // declaration
 - (int)fooMethod {
     return 0;
@@ -81,7 +81,7 @@ a = [someObjectOfThisClass fooMethod];
 
 __Functions__ - are code blocks that are unrelated to an object / class
 
-```
+```objective-c
 // declaration
 int fooFunction() {
     return 0;
