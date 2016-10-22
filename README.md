@@ -20,18 +20,45 @@ __Non-Atomic__
 
 
 
-:black_large_square:  Copy vs Retain 
+:black_large_square:  Assign vs Copy vs Retain 
+
+__Assign__
+ * In your setter method for the property, there is a simple assignment of your instance variable to the new value
+```objective-c
+- (void)setString:(NSString*)newString
+{         
+   string = newString;
+} 
+```
+
+__Retain__
+ * the retain count increases by one.
+ * the instance of the object will be kept in memory until it’s retain count drops to zero.
+ * The property will store a reference to this instance and will share the same instance with anyone else who retained it too.
+
+```objective-c
+- (void)setString:(NSString*)newString
+{          
+       [newString retain];          
+       [string release];            
+       string = newString;         
+}
+```
 
 __Copy__
  * the object will be cloned with duplicate values. It is not shared with any one else.
+```objective-c
+- (void)setString:(NSString*)newString
+{            
+   if(string!=newString)
+   {              
+      [string release];              
+      string = [newString copy];            
+   }
+}
+```
 
-__Retain__
- * the retain count increases by one. 
- * the instance of the object will be kept in memory until it’s retain count drops to zero. 
- * The property will store a reference to this instance and will share the same instance with anyone else who retained it too.
-
-__Assign__
- 
+:black_large_square:  Strong vs Weak
 
 __Strong__
   
@@ -124,7 +151,24 @@ dispatch_async(myQueue, ^{
     printf("Do some work here.\n");
 });
 ```
-####Core Data
+
+
+
+:black_large_square:  Memory Management
+
+[Apple Memory Management](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html)
+
+__copy__ Makes a copy of an object, and returns it with retain count of 1. If you copy an object, you own the copy. This applies to any method that contains the word copy where “copy” refers to the object being returned.
+
+
+__retain__ - Increases the retain count of an object by 1. Takes ownership of an object.
+
+__release__ - Decreases the retain count of an object by 1. Relinquishes ownership of an object.
+
+
+
+
+:black_large_square:  Core Data
 
 
 
