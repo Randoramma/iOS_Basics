@@ -24,19 +24,40 @@ __Non-Atomic__
 
 __Assign__
  * In your setter method for the property, there is a simple assignment of your instance variable to the new value
+ * assign is the default and simply performs a variable assignment
+ * assign is a property attribute that tells the compiler how to synthesize the property's setter implementation
+ * Recommended to  use assign for C primitive properties and weak for weak references to Objective-C objects.
+
 ```objective-c
+//vars
+@property (nonatomic, assign) NSString *address;
+@synthesize address;
+
+
+//methods
 - (void)setString:(NSString*)newString
 {         
    string = newString;
 } 
 ```
 
-__Retain__
+__Retain__ (in Non-ARC, for ARC use __Strong__)
  * the retain count increases by one.
  * the instance of the object will be kept in memory until it’s retain count drops to zero.
  * The property will store a reference to this instance and will share the same instance with anyone else who retained it too.
+ * it is retained, old value is released and it is assigned retain specifies the new value should be sent
+ * retain on assignment and the old value sent -release
+ * retain is the same as strong.
+ * apple says if you write retain it will auto converted/work like strong only.
+ * methods like "alloc" include an implicit "retain"
 
 ```objective-c
+//vars
+@property (nonatomic, retain) NSString *name;
+@synthesize name;
+
+
+//methods
 - (void)setString:(NSString*)newString
 {          
        [newString retain];          
@@ -60,11 +81,32 @@ __Copy__
 
 :black_large_square:  Strong vs Weak
 
-__Strong__
-  
+__Strong__ (in ARC, for NON-ARC use __retain__)
+ * it says "keep this in the heap until I don't point to it anymore"
+ * in other words " I'am the owner, you cannot dealloc this before i am fine with that same as retain"
+ * You use strong only if you need to retain the object.
+ * By default all instance variables and local variables are strong pointers.
+ * We generally use strong for UIViewControllers (UI item's parents)
+ * strong is used with ARC and it basically helps you , by not having to worry about the retain count of an object. ARC automatically releases it for you when you are done with it.Using the keyword strong means that you own the object.
+
+```objective-c
+@property (strong, nonatomic) ViewController *viewController;
+@synthesize viewController;
+``` 
 
 __Weak__
+ * it says "keep this as long as someone else points to it strongly"
+ * the same thing as assign, no retain or release
+ * A "weak" reference is a reference that you do not retain.
+ * We generally use weak for IBOutlets (UIViewController's Childs).This works because the child object only needs to exist as long as the parent object does.
+ * a weak reference is a reference that does not protect the referenced object from collection by a garbage collector.
+ * Weak is essentially assign, a unretained property. Except the when the object is deallocated the weak pointer is automatically set to nil
+ *__When to use?__ If you wanted to avoid retain cycles (e.g. the parent retains the child and the child retains the parent so neither is ever released)
 
+```objective-c
+@property (weak, nonatomic) IBOutlet UIButton *myButton;
+@synthesize myButton;
+``
 
 
 :black_large_square:  Methods vs Functions 
@@ -157,6 +199,8 @@ dispatch_async(myQueue, ^{
 :black_large_square:  Memory Management
 
 [Apple Memory Management](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html)
+
+[Apple Transitioning to ARC](https://developer.apple.com/library/content/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)
 
 __copy__ Makes a copy of an object, and returns it with retain count of 1. If you copy an object, you own the copy. This applies to any method that contains the word copy where “copy” refers to the object being returned.
 
