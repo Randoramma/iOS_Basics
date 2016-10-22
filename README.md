@@ -9,7 +9,7 @@
  * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. 
  * allows you to write code that can be executed before and/or after the original method.
 
-``` 
+```objective-c
 #import "UIViewController+Log.h"
 @implementation UIViewController (Log)
     + (void)load {
