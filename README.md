@@ -5,7 +5,7 @@
 
 
 
-######Swizzling
+####Swizzling
  * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. 
  * allows you to write code that can be executed before and/or after the original method.
 
@@ -31,7 +31,7 @@
 
 
 
-######Atomic vs Non-Atomic
+####Atomic vs Non-Atomic
 __Atomic__
  * is the default behavior
  * will ensure the present process is completed by the CPU, before another process accesses the variable
@@ -46,7 +46,7 @@ __Non-Atomic__
  * use where if the instance variable is not gonna be changed by multiple threads you can use it. It improves the performance
 
 
-######Copy vs Retain
+####Copy vs Retain
 __Copy__
  * the object will be cloned with duplicate values. It is not shared with any one else.
 
@@ -65,7 +65,7 @@ __Weak__
 
 
 
-######Methods vs Functions
+####Methods vs Functions
 __Methods__ -  are attached to class / instance (object) and you have to tell the class / object to perform them
 
 ```
@@ -93,7 +93,7 @@ a = fooFunction();
 ```
 
 
-######Core Data
+####Core Data
 
 
 
