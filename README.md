@@ -36,14 +36,15 @@ __Atomic__
  * is the default behavior
  * will ensure the present process is completed by the CPU, before another process accesses the variable
  * is not fast, as it ensures the process is completed entirely
- * use where if the instance variable is gonna be accessed in a multithreaded environment
+ * use where the instance variable is gonna be accessed in a multithreaded environment
 
 __Non-Atomic__
  * is NOT the default behavior
  * faster (for synthesized code, that is, for variables created using @property and @synthesize)
  * not thread-safe
  * may result in unexpected behavior, when two different process access the same variable at the same time
- * use where if the instance variable is not gonna be changed by multiple threads you can use it. It improves the performance
+ * use where the instance variable is not gonna be changed by multiple threads you can use it. It improves the performance
+
 
 
 :black_large_square:  Copy vs Retain 
