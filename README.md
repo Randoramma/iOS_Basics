@@ -32,6 +32,7 @@
 
 
 :black_large_square:  Atomic vs Non-Atomic 
+
 __Atomic__
  * is the default behavior
  * will ensure the present process is completed by the CPU, before another process accesses the variable
@@ -48,6 +49,7 @@ __Non-Atomic__
 
 
 :black_large_square:  Copy vs Retain 
+
 __Copy__
  * the object will be cloned with duplicate values. It is not shared with any one else.
 
@@ -67,6 +69,7 @@ __Weak__
 
 
 :black_large_square:  Methods vs Functions 
+
 __Methods__ -  are attached to class / instance (object) and you have to tell the class / object to perform them
 
 ```objective-c
