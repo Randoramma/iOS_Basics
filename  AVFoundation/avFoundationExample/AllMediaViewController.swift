@@ -47,14 +47,14 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     // MARK: - Media Selection
-    @IBAction func mediaOptionChanged(sender: UIButton)
+    @IBAction func mediaOptionChanged(_ sender: UIButton)
     {
         //gallery
         if sender == self.galleryButton
         {
-            self.galleryButton.selected = true
-            self.cameraButton.selected  = false
-            self.videoButton.selected   = false
+            self.galleryButton.isSelected = true
+            self.cameraButton.isSelected  = false
+            self.videoButton.isSelected   = false
             //
             self.updateButtonSelection()
             self.setupAndShowGallery()
@@ -62,9 +62,9 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
         //picture
         else if sender == self.cameraButton
         {
-            self.galleryButton.selected = false
-            self.cameraButton.selected  = true
-            self.videoButton.selected   = false
+            self.galleryButton.isSelected = false
+            self.cameraButton.isSelected  = true
+            self.videoButton.isSelected   = false
             //
             self.updateButtonSelection()
             self.setupAndTakePicture()
@@ -72,9 +72,9 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
         //video
         else if sender == self.videoButton
         {
-            self.galleryButton.selected = false
-            self.cameraButton.selected  = false
-            self.videoButton.selected   = true
+            self.galleryButton.isSelected = false
+            self.cameraButton.isSelected  = false
+            self.videoButton.isSelected   = true
             //
             self.updateButtonSelection()
             self.setupAndTakeVideo()
@@ -84,67 +84,67 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     // MARK: Update Button Selection
     func updateButtonSelection()
     {
-        if self.galleryButton.selected
+        if self.galleryButton.isSelected
         {
-            self.galleryButton.setImageTintColor(UIColor.blueColor(), forState: UIControlState.Normal)
-            self.cameraButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            self.videoButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+            self.galleryButton.setImageTintColor(UIColor.blue, forState: UIControlState())
+            self.cameraButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+            self.videoButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
         }
-        else if self.cameraButton.selected
+        else if self.cameraButton.isSelected
         {
-            self.galleryButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            self.cameraButton.setImageTintColor(UIColor.blueColor(), forState: UIControlState.Normal)
-            self.videoButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+            self.galleryButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+            self.cameraButton.setImageTintColor(UIColor.blue, forState: UIControlState())
+            self.videoButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
             //
-            self.retakeMediaButton.hidden           = true
-            self.confirmMediaButton.hidden          = true
-            self.confirmVideoButton.hidden          = true
-            self.remainingRecordingTimeLabel.hidden = true
+            self.retakeMediaButton.isHidden           = true
+            self.confirmMediaButton.isHidden          = true
+            self.confirmVideoButton.isHidden          = true
+            self.remainingRecordingTimeLabel.isHidden = true
             //
-            self.takePictureOrVideoButton.hidden    = false
+            self.takePictureOrVideoButton.isHidden    = false
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
-            self.galleryButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            self.cameraButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            self.videoButton.setImageTintColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            self.galleryButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+            self.cameraButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+            self.videoButton.setImageTintColor(UIColor.blue, forState: UIControlState())
             //
-            self.retakeMediaButton.hidden           = true
-            self.confirmMediaButton.hidden          = true
+            self.retakeMediaButton.isHidden           = true
+            self.confirmMediaButton.isHidden          = true
             //
-            self.takePictureOrVideoButton.hidden    = false
-            self.confirmVideoButton.hidden          = false
-            self.remainingRecordingTimeLabel.hidden = false
+            self.takePictureOrVideoButton.isHidden    = false
+            self.confirmVideoButton.isHidden          = false
+            self.remainingRecordingTimeLabel.isHidden = false
         }
     }//eom
     
     func setupButton()
     {
-        self.galleryButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        self.cameraButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        self.videoButton.setImageTintColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        self.galleryButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+        self.cameraButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
+        self.videoButton.setImageTintColor(UIColor.lightGray, forState: UIControlState())
         
         if self.optionSelected == 1
         {
-            self.galleryButton.selected = true
-            self.cameraButton.selected  = false
-            self.videoButton.selected   = false
+            self.galleryButton.isSelected = true
+            self.cameraButton.isSelected  = false
+            self.videoButton.isSelected   = false
             //
             self.setupAndShowGallery()
         }
         else if self.optionSelected == 2
         {
-            self.galleryButton.selected = false
-            self.cameraButton.selected  = true
-            self.videoButton.selected   = false
+            self.galleryButton.isSelected = false
+            self.cameraButton.isSelected  = true
+            self.videoButton.isSelected   = false
             //
             self.setupAndTakePicture()
         }
         else if self.optionSelected == 3
         {
-            self.galleryButton.selected = false
-            self.cameraButton.selected  = false
-            self.videoButton.selected   = true
+            self.galleryButton.isSelected = false
+            self.cameraButton.isSelected  = false
+            self.videoButton.isSelected   = true
             //
             self.setupAndTakeVideo()
         }
@@ -155,43 +155,43 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     //MARK: Confirm Media
     func showConfirmMedia()
     {
-        if self.cameraButton.selected
+        if self.cameraButton.isSelected
         {
-            self.takePictureOrVideoButton.hidden = true
+            self.takePictureOrVideoButton.isHidden = true
             
-            self.retakeMediaButton.hidden   = false
-            self.confirmMediaButton.hidden  = false
+            self.retakeMediaButton.isHidden   = false
+            self.confirmMediaButton.isHidden  = false
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
-            self.takePictureOrVideoButton.hidden    = true
-            self.confirmVideoButton.hidden          = true
-            self.remainingRecordingTimeLabel.hidden = true
+            self.takePictureOrVideoButton.isHidden    = true
+            self.confirmVideoButton.isHidden          = true
+            self.remainingRecordingTimeLabel.isHidden = true
             
-            self.retakeMediaButton.hidden   = false
-            self.confirmMediaButton.hidden  = false
+            self.retakeMediaButton.isHidden   = false
+            self.confirmMediaButton.isHidden  = false
         }
     }//eom
     
-    @IBAction func confirmMedia(sender: UIButton)
+    @IBAction func confirmMedia(_ sender: UIButton)
     {
-        if self.cameraButton.selected
+        if self.cameraButton.isSelected
         {
             
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
             
         }
     }//eo-a
     
-    @IBAction func retakeMedia(sender: UIButton)
+    @IBAction func retakeMedia(_ sender: UIButton)
     {
-        if self.cameraButton.selected
+        if self.cameraButton.isSelected
         {
             
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
             
         }
@@ -202,23 +202,23 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     {
         libraryPicker               = UIImagePickerController()
         libraryPicker.delegate      = self
-        libraryPicker.sourceType    = UIImagePickerControllerSourceType.PhotoLibrary
+        libraryPicker.sourceType    = UIImagePickerControllerSourceType.photoLibrary
         libraryPicker.allowsEditing = true
         
-        self.presentViewController(libraryPicker, animated: true, completion: nil)
+        self.present(libraryPicker, animated: true, completion: nil)
     }//eom
     
     //MARK: - [2] Picture
     func setupAndTakePicture()
     {
         //device has camera
-        if UIImagePickerController .isSourceTypeAvailable(.Camera)
+        if UIImagePickerController .isSourceTypeAvailable(.camera)
         {
             cameraPicker                        = UIImagePickerController()
             cameraPicker.delegate               = self
-            cameraPicker.sourceType             = UIImagePickerControllerSourceType.Camera
+            cameraPicker.sourceType             = UIImagePickerControllerSourceType.camera
             cameraPicker.showsCameraControls    = false
-            cameraPicker.cameraDevice           = UIImagePickerControllerCameraDevice.Front
+            cameraPicker.cameraDevice           = UIImagePickerControllerCameraDevice.front
             
             
             //remove elements from picture/video View
@@ -238,13 +238,13 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }//eom
     
-    @IBAction func takePictureOrVideo(sender: AnyObject)
+    @IBAction func takePictureOrVideo(_ sender: AnyObject)
     {
-        if self.cameraButton.selected
+        if self.cameraButton.isSelected
         {
             cameraPicker.takePicture()
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
             
         }
@@ -256,43 +256,43 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     func setupAndTakeVideo()
     {
         //device has camera
-        if UIImagePickerController .isSourceTypeAvailable(.Camera)
+        if UIImagePickerController .isSourceTypeAvailable(.camera)
         {
             /* Image picker setup */
             videoPicker.delegate            = self
-            videoPicker.sourceType          = UIImagePickerControllerSourceType.Camera
+            videoPicker.sourceType          = UIImagePickerControllerSourceType.camera
             //
             videoPicker.mediaTypes          = ["public.movie"]
-            videoPicker.cameraCaptureMode   = UIImagePickerControllerCameraCaptureMode.Video
+            videoPicker.cameraCaptureMode   = UIImagePickerControllerCameraCaptureMode.video
             //
             videoPicker.allowsEditing       = false
             videoPicker.showsCameraControls = false
             //
-            videoPicker.cameraViewTransform = CGAffineTransformIdentity
+            videoPicker.cameraViewTransform = CGAffineTransform.identity
             
             /* device has two cameras? */
             //rear camera
-            if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)
+            if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.rear)
             {
-                videoPicker.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+                videoPicker.cameraDevice = UIImagePickerControllerCameraDevice.rear
                 
                 //front camera
-                if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front)
+                if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.front)
                 {
                     //cameraSelectionButton.alpha = 1.0;
                     //showCameraSelection = true
                 }
             }
             //front camera
-            else if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front)
+            else if UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.front)
             {
-                videoPicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+                videoPicker.cameraDevice = UIImagePickerControllerCameraDevice.front
             }
             
             /* device has flash? */
-            if UIImagePickerController .isFlashAvailableForCameraDevice(videoPicker.cameraDevice)
+            if UIImagePickerController .isFlashAvailable(for: videoPicker.cameraDevice)
             {
-                videoPicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.Auto
+                videoPicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.auto
                 // flashModeButton.alpha = 1.0;
                 // showFlashSelection = true
             }
@@ -324,7 +324,7 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     }//eom
     
     
-    @IBAction func mergeAndDisplayVideo(sender: AnyObject)
+    @IBAction func mergeAndDisplayVideo(_ sender: AnyObject)
     {
         self.MergeVideos()
     }//eo
@@ -336,13 +336,13 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     }//eom
     
     //MARK: - Image Picker Delegates
-    func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : Any])
     {
         //gallery
-        if self.galleryButton.selected
+        if self.galleryButton.isSelected
         {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             
             var imageTake:UIImage?
             
@@ -364,20 +364,20 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
             
             vc?.imageChoosen.image = imageTake
             
-            self.navigationController?.navigationBarHidden = false
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.popViewController(animated: true)
         }
         //camera
-        else if self.cameraButton.selected
+        else if self.cameraButton.isSelected
         {
             guard let origImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
             
             print("\norigImage: \(origImage.debugDescription)")
             print("\ncameraPicker: \(cameraPicker.view.debugDescription)")
             print("\npictureTakenView: \(pictureTakenView.debugDescription)")
-            print("\nmainScreen: \(UIScreen.mainScreen().debugDescription)")
+            print("\nmainScreen: \(UIScreen.main.debugDescription)")
             
-            let desiredSize:CGSize = CGSizeMake(pictureTakenView.frame.width, pictureTakenView.frame.height)
+            let desiredSize:CGSize = CGSize(width: pictureTakenView.frame.width, height: pictureTakenView.frame.height)
             let finalImage:UIImage = origImage.imageByScalingAndCroppingForSizeWithCenter(desiredSize)
             
             print("\ndesiredSize: \(desiredSize)")
@@ -423,31 +423,31 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
             }
             
             let imageView:UIImageView = UIImageView(image: finalImage)
-            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
             self.pictureTakenView.addSubview(imageView)
             self.showConfirmMedia()
         }
         //video
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
             
         }
     }//eom
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
-        if self.galleryButton.selected
+        if self.galleryButton.isSelected
         {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            self.navigationController?.popViewControllerAnimated(false)
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: false)
         }
-        else if self.cameraButton.selected
+        else if self.cameraButton.isSelected
         {
             self.setupAndTakePicture()
         }
-        else if self.videoButton.selected
+        else if self.videoButton.isSelected
         {
             self.setupAndTakeVideo()
         }
@@ -463,7 +463,7 @@ class AllMediaViewController: UIViewController, UIImagePickerControllerDelegate,
     }//eom
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
     }//eom

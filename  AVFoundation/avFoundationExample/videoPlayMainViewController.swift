@@ -30,12 +30,12 @@ class videoPlayMainViewController: UIViewController,
         
     }//eom
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         
     }//eom
     
-    override func viewDidDisappear(animated: Bool)
+    override func viewDidDisappear(_ animated: Bool)
     {
         
     }//eom
@@ -43,27 +43,27 @@ class videoPlayMainViewController: UIViewController,
     
     
     // MARK:  - Choosing Video
-    @IBAction func chooseVideoFromDevice(sender: AnyObject)
+    @IBAction func chooseVideoFromDevice(_ sender: AnyObject)
     {
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .SavedPhotosAlbum
+        imagePickerController.sourceType = .savedPhotosAlbum
         imagePickerController.mediaTypes = [kUTTypeMovie as String]
         imagePickerController.delegate = self
         
-        self.presentViewController(imagePickerController, animated: true, completion: nil)
+        self.present(imagePickerController, animated: true, completion: nil)
     }//eo-a
    
     
     // MARK:  Image Picker Delegates
-    func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : Any])
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
-        if let videoPlayer = self.storyboard?.instantiateViewControllerWithIdentifier("VideoPlayer") as? VideoPlayerViewController
+        if let videoPlayer = self.storyboard?.instantiateViewController(withIdentifier: "VideoPlayer") as? VideoPlayerViewController
         {
-            videoPlayer.videoURL = info[UIImagePickerControllerMediaURL] as? NSURL
-            self.presentViewController(videoPlayer, animated: true, completion: nil)
+            videoPlayer.videoURL = info[UIImagePickerControllerMediaURL] as? URL
+            self.present(videoPlayer, animated: true, completion: nil)
         }
         else
         {
@@ -74,7 +74,7 @@ class videoPlayMainViewController: UIViewController,
     
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
     }//eom

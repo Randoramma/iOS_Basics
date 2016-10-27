@@ -32,8 +32,8 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     var showCameraSelection:Bool    = false
     var showFlashSelection:Bool     = false
     
-    var timer:NSTimer?
-    let timerSelector:Selector = Selector.init("updateTimeRecording")
+    var timer:Timer?
+    let timerSelector:Selector = #selector(VideoMakerViewController.updateTimeRecording)
     var recordedTime:Int = 0
     
     var wantsToLeaveVideoRecording:Bool = false
@@ -47,13 +47,13 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
         self.setupImagePicker()
     }//eom
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         
         if wantsToLeaveVideoRecording
         {
             //leaving camera controller
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         else
         {
@@ -62,7 +62,7 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
             cameraOverLayView.frame = frameSize
             
             //presenting imagePicker
-            self.presentViewController(imagePicker, animated: true) { () -> Void in
+            self.present(imagePicker, animated: true) { () -> Void in
                 
             }
             
@@ -76,28 +76,28 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     //MARK: - Image Picker
     func setupImagePicker()
     {
-        let cameraAvaliable:Bool        =   UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        let deviceHasFrontCamera:Bool   =   UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front)
-        let deviceHasRearCamera:Bool    =   UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)
+        let cameraAvaliable:Bool        =   UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        let deviceHasFrontCamera:Bool   =   UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.front)
+        let deviceHasRearCamera:Bool    =   UIImagePickerController .isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.rear)
        
         /* checking device has a camera */
         if (cameraAvaliable == false)
         {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }//
         
         
         /* Image picker setup */
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
         //
         imagePicker.mediaTypes = ["public.movie"]
-        imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureMode.Video
+        imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureMode.video
         //
         imagePicker.allowsEditing = false
         imagePicker.showsCameraControls = false
         //
-        imagePicker.cameraViewTransform = CGAffineTransformIdentity
+        imagePicker.cameraViewTransform = CGAffineTransform.identity
         
         
         
@@ -106,7 +106,7 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
         //rear camera
         if deviceHasRearCamera
         {
-            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.rear
             
             //front camera
             if deviceHasFrontCamera
@@ -118,45 +118,41 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
         //front camera
         else
         {
-            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.front
         }
         
         /* device has flash? */
-        if UIImagePickerController .isFlashAvailableForCameraDevice(imagePicker.cameraDevice)
+        if UIImagePickerController .isFlashAvailable(for: imagePicker.cameraDevice)
         {
-            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.Auto
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.auto
             // flashModeButton.alpha = 1.0;
             showFlashSelection = true
         }
         
         //video quality
-        imagePicker.videoQuality = UIImagePickerControllerQualityType.Type640x480
+        imagePicker.videoQuality = UIImagePickerControllerQualityType.type640x480
         
         //video duration
-        imagePicker.videoMaximumDuration = NSTimeInterval.init(10)
+        imagePicker.videoMaximumDuration = TimeInterval.init(10)
         
     }//eom
     
     //video picked
-    func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : Any])
     {
         //video info
-        if let videoInfo:NSDictionary = info
+        if let videoInfo:NSDictionary = info as NSDictionary?
         {
             print("videoInfo: \(videoInfo.debugDescription)\n")
             
             //saving video locally
-            if let videoURL:NSURL =  videoInfo .objectForKey(UIImagePickerControllerMediaURL) as? NSURL
+            if let videoURL:URL =  videoInfo .object(forKey: UIImagePickerControllerMediaURL) as? URL
             {
                 print("videoURL: \(videoURL.debugDescription)\n")
-                if let pathToVideo:String = videoURL .path
-                {
-                    print("pathToVideo: \(pathToVideo.debugDescription)\n")
-                    
-                    //saving videos url
-                    self.videosRecorded.addObject(pathToVideo)
-                }//eo-video path
+        
+                //saving videos url
+                self.videosRecorded.add(videoURL.path)
             }//eo-video url
             else
             {
@@ -183,30 +179,30 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
             {
                 print("saving video locally")
                 
-                UISaveVideoAtPathToSavedPhotosAlbum(pathToVideo, self, Selector("video:error:contextInfo:"), nil)
+                UISaveVideoAtPathToSavedPhotosAlbum(pathToVideo, self, #selector(VideoMakerViewController.video(_:error:contextInfo:)), nil)
             }
             else
             {
                 
                 print("un-able to save video locally")
                 let errorVar:NSError = NSError(domain: "someUnkErro", code: 123, userInfo: nil)
-                let voidContext:UnsafeMutablePointer<Void> = UnsafeMutablePointer<Void>()
-                self .video(pathToVideo, error: errorVar, contextInfo: voidContext)
+                let voidContext:UnsafeMutableRawPointer? = nil
+                self .video(pathToVideo, error: errorVar, contextInfo: voidContext!)
             }
         }
     }//eom
     
     //after video is saved
-    func video(videoPath:String ,  error:NSError , contextInfo:UnsafeMutablePointer<Void> )
+    func video(_ videoPath:String ,  error:NSError , contextInfo:UnsafeMutableRawPointer )
     {
         //showing main controls
-        UIView .animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations:
+        UIView .animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions(), animations:
             { () -> Void in
                 //things to animate
                 
                 self.recordedTime = 0
                 self.recordingTimeLabel.text = " "
-                self.saveVideoButton.hidden = true
+                self.saveVideoButton.isHidden = true
                 
                 
 //                //
@@ -232,31 +228,31 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     
     
      //MARK: - Video Recording
-    @IBAction func recording(sender: UILongPressGestureRecognizer)
+    @IBAction func recording(_ sender: UILongPressGestureRecognizer)
     {
         switch(recordingGesture.state)
         {
-            case UIGestureRecognizerState.Began:
+            case UIGestureRecognizerState.began:
                 print("recording began\n")
                 self.imagePicker .startVideoCapture()
                 self.startTimer()
                 break
-            case UIGestureRecognizerState.Ended:
+            case UIGestureRecognizerState.ended:
                 print("recording ended, stopping video\n")
                 self.imagePicker .stopVideoCapture()
                 self.stopTimer()
                 break
-            case UIGestureRecognizerState.Cancelled:
+            case UIGestureRecognizerState.cancelled:
                 print("recording cancel, stopping video\n")
                 self.imagePicker .stopVideoCapture()
                 self.stopTimer()
                 break
-            case UIGestureRecognizerState.Failed:
+            case UIGestureRecognizerState.failed:
                 print("recording Failed, stopping video\n")
                 self.imagePicker .stopVideoCapture()
                 self.stopTimer()
                 break
-            case UIGestureRecognizerState.Changed:
+            case UIGestureRecognizerState.changed:
                 //print("still recording, NO Action")
                 break
             default:
@@ -270,29 +266,29 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     //MARK: Timer
     func startTimer()
     {
-        self.cancelButton.hidden    = true
-        self.saveVideoButton.hidden = true
+        self.cancelButton.isHidden    = true
+        self.saveVideoButton.isHidden = true
         self.recordingTimeLabel.text = "\(recordedTime)"
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: timerSelector, userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: timerSelector, userInfo: nil, repeats: true)
     }//eom
     
     func stopTimer()
     {
-        self.cancelButton.hidden = false
+        self.cancelButton.isHidden = false
         self.recordedTime = 0
         self.timer?.invalidate()
     }//eom
     
     func updateTimeRecording()
     {
-        self.recordedTime++
+        self.recordedTime += 1
         self.recordingTimeLabel.text = "\(recordedTime)"
-        self.saveVideoButton.hidden = false
+        self.saveVideoButton.isHidden = false
     }//eom
    
     
     //MARK: - Save Video
-    @IBAction func saveVideo(sender: AnyObject)
+    @IBAction func saveVideo(_ sender: AnyObject)
     {
         print("videosRecorded: \(videosRecorded.debugDescription)")
         self.saveVideoLocally()
@@ -300,10 +296,10 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     //MARK: - Cancel
-    @IBAction func cancel(sender: AnyObject)
+    @IBAction func cancel(_ sender: AnyObject)
     {
         self.wantsToLeaveVideoRecording = true
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }//eo-a
     
     //MARK: - Memory
@@ -314,7 +310,7 @@ class VideoMakerViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
         

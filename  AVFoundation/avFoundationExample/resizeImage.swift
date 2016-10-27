@@ -11,16 +11,16 @@ import Foundation
 
 class resizeImage: NSObject
 {
-    var thumbnailImageData:NSData   = NSData()
+    var thumbnailImageData:Data   = Data()
     var resized:UIImage             = UIImage()
     
     
-    func resizeImage( image:UIImage, resizeWidth:CGFloat, resizeHeight:CGFloat )->UIImage
+    func resizeImage( _ image:UIImage, resizeWidth:CGFloat, resizeHeight:CGFloat )->UIImage
     {
-        UIGraphicsBeginImageContext(CGSizeMake(resizeWidth, resizeHeight))
+        UIGraphicsBeginImageContext(CGSize(width: resizeWidth, height: resizeHeight))
         
-        image .drawInRect(CGRectMake(0, 0, resizeWidth, resizeHeight))
-        resized = UIGraphicsGetImageFromCurrentImageContext()
+        image .draw(in: CGRect(x: 0, y: 0, width: resizeWidth, height: resizeHeight))
+        resized = UIGraphicsGetImageFromCurrentImageContext()!
         
         UIGraphicsEndImageContext()
         
@@ -28,9 +28,9 @@ class resizeImage: NSObject
     }//eom
     
     
-    func getThumbnailImageData()->NSData
+    func getThumbnailImageData()->Data
     {
-        if let imageData:NSData = UIImageJPEGRepresentation(resized, 0.7)
+        if let imageData:Data = UIImageJPEGRepresentation(resized, 0.7)
         {
             thumbnailImageData = imageData
         }
@@ -39,17 +39,17 @@ class resizeImage: NSObject
     }//eom
     
     // MARK: - Image Two Function
-    func resizeImageTwo(image: UIImage, newWidth: CGFloat) -> UIImage
+    func resizeImageTwo(_ image: UIImage, newWidth: CGFloat) -> UIImage
     {
         let scale       = newWidth / image.size.width
         let newHeight   = image.size.height * scale
         
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return newImage
+        return newImage!
     }//eom
 
     

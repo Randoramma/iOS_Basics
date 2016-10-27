@@ -29,27 +29,27 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
     
     let playerTimeSelector:Selector = #selector(audioPlayMainViewController.updatePlayerTime)
     
-    var timer:NSTimer?
+    var timer:Timer?
     
     //MARK: - View Loading
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        self.startStopButton.setTitle(playAudio, forState: UIControlState.Normal)
+        self.startStopButton.setTitle(playAudio, for: UIControlState.normal)
         
         
         self.initPlayerSetup()
         
     }//eom
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         self.startStopButton.updateConstraints()
         
     }//eom
     
-    override func viewDidDisappear(animated: Bool)
+    override func viewDidDisappear(_ animated: Bool)
     {
         
     }//eom
@@ -62,12 +62,12 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
         let selectedAudio       = audioChoices[audioSelected]
         let selectedAudioFormat = audioFormats[audioSelected]
         
-        guard let audioPath = NSBundle.mainBundle().pathForResource(selectedAudio, ofType: selectedAudioFormat) else { return }
-        let audioURL = NSURL(fileURLWithPath: audioPath)
+        guard let audioPath = Bundle.main.path(forResource: selectedAudio, ofType: selectedAudioFormat) else { return }
+        let audioURL = URL(fileURLWithPath: audioPath)
         
         do
         {
-            audioPlayer = try AVAudioPlayer(contentsOfURL: audioURL)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
             audioPlayer.delegate = self
             
             audioPlayer.prepareToPlay()
@@ -78,19 +78,19 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
         }
     }//eom
     
-    @IBAction func startStopPlayer(sender: UIButton)
+    @IBAction func startStopPlayer(_ sender: UIButton)
     {
-        if audioPlayer.playing
+        if audioPlayer.isPlaying
         {
             print("stopping audio")
             audioPlayer.stop()
             self.timeRemainingLabel.text = ""
-            self.startStopButton.setTitle(playAudio, forState: UIControlState.Normal)
+            self.startStopButton.setTitle(playAudio, for: UIControlState.normal)
         }
         else
         {
             print("starting audio")
-            self.startStopButton.setTitle(stopAudio, forState: UIControlState.Normal)
+            self.startStopButton.setTitle(stopAudio, for: UIControlState.normal)
             self.playSelectedAudio()
         }
     }//eo-a
@@ -100,12 +100,12 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
         let selectedAudio       = audioChoices[audioSelected]
         let selectedAudioFormat = audioFormats[audioSelected]
         
-        guard let audioPath = NSBundle.mainBundle().pathForResource(selectedAudio, ofType: selectedAudioFormat) else { return }
-        let audioURL = NSURL(fileURLWithPath: audioPath)
+        guard let audioPath = Bundle.main.path(forResource: selectedAudio, ofType: selectedAudioFormat) else { return }
+        let audioURL = URL(fileURLWithPath: audioPath)
         
         do
         {
-            audioPlayer = try AVAudioPlayer(contentsOfURL: audioURL)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
             audioPlayer.delegate = self
             
             if audioPlayer.prepareToPlay()
@@ -115,7 +115,7 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
                 
                 audioPlayer.play()
                 
-                timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: playerTimeSelector, userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: playerTimeSelector, userInfo: nil, repeats: true)
             }
         }
         catch
@@ -140,7 +140,7 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
     
     
     // MARK: Player Delegates
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool)
+    func audioPlayerDidFinishPlaying(_ successfully: Bool)
     {
         if(playAudioRepeatedly)
         {
@@ -153,7 +153,7 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
     }//eom
     
     //MARK: Audio Choice Selected
-    @IBAction func audioChoiceSelected(sender: UIButton)
+    @IBAction func audioChoiceSelected(_ sender: UIButton)
     {
         let index:Int = sender.tag
         if index >= 0 && index < audioChoices.count
@@ -161,12 +161,6 @@ class audioPlayMainViewController: UIViewController, AVAudioPlayerDelegate
             audioSelected = index
         }
     }//eo-a
-    
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        
-    }//eom
     
     //MARK: - Memory
     override func didReceiveMemoryWarning()

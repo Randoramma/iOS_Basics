@@ -13,13 +13,13 @@ import AVFoundation
 class VideoPlayerViewController: AVPlayerViewController
 {
     
-    var videoURL: NSURL?        = nil
+    var videoURL: URL?        = nil
     var videoPlayer: AVPlayer?  = AVPlayer()
     
-    let playerEndSelector:Selector      = Selector.init("playerDidReachEndNotificationHandler:")
-    let playerFailedSelector:Selector   = Selector.init("playerFailedToPlayNotificationHandler:")
-    let playerStalledSelector:Selector  = Selector.init("playerStalledNotificationHandler:")
-    let playerJumpedSelector:Selector   = Selector.init("playerJumpedNotificationHandler:")
+    let playerEndSelector:Selector      = #selector(VideoPlayerViewController.playerDidReachEndNotificationHandler(_:))
+    let playerFailedSelector:Selector   = #selector(VideoPlayerViewController.playerFailedToPlayNotificationHandler(_:))
+    let playerStalledSelector:Selector  = #selector(VideoPlayerViewController.playerStalledNotificationHandler(_:))
+    let playerJumpedSelector:Selector   = #selector(VideoPlayerViewController.playerJumpedNotificationHandler(_:))
     
     
     //MARK: View Loading
@@ -36,15 +36,15 @@ class VideoPlayerViewController: AVPlayerViewController
         //loading url
         if let url = videoURL
         {
-            videoPlayer = AVPlayer(URL: url)
+            videoPlayer = AVPlayer(url: url)
             self.player = videoPlayer
             
             //observers
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: playerEndSelector, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: playerEndSelector, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: playerFailedSelector, name: AVPlayerItemFailedToPlayToEndTimeNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: playerStalledSelector, name: AVPlayerItemPlaybackStalledNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: playerJumpedSelector, name: AVPlayerItemTimeJumpedNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: playerFailedSelector, name: NSNotification.Name.AVPlayerItemFailedToPlayToEndTime, object: nil)
+            NotificationCenter.default.addObserver(self, selector: playerStalledSelector, name: NSNotification.Name.AVPlayerItemPlaybackStalled, object: nil)
+            NotificationCenter.default.addObserver(self, selector: playerJumpedSelector, name: NSNotification.Name.AVPlayerItemTimeJumped, object: nil)
            
             //start video
             self.player?.play()
@@ -57,7 +57,7 @@ class VideoPlayerViewController: AVPlayerViewController
     
     func dismissPlayer()
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }//eom
     
     func failedToLoadVideo()
@@ -68,22 +68,22 @@ class VideoPlayerViewController: AVPlayerViewController
     
     //MARK: - Notifications
     
-    func playerStalledNotificationHandler(notification: NSNotification)
+    func playerStalledNotificationHandler(_ notification: Notification)
     {
         print("\nplayerStalledNotification")
     }//eom
     
-    func playerJumpedNotificationHandler(notification: NSNotification)
+    func playerJumpedNotificationHandler(_ notification: Notification)
     {
         print("(Playing Video) playerJumpedNotification...")
     }//eom
     
-    func playerFailedToPlayNotificationHandler(notification: NSNotification)
+    func playerFailedToPlayNotificationHandler(_ notification: Notification)
     {
         print("\nplayerFailedToPlayNotification")
     }//eom
     
-    func playerDidReachEndNotificationHandler(notification: NSNotification)
+    func playerDidReachEndNotificationHandler(_ notification: Notification)
     {
         print("\nplayerDidReachEndNotification")
     }//eom

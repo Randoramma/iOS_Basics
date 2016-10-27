@@ -12,7 +12,7 @@ extension  UIImage
 {
     
     /*  */
-    func imageByScalingAndCroppingForSizeWithCenter(targetSize:CGSize) -> UIImage
+    func imageByScalingAndCroppingForSizeWithCenter(_ targetSize:CGSize) -> UIImage
     {
         let sourceImage:UIImage     = self
         var newImage:UIImage        = UIImage()
@@ -24,9 +24,9 @@ extension  UIImage
         var scaleFactor:CGFloat     = 0.0
         var scaledWidth:CGFloat     = targetWidth
         var scaledHeight:CGFloat    = targetHeight
-        var thumbnailPoint:CGPoint  = CGPointMake(0.0, 0.0)
+        var thumbnailPoint:CGPoint  = CGPoint(x: 0.0, y: 0.0)
         
-        if ( CGSizeEqualToSize(imageSize, targetSize) == false )
+        if ( imageSize.equalTo(targetSize) == false )
         {
             let widthFactor:CGFloat     = targetWidth / width
             let heightFactor:CGFloat    = targetHeight / height
@@ -60,14 +60,14 @@ extension  UIImage
         // cropping image
         UIGraphicsBeginImageContext(targetSize)
         
-        var thumbnailRect:CGRect    = CGRectZero
+        var thumbnailRect:CGRect    = CGRect.zero
         thumbnailRect.origin        = thumbnailPoint
         thumbnailRect.size.width    = scaledWidth
         thumbnailRect.size.height   = scaledHeight
         
-        sourceImage.drawInRect(thumbnailRect)
+        sourceImage.draw(in: thumbnailRect)
             
-        newImage = UIGraphicsGetImageFromCurrentImageContext();
+        newImage = UIGraphicsGetImageFromCurrentImageContext()!;
         
         //pop the context to get back to the default
         UIGraphicsEndImageContext()
@@ -75,7 +75,7 @@ extension  UIImage
         return newImage;
     }//eom
 
-    func imageByScalingAndCroppingForSizeNoCenter(targetSize:CGSize) -> UIImage
+    func imageByScalingAndCroppingForSizeNoCenter(_ targetSize:CGSize) -> UIImage
     {
         let sourceImage:UIImage     = self
         var newImage:UIImage        = UIImage()
@@ -87,9 +87,9 @@ extension  UIImage
         var scaleFactor:CGFloat     = 0.0
         var scaledWidth:CGFloat     = targetWidth
         var scaledHeight:CGFloat    = targetHeight
-        var thumbnailPoint:CGPoint  = CGPointMake(0.0, 0.0)
+        let thumbnailPoint:CGPoint  = CGPoint(x: 0.0, y: 0.0)
         
-        if ( CGSizeEqualToSize(imageSize, targetSize) == false )
+        if ( imageSize.equalTo(targetSize) == false )
         {
             let widthFactor:CGFloat     = targetWidth / width
             let heightFactor:CGFloat    = targetHeight / height
@@ -123,14 +123,14 @@ extension  UIImage
         // cropping image
         UIGraphicsBeginImageContext(targetSize)
         
-        var thumbnailRect:CGRect    = CGRectZero
+        var thumbnailRect:CGRect    = CGRect.zero
         thumbnailRect.origin        = thumbnailPoint
         thumbnailRect.size.width    = scaledWidth
         thumbnailRect.size.height   = scaledHeight
         
-        sourceImage.drawInRect(thumbnailRect)
+        sourceImage.draw(in: thumbnailRect)
         
-        newImage = UIGraphicsGetImageFromCurrentImageContext();
+        newImage = UIGraphicsGetImageFromCurrentImageContext()!;
         
         //pop the context to get back to the default
         UIGraphicsEndImageContext()

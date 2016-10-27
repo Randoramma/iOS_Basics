@@ -32,7 +32,7 @@ class imageCaptureViewController: UIViewController {
         
     }//eom
 
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         let session:AVCaptureSession = AVCaptureSession()
         session.sessionPreset = AVCaptureSessionPresetMedium
@@ -40,14 +40,14 @@ class imageCaptureViewController: UIViewController {
         
         let viewLayer = self.vImagePreview.layer
         
-        print("\(viewLayer.debugDescription)")
+        print("\(self) \(viewLayer.debugDescription)")
         
         let captureVideoPreviewLayer:AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         
         captureVideoPreviewLayer.frame = self.vImagePreview.bounds
         self.vImagePreview.layer.addSublayer(captureVideoPreviewLayer)
         
-        let device:AVCaptureDevice =  AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let device:AVCaptureDevice =  AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do
         {
@@ -56,7 +56,7 @@ class imageCaptureViewController: UIViewController {
             session.addInput(input)
             
             stillImageOutput = AVCaptureStillImageOutput()
-            let outputSettings:[NSObject: AnyObject] = [AVVideoCodecJPEG : AVVideoCodecKey]
+            let outputSettings:[AnyHashable: Any] = [AVVideoCodecJPEG : AVVideoCodecKey]
             
             stillImageOutput.outputSettings = outputSettings
             session.addOutput(stillImageOutput)
@@ -68,7 +68,7 @@ class imageCaptureViewController: UIViewController {
         }
     }//eom
     
-    override func viewDidDisappear(animated: Bool)
+    override func viewDidDisappear(_ animated: Bool)
     {
         
     }//eom
@@ -76,26 +76,28 @@ class imageCaptureViewController: UIViewController {
     
     
     //MARK: Take Image
-    @IBAction func captureImage(sender: UIButton)
+    @IBAction func captureImage(_ sender: UIButton)
     {
-        var videoConnection:AVCaptureConnection = AVCaptureConnection()
+        var videoConnection:AVCaptureConnection? = nil
+        
         for currConnection in stillImageOutput.connections
         {
-            guard let curr = currConnection as? AVCaptureConnection else { continue }
+            guard let curr:AVCaptureConnection = currConnection as? AVCaptureConnection
+                else { continue }
         
             for port in curr.inputPorts
             {
                 guard let currPort = port as? AVCaptureInputPort else { continue }
                 
                 let portMedia = NSString(string: currPort.mediaType)
-                if portMedia.isEqualToString(AVMediaTypeVideo)
+                if portMedia.isEqual(to: AVMediaTypeVideo)
                 {
                     videoConnection = curr
                     break
                 }
             }//eofl
             
-            if videoConnection == true
+            if videoConnection != nil
             {
                 break
             }
@@ -103,9 +105,8 @@ class imageCaptureViewController: UIViewController {
 
         print("about to request a capture from: \(stillImageOutput)")
         
-        stillImageOutput.captureStillImageAsynchronouslyFromConnection(videoConnection)
-            { (imageSampleBuffer:CMSampleBuffer!, error:NSError!) -> Void in
-            
+        stillImageOutput.captureStillImageAsynchronously(from: videoConnection) { (imageSampleBuffer:CMSampleBuffer?, error:Error?) in
+           
 //                let exifAttachments:CFDictionaryRef = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, nil)
 //                if exifAttachments == true
 //                {
@@ -116,7 +117,7 @@ class imageCaptureViewController: UIViewController {
 //                    //no attachments
 //                }
                 
-                if let imageData:NSData = AVCaptureStillImageOutput .jpegStillImageNSDataRepresentation(imageSampleBuffer)
+                if let imageData:Data = AVCaptureStillImageOutput .jpegStillImageNSDataRepresentation(imageSampleBuffer)
                 {
                    if let image:UIImage = UIImage(data: imageData)
                    {
@@ -136,7 +137,7 @@ class imageCaptureViewController: UIViewController {
     }//eom
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
     
     }//eom

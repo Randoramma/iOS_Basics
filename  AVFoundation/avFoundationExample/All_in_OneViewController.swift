@@ -19,15 +19,14 @@ class All_in_OneViewController: UIViewController {
 
     }//eom
 
-    @IBAction func showAllMedia(sender: AnyObject)
+    @IBAction func showAllMedia(_ sender: AnyObject)
     {
         let vc:AllMediaViewController = AllMediaViewController()
         
         vc.optionSelected = 2
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
-        //self.presentViewController(vc, animated: true, completion: nil)
     }//eo-a
     
     // MARK: - Memory
@@ -37,10 +36,6 @@ class All_in_OneViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }//eom
     
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    }//eom
     
 
 }

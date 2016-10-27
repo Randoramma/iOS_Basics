@@ -20,30 +20,25 @@ class videoRecordMainViewController: UIViewController
         // Do any additional setup after loading the view.
     }//eom
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         
     }//eom
     
-    override func viewDidDisappear(animated: Bool)
+    override func viewDidDisappear(_ animated: Bool)
     {
         
     }//eom
     
-    @IBAction func recordVideo(sender: UIButton)
+    @IBAction func recordVideo(_ sender: UIButton)
     {
         let videoVC:VideoMakerViewController = VideoMakerViewController()
         
-        self.presentViewController(videoVC, animated: true) { () -> Void in
+        self.present(videoVC, animated: true) { () -> Void in
             
         }
     }//eo-a
     
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        
-    }//eom
     
     //MARK: Memory
     override func didReceiveMemoryWarning()

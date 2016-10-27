@@ -19,13 +19,16 @@ class imageCaptureMainViewController: UIViewController {
     }//eom
     
     
-    @IBAction func takePicture(sender: AnyObject)
+    @IBAction func takePicture(_ sender: AnyObject)
     {
         let vc:imageCaptureViewController = imageCaptureViewController()
         
-        self.presentViewController(vc, animated: true) { () -> Void in
-            
-        }
+//        self.present(vc, animated: true)
+//        { () -> Void in
+//            
+//        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }//eo-a
     
@@ -36,7 +39,7 @@ class imageCaptureMainViewController: UIViewController {
     }//eom
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
     }//eom
