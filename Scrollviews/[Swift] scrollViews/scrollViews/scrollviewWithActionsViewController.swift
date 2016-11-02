@@ -27,7 +27,7 @@ class scrollviewWithActionsViewController: UIViewController {
     var imageviewList: [UIImageView]    = []
   
     
-    var addTopicButton = UIButton.init(type: UIButtonType.Custom)
+    var addTopicButton = UIButton.init(type: UIButtonType.custom)
     
     var totalImages = 0
 
@@ -72,7 +72,7 @@ class scrollviewWithActionsViewController: UIViewController {
 
     }//eo-view
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }//eo-view
     
@@ -104,7 +104,7 @@ class scrollviewWithActionsViewController: UIViewController {
 
 //        print("subviews:")
         let scrollviewsSubviews = staticScrollview.subviews
-        for(var iter = 0; iter < scrollviewsSubviews.count; iter++)
+        for iter in 0 ..< scrollviewsSubviews.count
         {
             let currView = scrollviewsSubviews[iter]
 //            print("[\(iter)]  \(currView)")
@@ -150,7 +150,7 @@ class scrollviewWithActionsViewController: UIViewController {
         
         
         //creating UIImage and adding to UIImageView
-        for(var iter = 0 ; iter < totalImages; iter++)
+        for iter in 0  ..< totalImages
         {
             //current image name
             let currImageName:String = imageNames[iter]
@@ -163,7 +163,7 @@ class scrollviewWithActionsViewController: UIViewController {
             
             //adding imageview
             let newPageView = UIImageView(image: currImage)
-            newPageView.contentMode = .ScaleAspectFit
+            newPageView.contentMode = .scaleAspectFit
             
             //frame size
             let imageDefaultWidth = Int(imageSize.width)
@@ -192,13 +192,13 @@ class scrollviewWithActionsViewController: UIViewController {
     
     // MARK: - Action
 
-    @IBAction func addTopic(sender: UIButton)
+    @IBAction func addTopic(_ sender: UIButton)
     {
         //getting time
-        let date            = NSDate()
-        let formatter       = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        formatter.stringFromDate(date)
+        let date            = Date()
+        let formatter       = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.string(from: date)
         
         let buttonTagNum = sender.tag
         if(buttonTagNum == 2)
@@ -219,14 +219,14 @@ class scrollviewWithActionsViewController: UIViewController {
         addTopicButton.frame = CGRect.init(origin: buttonLocation, size: imageSize)
         
         //adding background image
-        addTopicButton.setBackgroundImage(buttonImage, forState: .Normal)
+        addTopicButton.setBackgroundImage(buttonImage, for: UIControlState())
         
-        addTopicButton.setBackgroundImage(buttonImage, forState: .Highlighted)
+        addTopicButton.setBackgroundImage(buttonImage, for: .highlighted)
         
-        addTopicButton.setBackgroundImage(buttonImage, forState: .Selected)
+        addTopicButton.setBackgroundImage(buttonImage, for: .selected)
         
         //adding action to button
-        addTopicButton.addTarget(self, action: "pressedAction:", forControlEvents: .TouchUpInside)
+        addTopicButton.addTarget(self, action: #selector(scrollviewWithActionsViewController.pressedAction(_:)), for: .touchUpInside)
         
         
         //adding button to scrollview
@@ -235,14 +235,14 @@ class scrollviewWithActionsViewController: UIViewController {
     
     }//eom
     
-    func pressedAction(sender: UIButton!)
+    func pressedAction(_ sender: UIButton!)
     {
     
         //getting time
-        let date            = NSDate()
-        let formatter       = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        formatter.stringFromDate(date)
+        let date            = Date()
+        let formatter       = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.string(from: date)
         
         //updating time
         buttonLabel.text = "pressed by DYNAMIC scrollview  - \(date)"
@@ -251,7 +251,7 @@ class scrollviewWithActionsViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

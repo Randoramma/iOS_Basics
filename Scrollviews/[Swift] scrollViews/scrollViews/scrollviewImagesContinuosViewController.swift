@@ -50,11 +50,11 @@ class scrollviewImagesContinuosViewController: UIViewController, UIScrollViewDel
         let pagesScrollViewSize = scrollView.frame.size
         
         let magicNumber:CGFloat = 150.0
-        scrollView.contentSize = CGSizeMake(magicNumber * CGFloat(pageImages.count), pagesScrollViewSize.height)
+        scrollView.contentSize = CGSize(width: magicNumber * CGFloat(pageImages.count), height: pagesScrollViewSize.height)
         
         let totalImages = pageImages.count
         
-        for(var iter = 0 ; iter < totalImages; iter++)
+        for iter in 0  ..< totalImages
         {
             self.loadPage(iter)
         }
@@ -62,10 +62,10 @@ class scrollviewImagesContinuosViewController: UIViewController, UIScrollViewDel
     
     
     /* loads a page if applicable */
-    func loadPage(page: Int) {
+    func loadPage(_ page: Int) {
 
             let newPageView         = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
+            newPageView.contentMode = .scaleAspectFit
         
             var frame = scrollView.bounds
         

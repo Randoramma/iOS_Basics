@@ -23,8 +23,9 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // create our array of documents
-        for (var i = 0; i < 10; i++) {
-            documentTitle.insert(String(format: "Page %i", i), atIndex: i)
+        for i in 0 ..< 10
+        {
+            documentTitle.insert(String(format: "Page %i", i), at: i)
         }
         
         initSubviews()
@@ -39,14 +40,14 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
     func initSubviews() {
 //        var fm: CGRect = UIScreen.mainScreen().bounds
         
-        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * CGFloat(numPages), scrollView.frame.size.height)
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(numPages), height: scrollView.frame.size.height)
         
 //        println("[horizontal] frame size: \(scrollView.frame)")
         
-        scrollView.backgroundColor = UIColor.greenColor()
+        scrollView.backgroundColor = UIColor.green
 
         //moves the scrollview to the middle page
-        scrollView.scrollRectToVisible(CGRectMake(scrollView.frame.size.width,0, scrollView.frame.size.width, scrollView.frame.size.height), animated: false)
+        scrollView.scrollRectToVisible(CGRect(x: scrollView.frame.size.width,y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
         
         
 //        println("[horizontal] scrollRectToVisible updated to   ( \(scrollView.frame.size.width), 0, \(scrollView.frame.size.width), \(scrollView.frame.size.height)) ")
@@ -54,13 +55,13 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
         /*creates 3 UIlabels and adds them to the UIScollview */
         for i in 0...(numPages-1) {
             //            var tempLabel = UILabel(frame:  CGRectMake(0, scrollView.frame.size.width * CGFloat(i), scrollView.frame.size.width, scrollView.frame.size.height))
-            let tempLabel = UILabel(frame:  CGRectMake(scrollView.frame.size.width * CGFloat(i), 0,scrollView.frame.size.width, scrollView.frame.size.height))
-            tempLabel.textAlignment = NSTextAlignment.Center
+            let tempLabel = UILabel(frame:  CGRect(x: scrollView.frame.size.width * CGFloat(i), y: 0,width: scrollView.frame.size.width, height: scrollView.frame.size.height))
+            tempLabel.textAlignment = NSTextAlignment.center
             
             
             print("[horizontal] adding label to \(tempLabel.description)")
             
-            pages.insert(tempLabel, atIndex: i)
+            pages.insert(tempLabel, at: i)
             scrollView.addSubview(pages[i]);
         }
         
@@ -71,7 +72,7 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
     }
     
     /*updates 1 of the 3 UIlabels in the array of UIlabels, this is necessary to show the correct information UIlabel while scrolling*/
-    func loadPageWithId(index: Int, onPage page: Int) {
+    func loadPageWithId(_ index: Int, onPage page: Int) {
         switch(page) {
         case 0:
             pages[0].text = documentTitle[index]
@@ -90,19 +91,19 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //print("scrolling...")
     }
     
     /*updates the values of the UIlabels when the uiscrolling detects is moving is about to be stopped*/
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         // moving forward
         if(scrollView.contentOffset.x >= scrollView.frame.size.width) {
             
 //            println("***moving forward***")
 
-            scrollView.backgroundColor = UIColor.lightGrayColor()
+            scrollView.backgroundColor = UIColor.lightGray
             
             // load current doc data on first page
             loadPageWithId(currIndex, onPage: 0)
@@ -121,7 +122,7 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
             
 //            println("***moving backward***")
 
-            scrollView.backgroundColor = UIColor.greenColor()
+            scrollView.backgroundColor = UIColor.green
 
             // load current doc data on last page
             loadPageWithId(currIndex, onPage: 2)
@@ -136,7 +137,7 @@ class InfiteHorizontalViewController: UIViewController, UIScrollViewDelegate {
         }
         
         // reset offset to the middle page
-    scrollView.scrollRectToVisible(CGRectMake(scrollView.frame.size.width,0, scrollView.frame.size.width, scrollView.frame.size.height), animated: false)
+    scrollView.scrollRectToVisible(CGRect(x: scrollView.frame.size.width,y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
         
 //        println("[horizontal] offset: \(scrollView.contentOffset)")
     }

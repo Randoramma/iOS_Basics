@@ -35,7 +35,7 @@ class webViewViewController: UIViewController, UIWebViewDelegate
     
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -45,30 +45,30 @@ class webViewViewController: UIViewController, UIWebViewDelegate
     {
         self.webAddressLabel.text = amazon
         
-        let url:NSURL               = NSURL(string: amazon)!
-        let urlRequest:NSURLRequest = NSURLRequest(URL: url)
+        let url:URL               = URL(string: amazon)!
+        let urlRequest:URLRequest = URLRequest(url: url)
         
         self.webView.loadRequest(urlRequest)
     }//eo-a
     
     
     
-    @IBAction func closeWebView(sender:AnyObject)
+    @IBAction func closeWebView(_ sender:AnyObject)
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }//eo-a
     
     
     //MARK: Webview Delegates
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         print(" ")
         print("didFailLoadWithError")
-        print(error?.localizedDescription)
+        print(error.localizedDescription)
     }//eom
     
     
-    func webView(webView: UIWebView,
-        shouldStartLoadWithRequest request: NSURLRequest,
+    func webView(_ webView: UIWebView,
+        shouldStartLoadWith request: URLRequest,
         navigationType: UIWebViewNavigationType) -> Bool
     {
         print(" ")
@@ -80,14 +80,14 @@ class webViewViewController: UIViewController, UIWebViewDelegate
     }//eom
     
     
-    func webViewDidFinishLoad(webView: UIWebView)
+    func webViewDidFinishLoad(_ webView: UIWebView)
     {
         print(" ")
         print("webViewDidFinishLoad")
         print("\(webView.debugDescription)")
     }//eom
     
-    func webViewDidStartLoad(webView: UIWebView)
+    func webViewDidStartLoad(_ webView: UIWebView)
     {
         print(" ")
         print("webViewDidStartLoad")

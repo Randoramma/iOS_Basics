@@ -10,7 +10,6 @@
 		DE791E691C022533001B4E56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE791E681C022533001B4E56 /* AppDelegate.swift */; };
 		DE791E6B1C022533001B4E56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE791E6A1C022533001B4E56 /* ViewController.swift */; };
 		DE791E6E1C022533001B4E56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE791E6C1C022533001B4E56 /* Main.storyboard */; };
-		DE791E711C022533001B4E56 /* Indicators.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE791E6F1C022533001B4E56 /* Indicators.xcdatamodeld */; };
 		DE791E731C022533001B4E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE791E721C022533001B4E56 /* Assets.xcassets */; };
 		DE791E761C022533001B4E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE791E741C022533001B4E56 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		DE791E681C022533001B4E56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE791E6A1C022533001B4E56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE791E6D1C022533001B4E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE791E701C022533001B4E56 /* Indicators.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Indicators.xcdatamodel; sourceTree = "<group>"; };
 		DE791E721C022533001B4E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE791E751C022533001B4E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE791E771C022534001B4E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				DE791E721C022533001B4E56 /* Assets.xcassets */,
 				DE791E741C022533001B4E56 /* LaunchScreen.storyboard */,
 				DE791E771C022534001B4E56 /* Info.plist */,
-				DE791E6F1C022533001B4E56 /* Indicators.xcdatamodeld */,
 			);
 			path = Indicators;
 			sourceTree = "<group>";
@@ -94,11 +91,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = DevBros;
 				TargetAttributes = {
 					DE791E641C022533001B4E56 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -140,7 +138,6 @@
 			files = (
 				DE791E6B1C022533001B4E56 /* ViewController.swift in Sources */,
 				DE791E691C022533001B4E56 /* AppDelegate.swift in Sources */,
-				DE791E711C022533001B4E56 /* Indicators.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,8 +176,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -223,8 +222,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -243,6 +244,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -255,6 +257,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.Indicators;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -266,6 +269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.Indicators;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -288,21 +292,9 @@
 				DE791E7C1C022534001B4E56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DE791E6F1C022533001B4E56 /* Indicators.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DE791E701C022533001B4E56 /* Indicators.xcdatamodel */,
-			);
-			currentVersion = DE791E701C022533001B4E56 /* Indicators.xcdatamodel */;
-			path = Indicators.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DE791E5D1C022533001B4E56 /* Project object */;
 }

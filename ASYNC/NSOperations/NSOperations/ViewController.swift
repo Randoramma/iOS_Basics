@@ -25,27 +25,27 @@ class ViewController: UIViewController {
     
     
     //MARK: - 
-    @IBAction func exampleOne(sender: AnyObject)
+    @IBAction func exampleOne(_ sender: AnyObject)
     {
         self.blockOperationsTest1()
     }//eo-a
 
-    @IBAction func exampleTwo(sender: AnyObject)
+    @IBAction func exampleTwo(_ sender: AnyObject)
     {
         self.blockOperationsTest2()
     }//eo-a
 
     
-    @IBAction func exampleThree(sender: AnyObject)
+    @IBAction func exampleThree(_ sender: AnyObject)
     {
           self.blockOperationsTest3()
     }//eo-a
 
     func blockOperationsTest1()
     {
-        let operationQueue = NSOperationQueue()
+        let operationQueue = OperationQueue()
         
-        let operation1 : NSBlockOperation = NSBlockOperation (block:
+        let operation1 : BlockOperation = BlockOperation (block:
             {
             
             NSLog("do Calculations")
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
                 sleep(1)
             }//eofl
                 
-            let operation2 : NSBlockOperation = NSBlockOperation (block:
+            let operation2 : BlockOperation = BlockOperation (block:
                 {
                 
                 NSLog("do Some More Calculations")
@@ -73,18 +73,20 @@ class ViewController: UIViewController {
     
     func blockOperationsTest2 ()
     {
-        let operationQueue: NSOperationQueue = NSOperationQueue.mainQueue()
-        let completionBlockOperation: NSBlockOperation = NSBlockOperation.init(
+        let operationQueue: OperationQueue = OperationQueue.main
+        let completionBlockOperation: BlockOperation = BlockOperation.init(
             block: {
                 print("completion Block is getting called")
             }
         )
         
-        let workerBlockOperation:NSBlockOperation = NSBlockOperation.init(
-            block: {
+        let workerBlockOperation:BlockOperation = BlockOperation.init(
+            block:
+            {
                 print("worker block")
                 print("Actual Worker Block")
-                for (var i = 0; i<5; i++)
+                
+                for i in 0..<5
                 {
                     sleep(1)
                     print(i)
@@ -106,14 +108,14 @@ class ViewController: UIViewController {
             print("Both the Block Operation and the Custom Operation is completed")
         }
         
-        let workerBlockOperation:NSBlockOperation = NSBlockOperation.init(
+        let workerBlockOperation:BlockOperation = BlockOperation.init(
             block: {
                 print("Primary Worker block")
             }
         )
         customOperation.addDependency(workerBlockOperation)
         
-        let operationQueue = NSOperationQueue.mainQueue()
+        let operationQueue = OperationQueue.main
         operationQueue.addOperation(customOperation)
         operationQueue.addOperation(workerBlockOperation)
     

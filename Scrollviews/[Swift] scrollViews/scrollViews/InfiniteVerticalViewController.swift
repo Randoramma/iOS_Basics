@@ -22,8 +22,9 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // create our array of documents
-        for (var i = 0; i < 10; i++) {
-            documentTitle.insert(String(format: "Page %i", i), atIndex: i)
+        for i in 0 ..< 10
+        {
+            documentTitle.insert(String(format: "Page %i", i), at: i)
         }
         
         initSubviews()
@@ -38,24 +39,24 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func initSubviews() {
-        let fm: CGRect = UIScreen.mainScreen().bounds
+        let fm: CGRect = UIScreen.main.bounds
         
-        self.mainScrollView = UIScrollView(frame:CGRectMake(0, 0, fm.size.width, fm.size.height))
+        self.mainScrollView = UIScrollView(frame:CGRect(x: 0, y: 0, width: fm.size.width, height: fm.size.height))
         
 //        println("scrollview first setup with \(mainScrollView?.frame)")
         
-        self.mainScrollView!.contentSize = CGSizeMake(self.mainScrollView!.frame.size.width, self.mainScrollView!.frame.size.height * CGFloat(numPages))
+        self.mainScrollView!.contentSize = CGSize(width: self.mainScrollView!.frame.size.width, height: self.mainScrollView!.frame.size.height * CGFloat(numPages))
         
 //        println("scrollview updated to (after contentsize)   \(mainScrollView?.contentOffset.x) \(mainScrollView?.contentOffset.y)")
         
-        self.mainScrollView!.backgroundColor = UIColor.greenColor()
-        self.mainScrollView!.pagingEnabled = true
+        self.mainScrollView!.backgroundColor = UIColor.green
+        self.mainScrollView!.isPagingEnabled = true
         self.mainScrollView!.bounces = false
         self.mainScrollView!.showsHorizontalScrollIndicator = false;
         
         
         //moves the scrollview to the middle page
-        self.mainScrollView!.scrollRectToVisible(CGRectMake(0, mainScrollView!.frame.size.height, mainScrollView!.frame.size.width, mainScrollView!.frame.size.height), animated: false)
+        self.mainScrollView!.scrollRectToVisible(CGRect(x: 0, y: mainScrollView!.frame.size.height, width: mainScrollView!.frame.size.width, height: mainScrollView!.frame.size.height), animated: false)
         
         
         
@@ -67,13 +68,13 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
         /*creates 3 UIlabels and adds them to the UIScollview */
         for i in 0...(numPages-1) {
         
-            let tempLabel = UILabel(frame:  CGRectMake(0, self.mainScrollView!.frame.size.height * CGFloat(i), fm.size.width, fm.size.height))
-            tempLabel.textAlignment = NSTextAlignment.Center
+            let tempLabel = UILabel(frame:  CGRect(x: 0, y: self.mainScrollView!.frame.size.height * CGFloat(i), width: fm.size.width, height: fm.size.height))
+            tempLabel.textAlignment = NSTextAlignment.center
             
             
             print("adding label to \(tempLabel.description)")
             
-            pages.insert(tempLabel, atIndex: i)
+            pages.insert(tempLabel, at: i)
             self.mainScrollView!.addSubview(pages[i]);
         }
         
@@ -84,7 +85,7 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
     }
     
     /*updates 1 of the 3 UIlabels in the array of UIlabels, this is necessary to show the correct information UIlabel while scrolling*/
-    func loadPageWithId(index: Int, onPage page: Int) {
+    func loadPageWithId(_ index: Int, onPage page: Int) {
         switch(page) {
         case 0:
             pages[0].text = documentTitle[index]
@@ -107,12 +108,12 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //println("scrolling...")
     }
     
     /*updates the values of the UIlabels when the uiscrolling detects is moving is about to be stopped*/
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         // moving forward
         if(scrollView.contentOffset.y > mainScrollView!.frame.size.height) {
@@ -148,7 +149,7 @@ class InfiniteVerticalViewController: UIViewController, UIScrollViewDelegate {
         }
         
         // reset offset to the middle page
-        self.mainScrollView!.scrollRectToVisible(CGRectMake(0, mainScrollView!.frame.size.height, mainScrollView!.frame.size.width, mainScrollView!.frame.size.height), animated: false)
+        self.mainScrollView!.scrollRectToVisible(CGRect(x: 0, y: mainScrollView!.frame.size.height, width: mainScrollView!.frame.size.width, height: mainScrollView!.frame.size.height), animated: false)
 
         
 //            println("offset: \(scrollView.contentOffset)")

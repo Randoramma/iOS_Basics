@@ -30,8 +30,9 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         
         // create our array of documents
-        for (var i = 0; i < 10; i++) {
-            documentTitle.insert(String(format: "Page %i", i), atIndex: i)
+        for i in 0 ..< 10
+        {
+            documentTitle.insert(String(format: "Page %i", i), at: i)
         }
         
         self.initSubviews()
@@ -46,7 +47,7 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
     func initSubviews() {
         //        var fm: CGRect = UIScreen.mainScreen().bounds
         
-        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * CGFloat(numPages), scrollView.frame.size.height)
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(numPages), height: scrollView.frame.size.height)
         
         //        println("[horizontal] frame size: \(scrollView.frame)")
         
@@ -57,12 +58,12 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
         
         /*creates 3 UIlabels and adds them to the UIScollview */
         for i in 0...(numPages-1) {
-            let tempLabel = UILabel(frame:  CGRectMake(scrollView.frame.size.width * CGFloat(i), 0,scrollView.frame.size.width, scrollView.frame.size.height))
-            tempLabel.textAlignment = NSTextAlignment.Center
+            let tempLabel = UILabel(frame:  CGRect(x: scrollView.frame.size.width * CGFloat(i), y: 0,width: scrollView.frame.size.width, height: scrollView.frame.size.height))
+            tempLabel.textAlignment = NSTextAlignment.center
             
 //            println("[horizontal] adding label to \(tempLabel.description)")
             
-            pages.insert(tempLabel, atIndex: i)
+            pages.insert(tempLabel, at: i)
             scrollView.addSubview(pages[i]);
         }
         
@@ -80,7 +81,7 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
     }
     
     /*updates 1 of the 3 UIlabels in the array of UIlabels, this is necessary to show the correct information UIlabel while scrolling*/
-    func loadPageWithId(index: Int, onPage page: Int) {
+    func loadPageWithId(_ index: Int, onPage page: Int) {
         switch(page) {
         case 0:
             pages[0].text = documentTitle[index]
@@ -100,12 +101,12 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
     }
     
     /**/
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //println("scrolling...")
     }
     
     /*updates the values of the UIlabels when the uiscrolling detects is moving is about to be stopped*/
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let movingForward = scrollView.contentOffset.x > scrollView.frame.size.width
         let movingBackward = scrollView.contentOffset.x < scrollView.frame.size.width
@@ -119,14 +120,14 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
         if(movingForward) {
             print("***moving forward ***")
 
-            backlimit++                                         //updating num of accum left scrolls
+            backlimit += 1                                         //updating num of accum left scrolls
             
             //there is atleast 5 pages on the left
             if(backlimit > 5){
-                currentNum++                                    //updated page # value - Tempopary Var!!
-                documentTitle.removeAtIndex(0)                  //remove first index
+                currentNum += 1                                    //updated page # value - Tempopary Var!!
+                documentTitle.remove(at: 0)                  //remove first index
                 documentTitle.append("Page \(currentNum)")     //add new index
-                backlimit--                                     //reduce backlimit
+                backlimit -= 1                                     //reduce backlimit
             
                 //updating pages
                 loadPageWithId(prevIndex, onPage: 0)                //load current doc data on first page
@@ -136,13 +137,13 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
             else{
                 //there is less than 5 pages on the left, NOT adding indexes yet
                 
-                prevIndex++
+                prevIndex += 1
                 loadPageWithId(prevIndex, onPage: 0)                //load current doc data on first page
                 
-                currIndex++
+                currIndex += 1
                 loadPageWithId(currIndex, onPage: 1)                //load next doc data on second page
                 
-                nextIndex++
+                nextIndex += 1
                 loadPageWithId(nextIndex, onPage: 2)
             }
         }
@@ -156,16 +157,16 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
             if(backlimit > 1){
                 
                 //updating page of indexes
-                nextIndex--
+                nextIndex -= 1
                 loadPageWithId( nextIndex, onPage: 2)
                 
-                currIndex--
+                currIndex -= 1
                 loadPageWithId( currIndex, onPage: 1)
                 
-                prevIndex--
+                prevIndex -= 1
                 loadPageWithId( prevIndex, onPage: 0)
                 
-                 backlimit--             //updating backlimit
+                 backlimit -= 1             //updating backlimit
             }
             else
             {
@@ -174,19 +175,19 @@ class InfiteHorizontalRightViewController: UIViewController , UIScrollViewDelega
         }
         else if(firstMove){
 
-            backlimit++                                     //updating num of accum left scrolls
+            backlimit += 1                                     //updating num of accum left scrolls
             
             //updating index values
             prevIndex = currIndex
-            currIndex++
+            currIndex += 1
             
-            nextIndex++
+            nextIndex += 1
             loadPageWithId(nextIndex, onPage: 2)
         }
         
         // reset offset to the middle page ONLY if backlimit has NOT been reached
         if(backlimit > 0){
-            scrollView.scrollRectToVisible(CGRectMake(scrollView.frame.size.width,0, scrollView.frame.size.width, scrollView.frame.size.height), animated: false)
+            scrollView.scrollRectToVisible(CGRect(x: scrollView.frame.size.width,y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
         }
         
         print("[horizontal] offset: \(scrollView.contentOffset) frame: \(scrollView.frame)")

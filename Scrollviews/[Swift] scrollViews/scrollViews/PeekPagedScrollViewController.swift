@@ -40,7 +40,10 @@ class PeekPagedScrollViewController: UIViewController, UIScrollViewDelegate {
         
         // Set up the content size of the scroll view
         let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * CGFloat(pageImages.count), pagesScrollViewSize.height)
+        let scrollWidth:CGFloat = pagesScrollViewSize.width * CGFloat(pageImages.count)
+        let scrollHeight:CGFloat = pagesScrollViewSize.height
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
+        
         
         print("scrollview info:")
         print(" current frame size: \(scrollView.frame)")
@@ -71,7 +74,7 @@ class PeekPagedScrollViewController: UIViewController, UIScrollViewDelegate {
         }
         
         // Load an individual page, first checking if you've already loaded it
-        if let pageView = pageViews[page] {
+        if pageViews[page] != nil {
             // Do nothing. The view is already loaded.
             
             print("     page # \(page) was already loaded, no action taken")
@@ -84,11 +87,11 @@ class PeekPagedScrollViewController: UIViewController, UIScrollViewDelegate {
             //The below line makes it different the other type of types.
             // sets the frame of the image view to be slightly inset horizontally, 
                 //such that the pages don’t touch.
-            frame = CGRectInset(frame, 90.0, 0.0)
+            frame = frame.insetBy(dx: 90.0, dy: 0.0)
             
             
             let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
+            newPageView.contentMode = .scaleAspectFit
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
             
@@ -128,23 +131,28 @@ class PeekPagedScrollViewController: UIViewController, UIScrollViewDelegate {
         let lastPage = page + 1
         
         // Purge anything before the first page
-        for var index = 0; index < firstPage; ++index {
-            purgePage(index)
+//        for var index = 0; index < firstPage; ++index
+        for index in 0..<firstPage
+        {
+            purgePage(page: index)
         }
         
         // Load pages in our range
-        for index in firstPage...lastPage {
-            loadPage(index)
+        for index in firstPage...lastPage
+        {
+            loadPage(page: index)
         }
         
         // Purge anything after the last page
-        for var index = lastPage+1; index < pageImages.count; ++index {
-            purgePage(index)
+//        for var index = lastPage+1; index < pageImages.count; ++index
+        for index in lastPage+1..<pageImages.count
+        {
+            purgePage(page: index)
         }
     }
     
     /*  */
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Load the pages that are now on screen
         loadVisiblePages()
     }

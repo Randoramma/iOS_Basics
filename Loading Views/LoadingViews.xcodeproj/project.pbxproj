@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE483CF51C34DDA400F46E4B /* starWars.jpg */; };
+		DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78646B1BFC403C00FFE21B /* AppDelegate.swift */; };
+		DE7864711BFC403C00FFE21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE78646F1BFC403C00FFE21B /* Main.storyboard */; };
+		DE7864731BFC403C00FFE21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7864721BFC403C00FFE21B /* Assets.xcassets */; };
+		DE7864761BFC403C00FFE21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */; };
+		DE78649B1BFC414800FFE21B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78649A1BFC414800FFE21B /* MainTableViewController.swift */; };
+		DE7DA7761C372F9500359127 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7751C372F9500359127 /* UIKit.framework */; };
+		DE7DA7781C372F9F00359127 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7771C372F9F00359127 /* Foundation.framework */; };
+		DE7DA77A1C372FA600359127 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7DA7791C372FA600359127 /* QuartzCore.framework */; };
+		F7496DC21DC7EDF90054852A /* ContainerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DBB1DC7EDF90054852A /* ContainerVCViewController.m */; };
+		F7496DC31DC7EDF90054852A /* MainVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DBD1DC7EDF90054852A /* MainVCViewController.m */; };
+		F7496DC41DC7EDFA0054852A /* MenuVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DBF1DC7EDF90054852A /* MenuVCViewController.m */; };
+		F7496DC51DC7EDFA0054852A /* ProfileVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DC11DC7EDF90054852A /* ProfileVCViewController.m */; };
+		F7496DCA1DC7EE1C0054852A /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DC61DC7EE1C0054852A /* AViewController.swift */; };
+		F7496DCB1DC7EE1C0054852A /* ViewInNIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DC71DC7EE1C0054852A /* ViewInNIBViewController.swift */; };
+		F7496DCC1DC7EE1C0054852A /* ViewInNIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496DC81DC7EE1C0054852A /* ViewInNIBViewController.xib */; };
+		F7496DCD1DC7EE1C0054852A /* ViewInUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DC91DC7EE1C0054852A /* ViewInUIViewViewController.swift */; };
+		F7496DD01DC7EEAC0054852A /* ShareSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DCF1DC7EEAC0054852A /* ShareSetting.m */; };
+		F7496DDC1DC7EEFF0054852A /* SegmentedControlSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DD31DC7EEFF0054852A /* SegmentedControlSettings.m */; };
+		F7496DDD1DC7EEFF0054852A /* SegmentedFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DD51DC7EEFF0054852A /* SegmentedFirstViewController.m */; };
+		F7496DDE1DC7EEFF0054852A /* SegmentedMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DD71DC7EEFF0054852A /* SegmentedMainViewController.m */; };
+		F7496DDF1DC7EEFF0054852A /* SegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DD91DC7EEFF0054852A /* SegmentedTableViewCell.m */; };
+		F7496DE01DC7EEFF0054852A /* SegmentedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DDB1DC7EEFF0054852A /* SegmentedTableViewController.m */; };
+		F7496DE51DC7EFF20054852A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DE11DC7EFF20054852A /* TableViewCell.swift */; };
+		F7496DE61DC7EFF20054852A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496DE21DC7EFF20054852A /* TableViewCell.xib */; };
+		F7496DE71DC7EFF20054852A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DE31DC7EFF20054852A /* TableViewController.swift */; };
+		F7496DE81DC7EFF20054852A /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496DE41DC7EFF20054852A /* TableViewController.xib */; };
+		F7496DEB1DC7F00B0054852A /* ADiffSBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DE91DC7F00B0054852A /* ADiffSBViewController.swift */; };
+		F7496DEC1DC7F00B0054852A /* StoryboardTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7496DEA1DC7F00B0054852A /* StoryboardTwo.storyboard */; };
+		F7496DF21DC7F02B0054852A /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DEE1DC7F02B0054852A /* PopOverViewController.m */; };
+		F7496DF31DC7F02B0054852A /* PopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496DEF1DC7F02B0054852A /* PopOverViewController.xib */; };
+		F7496DF41DC7F02B0054852A /* VCThatCallsPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496DF11DC7F02B0054852A /* VCThatCallsPopOverViewController.m */; };
+		F7496DF81DC8E2E10054852A /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DF61DC8E2E10054852A /* PopOverViewController.swift */; };
+		F7496DF91DC8E2E10054852A /* VCThatCallsPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496DF71DC8E2E10054852A /* VCThatCallsPopOverViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE483CF51C34DDA400F46E4B /* starWars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starWars.jpg; sourceTree = "<group>"; };
+		DE7864681BFC403C00FFE21B /* LoadingViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE78646B1BFC403C00FFE21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE7864701BFC403C00FFE21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE7864721BFC403C00FFE21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE7864751BFC403C00FFE21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE7864771BFC403C00FFE21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE78649A1BFC414800FFE21B /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		DE7DA7751C372F9500359127 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DE7DA7771C372F9F00359127 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DE7DA7791C372FA600359127 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F7496DB91DC7EDF90054852A /* LoadingViews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoadingViews-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7496DBA1DC7EDF90054852A /* ContainerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerVCViewController.h; path = "Container Option 2 Menu/ContainerVCViewController.h"; sourceTree = "<group>"; };
+		F7496DBB1DC7EDF90054852A /* ContainerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerVCViewController.m; path = "Container Option 2 Menu/ContainerVCViewController.m"; sourceTree = "<group>"; };
+		F7496DBC1DC7EDF90054852A /* MainVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainVCViewController.h; path = "Container Option 2 Menu/MainVCViewController.h"; sourceTree = "<group>"; };
+		F7496DBD1DC7EDF90054852A /* MainVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVCViewController.m; path = "Container Option 2 Menu/MainVCViewController.m"; sourceTree = "<group>"; };
+		F7496DBE1DC7EDF90054852A /* MenuVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuVCViewController.h; path = "Container Option 2 Menu/MenuVCViewController.h"; sourceTree = "<group>"; };
+		F7496DBF1DC7EDF90054852A /* MenuVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVCViewController.m; path = "Container Option 2 Menu/MenuVCViewController.m"; sourceTree = "<group>"; };
+		F7496DC01DC7EDF90054852A /* ProfileVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileVCViewController.h; path = "Container Option 2 Menu/ProfileVCViewController.h"; sourceTree = "<group>"; };
+		F7496DC11DC7EDF90054852A /* ProfileVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileVCViewController.m; path = "Container Option 2 Menu/ProfileVCViewController.m"; sourceTree = "<group>"; };
+		F7496DC61DC7EE1C0054852A /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AViewController.swift; path = "Container Option 0/AViewController.swift"; sourceTree = "<group>"; };
+		F7496DC71DC7EE1C0054852A /* ViewInNIBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewInNIBViewController.swift; path = "Container Option 0/ViewInNIBViewController.swift"; sourceTree = "<group>"; };
+		F7496DC81DC7EE1C0054852A /* ViewInNIBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewInNIBViewController.xib; path = "Container Option 0/ViewInNIBViewController.xib"; sourceTree = "<group>"; };
+		F7496DC91DC7EE1C0054852A /* ViewInUIViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewInUIViewViewController.swift; path = "Container Option 0/ViewInUIViewViewController.swift"; sourceTree = "<group>"; };
+		F7496DCE1DC7EEAC0054852A /* ShareSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareSetting.h; path = "Container Option 2 Menu/ShareSetting.h"; sourceTree = "<group>"; };
+		F7496DCF1DC7EEAC0054852A /* ShareSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareSetting.m; path = "Container Option 2 Menu/ShareSetting.m"; sourceTree = "<group>"; };
+		F7496DD21DC7EEFF0054852A /* SegmentedControlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentedControlSettings.h; path = "Container Option 1 Segmented Views/SegmentedControlSettings.h"; sourceTree = "<group>"; };
+		F7496DD31DC7EEFF0054852A /* SegmentedControlSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentedControlSettings.m; path = "Container Option 1 Segmented Views/SegmentedControlSettings.m"; sourceTree = "<group>"; };
+		F7496DD41DC7EEFF0054852A /* SegmentedFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentedFirstViewController.h; path = "Container Option 1 Segmented Views/SegmentedFirstViewController.h"; sourceTree = "<group>"; };
+		F7496DD51DC7EEFF0054852A /* SegmentedFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentedFirstViewController.m; path = "Container Option 1 Segmented Views/SegmentedFirstViewController.m"; sourceTree = "<group>"; };
+		F7496DD61DC7EEFF0054852A /* SegmentedMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentedMainViewController.h; path = "Container Option 1 Segmented Views/SegmentedMainViewController.h"; sourceTree = "<group>"; };
+		F7496DD71DC7EEFF0054852A /* SegmentedMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentedMainViewController.m; path = "Container Option 1 Segmented Views/SegmentedMainViewController.m"; sourceTree = "<group>"; };
+		F7496DD81DC7EEFF0054852A /* SegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentedTableViewCell.h; path = "Container Option 1 Segmented Views/SegmentedTableViewCell.h"; sourceTree = "<group>"; };
+		F7496DD91DC7EEFF0054852A /* SegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentedTableViewCell.m; path = "Container Option 1 Segmented Views/SegmentedTableViewCell.m"; sourceTree = "<group>"; };
+		F7496DDA1DC7EEFF0054852A /* SegmentedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentedTableViewController.h; path = "Container Option 1 Segmented Views/SegmentedTableViewController.h"; sourceTree = "<group>"; };
+		F7496DDB1DC7EEFF0054852A /* SegmentedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentedTableViewController.m; path = "Container Option 1 Segmented Views/SegmentedTableViewController.m"; sourceTree = "<group>"; };
+		F7496DE11DC7EFF20054852A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = "Other Option 0/TableViewCell.swift"; sourceTree = "<group>"; };
+		F7496DE21DC7EFF20054852A /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = "Other Option 0/TableViewCell.xib"; sourceTree = "<group>"; };
+		F7496DE31DC7EFF20054852A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "Other Option 0/TableViewController.swift"; sourceTree = "<group>"; };
+		F7496DE41DC7EFF20054852A /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewController.xib; path = "Other Option 0/TableViewController.xib"; sourceTree = "<group>"; };
+		F7496DE91DC7F00B0054852A /* ADiffSBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADiffSBViewController.swift; path = "Other Option 1 & 2/ADiffSBViewController.swift"; sourceTree = "<group>"; };
+		F7496DEA1DC7F00B0054852A /* StoryboardTwo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StoryboardTwo.storyboard; path = "Other Option 1 & 2/StoryboardTwo.storyboard"; sourceTree = "<group>"; };
+		F7496DED1DC7F02B0054852A /* PopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopOverViewController.h; path = "Presentations Option 0 Pop Over/PopOverViewController.h"; sourceTree = "<group>"; };
+		F7496DEE1DC7F02B0054852A /* PopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopOverViewController.m; path = "Presentations Option 0 Pop Over/PopOverViewController.m"; sourceTree = "<group>"; };
+		F7496DEF1DC7F02B0054852A /* PopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopOverViewController.xib; path = "Presentations Option 0 Pop Over/PopOverViewController.xib"; sourceTree = "<group>"; };
+		F7496DF01DC7F02B0054852A /* VCThatCallsPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCThatCallsPopOverViewController.h; path = "Presentations Option 0 Pop Over/VCThatCallsPopOverViewController.h"; sourceTree = "<group>"; };
+		F7496DF11DC7F02B0054852A /* VCThatCallsPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCThatCallsPopOverViewController.m; path = "Presentations Option 0 Pop Over/VCThatCallsPopOverViewController.m"; sourceTree = "<group>"; };
+		F7496DF61DC8E2E10054852A /* PopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopOverViewController.swift; path = "Presentations Option 0 Pop Over/PopOverViewController.swift"; sourceTree = "<group>"; };
+		F7496DF71DC8E2E10054852A /* VCThatCallsPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCThatCallsPopOverViewController.swift; path = "Presentations Option 0 Pop Over/VCThatCallsPopOverViewController.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE7864651BFC403C00FFE21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7DA77A1C372FA600359127 /* QuartzCore.framework in Frameworks */,
+				DE7DA7781C372F9F00359127 /* Foundation.framework in Frameworks */,
+				DE7DA7761C372F9500359127 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE483CF31C34DC3700F46E4B /* 0 Pop Up Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DF01DC7F02B0054852A /* VCThatCallsPopOverViewController.h */,
+				F7496DF11DC7F02B0054852A /* VCThatCallsPopOverViewController.m */,
+				F7496DED1DC7F02B0054852A /* PopOverViewController.h */,
+				F7496DEE1DC7F02B0054852A /* PopOverViewController.m */,
+				F7496DF51DC8E2CF0054852A /* Swift version - works but not being used */,
+			);
+			name = "0 Pop Up Controller";
+			sourceTree = "<group>";
+		};
+		DE483CF41C34DD9400F46E4B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CF51C34DDA400F46E4B /* starWars.jpg */,
+				F7496DB91DC7EDF90054852A /* LoadingViews-Bridging-Header.h */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DE624FE11C379AC2005F69BA /* Pop Over */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DEF1DC7F02B0054852A /* PopOverViewController.xib */,
+			);
+			name = "Pop Over";
+			sourceTree = "<group>";
+		};
+		DE78645F1BFC403C00FFE21B = {
+			isa = PBXGroup;
+			children = (
+				DE7DA7791C372FA600359127 /* QuartzCore.framework */,
+				DE7DA7771C372F9F00359127 /* Foundation.framework */,
+				DE7DA7751C372F9500359127 /* UIKit.framework */,
+				DE78646A1BFC403C00FFE21B /* LoadingViews */,
+				DE7864691BFC403C00FFE21B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE7864691BFC403C00FFE21B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE7864681BFC403C00FFE21B /* LoadingViews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE78646A1BFC403C00FFE21B /* LoadingViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CF41C34DD9400F46E4B /* Images */,
+				DE78648E1BFC407300FFE21B /* Controllers */,
+				DE78648D1BFC406E00FFE21B /* Models */,
+				DE78648C1BFC406800FFE21B /* Views */,
+				DE78648B1BFC406400FFE21B /* App */,
+				DE7864721BFC403C00FFE21B /* Assets.xcassets */,
+				DE7864771BFC403C00FFE21B /* Info.plist */,
+			);
+			path = LoadingViews;
+			sourceTree = "<group>";
+		};
+		DE78648B1BFC406400FFE21B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE78646B1BFC403C00FFE21B /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		DE78648C1BFC406800FFE21B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */,
+				DE78646F1BFC403C00FFE21B /* Main.storyboard */,
+				F7496DD11DC7EED00054852A /* Containers */,
+				DE624FE11C379AC2005F69BA /* Pop Over */,
+				F7496D8C1DC7E63B0054852A /* Other */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE78648D1BFC406E00FFE21B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DE78648E1BFC407300FFE21B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE78649A1BFC414800FFE21B /* MainTableViewController.swift */,
+				F7496DB51DC7ECC80054852A /* Containers */,
+				F7496DB61DC7ECCF0054852A /* Presentations (Animations) */,
+				F7496DB71DC7ECDC0054852A /* Other */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DE86E1501C2BA030004D676F /* 1 Loading Container Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DD21DC7EEFF0054852A /* SegmentedControlSettings.h */,
+				F7496DD31DC7EEFF0054852A /* SegmentedControlSettings.m */,
+				F7496DD41DC7EEFF0054852A /* SegmentedFirstViewController.h */,
+				F7496DD51DC7EEFF0054852A /* SegmentedFirstViewController.m */,
+				F7496DD61DC7EEFF0054852A /* SegmentedMainViewController.h */,
+				F7496DD71DC7EEFF0054852A /* SegmentedMainViewController.m */,
+				F7496DD81DC7EEFF0054852A /* SegmentedTableViewCell.h */,
+				F7496DD91DC7EEFF0054852A /* SegmentedTableViewCell.m */,
+				F7496DDA1DC7EEFF0054852A /* SegmentedTableViewController.h */,
+				F7496DDB1DC7EEFF0054852A /* SegmentedTableViewController.m */,
+			);
+			name = "1 Loading Container Views";
+			sourceTree = "<group>";
+		};
+		DEB936D41BFFD02700DF223E /* 0 Push to NIB Tableview */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DE11DC7EFF20054852A /* TableViewCell.swift */,
+				F7496DE31DC7EFF20054852A /* TableViewController.swift */,
+			);
+			name = "0 Push to NIB Tableview";
+			sourceTree = "<group>";
+		};
+		DEB936D51BFFD05200DF223E /* 0 Load a viewinside a view */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DC61DC7EE1C0054852A /* AViewController.swift */,
+				F7496DC71DC7EE1C0054852A /* ViewInNIBViewController.swift */,
+				F7496DC91DC7EE1C0054852A /* ViewInUIViewViewController.swift */,
+			);
+			name = "0 Load a viewinside a view";
+			sourceTree = "<group>";
+		};
+		DEB937A81C00AD0D00DF223E /* 2 Loading View in A diff SB */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DE91DC7F00B0054852A /* ADiffSBViewController.swift */,
+			);
+			name = "2 Loading View in A diff SB";
+			sourceTree = "<group>";
+		};
+		F7496D8C1DC7E63B0054852A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DEA1DC7F00B0054852A /* StoryboardTwo.storyboard */,
+				F7496DE21DC7EFF20054852A /* TableViewCell.xib */,
+				F7496DE41DC7EFF20054852A /* TableViewController.xib */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		F7496DB51DC7ECC80054852A /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				DEB936D51BFFD05200DF223E /* 0 Load a viewinside a view */,
+				DE86E1501C2BA030004D676F /* 1 Loading Container Views */,
+				F7496DB81DC7EDE80054852A /* 2 Menu */,
+			);
+			name = Containers;
+			sourceTree = "<group>";
+		};
+		F7496DB61DC7ECCF0054852A /* Presentations (Animations) */ = {
+			isa = PBXGroup;
+			children = (
+				DE483CF31C34DC3700F46E4B /* 0 Pop Up Controller */,
+			);
+			name = "Presentations (Animations)";
+			sourceTree = "<group>";
+		};
+		F7496DB71DC7ECDC0054852A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DEB936D41BFFD02700DF223E /* 0 Push to NIB Tableview */,
+				DEB937A81C00AD0D00DF223E /* 2 Loading View in A diff SB */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		F7496DB81DC7EDE80054852A /* 2 Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DCE1DC7EEAC0054852A /* ShareSetting.h */,
+				F7496DCF1DC7EEAC0054852A /* ShareSetting.m */,
+				F7496DBA1DC7EDF90054852A /* ContainerVCViewController.h */,
+				F7496DBB1DC7EDF90054852A /* ContainerVCViewController.m */,
+				F7496DBC1DC7EDF90054852A /* MainVCViewController.h */,
+				F7496DBD1DC7EDF90054852A /* MainVCViewController.m */,
+				F7496DBE1DC7EDF90054852A /* MenuVCViewController.h */,
+				F7496DBF1DC7EDF90054852A /* MenuVCViewController.m */,
+				F7496DC01DC7EDF90054852A /* ProfileVCViewController.h */,
+				F7496DC11DC7EDF90054852A /* ProfileVCViewController.m */,
+			);
+			name = "2 Menu";
+			sourceTree = "<group>";
+		};
+		F7496DD11DC7EED00054852A /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DC81DC7EE1C0054852A /* ViewInNIBViewController.xib */,
+			);
+			name = Containers;
+			sourceTree = "<group>";
+		};
+		F7496DF51DC8E2CF0054852A /* Swift version - works but not being used */ = {
+			isa = PBXGroup;
+			children = (
+				F7496DF61DC8E2E10054852A /* PopOverViewController.swift */,
+				F7496DF71DC8E2E10054852A /* VCThatCallsPopOverViewController.swift */,
+			);
+			name = "Swift version - works but not being used";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE7864671BFC403C00FFE21B /* LoadingViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE7864851BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViews" */;
+			buildPhases = (
+				DE7864641BFC403C00FFE21B /* Sources */,
+				DE7864651BFC403C00FFE21B /* Frameworks */,
+				DE7864661BFC403C00FFE21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoadingViews;
+			productName = LoadingViews;
+			productReference = DE7864681BFC403C00FFE21B /* LoadingViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE7864601BFC403C00FFE21B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = devbros;
+				TargetAttributes = {
+					DE7864671BFC403C00FFE21B = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = Y24U4BPF65;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = DE7864631BFC403C00FFE21B /* Build configuration list for PBXProject "LoadingViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE78645F1BFC403C00FFE21B;
+			productRefGroup = DE7864691BFC403C00FFE21B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE7864671BFC403C00FFE21B /* LoadingViews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE7864661BFC403C00FFE21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7864761BFC403C00FFE21B /* LaunchScreen.storyboard in Resources */,
+				F7496DEC1DC7F00B0054852A /* StoryboardTwo.storyboard in Resources */,
+				DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */,
+				F7496DE61DC7EFF20054852A /* TableViewCell.xib in Resources */,
+				DE7864731BFC403C00FFE21B /* Assets.xcassets in Resources */,
+				DE7864711BFC403C00FFE21B /* Main.storyboard in Resources */,
+				F7496DF31DC7F02B0054852A /* PopOverViewController.xib in Resources */,
+				F7496DCC1DC7EE1C0054852A /* ViewInNIBViewController.xib in Resources */,
+				F7496DE81DC7EFF20054852A /* TableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE7864641BFC403C00FFE21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7496DF41DC7F02B0054852A /* VCThatCallsPopOverViewController.m in Sources */,
+				F7496DDE1DC7EEFF0054852A /* SegmentedMainViewController.m in Sources */,
+				F7496DF81DC8E2E10054852A /* PopOverViewController.swift in Sources */,
+				F7496DCD1DC7EE1C0054852A /* ViewInUIViewViewController.swift in Sources */,
+				F7496DF91DC8E2E10054852A /* VCThatCallsPopOverViewController.swift in Sources */,
+				F7496DE71DC7EFF20054852A /* TableViewController.swift in Sources */,
+				F7496DE51DC7EFF20054852A /* TableViewCell.swift in Sources */,
+				F7496DDF1DC7EEFF0054852A /* SegmentedTableViewCell.m in Sources */,
+				F7496DC51DC7EDFA0054852A /* ProfileVCViewController.m in Sources */,
+				F7496DC41DC7EDFA0054852A /* MenuVCViewController.m in Sources */,
+				F7496DF21DC7F02B0054852A /* PopOverViewController.m in Sources */,
+				F7496DCB1DC7EE1C0054852A /* ViewInNIBViewController.swift in Sources */,
+				F7496DDD1DC7EEFF0054852A /* SegmentedFirstViewController.m in Sources */,
+				F7496DE01DC7EEFF0054852A /* SegmentedTableViewController.m in Sources */,
+				DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */,
+				F7496DC21DC7EDF90054852A /* ContainerVCViewController.m in Sources */,
+				F7496DEB1DC7F00B0054852A /* ADiffSBViewController.swift in Sources */,
+				DE78649B1BFC414800FFE21B /* MainTableViewController.swift in Sources */,
+				F7496DCA1DC7EE1C0054852A /* AViewController.swift in Sources */,
+				F7496DDC1DC7EEFF0054852A /* SegmentedControlSettings.m in Sources */,
+				F7496DD01DC7EEAC0054852A /* ShareSetting.m in Sources */,
+				F7496DC31DC7EDF90054852A /* MainVCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE78646F1BFC403C00FFE21B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7864701BFC403C00FFE21B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE7864741BFC403C00FFE21B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7864751BFC403C00FFE21B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE7864831BFC403D00FFE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE7864841BFC403D00FFE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE7864861BFC403D00FFE21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Y24U4BPF65;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lc.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingViews/LoadingViews-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DE7864871BFC403D00FFE21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Y24U4BPF65;
+				INFOPLIST_FILE = LoadingViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lc.LoadingViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingViews/LoadingViews-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE7864631BFC403C00FFE21B /* Build configuration list for PBXProject "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7864831BFC403D00FFE21B /* Debug */,
+				DE7864841BFC403D00FFE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE7864851BFC403D00FFE21B /* Build configuration list for PBXNativeTarget "LoadingViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7864861BFC403D00FFE21B /* Debug */,
+				DE7864871BFC403D00FFE21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE7864601BFC403C00FFE21B /* Project object */;
+}

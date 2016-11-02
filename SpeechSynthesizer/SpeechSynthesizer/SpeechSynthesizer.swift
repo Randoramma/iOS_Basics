@@ -11,7 +11,7 @@ import AVFoundation
 
 @objc protocol speechSynthesizerDelegate
 {
-    func playingStatusChanged(status:Bool)
+    func playingStatusChanged(_ status:Bool)
 }
 
 @objc enum ISO0681Languages:Int {
@@ -103,7 +103,7 @@ import AVFoundation
 @objc class SpeechSynthesizer:NSObject, AVSpeechSynthesizerDelegate {
     static let sharedInstance = SpeechSynthesizer()
     
-    private var speechSynth:AVSpeechSynthesizer = AVSpeechSynthesizer()
+    fileprivate var speechSynth:AVSpeechSynthesizer = AVSpeechSynthesizer()
     
     
     var language:String = ISO0681Languages.en_US.toString()
@@ -118,7 +118,7 @@ import AVFoundation
         
     }
     
-    func speakText(textToSpeak:String)
+    func speakText(_ textToSpeak:String)
     {
         //setting speach synthesizer
         speechSynth.delegate = self
@@ -132,31 +132,31 @@ import AVFoundation
         utterance.voice = voice
         
         //speaking text
-        speechSynth.speakUtterance(utterance)
+        speechSynth.speak(utterance)
     }//eom
     
     //MARK: Delegates
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didPauseSpeechUtterance utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
         
     }//eom
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didStartSpeechUtterance utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         
     }//eom
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didCancelSpeechUtterance utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         
     }//eom
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         
     }//eom
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didContinueSpeechUtterance utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
         
     }//eom
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
         
     }//eom
 }//eoc

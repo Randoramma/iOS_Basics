@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func speakTextNow(sender:UIButton)
+    @IBAction func speakTextNow(_ sender:UIButton)
     {
         let textToSpeak:String = textTospeakTextView.text
         speech.speakText(textToSpeak)

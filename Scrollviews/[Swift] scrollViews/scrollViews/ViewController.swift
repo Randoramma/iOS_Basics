@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = image.size
         
         // 3
-        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(doubleTapRecognizer)
@@ -74,9 +74,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     /* 
         tap gesture recognizer detects a double tap
     */
-    func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
+    func scrollViewDoubleTapped(_ recognizer: UITapGestureRecognizer) {
         // where the tap occurred within the image view
-        let pointInView = recognizer.locationInView(imageView)
+        let pointInView = recognizer.location(in: imageView)
         
         // calculate a zoom scale that’s zoomed in 150%
         //    but capped at the maximum zoom scale specified in viewDidLoad
@@ -90,19 +90,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let x = pointInView.x - (w / 2.0)
         let y = pointInView.y - (h / 2.0)
         
-        let rectToZoomTo = CGRectMake(x, y, w, h);
+        let rectToZoomTo = CGRect(x: x, y: y, width: w, height: h);
         
         // zoom in, and here you animate it
-        scrollView.zoomToRect(rectToZoomTo, animated: true)
+        scrollView.zoom(to: rectToZoomTo, animated: true)
     }
     
     /* specifying the view should be made bigger and smaller when the scroll view is pinched */
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
     /*  */
-    func scrollViewDidZoom(scrollView: UIScrollView) {
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
         centerScrollViewContents()
     }
     

@@ -39,7 +39,7 @@ class SearchBaseTableViewController: UITableViewController
                 let filterPredicate = NSPredicate(format: "self contains[c] %@", argumentArray: [filterString!])
                 
                 visibleResults = allResults.filter
-                    { filterPredicate.evaluateWithObject($0) }
+                    { filterPredicate.evaluate(with: $0) }
             }
             
             tableView.reloadData()
@@ -48,18 +48,18 @@ class SearchBaseTableViewController: UITableViewController
     
     // MARK: UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return visibleResults.count
     }//eom
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        return tableView.dequeueReusableCellWithIdentifier(TableViewConstants.tableViewCellIdentifier, forIndexPath: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: TableViewConstants.tableViewCellIdentifier, for: indexPath)
     }//eom
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.textLabel!.text = visibleResults[indexPath.row]
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel!.text = visibleResults[(indexPath as NSIndexPath).row]
     }//eom
 
 }

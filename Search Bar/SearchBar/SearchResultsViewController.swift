@@ -22,7 +22,7 @@ class SearchResultsViewController: SearchBaseTableViewController, UISearchResult
     }//EO-struct
     
     // MARK: UISearchResultsUpdating
-    func updateSearchResultsForSearchController(searchController: UISearchController)
+    func updateSearchResults(for searchController: UISearchController)
     {
         /*
         `updateSearchResultsForSearchController(_:)` is called when the controller is
@@ -30,7 +30,7 @@ class SearchResultsViewController: SearchBaseTableViewController, UISearchResult
         as the results controller a chance to reset their state. No need to update
         anything if we're being dismissed.
         */
-        guard searchController.active else { return }
+        guard searchController.isActive else { return }
         
         filterString = searchController.searchBar.text
     }//eom

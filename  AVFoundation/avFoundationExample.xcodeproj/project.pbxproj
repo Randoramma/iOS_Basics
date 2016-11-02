@@ -7,47 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE13D85C1C72E05D00BEFBE1 /* UIImage+cropAndResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE13D85B1C72E05D00BEFBE1 /* UIImage+cropAndResize.swift */; };
-		DE544A6E1C6D2C0200F7EE95 /* VideoMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE544A6C1C6D2C0200F7EE95 /* VideoMakerViewController.swift */; };
-		DE544A6F1C6D2C0200F7EE95 /* VideoMakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE544A6D1C6D2C0200F7EE95 /* VideoMakerViewController.xib */; };
-		DE763CC21C72905F009B3203 /* UIbutton+tintImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE763CC11C72905F009B3203 /* UIbutton+tintImage.swift */; };
-		DEDDA4A41C6D4F5500D8C3C2 /* All_in_OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA4A31C6D4F5500D8C3C2 /* All_in_OneViewController.swift */; };
-		DEDDA4A71C6D4FC300D8C3C2 /* AllMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA4A51C6D4FC300D8C3C2 /* AllMediaViewController.swift */; };
-		DEDDA4A81C6D4FC300D8C3C2 /* AllMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDDA4A61C6D4FC300D8C3C2 /* AllMediaViewController.xib */; };
-		DEDDA4AB1C6D85D600D8C3C2 /* imageCaptureMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA4AA1C6D85D600D8C3C2 /* imageCaptureMainViewController.swift */; };
-		DEDDA4AE1C6D85E600D8C3C2 /* imageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA4AC1C6D85E600D8C3C2 /* imageCaptureViewController.swift */; };
-		DEDDA4AF1C6D85E600D8C3C2 /* imageCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDDA4AD1C6D85E600D8C3C2 /* imageCaptureViewController.xib */; };
-		DEE17A901C77B0B800A54CC3 /* resizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE17A8F1C77B0B800A54CC3 /* resizeImage.swift */; };
+		F7496D411DC797DF0054852A /* beatsMono.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7496D3B1DC797DF0054852A /* beatsMono.caf */; };
+		F7496D421DC797DF0054852A /* chime_bell_ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7496D3C1DC797DF0054852A /* chime_bell_ding.wav */; };
+		F7496D431DC797DF0054852A /* guitarStereo.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7496D3D1DC797DF0054852A /* guitarStereo.caf */; };
+		F7496D441DC797DF0054852A /* music_marimba_chord.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7496D3E1DC797DF0054852A /* music_marimba_chord.wav */; };
+		F7496D451DC797DF0054852A /* pop_drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7496D3F1DC797DF0054852A /* pop_drip.wav */; };
+		F7496D461DC797DF0054852A /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = F7496D401DC797DF0054852A /* tap.aif */; };
+		F7496D481DC797EA0054852A /* audioPlayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D471DC797EA0054852A /* audioPlayMainViewController.swift */; };
+		F7496D4C1DC7981C0054852A /* VideoMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D491DC7981C0054852A /* VideoMakerViewController.swift */; };
+		F7496D4D1DC7981C0054852A /* VideoMakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496D4A1DC7981C0054852A /* VideoMakerViewController.xib */; };
+		F7496D4E1DC7981C0054852A /* videoRecordMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D4B1DC7981C0054852A /* videoRecordMainViewController.swift */; };
+		F7496D561DC799470054852A /* imageCaptureMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D531DC799470054852A /* imageCaptureMainViewController.swift */; };
+		F7496D571DC799470054852A /* imageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D541DC799470054852A /* imageCaptureViewController.swift */; };
+		F7496D581DC799470054852A /* imageCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496D551DC799470054852A /* imageCaptureViewController.xib */; };
+		F7496D5C1DC7996E0054852A /* All_in_OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D591DC7996E0054852A /* All_in_OneViewController.swift */; };
+		F7496D5D1DC7996E0054852A /* AllMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D5A1DC7996E0054852A /* AllMediaViewController.swift */; };
+		F7496D5E1DC7996E0054852A /* AllMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7496D5B1DC7996E0054852A /* AllMediaViewController.xib */; };
+		F7496D611DC799940054852A /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D5F1DC799940054852A /* VideoPlayerViewController.swift */; };
+		F7496D621DC799940054852A /* videoPlayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D601DC799940054852A /* videoPlayMainViewController.swift */; };
+		F7496D711DC79A360054852A /* audioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D691DC79A360054852A /* audioPlayer.m */; };
+		F7496D721DC79A360054852A /* Filename.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D6B1DC79A360054852A /* Filename.m */; };
+		F7496D731DC79A360054852A /* resizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D6C1DC79A360054852A /* resizeImage.swift */; };
+		F7496D741DC79A360054852A /* Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D6E1DC79A360054852A /* Shared.m */; };
+		F7496D751DC79A360054852A /* UIbutton+tintImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D6F1DC79A360054852A /* UIbutton+tintImage.swift */; };
+		F7496D761DC79A360054852A /* UIImage+cropAndResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496D701DC79A360054852A /* UIImage+cropAndResize.swift */; };
+		F7496D7E1DC79DA60054852A /* AudioRecorderHighQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D7B1DC79DA60054852A /* AudioRecorderHighQuality.m */; };
+		F7496D7F1DC79DA60054852A /* AudioRecorderHighQualityController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D7D1DC79DA60054852A /* AudioRecorderHighQualityController.m */; };
+		F7496D841DC79DFC0054852A /* AudioRecorderLPCMBundleDir.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D811DC79DFC0054852A /* AudioRecorderLPCMBundleDir.m */; };
+		F7496D851DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D831DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.m */; };
+		F7496D8A1DC79E360054852A /* AudioRecorderLPCMHomeDir.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D871DC79E360054852A /* AudioRecorderLPCMHomeDir.m */; };
+		F7496D8B1DC79E360054852A /* AudioRecorderLPCMHomeDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7496D891DC79E360054852A /* AudioRecorderLPCMHomeDirController.m */; };
 		F77D6C4F1C695053009489D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D6C4E1C695053009489D6 /* AppDelegate.swift */; };
 		F77D6C541C695053009489D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77D6C521C695053009489D6 /* Main.storyboard */; };
 		F77D6C561C695053009489D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77D6C551C695053009489D6 /* Assets.xcassets */; };
 		F77D6C591C695053009489D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77D6C571C695053009489D6 /* LaunchScreen.storyboard */; };
 		F77D6C681C695557009489D6 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77D6C671C695557009489D6 /* AVKit.framework */; };
 		F77D6C6A1C69555E009489D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77D6C691C69555E009489D6 /* AVFoundation.framework */; };
-		F77D6CA11C6B9FC9009489D6 /* videoPlayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D6CA01C6B9FC9009489D6 /* videoPlayMainViewController.swift */; };
-		F77D6CA31C6B9FD8009489D6 /* videoRecordMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D6CA21C6B9FD8009489D6 /* videoRecordMainViewController.swift */; };
-		F77D6CA51C6B9FE5009489D6 /* audioPlayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D6CA41C6B9FE5009489D6 /* audioPlayMainViewController.swift */; };
-		F77D6CA81C6BA0B8009489D6 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D6CA71C6BA0B8009489D6 /* VideoPlayerViewController.swift */; };
-		F77D6CAF1C6BEB5B009489D6 /* beatsMono.caf in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CA91C6BEB5B009489D6 /* beatsMono.caf */; };
-		F77D6CB01C6BEB5B009489D6 /* chime_bell_ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CAA1C6BEB5B009489D6 /* chime_bell_ding.wav */; };
-		F77D6CB11C6BEB5B009489D6 /* guitarStereo.caf in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CAB1C6BEB5B009489D6 /* guitarStereo.caf */; };
-		F77D6CB21C6BEB5B009489D6 /* music_marimba_chord.wav in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CAC1C6BEB5B009489D6 /* music_marimba_chord.wav */; };
-		F77D6CB31C6BEB5B009489D6 /* pop_drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CAD1C6BEB5B009489D6 /* pop_drip.wav */; };
-		F77D6CB41C6BEB5B009489D6 /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = F77D6CAE1C6BEB5B009489D6 /* tap.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE13D85B1C72E05D00BEFBE1 /* UIImage+cropAndResize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+cropAndResize.swift"; sourceTree = "<group>"; };
-		DE544A6C1C6D2C0200F7EE95 /* VideoMakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMakerViewController.swift; sourceTree = "<group>"; };
-		DE544A6D1C6D2C0200F7EE95 /* VideoMakerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoMakerViewController.xib; sourceTree = "<group>"; };
-		DE763CC11C72905F009B3203 /* UIbutton+tintImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIbutton+tintImage.swift"; sourceTree = "<group>"; };
-		DEDDA4A31C6D4F5500D8C3C2 /* All_in_OneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = All_in_OneViewController.swift; sourceTree = "<group>"; };
-		DEDDA4A51C6D4FC300D8C3C2 /* AllMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMediaViewController.swift; sourceTree = "<group>"; };
-		DEDDA4A61C6D4FC300D8C3C2 /* AllMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllMediaViewController.xib; sourceTree = "<group>"; };
-		DEDDA4AA1C6D85D600D8C3C2 /* imageCaptureMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageCaptureMainViewController.swift; sourceTree = "<group>"; };
-		DEDDA4AC1C6D85E600D8C3C2 /* imageCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageCaptureViewController.swift; sourceTree = "<group>"; };
-		DEDDA4AD1C6D85E600D8C3C2 /* imageCaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imageCaptureViewController.xib; sourceTree = "<group>"; };
-		DEE17A8F1C77B0B800A54CC3 /* resizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resizeImage.swift; sourceTree = "<group>"; };
+		F7496D3B1DC797DF0054852A /* beatsMono.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = beatsMono.caf; path = "Resources/Audio Files/beatsMono.caf"; sourceTree = "<group>"; };
+		F7496D3C1DC797DF0054852A /* chime_bell_ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime_bell_ding.wav; path = "Resources/Audio Files/chime_bell_ding.wav"; sourceTree = "<group>"; };
+		F7496D3D1DC797DF0054852A /* guitarStereo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = guitarStereo.caf; path = "Resources/Audio Files/guitarStereo.caf"; sourceTree = "<group>"; };
+		F7496D3E1DC797DF0054852A /* music_marimba_chord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = music_marimba_chord.wav; path = "Resources/Audio Files/music_marimba_chord.wav"; sourceTree = "<group>"; };
+		F7496D3F1DC797DF0054852A /* pop_drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pop_drip.wav; path = "Resources/Audio Files/pop_drip.wav"; sourceTree = "<group>"; };
+		F7496D401DC797DF0054852A /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = tap.aif; path = "Resources/Audio Files/tap.aif"; sourceTree = "<group>"; };
+		F7496D471DC797EA0054852A /* audioPlayMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = audioPlayMainViewController.swift; path = Audio/audioPlayMainViewController.swift; sourceTree = "<group>"; };
+		F7496D491DC7981C0054852A /* VideoMakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoMakerViewController.swift; path = Video/VideoMakerViewController.swift; sourceTree = "<group>"; };
+		F7496D4A1DC7981C0054852A /* VideoMakerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoMakerViewController.xib; path = Video/VideoMakerViewController.xib; sourceTree = "<group>"; };
+		F7496D4B1DC7981C0054852A /* videoRecordMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = videoRecordMainViewController.swift; path = Video/videoRecordMainViewController.swift; sourceTree = "<group>"; };
+		F7496D531DC799470054852A /* imageCaptureMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = imageCaptureMainViewController.swift; path = Image/imageCaptureMainViewController.swift; sourceTree = "<group>"; };
+		F7496D541DC799470054852A /* imageCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = imageCaptureViewController.swift; path = Image/imageCaptureViewController.swift; sourceTree = "<group>"; };
+		F7496D551DC799470054852A /* imageCaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = imageCaptureViewController.xib; path = Image/imageCaptureViewController.xib; sourceTree = "<group>"; };
+		F7496D591DC7996E0054852A /* All_in_OneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = All_in_OneViewController.swift; path = "All in One/All_in_OneViewController.swift"; sourceTree = "<group>"; };
+		F7496D5A1DC7996E0054852A /* AllMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllMediaViewController.swift; path = "All in One/AllMediaViewController.swift"; sourceTree = "<group>"; };
+		F7496D5B1DC7996E0054852A /* AllMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllMediaViewController.xib; path = "All in One/AllMediaViewController.xib"; sourceTree = "<group>"; };
+		F7496D5F1DC799940054852A /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = Video/VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		F7496D601DC799940054852A /* videoPlayMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = videoPlayMainViewController.swift; path = Video/videoPlayMainViewController.swift; sourceTree = "<group>"; };
+		F7496D671DC79A360054852A /* avFoundationExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "avFoundationExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7496D681DC79A360054852A /* audioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioPlayer.h; path = Model/audioPlayer.h; sourceTree = "<group>"; };
+		F7496D691DC79A360054852A /* audioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = audioPlayer.m; path = Model/audioPlayer.m; sourceTree = "<group>"; };
+		F7496D6A1DC79A360054852A /* Filename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filename.h; path = Model/Filename.h; sourceTree = "<group>"; };
+		F7496D6B1DC79A360054852A /* Filename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Filename.m; path = Model/Filename.m; sourceTree = "<group>"; };
+		F7496D6C1DC79A360054852A /* resizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = resizeImage.swift; path = Model/resizeImage.swift; sourceTree = "<group>"; };
+		F7496D6D1DC79A360054852A /* Shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shared.h; path = Model/Shared.h; sourceTree = "<group>"; };
+		F7496D6E1DC79A360054852A /* Shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Shared.m; path = Model/Shared.m; sourceTree = "<group>"; };
+		F7496D6F1DC79A360054852A /* UIbutton+tintImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIbutton+tintImage.swift"; path = "Model/UIbutton+tintImage.swift"; sourceTree = "<group>"; };
+		F7496D701DC79A360054852A /* UIImage+cropAndResize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+cropAndResize.swift"; path = "Model/UIImage+cropAndResize.swift"; sourceTree = "<group>"; };
+		F7496D7A1DC79DA60054852A /* AudioRecorderHighQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderHighQuality.h; path = "Audio/Recorder High Quality_Temp Dir/AudioRecorderHighQuality.h"; sourceTree = "<group>"; };
+		F7496D7B1DC79DA60054852A /* AudioRecorderHighQuality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderHighQuality.m; path = "Audio/Recorder High Quality_Temp Dir/AudioRecorderHighQuality.m"; sourceTree = "<group>"; };
+		F7496D7C1DC79DA60054852A /* AudioRecorderHighQualityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderHighQualityController.h; path = "Audio/Recorder High Quality_Temp Dir/AudioRecorderHighQualityController.h"; sourceTree = "<group>"; };
+		F7496D7D1DC79DA60054852A /* AudioRecorderHighQualityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderHighQualityController.m; path = "Audio/Recorder High Quality_Temp Dir/AudioRecorderHighQualityController.m"; sourceTree = "<group>"; };
+		F7496D801DC79DFC0054852A /* AudioRecorderLPCMBundleDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderLPCMBundleDir.h; path = "Audio/Recorder LPCM_Bundle Dir/AudioRecorderLPCMBundleDir.h"; sourceTree = "<group>"; };
+		F7496D811DC79DFC0054852A /* AudioRecorderLPCMBundleDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderLPCMBundleDir.m; path = "Audio/Recorder LPCM_Bundle Dir/AudioRecorderLPCMBundleDir.m"; sourceTree = "<group>"; };
+		F7496D821DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderLPCMBundleDirController.h; path = "Audio/Recorder LPCM_Bundle Dir/AudioRecorderLPCMBundleDirController.h"; sourceTree = "<group>"; };
+		F7496D831DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderLPCMBundleDirController.m; path = "Audio/Recorder LPCM_Bundle Dir/AudioRecorderLPCMBundleDirController.m"; sourceTree = "<group>"; };
+		F7496D861DC79E360054852A /* AudioRecorderLPCMHomeDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderLPCMHomeDir.h; path = "Audio/Recorder LPCM_Home Dir/AudioRecorderLPCMHomeDir.h"; sourceTree = "<group>"; };
+		F7496D871DC79E360054852A /* AudioRecorderLPCMHomeDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderLPCMHomeDir.m; path = "Audio/Recorder LPCM_Home Dir/AudioRecorderLPCMHomeDir.m"; sourceTree = "<group>"; };
+		F7496D881DC79E360054852A /* AudioRecorderLPCMHomeDirController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioRecorderLPCMHomeDirController.h; path = "Audio/Recorder LPCM_Home Dir/AudioRecorderLPCMHomeDirController.h"; sourceTree = "<group>"; };
+		F7496D891DC79E360054852A /* AudioRecorderLPCMHomeDirController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioRecorderLPCMHomeDirController.m; path = "Audio/Recorder LPCM_Home Dir/AudioRecorderLPCMHomeDirController.m"; sourceTree = "<group>"; };
 		F77D6C4B1C695053009489D6 /* avFoundationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = avFoundationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77D6C4E1C695053009489D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F77D6C531C695053009489D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,16 +94,6 @@
 		F77D6C5A1C695053009489D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F77D6C671C695557009489D6 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F77D6C691C69555E009489D6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		F77D6CA01C6B9FC9009489D6 /* videoPlayMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoPlayMainViewController.swift; sourceTree = "<group>"; };
-		F77D6CA21C6B9FD8009489D6 /* videoRecordMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoRecordMainViewController.swift; sourceTree = "<group>"; };
-		F77D6CA41C6B9FE5009489D6 /* audioPlayMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = audioPlayMainViewController.swift; sourceTree = "<group>"; };
-		F77D6CA71C6BA0B8009489D6 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
-		F77D6CA91C6BEB5B009489D6 /* beatsMono.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = beatsMono.caf; path = Resources/beatsMono.caf; sourceTree = "<group>"; };
-		F77D6CAA1C6BEB5B009489D6 /* chime_bell_ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime_bell_ding.wav; path = Resources/chime_bell_ding.wav; sourceTree = "<group>"; };
-		F77D6CAB1C6BEB5B009489D6 /* guitarStereo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = guitarStereo.caf; path = Resources/guitarStereo.caf; sourceTree = "<group>"; };
-		F77D6CAC1C6BEB5B009489D6 /* music_marimba_chord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = music_marimba_chord.wav; path = Resources/music_marimba_chord.wav; sourceTree = "<group>"; };
-		F77D6CAD1C6BEB5B009489D6 /* pop_drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pop_drip.wav; path = Resources/pop_drip.wav; sourceTree = "<group>"; };
-		F77D6CAE1C6BEB5B009489D6 /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = tap.aif; path = Resources/tap.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +112,8 @@
 		DEDDA4A21C6D4EA200D8C3C2 /* All in One */ = {
 			isa = PBXGroup;
 			children = (
-				DEDDA4A31C6D4F5500D8C3C2 /* All_in_OneViewController.swift */,
-				DEDDA4A51C6D4FC300D8C3C2 /* AllMediaViewController.swift */,
+				F7496D591DC7996E0054852A /* All_in_OneViewController.swift */,
+				F7496D5A1DC7996E0054852A /* AllMediaViewController.swift */,
 			);
 			name = "All in One";
 			sourceTree = "<group>";
@@ -93,10 +121,103 @@
 		DEDDA4A91C6D81F200D8C3C2 /* Image Capture */ = {
 			isa = PBXGroup;
 			children = (
-				DEDDA4AA1C6D85D600D8C3C2 /* imageCaptureMainViewController.swift */,
-				DEDDA4AC1C6D85E600D8C3C2 /* imageCaptureViewController.swift */,
+				F7496D531DC799470054852A /* imageCaptureMainViewController.swift */,
+				F7496D541DC799470054852A /* imageCaptureViewController.swift */,
 			);
 			name = "Image Capture";
+			sourceTree = "<group>";
+		};
+		F7496D331DC7973C0054852A /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D471DC797EA0054852A /* audioPlayMainViewController.swift */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
+		F7496D341DC797420054852A /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D791DC79AE70054852A /* High Quality - Temp Dir */,
+				F7496D771DC79AC70054852A /* Linear PCM - Home Dir */,
+				F7496D781DC79ADA0054852A /* Linear PCM - Bundle Dir */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		F7496D4F1DC7986E0054852A /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D4A1DC7981C0054852A /* VideoMakerViewController.xib */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		F7496D511DC798790054852A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D551DC799470054852A /* imageCaptureViewController.xib */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		F7496D521DC7989A0054852A /* All */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D5B1DC7996E0054852A /* AllMediaViewController.xib */,
+			);
+			name = All;
+			sourceTree = "<group>";
+		};
+		F7496D631DC7999D0054852A /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D5F1DC799940054852A /* VideoPlayerViewController.swift */,
+				F7496D601DC799940054852A /* videoPlayMainViewController.swift */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
+		F7496D641DC799A20054852A /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D491DC7981C0054852A /* VideoMakerViewController.swift */,
+				F7496D4B1DC7981C0054852A /* videoRecordMainViewController.swift */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		F7496D771DC79AC70054852A /* Linear PCM - Home Dir */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D861DC79E360054852A /* AudioRecorderLPCMHomeDir.h */,
+				F7496D871DC79E360054852A /* AudioRecorderLPCMHomeDir.m */,
+				F7496D881DC79E360054852A /* AudioRecorderLPCMHomeDirController.h */,
+				F7496D891DC79E360054852A /* AudioRecorderLPCMHomeDirController.m */,
+			);
+			name = "Linear PCM - Home Dir";
+			sourceTree = "<group>";
+		};
+		F7496D781DC79ADA0054852A /* Linear PCM - Bundle Dir */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D801DC79DFC0054852A /* AudioRecorderLPCMBundleDir.h */,
+				F7496D811DC79DFC0054852A /* AudioRecorderLPCMBundleDir.m */,
+				F7496D821DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.h */,
+				F7496D831DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.m */,
+			);
+			name = "Linear PCM - Bundle Dir";
+			sourceTree = "<group>";
+		};
+		F7496D791DC79AE70054852A /* High Quality - Temp Dir */ = {
+			isa = PBXGroup;
+			children = (
+				F7496D7A1DC79DA60054852A /* AudioRecorderHighQuality.h */,
+				F7496D7B1DC79DA60054852A /* AudioRecorderHighQuality.m */,
+				F7496D7C1DC79DA60054852A /* AudioRecorderHighQualityController.h */,
+				F7496D7D1DC79DA60054852A /* AudioRecorderHighQualityController.m */,
+			);
+			name = "High Quality - Temp Dir";
 			sourceTree = "<group>";
 		};
 		F77D6C421C695053009489D6 = {
@@ -134,10 +255,10 @@
 			isa = PBXGroup;
 			children = (
 				F77D6C521C695053009489D6 /* Main.storyboard */,
-				DE544A6D1C6D2C0200F7EE95 /* VideoMakerViewController.xib */,
-				DEDDA4A61C6D4FC300D8C3C2 /* AllMediaViewController.xib */,
-				DEDDA4AD1C6D85E600D8C3C2 /* imageCaptureViewController.xib */,
 				F77D6C571C695053009489D6 /* LaunchScreen.storyboard */,
+				F7496D521DC7989A0054852A /* All */,
+				F7496D511DC798790054852A /* Image */,
+				F7496D4F1DC7986E0054852A /* Video */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -145,9 +266,15 @@
 		F77D6C611C695274009489D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE763CC11C72905F009B3203 /* UIbutton+tintImage.swift */,
-				DE13D85B1C72E05D00BEFBE1 /* UIImage+cropAndResize.swift */,
-				DEE17A8F1C77B0B800A54CC3 /* resizeImage.swift */,
+				F7496D681DC79A360054852A /* audioPlayer.h */,
+				F7496D691DC79A360054852A /* audioPlayer.m */,
+				F7496D6A1DC79A360054852A /* Filename.h */,
+				F7496D6B1DC79A360054852A /* Filename.m */,
+				F7496D6D1DC79A360054852A /* Shared.h */,
+				F7496D6E1DC79A360054852A /* Shared.m */,
+				F7496D6C1DC79A360054852A /* resizeImage.swift */,
+				F7496D6F1DC79A360054852A /* UIbutton+tintImage.swift */,
+				F7496D701DC79A360054852A /* UIImage+cropAndResize.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -157,8 +284,7 @@
 			children = (
 				DEDDA4A91C6D81F200D8C3C2 /* Image Capture */,
 				F77D6C9F1C6B9F73009489D6 /* Video Play */,
-				F77D6C6C1C6A30AC009489D6 /* Audio Play */,
-				F77D6C6B1C6A309C009489D6 /* Video Record */,
+				F77D6C6C1C6A30AC009489D6 /* Audio */,
 				DEDDA4A21C6D4EA200D8C3C2 /* All in One */,
 			);
 			name = Controllers;
@@ -175,39 +301,32 @@
 		F77D6C641C695295009489D6 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				F77D6CA91C6BEB5B009489D6 /* beatsMono.caf */,
-				F77D6CAA1C6BEB5B009489D6 /* chime_bell_ding.wav */,
-				F77D6CAB1C6BEB5B009489D6 /* guitarStereo.caf */,
-				F77D6CAC1C6BEB5B009489D6 /* music_marimba_chord.wav */,
-				F77D6CAD1C6BEB5B009489D6 /* pop_drip.wav */,
-				F77D6CAE1C6BEB5B009489D6 /* tap.aif */,
+				F7496D3B1DC797DF0054852A /* beatsMono.caf */,
+				F7496D3C1DC797DF0054852A /* chime_bell_ding.wav */,
+				F7496D3D1DC797DF0054852A /* guitarStereo.caf */,
+				F7496D3E1DC797DF0054852A /* music_marimba_chord.wav */,
+				F7496D3F1DC797DF0054852A /* pop_drip.wav */,
+				F7496D401DC797DF0054852A /* tap.aif */,
 				F77D6C551C695053009489D6 /* Assets.xcassets */,
+				F7496D671DC79A360054852A /* avFoundationExample-Bridging-Header.h */,
 			);
 			name = resources;
 			sourceTree = "<group>";
 		};
-		F77D6C6B1C6A309C009489D6 /* Video Record */ = {
+		F77D6C6C1C6A30AC009489D6 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				F77D6CA21C6B9FD8009489D6 /* videoRecordMainViewController.swift */,
-				DE544A6C1C6D2C0200F7EE95 /* VideoMakerViewController.swift */,
+				F7496D341DC797420054852A /* Record */,
+				F7496D331DC7973C0054852A /* Play */,
 			);
-			name = "Video Record";
-			sourceTree = "<group>";
-		};
-		F77D6C6C1C6A30AC009489D6 /* Audio Play */ = {
-			isa = PBXGroup;
-			children = (
-				F77D6CA41C6B9FE5009489D6 /* audioPlayMainViewController.swift */,
-			);
-			name = "Audio Play";
+			name = Audio;
 			sourceTree = "<group>";
 		};
 		F77D6C9F1C6B9F73009489D6 /* Video Play */ = {
 			isa = PBXGroup;
 			children = (
-				F77D6CA71C6BA0B8009489D6 /* VideoPlayerViewController.swift */,
-				F77D6CA01C6B9FC9009489D6 /* videoPlayMainViewController.swift */,
+				F7496D641DC799A20054852A /* Record */,
+				F7496D631DC7999D0054852A /* Play */,
 			);
 			name = "Video Play";
 			sourceTree = "<group>";
@@ -244,7 +363,7 @@
 				TargetAttributes = {
 					F77D6C4A1C695053009489D6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = QLZS39CLDT;
+						DevelopmentTeam = Y24U4BPF65;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -272,18 +391,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77D6CB11C6BEB5B009489D6 /* guitarStereo.caf in Resources */,
+				F7496D431DC797DF0054852A /* guitarStereo.caf in Resources */,
+				F7496D4D1DC7981C0054852A /* VideoMakerViewController.xib in Resources */,
+				F7496D441DC797DF0054852A /* music_marimba_chord.wav in Resources */,
+				F7496D581DC799470054852A /* imageCaptureViewController.xib in Resources */,
 				F77D6C591C695053009489D6 /* LaunchScreen.storyboard in Resources */,
-				F77D6CB01C6BEB5B009489D6 /* chime_bell_ding.wav in Resources */,
-				F77D6CB21C6BEB5B009489D6 /* music_marimba_chord.wav in Resources */,
-				F77D6CAF1C6BEB5B009489D6 /* beatsMono.caf in Resources */,
-				DEDDA4AF1C6D85E600D8C3C2 /* imageCaptureViewController.xib in Resources */,
-				F77D6CB31C6BEB5B009489D6 /* pop_drip.wav in Resources */,
-				DEDDA4A81C6D4FC300D8C3C2 /* AllMediaViewController.xib in Resources */,
-				F77D6CB41C6BEB5B009489D6 /* tap.aif in Resources */,
 				F77D6C561C695053009489D6 /* Assets.xcassets in Resources */,
+				F7496D421DC797DF0054852A /* chime_bell_ding.wav in Resources */,
 				F77D6C541C695053009489D6 /* Main.storyboard in Resources */,
-				DE544A6F1C6D2C0200F7EE95 /* VideoMakerViewController.xib in Resources */,
+				F7496D5E1DC7996E0054852A /* AllMediaViewController.xib in Resources */,
+				F7496D411DC797DF0054852A /* beatsMono.caf in Resources */,
+				F7496D451DC797DF0054852A /* pop_drip.wav in Resources */,
+				F7496D461DC797DF0054852A /* tap.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,18 +414,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77D6C4F1C695053009489D6 /* AppDelegate.swift in Sources */,
-				F77D6CA31C6B9FD8009489D6 /* videoRecordMainViewController.swift in Sources */,
-				DE763CC21C72905F009B3203 /* UIbutton+tintImage.swift in Sources */,
-				DEDDA4AB1C6D85D600D8C3C2 /* imageCaptureMainViewController.swift in Sources */,
-				DEE17A901C77B0B800A54CC3 /* resizeImage.swift in Sources */,
-				F77D6CA81C6BA0B8009489D6 /* VideoPlayerViewController.swift in Sources */,
-				F77D6CA51C6B9FE5009489D6 /* audioPlayMainViewController.swift in Sources */,
-				F77D6CA11C6B9FC9009489D6 /* videoPlayMainViewController.swift in Sources */,
-				DEDDA4AE1C6D85E600D8C3C2 /* imageCaptureViewController.swift in Sources */,
-				DEDDA4A41C6D4F5500D8C3C2 /* All_in_OneViewController.swift in Sources */,
-				DE544A6E1C6D2C0200F7EE95 /* VideoMakerViewController.swift in Sources */,
-				DEDDA4A71C6D4FC300D8C3C2 /* AllMediaViewController.swift in Sources */,
-				DE13D85C1C72E05D00BEFBE1 /* UIImage+cropAndResize.swift in Sources */,
+				F7496D731DC79A360054852A /* resizeImage.swift in Sources */,
+				F7496D7F1DC79DA60054852A /* AudioRecorderHighQualityController.m in Sources */,
+				F7496D8A1DC79E360054852A /* AudioRecorderLPCMHomeDir.m in Sources */,
+				F7496D751DC79A360054852A /* UIbutton+tintImage.swift in Sources */,
+				F7496D711DC79A360054852A /* audioPlayer.m in Sources */,
+				F7496D561DC799470054852A /* imageCaptureMainViewController.swift in Sources */,
+				F7496D851DC79DFC0054852A /* AudioRecorderLPCMBundleDirController.m in Sources */,
+				F7496D4C1DC7981C0054852A /* VideoMakerViewController.swift in Sources */,
+				F7496D761DC79A360054852A /* UIImage+cropAndResize.swift in Sources */,
+				F7496D571DC799470054852A /* imageCaptureViewController.swift in Sources */,
+				F7496D5D1DC7996E0054852A /* AllMediaViewController.swift in Sources */,
+				F7496D4E1DC7981C0054852A /* videoRecordMainViewController.swift in Sources */,
+				F7496D721DC79A360054852A /* Filename.m in Sources */,
+				F7496D841DC79DFC0054852A /* AudioRecorderLPCMBundleDir.m in Sources */,
+				F7496D621DC799940054852A /* videoPlayMainViewController.swift in Sources */,
+				F7496D611DC799940054852A /* VideoPlayerViewController.swift in Sources */,
+				F7496D8B1DC79E360054852A /* AudioRecorderLPCMHomeDirController.m in Sources */,
+				F7496D481DC797EA0054852A /* audioPlayMainViewController.swift in Sources */,
+				F7496D741DC79A360054852A /* Shared.m in Sources */,
+				F7496D5C1DC7996E0054852A /* All_in_OneViewController.swift in Sources */,
+				F7496D7E1DC79DA60054852A /* AudioRecorderHighQuality.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +550,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QLZS39CLDT;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = avFoundationExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.avFoundationExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "avFoundationExample/avFoundationExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -435,11 +566,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QLZS39CLDT;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = avFoundationExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.avFoundationExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "avFoundationExample/avFoundationExample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

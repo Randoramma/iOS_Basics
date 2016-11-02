@@ -8,34 +8,34 @@
 
 import Foundation
 
-class MyCustomOperation: NSOperation
+class MyCustomOperation: Operation
 {
     var running:Bool = false
     var didFinished:Bool = false
     
     override func main()
     {
-        if self.cancelled
+        if self.isCancelled
         {
             return
         }
         else
         {
             NSLog("custom operation work is done here.")
-            for (var i = 0; i<5; i++)
+            for i in 0..<5
             {
                 NSLog("i%d",i)
                 sleep(1)
             }//eofl
         }
         
-        self.willChangeValueForKey("executing")
+        self.willChangeValue(forKey: "executing")
         running = false
-        self.didChangeValueForKey("executing")
+        self.didChangeValue(forKey: "executing")
         
-        self.willChangeValueForKey("finished")
+        self.willChangeValue(forKey: "finished")
         didFinished = true
-        self.didChangeValueForKey("finished")
+        self.didChangeValue(forKey: "finished")
         
         if(didFinished)
         {

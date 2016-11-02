@@ -35,7 +35,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var dateOfBirth: UITextField!
     
-    var DOB:NSDateComponents = NSDateComponents()
+    var DOB:DateComponents = DateComponents()
     let dobPicker = UIDatePicker()
     
     //MARK: View Loading
@@ -43,22 +43,22 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationController?.toolbarHidden = true
+        self.navigationController?.isToolbarHidden = true
         
         self.setUpDOBPicker()
         
     }//eom
     
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
-        self.navigationController?.toolbarHidden = false
+        self.navigationController?.isToolbarHidden = false
     }//eom
 
 
     //MARK: Saving A Contact
     
-    @IBAction func saveContact(sender: AnyObject)
+    @IBAction func saveContact(_ sender: AnyObject)
     {
         if self.isContactReadyToBeSaved()
         {
@@ -87,6 +87,9 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     
     func saveAContact()
     {
+        
+        
+        
         // Creating a mutable object to add to the contact
         let contact = CNMutableContact()
         
@@ -100,9 +103,9 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
         contact.familyName  =  lastName.text!
         
         //emails
-        let userHomeEmail = CNLabeledValue(label:CNLabelHome, value:email.text!)
-        let userWorkEmail = CNLabeledValue(label:CNLabelWork, value:workEmail.text!)
-        contact.emailAddresses = [userHomeEmail, userWorkEmail]
+        let emailLabel = CNLabeledValue<NSString>.init(label: CNLabelHome, value: self.email.text! as NSString)
+        let workEmailLabel = CNLabeledValue<NSString>.init(label: CNLabelWork , value: self.workEmail.text! as NSString)
+        contact.emailAddresses = [emailLabel, workEmailLabel]
         
         //phone numbers
         contact.phoneNumbers = [CNLabeledValue(
@@ -128,11 +131,11 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
         // Saving the newly created contact
         let store = CNContactStore()
         let saveRequest = CNSaveRequest()
-        saveRequest.addContact(contact, toContainerWithIdentifier:nil)
+        saveRequest.add(contact, toContainerWithIdentifier:nil)
         
         do
         {
-            try store.executeSaveRequest(saveRequest)
+            try store.execute(saveRequest)
         }
         catch {
             print("un-able to store contact")
@@ -141,17 +144,11 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     }//eom
     
     
-    //MARK: Camera
-    
-    
-    //MARK:
-    
-    
     //MARK: Date Picker
     func setUpDOBPicker()
     {
         //picker set up
-        dobPicker.datePickerMode = UIDatePickerMode.Date
+        dobPicker.datePickerMode = UIDatePickerMode.date
         
         
         
@@ -163,7 +160,7 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: TextField Delegates
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         textField.resignFirstResponder()
         
@@ -203,12 +200,12 @@ class SaveContactViewController: UIViewController, UITextFieldDelegate {
         return true
     }//eom
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         self.moveScrollview(textField)
     }//eom
     
     //MARK: Scrollview
-    func moveScrollview(textfield: UITextField)
+    func moveScrollview(_ textfield: UITextField)
     {
     
     }//eom

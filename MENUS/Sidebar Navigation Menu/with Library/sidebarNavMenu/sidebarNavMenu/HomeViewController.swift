@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         let revealSelector = #selector(SWRevealViewController.revealToggle(_:))
         
-        self.menuButton.addTarget(self.revealViewController(), action: revealSelector, forControlEvents: UIControlEvents.TouchDown)
+        self.menuButton.addTarget(self.revealViewController(), action: revealSelector, for: UIControlEvents.touchDown)
         
         
         //show menu by sliding the screen
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

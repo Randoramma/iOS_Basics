@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDF94C01BF50532008FE7F4 /* images */,
-				DEDF94BD1BF50075008FE7F4 /* Model */,
 				DEDF94BC1BF5006B008FE7F4 /* Views */,
 				DEDF94BB1BF5005D008FE7F4 /* Controllers */,
 				DEDF94BA1BF50053008FE7F4 /* Application */,
@@ -115,13 +114,6 @@
 				DEDF94B11BF4FF23008FE7F4 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		DEDF94BD1BF50075008FE7F4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		DEDF94C01BF50532008FE7F4 /* images */ = {
@@ -354,6 +346,7 @@
 				DEDF94B91BF4FF23008FE7F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

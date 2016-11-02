@@ -20,7 +20,7 @@ class project8MainViewController: UIViewController {
         self.loadViewFromNib()
     }//eom
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
     }//eom
  
@@ -33,7 +33,7 @@ class project8MainViewController: UIViewController {
         
         addChildViewController(nibController)
         
-        nibController.didMoveToParentViewController(self)
+        nibController.didMove(toParentViewController: self)
     }//eom
 
     
@@ -45,7 +45,7 @@ class project8MainViewController: UIViewController {
     
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

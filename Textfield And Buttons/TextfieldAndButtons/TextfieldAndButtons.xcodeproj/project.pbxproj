@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7496E161DC907EF0054852A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496E151DC907EF0054852A /* AppDelegate.swift */; };
+		F7496E181DC907EF0054852A /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496E171DC907EF0054852A /* ButtonViewController.swift */; };
+		F7496E1B1DC907EF0054852A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7496E191DC907EF0054852A /* Main.storyboard */; };
+		F7496E1D1DC907EF0054852A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7496E1C1DC907EF0054852A /* Assets.xcassets */; };
+		F7496E201DC907EF0054852A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7496E1E1DC907EF0054852A /* LaunchScreen.storyboard */; };
+		F7496E281DC908170054852A /* button+layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496E271DC908170054852A /* button+layers.swift */; };
+		F7496E2C1DC934510054852A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7496E2B1DC934510054852A /* UIKit.framework */; };
+		F7496E2E1DC934570054852A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7496E2D1DC934570054852A /* QuartzCore.framework */; };
+		F7496E331DCA3CEB0054852A /* TextfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496E321DCA3CEB0054852A /* TextfieldViewController.swift */; };
+		F7496E351DCA3DE80054852A /* textfield+layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7496E341DCA3DE70054852A /* textfield+layers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F7496E121DC907EF0054852A /* TextfieldAndButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextfieldAndButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7496E151DC907EF0054852A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7496E171DC907EF0054852A /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		F7496E1A1DC907EF0054852A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7496E1C1DC907EF0054852A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7496E1F1DC907EF0054852A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7496E211DC907EF0054852A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7496E271DC908170054852A /* button+layers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "button+layers.swift"; sourceTree = "<group>"; };
+		F7496E2B1DC934510054852A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F7496E2D1DC934570054852A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F7496E321DCA3CEB0054852A /* TextfieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldViewController.swift; sourceTree = "<group>"; };
+		F7496E341DCA3DE70054852A /* textfield+layers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "textfield+layers.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7496E0F1DC907EF0054852A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7496E2E1DC934570054852A /* QuartzCore.framework in Frameworks */,
+				F7496E2C1DC934510054852A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7496E091DC907EF0054852A = {
+			isa = PBXGroup;
+			children = (
+				F7496E141DC907EF0054852A /* TextfieldAndButtons */,
+				F7496E131DC907EF0054852A /* Products */,
+				F7496E2A1DC934510054852A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F7496E131DC907EF0054852A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7496E121DC907EF0054852A /* TextfieldAndButtons.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7496E141DC907EF0054852A /* TextfieldAndButtons */ = {
+			isa = PBXGroup;
+			children = (
+				F7496E151DC907EF0054852A /* AppDelegate.swift */,
+				F7496E191DC907EF0054852A /* Main.storyboard */,
+				F7496E1C1DC907EF0054852A /* Assets.xcassets */,
+				F7496E1E1DC907EF0054852A /* LaunchScreen.storyboard */,
+				F7496E211DC907EF0054852A /* Info.plist */,
+				F7496E311DCA3C210054852A /* Textfields */,
+				F7496E301DCA3C1B0054852A /* Buttons */,
+			);
+			path = TextfieldAndButtons;
+			sourceTree = "<group>";
+		};
+		F7496E2A1DC934510054852A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7496E2D1DC934570054852A /* QuartzCore.framework */,
+				F7496E2B1DC934510054852A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7496E301DCA3C1B0054852A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F7496E171DC907EF0054852A /* ButtonViewController.swift */,
+				F7496E271DC908170054852A /* button+layers.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		F7496E311DCA3C210054852A /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				F7496E321DCA3CEB0054852A /* TextfieldViewController.swift */,
+				F7496E341DCA3DE70054852A /* textfield+layers.swift */,
+			);
+			name = Textfields;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7496E111DC907EF0054852A /* TextfieldAndButtons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7496E241DC907F00054852A /* Build configuration list for PBXNativeTarget "TextfieldAndButtons" */;
+			buildPhases = (
+				F7496E0E1DC907EF0054852A /* Sources */,
+				F7496E0F1DC907EF0054852A /* Frameworks */,
+				F7496E101DC907EF0054852A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextfieldAndButtons;
+			productName = TextfieldAndButtons;
+			productReference = F7496E121DC907EF0054852A /* TextfieldAndButtons.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7496E0A1DC907EF0054852A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = LC;
+				TargetAttributes = {
+					F7496E111DC907EF0054852A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F7496E0D1DC907EF0054852A /* Build configuration list for PBXProject "TextfieldAndButtons" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7496E091DC907EF0054852A;
+			productRefGroup = F7496E131DC907EF0054852A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7496E111DC907EF0054852A /* TextfieldAndButtons */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7496E101DC907EF0054852A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7496E201DC907EF0054852A /* LaunchScreen.storyboard in Resources */,
+				F7496E1D1DC907EF0054852A /* Assets.xcassets in Resources */,
+				F7496E1B1DC907EF0054852A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7496E0E1DC907EF0054852A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7496E331DCA3CEB0054852A /* TextfieldViewController.swift in Sources */,
+				F7496E181DC907EF0054852A /* ButtonViewController.swift in Sources */,
+				F7496E281DC908170054852A /* button+layers.swift in Sources */,
+				F7496E161DC907EF0054852A /* AppDelegate.swift in Sources */,
+				F7496E351DCA3DE80054852A /* textfield+layers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7496E191DC907EF0054852A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7496E1A1DC907EF0054852A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7496E1E1DC907EF0054852A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7496E1F1DC907EF0054852A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7496E221DC907EF0054852A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7496E231DC907F00054852A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7496E251DC907F00054852A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = TextfieldAndButtons/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.TextfieldAndButtons;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F7496E261DC907F00054852A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = TextfieldAndButtons/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.TextfieldAndButtons;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7496E0D1DC907EF0054852A /* Build configuration list for PBXProject "TextfieldAndButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7496E221DC907EF0054852A /* Debug */,
+				F7496E231DC907F00054852A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7496E241DC907F00054852A /* Build configuration list for PBXNativeTarget "TextfieldAndButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7496E251DC907F00054852A /* Debug */,
+				F7496E261DC907F00054852A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7496E0A1DC907EF0054852A /* Project object */;
+}

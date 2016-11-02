@@ -37,7 +37,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         self.getAllContactsFromAllContainers()
     }//eom
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         
         
@@ -62,7 +62,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         
         do
         {
-            AllContainers =  try contactStore.containersMatchingPredicate(nil)
+            AllContainers =  try contactStore.containers(matching: nil)
         }
         catch
         {
@@ -74,12 +74,12 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         //iter
         for currContainer in AllContainers
         {
-            let fetchPredicate = CNContact.predicateForContactsInContainerWithIdentifier(currContainer.identifier)
+            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: currContainer.identifier)
             
             do
             {
-                let containerResults = try contactStore.unifiedContactsMatchingPredicate(fetchPredicate, keysToFetch: contactKeysSearching)
-                results.appendContentsOf(containerResults)
+                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: contactKeysSearching as [CNKeyDescriptor])
+                results.append(contentsOf: containerResults)
             }
             catch
             {
@@ -88,13 +88,13 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         
         }//eofl
         
-        self.updateContactView(results)
+        self.updateContactView(results as AnyObject)
         
         
     }//eom
     
     //MARK: Update / Sort Contacts
-    func updateContactView(results: AnyObject)
+    func updateContactView(_ results: AnyObject)
     {
         
         contactsList = NSArray(array: results as! [AnyObject])
@@ -102,7 +102,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         //sorting data
         
         let sortedList =
-        contactsList.sort { (first, second) -> Bool in
+        contactsList.sorted { (first, second) -> Bool in
             
             guard let one:CNContact = first as? CNContact else { print("first not a contact") ; return false }
             guard let two:CNContact = second as? CNContact else { print("second not a contact") ; return false }
@@ -157,11 +157,11 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
             }
           
             
-           return oneName.localizedCaseInsensitiveCompare(twoName) == NSComparisonResult.OrderedAscending
+           return oneName.localizedCaseInsensitiveCompare(twoName) == ComparisonResult.orderedAscending
         }//eo-sorting
         
         
-        contactsList = sortedList
+        contactsList = sortedList as NSArray
         //self.printContacts()
         
         self.tableView .reloadData()
@@ -173,18 +173,18 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
    
     
     //MARK: Present Current Contact
-    func presentAContact(index:Int)
+    func presentAContact(_ index:Int)
     {
-        if let currContact = contactsList .objectAtIndex(index) as? CNContact
+        if let currContact = contactsList .object(at: index) as? CNContact
         {
             let currContactID = currContact.identifier
             let IDKeysSearching = [CNContactViewController.descriptorForRequiredKeys()]
             
             do
             {
-                let contact = try contactStore.unifiedContactWithIdentifier(currContactID, keysToFetch: IDKeysSearching)
+                let contact = try contactStore.unifiedContact(withIdentifier: currContactID, keysToFetch: IDKeysSearching)
                 
-                let existingContactVC:CNContactViewController = CNContactViewController(forContact: contact)
+                let existingContactVC:CNContactViewController = CNContactViewController(for: contact)
                 existingContactVC.delegate = self
                 existingContactVC.contactStore = contactStore
                 
@@ -214,50 +214,50 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }//eom
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactsList.count
     }//eom
 
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let index:Int = Int(indexPath.row)
+        let index:Int = Int((indexPath as NSIndexPath).row)
         self.presentAContact(index)
         
     }//eom
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell:ContactTableViewCell = (tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as? ContactTableViewCell)!
+        let cell:ContactTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as? ContactTableViewCell)!
         
-        let index:Int = Int(indexPath.row)
+        let index:Int = Int((indexPath as NSIndexPath).row)
         //print("\n\(index)")//testing
-        if let currContact = contactsList .objectAtIndex(index) as? CNContact
+        if let currContact = contactsList .object(at: index) as? CNContact
         {
             //contact name
             var fullname:NSString = ""
             if(currContact.isKeyAvailable(CNContactGivenNameKey))
             {
-                fullname = currContact.givenName
+                fullname = currContact.givenName as NSString
             }
             
             if fullname.length == 0
             {
                 if(currContact.isKeyAvailable(CNContactOrganizationNameKey))
                 {
-                    fullname = currContact.organizationName
+                    fullname = currContact.organizationName as NSString
                 }
             }
             else
             {
                 if(currContact.isKeyAvailable(CNContactFamilyNameKey))
                 {
-                    fullname = fullname .stringByAppendingString(" \(currContact.familyName)")
+                    fullname = fullname .appending(" \(currContact.familyName)") as NSString
                 }
             }
             
@@ -272,13 +272,11 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
                 if numbers.count > 0
                 {
                     let firstNumLabel:CNLabeledValue    = numbers[0]
-                    if let firstNum  = firstNumLabel.value as? CNPhoneNumber
-                    {
-                        let phoneNumber = firstNum.stringValue
-                        cell.contactPhone.text = phoneNumber
-                        
-                        //print("\(phoneNumber)")//testing
-                    }
+                    let firstNum:CNPhoneNumber  = firstNumLabel.value
+                    let phoneNumber = firstNum.stringValue
+                    cell.contactPhone.text = phoneNumber
+                    
+                    //print("\(phoneNumber)")//testing
                 }
             }//eo-phone numbers
             
@@ -297,9 +295,9 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
             cell.contactTextMsgButton.tag   = index
             cell.contactEmailButton.tag     = index
 
-            cell.contactTextMsgButton.addTarget(self, action: #selector(ListContactsTableViewController.sendCurrContactAnTextMessage(_:)), forControlEvents: UIControlEvents.TouchDown)
+            cell.contactTextMsgButton.addTarget(self, action: #selector(ListContactsTableViewController.sendCurrContactAnTextMessage(_:)), for: UIControlEvents.touchDown)
             
-            cell.contactEmailButton.addTarget(self, action: #selector(ListContactsTableViewController.sendCurrContactAnEmail(_:)), forControlEvents: UIControlEvents.TouchDown)
+            cell.contactEmailButton.addTarget(self, action: #selector(ListContactsTableViewController.sendCurrContactAnEmail(_:)), for: UIControlEvents.touchDown)
             
             
         }//eo-valid contact
@@ -309,7 +307,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     
 
     //MARK: - Text Message
-    func sendCurrContactAnTextMessage(sender:UIButton)
+    func sendCurrContactAnTextMessage(_ sender:UIButton)
     {
         let index = sender.tag
         if let currContact = contactsList[index] as? CNContact
@@ -320,11 +318,10 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
                 if phoneNumbers.count > 0
                 {
                     let firstNumLabel = phoneNumbers[0]
-                    let firstNumber = firstNumLabel.value as? CNPhoneNumber
-                    if let phoneNumber = firstNumber?.stringValue
-                    {
-                        self.showTextMessagePicker(phoneNumber)
-                    }
+                    let firstNumber:CNPhoneNumber = firstNumLabel.value as CNPhoneNumber
+                    let phoneNumber = firstNumber.stringValue
+                    
+                    self.showTextMessagePicker(phoneNumber)
                 }//eo-phone numbers
                 else
                 {
@@ -334,7 +331,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         }//eo-curr contact
     }//eom
     
-    func showTextMessagePicker(phoneNumberSending:String)
+    func showTextMessagePicker(_ phoneNumberSending:String)
     {
         if( MFMessageComposeViewController .canSendText())
         {
@@ -347,7 +344,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
             //recipients
             textMessagePicker.recipients = [phoneNumberSending]
             
-            self.presentViewController(textMessagePicker, animated: true, completion:
+            self.present(textMessagePicker, animated: true, completion:
             { () -> Void in
                 
             })
@@ -360,25 +357,23 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     
     //MARK:  Text Message Delegates
     
-    func messageComposeViewController(controller: MFMessageComposeViewController,
-        didFinishWithResult result: MessageComposeResult)
+    func messageComposeViewController(_ controller: MFMessageComposeViewController,
+        didFinishWith result: MessageComposeResult)
     {
         switch(result)
         {
-        case MessageComposeResultCancelled:
+        case MessageComposeResult.cancelled:
             print("Message Cancelled")
             break
-        case MessageComposeResultFailed:
+        case MessageComposeResult.failed:
             print("Message Failed")
             break
-        case MessageComposeResultSent:
+        case MessageComposeResult.sent:
             print("Message Sent")
-            break
-        default:
             break
         }
         
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.dismiss(animated: true) { () -> Void in
             
         }//
         
@@ -386,7 +381,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     
     
     //MARK: - Email
-    func sendCurrContactAnEmail(sender: UIButton)
+    func sendCurrContactAnEmail(_ sender: UIButton)
     {
         let index = sender.tag
         if let currContact = contactsList[index] as? CNContact
@@ -398,10 +393,9 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
                 {
                     let contactEmailLabel   = contactEmails[0]
                     let contactEmail        = contactEmailLabel.value
-                    if let email = contactEmail as? String
-                    {
-                        self.showEmailPicker(email)
-                    }
+                    let email:String        = contactEmail as String
+                    
+                    self.showEmailPicker(email)
                 }
                 else
                 {
@@ -412,7 +406,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     }//eom
     
     
-    func showEmailPicker(emailAddressSending:String)
+    func showEmailPicker(_ emailAddressSending:String)
     {
         if( MFMailComposeViewController .canSendMail() )
         {
@@ -436,7 +430,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
             let bodyMessage = "Dear Turtle"
             mailPicker .setMessageBody(bodyMessage, isHTML: false)
             
-            self.presentViewController(mailPicker, animated: true, completion:
+            self.present(mailPicker, animated: true, completion:
             { () -> Void in
             
             })
@@ -450,29 +444,27 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     }//eom
     
     //MARK: Email Delegates
-    func mailComposeController(controller: MFMailComposeViewController,
-        didFinishWithResult result: MFMailComposeResult,
-        error: NSError?)
+    func mailComposeController(_ controller: MFMailComposeViewController,
+        didFinishWith result: MFMailComposeResult,
+        error: Error?)
     {
         switch(result)
         {
-        case MFMailComposeResultCancelled:
+        case MFMailComposeResult.cancelled:
             print("Email Cancelled")
             break
-        case MFMailComposeResultFailed:
+        case MFMailComposeResult.failed:
             print("Email Failed")
             break
-        case MFMailComposeResultSaved:
+        case MFMailComposeResult.saved:
             print("Email Saved")
             break
-        case MFMailComposeResultSent:
+        case MFMailComposeResult.sent:
             print("Email Sent")
-            break
-        default:
             break
         }
         
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.dismiss(animated: true) { () -> Void in
             
         }//
         
@@ -506,7 +498,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
 //    }//eom
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
     }//eom

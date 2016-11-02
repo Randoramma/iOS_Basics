@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ox5-gZ-mkx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ox5-gZ-mkx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Project2 Main View Controller-->
@@ -16,31 +17,34 @@
                         <viewControllerLayoutGuide type="bottom" id="PQk-No-PHW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QQB-Ir-Kl8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-QT-4Wc">
-                                <rect key="frame" x="20" y="20" width="560" height="128"/>
-                                <color key="backgroundColor" red="0.90855368589999996" green="0.0" blue="0.008505657505" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90855368589999996" green="0.0" blue="0.008505657505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="vsO-C7-Zkr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J52-p2-x2B">
-                                <rect key="frame" x="304" y="156" width="276" height="128"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J52-p2-x2B">
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcu-Wv-Ebl">
-                                <rect key="frame" x="20" y="156" width="276" height="128"/>
-                                <color key="backgroundColor" red="0.3294117647" green="0.55294117649999996" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcu-Wv-Ebl">
+                                <color key="backgroundColor" red="0.3294117647" green="0.55294117649999996" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="width" secondItem="Qfg-QT-4Wc" secondAttribute="width" multiplier="2" id="QoT-qe-p5U"/>
-                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="leading" secondItem="Qfg-QT-4Wc" secondAttribute="leading" id="Txn-fg-CrO"/>
+                            <constraint firstItem="J52-p2-x2B" firstAttribute="height" secondItem="Fcu-Wv-Ebl" secondAttribute="height" id="2F2-cA-qyB"/>
+                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="width" secondItem="Qfg-QT-4Wc" secondAttribute="width" multiplier="0.5" id="4Sz-yZ-w82"/>
                             <constraint firstItem="Qfg-QT-4Wc" firstAttribute="trailing" secondItem="QQB-Ir-Kl8" secondAttribute="trailingMargin" id="Vnj-KL-dga"/>
+                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="top" secondItem="Qfg-QT-4Wc" secondAttribute="bottom" id="XIE-vG-ggd"/>
                             <constraint firstItem="Qfg-QT-4Wc" firstAttribute="leading" secondItem="QQB-Ir-Kl8" secondAttribute="leadingMargin" id="ayP-dV-fwg"/>
+                            <constraint firstItem="J52-p2-x2B" firstAttribute="leading" secondItem="Fcu-Wv-Ebl" secondAttribute="trailing" id="bew-2D-fpO"/>
+                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="height" secondItem="Qfg-QT-4Wc" secondAttribute="height" id="fKq-ZD-Fmw"/>
                             <constraint firstItem="Qfg-QT-4Wc" firstAttribute="top" secondItem="4tY-Dp-P8q" secondAttribute="bottom" id="i5w-n5-Mya"/>
+                            <constraint firstItem="J52-p2-x2B" firstAttribute="width" secondItem="Fcu-Wv-Ebl" secondAttribute="width" id="iK4-H7-aGy"/>
+                            <constraint firstItem="Fcu-Wv-Ebl" firstAttribute="leading" secondItem="Qfg-QT-4Wc" secondAttribute="leading" id="ixs-fT-sFv"/>
+                            <constraint firstItem="J52-p2-x2B" firstAttribute="baseline" secondItem="Fcu-Wv-Ebl" secondAttribute="baseline" id="oCH-LZ-dnz"/>
                         </constraints>
                     </view>
                 </viewController>

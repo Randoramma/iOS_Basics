@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Project8SubViewController" customModule="AutoLayoutConstraits" customModuleProvider="target">
@@ -16,59 +17,53 @@
             <rect key="frame" x="0.0" y="0.0" width="465" height="111"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-ew-CcA">
-                    <rect key="frame" x="8" y="63" width="40" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.49989468920000002" blue="0.15016303140000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="IMG">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egy-He-Vj8">
-                    <rect key="frame" x="417" y="63" width="40" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-ew-CcA">
+                    <color key="backgroundColor" red="1" green="0.49989468920000002" blue="0.15016303140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="WAd-uA-EM5"/>
+                        <constraint firstAttribute="height" constant="40" id="McR-dL-efe"/>
+                        <constraint firstAttribute="width" constant="40" id="n7H-xp-KMK"/>
                     </constraints>
                     <state key="normal" title="IMG">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="WAd-uA-EM5"/>
-                        </mask>
-                    </variation>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRg-R9-x62">
-                    <rect key="frame" x="212" y="63" width="40" height="40"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Ckg-Tx-5M7"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egy-He-Vj8">
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="IMG">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRg-R9-x62">
+                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="IMG">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Ckg-Tx-5M7"/>
-                        </mask>
-                    </variation>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-Zc-dMH">
-                    <rect key="frame" x="8" y="8" width="449" height="47"/>
-                    <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-Zc-dMH">
+                    <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="pY4-Zc-dMH" secondAttribute="trailing" constant="8" id="5DG-CL-SNB"/>
-                <constraint firstItem="pY4-Zc-dMH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="6Rv-lF-u71"/>
+                <constraint firstItem="pY4-Zc-dMH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" priority="750" id="6Rv-lF-u71"/>
                 <constraint firstItem="pY4-Zc-dMH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="BaF-ci-100"/>
+                <constraint firstItem="YRg-R9-x62" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" id="Cgi-dU-Bdj"/>
+                <constraint firstAttribute="trailing" secondItem="egy-He-Vj8" secondAttribute="trailing" constant="8" id="FTC-bf-fqb"/>
+                <constraint firstItem="YRg-R9-x62" firstAttribute="width" secondItem="h9A-ew-CcA" secondAttribute="width" id="HWt-Nz-CG8"/>
+                <constraint firstAttribute="bottom" secondItem="egy-He-Vj8" secondAttribute="bottom" constant="8" id="Ruv-CH-Gur"/>
                 <constraint firstItem="pY4-Zc-dMH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="VGz-ic-SgS"/>
-                <constraint firstItem="h9A-ew-CcA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="ggf-lp-ImR"/>
-                <constraint firstItem="h9A-ew-CcA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="v5u-hA-m4H"/>
+                <constraint firstItem="h9A-ew-CcA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="XLw-RA-Ad7"/>
+                <constraint firstItem="egy-He-Vj8" firstAttribute="width" secondItem="h9A-ew-CcA" secondAttribute="width" id="Za6-0S-C9y"/>
+                <constraint firstItem="egy-He-Vj8" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" id="a5h-A9-dwo"/>
+                <constraint firstItem="h9A-ew-CcA" firstAttribute="top" secondItem="pY4-Zc-dMH" secondAttribute="bottom" id="eDk-Js-Oaw"/>
+                <constraint firstItem="YRg-R9-x62" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nYi-3O-1sT"/>
+                <constraint firstItem="YRg-R9-x62" firstAttribute="height" secondItem="h9A-ew-CcA" secondAttribute="height" id="nbj-2V-vLk"/>
+                <constraint firstAttribute="bottom" secondItem="h9A-ew-CcA" secondAttribute="bottom" constant="8" id="wpT-0d-bat"/>
+                <constraint firstItem="egy-He-Vj8" firstAttribute="height" secondItem="h9A-ew-CcA" secondAttribute="height" id="zrg-fb-L93"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

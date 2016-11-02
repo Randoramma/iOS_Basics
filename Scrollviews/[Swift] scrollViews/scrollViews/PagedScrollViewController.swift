@@ -61,7 +61,7 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
     
     
     /* loads a page if applicable */
-    func loadPage(page: Int) {
+    func loadPage(_ page: Int) {
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             print("     page # \(page) its outside the range allowed")
@@ -70,7 +70,7 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
         }
         
         // using optional binding to check if you’ve already loaded the view
-        if let pageView = pageViews[page] {
+        if pageViews[page] != nil {
             // Do nothing. The view is already loaded.
             print("     page # \(page) was already loaded, no action taken")
         } else {
@@ -83,7 +83,7 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
             
             // creates a new UIImageView, sets it up and adds it to the scroll view.
             let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
+            newPageView.contentMode = .scaleAspectFit
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
             
@@ -97,7 +97,7 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     
     /* purges a page that was previously created via loadPage(). */
-    func purgePage(page: Int) {
+    func purgePage(_ page: Int) {
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             return
@@ -133,20 +133,25 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
         
         print("PURGING: (goes front 0 to prevPage)")
         // Purge anything before the first page
-        for var index = 0; index < firstPage; ++index {
+//        for index in 0 ..< firstPage += 1
+        for index in 0 ..< (firstPage+1)
+        {
             print("   purging page# \(index)")
             purgePage(index)
         }
         
         print("LOADING: (goes front prevPage to Next Page)")
         // Load pages in our range
-        for index in firstPage...lastPage {
+        for index in firstPage...lastPage
+        {
             print("   loading page# \(index)")
             loadPage(index)
         }
         
         // Purge anything after the last page
-        for var index = lastPage+1; index < pageImages.count; ++index {
+        //for index in lastPage+1 ..< pageImages.count += 1
+        for index in (lastPage+1) ..< (pageImages.count + 1)
+        {
             print("purging (after last page\(lastPage)) page# \(index)")
             purgePage(index)
         }
@@ -154,7 +159,7 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     
     /*UIScrollView delegate - ensure that as the scroll view is scrolled, the relevant pages are always loaded (and that unnecessary pages are purged) */
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Load the pages that are now on screen
         loadVisiblePages()
     }

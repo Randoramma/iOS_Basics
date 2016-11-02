@@ -18,50 +18,37 @@ class ViewController: UIViewController,SFSafariViewControllerDelegate {
 
         // Do any additional setup after loading the view.
     }
-
-    
-    // MARK: - Memory
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }//eo-m
-    
-
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "goToCustomWebView"
-        {
-            
-        }
     }//eo-m
 
 
-    @IBAction func showSafari(sender: AnyObject)
+    @IBAction func showSafari(_ sender: AnyObject)
     {
-        let url:NSURL = NSURL(string: amazon)!
-        UIApplication.sharedApplication().openURL(url)
+        let url:URL = URL(string: amazon)!
+        UIApplication.shared.openURL(url)
     }//eo-a
     
     
     
     
-    @IBAction func showCustomWebView(sender: AnyObject)
+    @IBAction func showCustomWebView(_ sender: AnyObject)
     {
-        self.performSegueWithIdentifier("goToCustomWebView", sender: nil)
+        self.performSegue(withIdentifier: "goToCustomWebView", sender: nil)
     }//eo-a
     
     
     
     
-    @IBAction func showSafariController(sender: AnyObject)
+    @IBAction func showSafariController(_ sender: AnyObject)
     {
-        let url:NSURL = NSURL(string: amazon)!
+        let url:URL = URL(string: amazon)!
         
-        let safariVC = SFSafariViewController(URL: url)
+        let safariVC = SFSafariViewController(url: url)
         safariVC.delegate = self
-        self.presentViewController(safariVC, animated: true, completion: nil)
+        self.present(safariVC, animated: true, completion: nil)
     }//eo-a
     
     
@@ -75,19 +62,19 @@ class ViewController: UIViewController,SFSafariViewControllerDelegate {
     //    }//eom
     
     
-    func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool)
+    func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool)
     {
         print("didCompleteInitialLoad")
         print(controller.debugDescription)
         
     }//eom
     
-    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
     {
         print("safariViewControllerDidFinish")
         print(controller.debugDescription)
         
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
         
     }//eom
 
