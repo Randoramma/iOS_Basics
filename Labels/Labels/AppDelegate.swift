@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  recorderTwo
+//  Labels
 //
-//  Created by Luis Castillo on 10/22/16.
+//  Created by Luis Castillo on 11/27/16.
 //  Copyright © 2016 LC. All rights reserved.
 //
 
