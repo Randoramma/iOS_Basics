@@ -18,18 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.setupVolumeListener()
+        self.setupVolumeListener_appDelegate(self.window)
         
         return true
-    }
+    }//eom
 
-    fileprivate func setupVolumeListener()
+    private func setupVolumeListener_appDelegate(_ window:UIWindow?)
     {
         let frameView:CGRect = CGRect(x: -CGFloat.greatestFiniteMagnitude, y: -CGFloat.greatestFiniteMagnitude, width: 0, height: 0)
         let volumeView = MPVolumeView(frame: frameView)
-        self.window?.addSubview(volumeView) //app delegate
-       // self.view.addSubview(volumeView)  //view controller
+        window?.addSubview(volumeView)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged(_:)), name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
+    }//eom
+    
+    private func setupVolumeListener_ViewController(_ view:UIView?)
+    {
+        let frameView:CGRect = CGRect(x: -CGFloat.greatestFiniteMagnitude, y: -CGFloat.greatestFiniteMagnitude, width: 0, height: 0)
+        let volumeView = MPVolumeView(frame: frameView)
+        view?.addSubview(volumeView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged(_:)), name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
     }//eom
