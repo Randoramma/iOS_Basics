@@ -8,12 +8,16 @@
 
 import UIKit
 
-class BasicViewController: UIViewController, UIPageViewControllerDataSource {
+class BasicViewController: UIViewController,
+                            UIPageViewControllerDataSource,
+                            BasicPageContentNotificationDelegate {
 
     fileprivate var pageViewController:UIPageViewController? = nil
     fileprivate var _pageTitles:[String] = []
     fileprivate var _pageImages:[String] = []
     
+    
+    var onboardingDelegate:OnboardingDelegate? = nil
     
     @IBOutlet weak var gotItButton: UIButton!
     @IBOutlet weak var startAgainButton: UIButton!
@@ -22,8 +26,16 @@ class BasicViewController: UIViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
         
         //setting content
-        self._pageTitles = ["Over 200 Tips and Tricks", "Discover Hidden Features", "Bookmark Favorite Tip", "Free Regular Update"]
-        self._pageImages = ["page1.png", "page2.png", "page3.png", "page4.png"]
+        self._pageTitles = ["Over 200 Tips and Tricks",
+                            "Discover Hidden Features",
+                            "Bookmark Favorite Tip",
+                            "Free Regular Update",
+                            " "]
+        self._pageImages = ["page1.png",
+                            "page2.png",
+                            "page3.png",
+                            "page4.png",
+                            "page5.png"]
         
         //setting page view controller
         self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "pageVC") as? UIPageViewController
@@ -43,6 +55,7 @@ class BasicViewController: UIViewController, UIPageViewControllerDataSource {
         else
         {
             print("something wrong happen")
+            self.onboardingDelegate?.dismiss()
         }
         
     }//eom
@@ -56,13 +69,19 @@ class BasicViewController: UIViewController, UIPageViewControllerDataSource {
         else
         {
             print("something wrong happen")
+            self.onboardingDelegate?.dismiss()
         }
-
     }//eo-a
     
     @IBAction func gotIt(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
+        self.onboardingDelegate?.dismiss()
     }
+    
+    //MARK: - Page Content Delegate
+    func pageDismiss_down() {
+        print("dismiss - down swipe ")
+        self.onboardingDelegate?.dismiss()
+    }//eom
     
     //MARK: - Delegates
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
@@ -95,7 +114,12 @@ class BasicViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         index += 1
-        if index == self._pageTitles.count {
+        
+        if (index) == self._pageTitles.count {
+            print("dismiss view by last page")
+            self.onboardingDelegate?.dismiss()
+        }
+        else if index == self._pageTitles.count {
             return nil
         }
         
@@ -120,6 +144,9 @@ class BasicViewController: UIViewController, UIPageViewControllerDataSource {
         {
             return nil
         }
+        
+        //page content delegate
+        controller.pageDelegate = self
         
         controller.imageFile = self._pageImages[index]
         controller.titleText = self._pageTitles[index]

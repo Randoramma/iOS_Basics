@@ -8,11 +8,16 @@
 
 import UIKit
 
-class StandardViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
+class StandardViewController: UIViewController,
+                                UIPageViewControllerDelegate,
+                                UIPageViewControllerDataSource,
+                                StandardPageContentNotificationDelegate
+{
         @IBOutlet weak var okayButton: UIButton!
         @IBOutlet weak var pageControl: UIPageControl!
         @IBOutlet weak var contentView: UIView!
+    
+        var onboardingDelegate:OnboardingDelegate? = nil
     
         fileprivate var pageViewController:UIPageViewController? = nil
         fileprivate var _contents:[NSDictionary] = []
@@ -24,20 +29,24 @@ class StandardViewController: UIViewController, UIPageViewControllerDelegate, UI
             //setting content
             let items = [
                             [
-                            "title":"Over 200 Tips and Tricks",
-                            "image":"page1.png"
+                                "title":"Over 200 Tips and Tricks",
+                                "image":"page1.png"
                             ],
                             [
-                            "title":"Discover Hidden Features",
-                            "image":"page2.png"
+                                "title":"Discover Hidden Features",
+                                "image":"page2.png"
                             ],
                             [
-                            "title":"Bookmark Favorite Tip",
-                            "image":"page3.png"
+                                "title":"Bookmark Favorite Tip",
+                                "image":"page3.png"
                             ],
                             [
-                            "title":"Free Regular Update",
-                            "image":"page4.png"
+                                "title":"Free Regular Update",
+                                "image":"page4.png"
+                            ],
+                            [
+                                "title":"",
+                                "image":"page5.png"
                             ]
                         ]
             self._contents = items as [NSDictionary]
@@ -65,10 +74,17 @@ class StandardViewController: UIViewController, UIPageViewControllerDelegate, UI
             else
             {
                 print("something wrong happen")
+                self.onboardingDelegate?.dismiss()
             }
             
         }//eom
     
+        //MARK: - Page Content Delegate
+        func pageDismiss_down() {
+            print("dismiss - down swipe ")
+            self.onboardingDelegate?.dismiss()
+        }//eom
+        
         //MARK: - Current Page Displayed
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating
                                     finished: Bool,
@@ -98,7 +114,7 @@ class StandardViewController: UIViewController, UIPageViewControllerDelegate, UI
     
         //MARK: Dismiss
         @IBAction func dismissView(_ sender: AnyObject) {
-                self.navigationController?.popViewController(animated: true)
+            self.onboardingDelegate?.dismiss()
         }//eo-a
     
     
@@ -135,7 +151,11 @@ class StandardViewController: UIViewController, UIPageViewControllerDelegate, UI
             }
             
             index += 1
-            if index == self._contents.count {
+            if (index) == self._contents.count {
+                print("dismiss view by last page")
+                self.onboardingDelegate?.dismiss()
+            }
+            else if index == self._contents.count {
                 return nil
             }
             
@@ -160,6 +180,9 @@ class StandardViewController: UIViewController, UIPageViewControllerDelegate, UI
             {
                 return nil
             }
+            
+            //page content delegate
+            controller.pageDelegate = self
             
             //updating vc data
             let currItem:NSDictionary = self._contents[index]

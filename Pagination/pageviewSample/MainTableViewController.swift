@@ -8,8 +8,13 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+protocol OnboardingDelegate {
+    func dismiss()
+}
 
+class MainTableViewController: UITableViewController, OnboardingDelegate {
+
+    private var presentingOnboardVC:UIViewController? = nil
     
     //MARK: - View
     override func viewDidLoad() {
@@ -31,13 +36,28 @@ class MainTableViewController: UITableViewController {
     }//eom
 
    
-
+    //MARK: - Onboarding Delegate
+    func dismiss() {
+//        self.dismiss(animated: true, completion: nil)
+         _ = self.navigationController?.popViewController(animated: true)
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
+        
+        if let basicVC:BasicViewController = segue.destination as? BasicViewController
+        {
+            presentingOnboardVC = basicVC
+            basicVC.onboardingDelegate = self
+        }
+        else if let standardVC:StandardViewController = segue.destination as? StandardViewController
+        {
+            presentingOnboardVC = standardVC
+            standardVC.onboardingDelegate = self
+        }
+    }//eom
     
     //MARK: - Memory
     override func didReceiveMemoryWarning() {

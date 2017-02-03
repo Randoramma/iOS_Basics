@@ -72,20 +72,11 @@ class KILabelViewController: UIViewController
     {
         guard let urlProvided:URL = url else
         {
-            print("empty url \(url)")
+            print("invalid url \(url)")
             return
         }
         
-//        let isSafariCompatible = (urlProvided.scheme == "http") || (urlProvided.scheme == "https")
-        let isSafariCompatible = true
-        if isSafariCompatible
-        {
-            UIApplication.shared.open(urlProvided, options: [:], completionHandler: nil)
-        }
-        else
-        {
-            print("url '",urlProvided,"' is NOT compatible!!!")
-        }
+        UIApplication.shared.open(urlProvided, options: [:], completionHandler: nil)
     }//eom
 
 }

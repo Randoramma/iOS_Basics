@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE71F2AD1E452DE4003BD757 /* page5.png in Resources */ = {isa = PBXBuildFile; fileRef = DE71F2AC1E452DE4003BD757 /* page5.png */; };
 		DE9553D21D45C50D00AE8578 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9553D11D45C50D00AE8578 /* AppDelegate.swift */; };
 		DE9553D41D45C50D00AE8578 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9553D31D45C50D00AE8578 /* BasicViewController.swift */; };
 		DE9553D71D45C50D00AE8578 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9553D51D45C50D00AE8578 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE71F2AC1E452DE4003BD757 /* page5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page5.png; path = images/page5.png; sourceTree = "<group>"; };
 		DE9553CE1D45C50D00AE8578 /* pageviewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pageviewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9553D11D45C50D00AE8578 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9553D31D45C50D00AE8578 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				DE9553E61D45D16D00AE8578 /* page2.png */,
 				DE9553E71D45D16D00AE8578 /* page3.png */,
 				DE9553E81D45D16D00AE8578 /* page4.png */,
+				DE71F2AC1E452DE4003BD757 /* page5.png */,
 				DE9553D81D45C50D00AE8578 /* Assets.xcassets */,
 				DE9553DD1D45C50D00AE8578 /* Info.plist */,
 			);
@@ -160,6 +163,7 @@
 				TargetAttributes = {
 					DE9553CD1D45C50D00AE8578 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = QLZS39CLDT;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -193,6 +197,7 @@
 				DE9553EC1D45D16D00AE8578 /* page4.png in Resources */,
 				DE9553E91D45D16D00AE8578 /* page1.png in Resources */,
 				DE9553D71D45C50D00AE8578 /* Main.storyboard in Resources */,
+				DE71F2AD1E452DE4003BD757 /* page5.png in Resources */,
 				DE9553EA1D45D16D00AE8578 /* page2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
 				INFOPLIST_FILE = pageviewSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.pageviewSample;
@@ -339,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
 				INFOPLIST_FILE = pageviewSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.pageviewSample;
