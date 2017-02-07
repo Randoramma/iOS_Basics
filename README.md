@@ -3,7 +3,8 @@
 
 #Notes
 
-:black_large_square:  Atomic vs Non-Atomic 
+:black_large_square:  _Atomic vs Non-Atomic_ 
+(thread-safe - the guarantee that no one other thread will be touch that value at the same time)  
 
 __Atomic__
  * is the default behavior
@@ -20,7 +21,7 @@ __Non-Atomic__
 
 
 
-:black_large_square:  Assign vs Copy vs Retain 
+:black_large_square:  _Assign vs Copy vs Retain_
 
 __Assign__
  * In your setter method for the property, there is a simple assignment of your instance variable to the new value
@@ -35,9 +36,9 @@ __Assign__
 
 
 //methods
-- (void)setString:(NSString*)newString
+- (void)setAddressString:(NSString*)newAddressString
 {         
-   string = newString;
+   address = newAddressString;
 } 
 ```
 
@@ -79,7 +80,7 @@ __Copy__
 }
 ```
 
-:black_large_square:  Strong vs Weak
+:black_large_square:  _Strong vs Weak_
 
 __Strong__ (in ARC, for NON-ARC use __retain__)
  * it says "keep this in the heap until I don't point to it anymore"
@@ -109,7 +110,7 @@ __Weak__
 ```
 
 
-:black_large_square:  Methods vs Functions 
+:black_large_square:  _Methods vs Functions_ 
 
 __Methods__ -  are attached to class / instance (object) and you have to tell the class / object to perform them
 
@@ -137,7 +138,7 @@ int a;
 a = fooFunction();
 ```
 
-:black_large_square: Swizzling
+:black_large_square: _Swizzling_
  * allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table.
  * allows you to write code that can be executed before and/or after the original method.
 
@@ -161,8 +162,7 @@ a = fooFunction();
 @end
 ```
 
-
-:black_large_square:  Multi-Threading
+:black_large_square:  _Multi-Threading_
 
 __NSThread__ -  creates a new low-level thread which can be started by calling the start method.
 
@@ -196,7 +196,7 @@ dispatch_async(myQueue, ^{
 
 
 
-:black_large_square:  Memory Management
+:black_large_square:  _Memory Management_
 
 [Apple Memory Management](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html)
 
@@ -212,7 +212,7 @@ __release__ - Decreases the retain count of an object by 1. Relinquishes ownersh
 
 
 
-:black_large_square:  Core Data
+:black_large_square:  _Core Data_
 
 
 
