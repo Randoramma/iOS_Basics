@@ -3,6 +3,91 @@
 
 #Notes
 
+
+:black_large_square: __Swift Types__
+
+* __public__ isn't necessary unless you're writing a library to share with other app developers, we won't use it here.
+
+* __internal__ is the default access control level. Everything is internal unless specified as public or private.
+
+* __fileprivate__ restricts the use of a class, method, or entity to the file where it is defined.
+
+
+:black_large_square: __Get vs Set__
+
+* __get__  it can only be read and never written (if it's a computed property, it can only have a custom getter).
+
+* __set__  writeable (set).
+
+
+```swift
+protocol PlayingCard {
+    var isFaceDown:Bool { get set }
+    var shortName:String { get }
+}
+```
+
+:black_large_square: __try? vs try!__
+
+__try?__ means that the value returned from the function will be optional. If there is an error, the return value will be nil, and there won't be any information about what went wrong
+
+__try!__ If there's an error, 💥 BOOM 💥, the app will crash!
+
+
+:black_large_square: __map__
+
+The __map()__ function is available as a part of the Swift Standard Library's SequenceType protocol. 
+This means that the function can be called on a type that conforms to the SequenceType protocol, such as an array or a dictionary. 
+__map()__ is the most efficient way to apply a function to every item in a collection.
+
+```swift
+let tripContributions = ["Andy": 25, "Kathleen": 45, "Janhavi": 50, "Sebastian": 10, "Chrisna": 50]
+let averageTripCost = (25 + 50 + 45 + 10 + 50)/5
+
+let tripDebts = tripContributions.map({ (key, value) -> String in
+    let amountOwed = averageTripCost - value
+    if amountOwed > 0 {
+        return "\(key) owes $\(amountOwed)"
+    } else {
+        return "\(key) is owed $\(-amountOwed)"
+    }
+})
+```
+
+:black_large_square: __reduce__
+
+__reduce()__ is another function found in Swift's SequenceType protocol and is generally called by arrays and dictionaries. As its name suggests, this function reduces a collection of values to one value by applying a function to every element in the collection.
+
+```swift
+let tripContributions = ["Andy": 25, "Kathleen": 50, "Janhavi": 45, "Sebastian": 10, "Chrisna": 50]
+let tripContributionsArray = Array(tripContributions.values)
+
+let totalTripCost = tripContributionsArray.reduce(0, combine: {(subtotal, contribution) -> Int in
+    subtotal + contribution
+})
+
+
+
+let numbers = [7, 89, 48, 20, 38, 89, 29]
+let highestNumber = numbers.reduce(0, {(currentMax, number) -> Int in
+    return max(currentMax, number)
+})
+```
+
+
+:black_large_square:  _Class Terminology_ 
+
+__superclass__  A class that is inherited from
+__subclass__  A class that inherits from another class (the superclass)
+__parent class__  A class's superclass
+__child class__ A class that descended (inherited directly) from a parent class.
+__descendant__  A class that inherited from an ancestor
+__ancestor__  A class that has child or descendent classes
+__root class__  A class with no superclass
+__leaf class__  A class with no subclasses
+__hierarchy__ A tree of inheritance relationships
+
+
 :black_large_square:  _Atomic vs Non-Atomic_ 
 (thread-safe - the guarantee that no one other thread will be touch that value at the same time)  
 
