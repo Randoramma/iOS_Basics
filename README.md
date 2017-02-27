@@ -3,6 +3,151 @@
 
 #Notes
 
+:black_large_square: __Generics__
+
+
+
+
+:black_large_square: __enums/structs VS classes__
+
+- enums/structs are value types (stay in the heap- meant to be recreated various times)
+- classes are reference type (stay in memory)
+
+
+:black_large_square: __Protocol (Interface)__
+
+Protocol are interfaces (has no implementation , only declaration of methods. 
+They can __adopted__ by a class,struct, or enum and when its adopted, it is required to 
+implement the methods and properties defined in protocol.
+
+Note that protocol __can not__ contain default parameters.
+
+```swift
+
+//EXAMPLE 1
+protocol Account {
+  var value: Double { get set }
+  init(initialAmount: Double)
+  init?(transferAccount: Account)
+}
+
+class BitcoinAccount: Account {
+  var value: Double
+  required init(initialAmount: Double) {
+    value = initialAmount
+  }
+  required init?(transferAccount: Account) {
+    guard transferAccount.value > 0.0 else {
+return nil
+}
+    value = transferAccount.value
+  }
+}
+var accountType: Account.Type = BitcoinAccount.self
+let account = accountType.init(initialAmount: 30.00)
+let transferAccount = accountType.init(transferAccount: account)!
+
+
+//EXAMPLE 2 - Protocol inheritance	
+
+protocol WheeledVehicle: Vehicle {
+  var numberOfWheels: Int { get }
+  var wheelSize: Double { get set }
+}
+```
+
+__Protocol with associated type__
+
+When using associatedtype in a protocol, you’re simply stating there is a type used in this protocol — without specifying what type this should be. It’s up to the protocol adopter to decide what the exact type should be.
+
+```swift
+protocol WeightCalculatable {
+  associatedtype WeightType
+  func calculateWeight() -> WeightType
+}
+
+class HeavyThing: WeightCalculatable {
+  // This heavy thing only needs integer accuracy
+  typealias WeightType = Int
+  func calculateWeight() -> Int {
+return 100 }
+}
+class LightThing: WeightCalculatable {
+  // This light thing needs decimal places
+  typealias WeightType = Double
+  func calculateWeight() -> Double {
+    return 0.0025
+  }
+}
+```
+
+
+:black_large_square: __Hashable Protocol__
+
+The Hashable protocol, a subprotocol of Equatable, is a requirement for any type you want to use as a key to a Dictionary:
+Hash values help you quickly find elements in a collection.
+
+```swift
+//Hashable Protocol
+protocol Hashable : Equatable {
+  var hashValue: Int { get }
+}
+
+//EXAMPLE
+class Student {
+  let email: String
+  var firstName: String
+  var lastName: String
+  init(email: String, firstName: String, lastName: String) {
+    self.email = email
+    self.firstName = firstName
+    self.lastName = lastName
+} }
+extension Student: Equatable {
+  static func ==(lhs: Student, rhs: Student) -> Bool {
+    return lhs.email == rhs.email
+  }
+}
+extension Student: Hashable {
+  var hashValue: Int {
+    return email.hashValue
+  }
+}
+
+
+//You can now use the Student type as the key in a Dictionary
+let john = Student(email: "johnny.appleseed@apple.com", firstName: "Johnny", lastName: "Appleseed")
+let lockerMap = [john: "14B"]
+
+
+```
+
+
+:black_large_square:  __CustomStringConvertible Protocol__
+
+
+```swift
+//CustomStringConvertible protocol
+protocol CustomStringConvertible {
+  var description: String { get }
+}
+
+//EXAMPLE without CustomStringConvertible
+print(john) // Student
+
+
+//EXAMPLE of CustomStringConvertible
+extension Student: CustomStringConvertible {
+  var description: String {
+    return "\(firstName) \(lastName)"
+  }
+}
+
+print(john) // Johnny Appleseed
+
+```
+
+
 
 :black_large_square: __Swift Types__
 
@@ -150,6 +295,93 @@ __Retain__ (in Non-ARC, for ARC use __Strong__)
        [string release];            
        string = newString;         
 }
+```
+
+```swift
+var someone = Person(firstName: "Johnny", lastName: "Appleseed")
+// Person object has a reference count of 1 (someone variable)
+
+var anotherSomeone: Person? = someone
+// Reference count 2 (someone, anotherSomeone)
+
+var lotsOfPeople = [someone, someone, anotherSomeone, someone]
+// Reference count 6 (someone, anotherSomeone, 4 references in
+lotsOfPeople)
+
+anotherSomeone = nil
+// Reference count 5 (someone, 4 references in lotsOfPeople)
+
+lotsOfPeople = []
+// Reference count 1 (someone)
+
+someone = Person(firstName: "Johnny", lastName: "Appleseed")
+// Reference count 0 for the original Person object!
+// Variable someone now references a new object
+```
+
+NOTE: once the reference count reaches zero, the __deinitializer__ method would be called.
+
+Swift example::
+
+```swift
+class player
+{
+
+	init()
+        {
+		//init vars here
+        }
+
+	deinit {
+		//free up vars here, close any open files that you may have open on init
+	}
+}
+```
+
+__Memory Leaks__
+memory isn’t freed up even though its practical lifecycle has ended. Retain cycles are the most common cause of memory leaks.
+
+EXAMPLE:
+
+```swift
+class Student: Person {
+  var partner: Student?
+deinit {
+    print("\(firstName) being deallocated!")
+  }
+}
+
+var john: Student? = Student(firstName: "Johnny", lastName: "Appleseed")
+var jane: Student? = Student(firstName: "Jane", lastName: "Appleseed")
+john?.partner = jane
+jane?.partner = john
+
+//this would make a memory leak - since both objects have references to each other!!
+jane = nil
+john = nil
+```
+
+
+HOW CAN IT BE FIXED?
+
+By making variables __weak__ type.
+
+```swift
+class Student: Person {
+  weak var partner: Student?
+deinit {
+    print("\(firstName) being deallocated!")
+  }
+}
+
+var john: Student? = Student(firstName: "Johnny", lastName: "Appleseed")
+var jane: Student? = Student(firstName: "Jane", lastName: "Appleseed")
+john?.partner = jane
+jane?.partner = john
+
+//this would no longer caused a memory leak, as the var is now weak
+jane = nil
+john = nil
 ```
 
 __Copy__
