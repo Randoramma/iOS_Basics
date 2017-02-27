@@ -1,16 +1,17 @@
 //
-//  MainTableViewCell.m
+//  LoadingTableViewCell.m
 //  tableviewExample
 //
-//  Created by Luis Andres Castillo Hernandez on 10/27/15.
-//  Copyright © 2015 DevBros. All rights reserved.
+//  Created by Luis Castillo on 2/26/17.
+//  Copyright © 2017 DevBros. All rights reserved.
 //
 
-#import "MainTableViewCell.h"
+#import "LoadingTableViewCell.h"
 
-@implementation MainTableViewCell
+@implementation LoadingTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

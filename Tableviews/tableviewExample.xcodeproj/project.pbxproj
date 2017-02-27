@@ -14,11 +14,17 @@
 		DE91F1211BE00DE2007F892D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91F11F1BE00DE2007F892D /* LaunchScreen.storyboard */; };
 		DE91F13A1BE01734007F892D /* BasicViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F1391BE01734007F892D /* BasicViewTableViewController.m */; };
 		DE91F13D1BE0174D007F892D /* BasicViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F13C1BE0174D007F892D /* BasicViewTableViewCell.m */; };
-		DE91F1401BE0175E007F892D /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F13F1BE0175E007F892D /* MainTableViewCell.m */; };
-		DE91F1431BE01787007F892D /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F1421BE01787007F892D /* MainTableViewController.m */; };
 		DE91F1471BE02BAD007F892D /* BasicView1TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F1461BE02BAD007F892D /* BasicView1TableViewController.m */; };
 		DE91F14A1BE02BC4007F892D /* BasicView1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F1491BE02BC4007F892D /* BasicView1TableViewCell.m */; };
 		DE91F14D1BE0457A007F892D /* BasicView1DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE91F14C1BE0457A007F892D /* BasicView1DetailViewController.m */; };
+		DECB6E0C1E63ABEE00316432 /* CenteredPagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E0B1E63ABEE00316432 /* CenteredPagingTableViewCell.swift */; };
+		DECB6E0E1E63AC5E00316432 /* CenteredPagingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E0D1E63AC5E00316432 /* CenteredPagingTableViewController.swift */; };
+		DECB6E111E63B5DE00316432 /* BottomRefreshCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E101E63B5DE00316432 /* BottomRefreshCellTableViewController.m */; };
+		DECB6E171E63B67600316432 /* LoadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E161E63B67600316432 /* LoadingTableViewCell.m */; };
+		DECB6E1F1E63C18C00316432 /* LetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E1E1E63C18C00316432 /* LetterViewController.m */; };
+		DECB6E241E63E2A300316432 /* QuoteBottomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E231E63E2A300316432 /* QuoteBottomTableViewController.swift */; };
+		DECB6E281E63EBA800316432 /* BottomFooterIndicatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E271E63EBA800316432 /* BottomFooterIndicatorTableViewController.m */; };
+		DECB6E2C1E63F64400316432 /* TopHeaderIndicatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */; };
 		DEFACFA81BE0584F00BAAAE2 /* BasicView2DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFA71BE0584F00BAAAE2 /* BasicView2DetailViewController.m */; };
 		DEFACFAB1BE0586600BAAAE2 /* BasicView2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFAA1BE0586600BAAAE2 /* BasicView2TableViewController.m */; };
 		DEFACFAE1BE0587A00BAAAE2 /* BasicView2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFAD1BE0587A00BAAAE2 /* BasicView2TableViewCell.m */; };
@@ -46,16 +52,26 @@
 		DE91F1391BE01734007F892D /* BasicViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewTableViewController.m; sourceTree = "<group>"; };
 		DE91F13B1BE0174D007F892D /* BasicViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewTableViewCell.h; sourceTree = "<group>"; };
 		DE91F13C1BE0174D007F892D /* BasicViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewTableViewCell.m; sourceTree = "<group>"; };
-		DE91F13E1BE0175E007F892D /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
-		DE91F13F1BE0175E007F892D /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
-		DE91F1411BE01787007F892D /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
-		DE91F1421BE01787007F892D /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		DE91F1451BE02BAD007F892D /* BasicView1TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView1TableViewController.h; sourceTree = "<group>"; };
 		DE91F1461BE02BAD007F892D /* BasicView1TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView1TableViewController.m; sourceTree = "<group>"; };
 		DE91F1481BE02BC4007F892D /* BasicView1TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView1TableViewCell.h; sourceTree = "<group>"; };
 		DE91F1491BE02BC4007F892D /* BasicView1TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView1TableViewCell.m; sourceTree = "<group>"; };
 		DE91F14B1BE0457A007F892D /* BasicView1DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView1DetailViewController.h; sourceTree = "<group>"; };
 		DE91F14C1BE0457A007F892D /* BasicView1DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView1DetailViewController.m; sourceTree = "<group>"; };
+		DECB6E0A1E63ABED00316432 /* tableviewExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tableviewExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		DECB6E0B1E63ABEE00316432 /* CenteredPagingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredPagingTableViewCell.swift; sourceTree = "<group>"; };
+		DECB6E0D1E63AC5E00316432 /* CenteredPagingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredPagingTableViewController.swift; sourceTree = "<group>"; };
+		DECB6E0F1E63B5DE00316432 /* BottomRefreshCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomRefreshCellTableViewController.h; sourceTree = "<group>"; };
+		DECB6E101E63B5DE00316432 /* BottomRefreshCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomRefreshCellTableViewController.m; sourceTree = "<group>"; };
+		DECB6E151E63B67600316432 /* LoadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingTableViewCell.h; sourceTree = "<group>"; };
+		DECB6E161E63B67600316432 /* LoadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingTableViewCell.m; sourceTree = "<group>"; };
+		DECB6E1D1E63C18C00316432 /* LetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterViewController.h; sourceTree = "<group>"; };
+		DECB6E1E1E63C18C00316432 /* LetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterViewController.m; sourceTree = "<group>"; };
+		DECB6E231E63E2A300316432 /* QuoteBottomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteBottomTableViewController.swift; sourceTree = "<group>"; };
+		DECB6E261E63EBA800316432 /* BottomFooterIndicatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomFooterIndicatorTableViewController.h; sourceTree = "<group>"; };
+		DECB6E271E63EBA800316432 /* BottomFooterIndicatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomFooterIndicatorTableViewController.m; sourceTree = "<group>"; };
+		DECB6E2A1E63F64400316432 /* TopHeaderIndicatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopHeaderIndicatorTableViewController.h; sourceTree = "<group>"; };
+		DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopHeaderIndicatorTableViewController.m; sourceTree = "<group>"; };
 		DEFACFA61BE0584F00BAAAE2 /* BasicView2DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView2DetailViewController.h; sourceTree = "<group>"; };
 		DEFACFA71BE0584F00BAAAE2 /* BasicView2DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView2DetailViewController.m; sourceTree = "<group>"; };
 		DEFACFA91BE0586600BAAAE2 /* BasicView2TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView2TableViewController.h; sourceTree = "<group>"; };
@@ -118,6 +134,7 @@
 		DE91F1111BE00DE2007F892D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DECB6E0A1E63ABED00316432 /* tableviewExample-Bridging-Header.h */,
 				DE91F1121BE00DE2007F892D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -150,10 +167,15 @@
 		DE91F1341BE0152C007F892D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DEFACFA21BE0580E00BAAAE2 /* basicview2 */,
-				DE91F1441BE02B51007F892D /* basicView1 */,
-				DE91F1371BE01715007F892D /* BasicView */,
-				DE91F1361BE0170E007F892D /* Main */,
+				DECB6E251E63EB6F00316432 /* NOT USING OR WORKING */,
+				DECB6E1C1E63C12F00316432 /* 8 Top Pull to Refresh */,
+				DECB6E291E63F35600316432 /* 7 Header Indicator (Top pull to refresh) */,
+				DECB6E091E63AA2300316432 /* 6 Footer Indicator (Bottom Pull to refresh) */,
+				DECB6E081E63AA1900316432 /* 5 Bottom Refreshing with Cell */,
+				DECB6E071E63AA0600316432 /* 4 Centered Paging */,
+				DEFACFA21BE0580E00BAAAE2 /* 3 View with TableView Header */,
+				DE91F1441BE02B51007F892D /* 2 View with subview */,
+				DE91F1371BE01715007F892D /* 1 Basic View */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -167,18 +189,7 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		DE91F1361BE0170E007F892D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				DE91F13E1BE0175E007F892D /* MainTableViewCell.h */,
-				DE91F13F1BE0175E007F892D /* MainTableViewCell.m */,
-				DE91F1411BE01787007F892D /* MainTableViewController.h */,
-				DE91F1421BE01787007F892D /* MainTableViewController.m */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
-		DE91F1371BE01715007F892D /* BasicView */ = {
+		DE91F1371BE01715007F892D /* 1 Basic View */ = {
 			isa = PBXGroup;
 			children = (
 				DE91F1381BE01734007F892D /* BasicViewTableViewController.h */,
@@ -186,10 +197,10 @@
 				DE91F13B1BE0174D007F892D /* BasicViewTableViewCell.h */,
 				DE91F13C1BE0174D007F892D /* BasicViewTableViewCell.m */,
 			);
-			name = BasicView;
+			name = "1 Basic View";
 			sourceTree = "<group>";
 		};
-		DE91F1441BE02B51007F892D /* basicView1 */ = {
+		DE91F1441BE02B51007F892D /* 2 View with subview */ = {
 			isa = PBXGroup;
 			children = (
 				DE91F1451BE02BAD007F892D /* BasicView1TableViewController.h */,
@@ -199,10 +210,65 @@
 				DE91F14B1BE0457A007F892D /* BasicView1DetailViewController.h */,
 				DE91F14C1BE0457A007F892D /* BasicView1DetailViewController.m */,
 			);
-			name = basicView1;
+			name = "2 View with subview";
 			sourceTree = "<group>";
 		};
-		DEFACFA21BE0580E00BAAAE2 /* basicview2 */ = {
+		DECB6E071E63AA0600316432 /* 4 Centered Paging */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E0D1E63AC5E00316432 /* CenteredPagingTableViewController.swift */,
+				DECB6E0B1E63ABEE00316432 /* CenteredPagingTableViewCell.swift */,
+			);
+			name = "4 Centered Paging";
+			sourceTree = "<group>";
+		};
+		DECB6E081E63AA1900316432 /* 5 Bottom Refreshing with Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E0F1E63B5DE00316432 /* BottomRefreshCellTableViewController.h */,
+				DECB6E101E63B5DE00316432 /* BottomRefreshCellTableViewController.m */,
+				DECB6E151E63B67600316432 /* LoadingTableViewCell.h */,
+				DECB6E161E63B67600316432 /* LoadingTableViewCell.m */,
+			);
+			name = "5 Bottom Refreshing with Cell";
+			sourceTree = "<group>";
+		};
+		DECB6E091E63AA2300316432 /* 6 Footer Indicator (Bottom Pull to refresh) */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E261E63EBA800316432 /* BottomFooterIndicatorTableViewController.h */,
+				DECB6E271E63EBA800316432 /* BottomFooterIndicatorTableViewController.m */,
+			);
+			name = "6 Footer Indicator (Bottom Pull to refresh)";
+			sourceTree = "<group>";
+		};
+		DECB6E1C1E63C12F00316432 /* 8 Top Pull to Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E1D1E63C18C00316432 /* LetterViewController.h */,
+				DECB6E1E1E63C18C00316432 /* LetterViewController.m */,
+			);
+			name = "8 Top Pull to Refresh";
+			sourceTree = "<group>";
+		};
+		DECB6E251E63EB6F00316432 /* NOT USING OR WORKING */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E231E63E2A300316432 /* QuoteBottomTableViewController.swift */,
+			);
+			name = "NOT USING OR WORKING";
+			sourceTree = "<group>";
+		};
+		DECB6E291E63F35600316432 /* 7 Header Indicator (Top pull to refresh) */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E2A1E63F64400316432 /* TopHeaderIndicatorTableViewController.h */,
+				DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */,
+			);
+			name = "7 Header Indicator (Top pull to refresh)";
+			sourceTree = "<group>";
+		};
+		DEFACFA21BE0580E00BAAAE2 /* 3 View with TableView Header */ = {
 			isa = PBXGroup;
 			children = (
 				DEFACFA91BE0586600BAAAE2 /* BasicView2TableViewController.h */,
@@ -213,7 +279,7 @@
 				DEFACFA71BE0584F00BAAAE2 /* BasicView2DetailViewController.m */,
 				DEFACFB21BE05F3100BAAAE2 /* tableview header */,
 			);
-			name = basicview2;
+			name = "3 View with TableView Header";
 			sourceTree = "<group>";
 		};
 		DEFACFB21BE05F3100BAAAE2 /* tableview header */ = {
@@ -251,11 +317,13 @@
 		DE91F1061BE00DE2007F892D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = DevBros;
 				TargetAttributes = {
 					DE91F10D1BE00DE2007F892D = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = QLZS39CLDT;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -304,16 +372,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFACFB11BE05F2B00BAAAE2 /* TableViewHeader.m in Sources */,
-				DE91F1401BE0175E007F892D /* MainTableViewCell.m in Sources */,
+				DECB6E0E1E63AC5E00316432 /* CenteredPagingTableViewController.swift in Sources */,
+				DECB6E281E63EBA800316432 /* BottomFooterIndicatorTableViewController.m in Sources */,
+				DECB6E1F1E63C18C00316432 /* LetterViewController.m in Sources */,
 				DE91F13A1BE01734007F892D /* BasicViewTableViewController.m in Sources */,
 				DEFACFAE1BE0587A00BAAAE2 /* BasicView2TableViewCell.m in Sources */,
 				DEFACFAB1BE0586600BAAAE2 /* BasicView2TableViewController.m in Sources */,
-				DE91F1431BE01787007F892D /* MainTableViewController.m in Sources */,
 				DE91F1471BE02BAD007F892D /* BasicView1TableViewController.m in Sources */,
+				DECB6E0C1E63ABEE00316432 /* CenteredPagingTableViewCell.swift in Sources */,
 				DE91F1161BE00DE2007F892D /* AppDelegate.m in Sources */,
 				DE91F14A1BE02BC4007F892D /* BasicView1TableViewCell.m in Sources */,
 				DE91F1131BE00DE2007F892D /* main.m in Sources */,
+				DECB6E2C1E63F64400316432 /* TopHeaderIndicatorTableViewController.m in Sources */,
+				DECB6E111E63B5DE00316432 /* BottomRefreshCellTableViewController.m in Sources */,
 				DE91F14D1BE0457A007F892D /* BasicView1DetailViewController.m in Sources */,
+				DECB6E171E63B67600316432 /* LoadingTableViewCell.m in Sources */,
+				DECB6E241E63E2A300316432 /* QuoteBottomTableViewController.swift in Sources */,
 				DEFACFA81BE0584F00BAAAE2 /* BasicView2DetailViewController.m in Sources */,
 				DE91F13D1BE0174D007F892D /* BasicViewTableViewCell.m in Sources */,
 			);
@@ -354,8 +428,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -397,8 +473,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -425,10 +503,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
 				INFOPLIST_FILE = tableviewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.tableviewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tableviewExample/tableviewExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -436,10 +519,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
 				INFOPLIST_FILE = tableviewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.tableviewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tableviewExample/tableviewExample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
