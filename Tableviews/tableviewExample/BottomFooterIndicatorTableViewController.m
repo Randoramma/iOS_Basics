@@ -44,7 +44,6 @@
     indicatorFooter = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 44)];
     [indicatorFooter setColor:[UIColor blackColor]];
     [indicatorFooter startAnimating];
-    [self.tableView setTableFooterView:indicatorFooter];
 }//eom
     
 #pragma mark - Table view data source
@@ -70,9 +69,18 @@
     
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    BOOL reachedBottomOfData = scrollView.contentOffset.y < scrollView.frame.size.height == scrollView.contentSize.height;
+//    NSLog(@"\n\n");
+//    NSLog(@"nav - height: %f",self.navigationController.navigationBar.bounds.size.height);
+//    NSLog(@"table header - height: %f",self.tableView.tableHeaderView.bounds.size.height);
+//    NSLog(@"table row - height: %f",self.tableView.rowHeight);
+//    NSLog(@"offset - y: %f",scrollView.contentOffset.y);
+//    NSLog(@"frame - height: %f",scrollView.frame.size.height);
+//    NSLog(@"content - height: %f",scrollView.contentSize.height);
+
+    BOOL reachedBottomOfData = scrollView.contentOffset.y + scrollView.frame.size.height == scrollView.contentSize.height;
     if (reachedBottomOfData)
     {
+        [self.tableView setTableFooterView:indicatorFooter];
         [self refreshTableViewList];
     }
 }//eom
@@ -98,6 +106,9 @@
             [strongSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
             fetchInProgress = FALSE;
             [strongSelf.tableView endUpdates];
+            
+            [strongSelf.tableView.tableFooterView removeFromSuperview];
+            [strongSelf.tableView setTableFooterView:nil];
         }
     });
 }//eom
@@ -120,15 +131,53 @@
               @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
               nil];
     
-    for (NSInteger i = 0; i < moreQuotes.count; i++)
+    for (NSInteger iter = 0; iter < moreQuotes.count; iter++)
     {
         //quotes added
-        NSString * currQuote = [moreQuotes objectAtIndex:i];
+    
+        NSInteger currQuoteIndex = arc4random_uniform(moreQuotes.count);
+        NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
         [self.quotes addObject:currQuote];
     
         //tableview updated
-        NSIndexPath * currPath = [NSIndexPath indexPathForRow:(self.quotes.count - 1) inSection:0];
+        NSInteger currIndex = (self.quotes.count - 1);
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currIndex inSection:0];
         [indexPaths addObject:currPath];
+    
+        NSLog(@"[adding quote] in index %d quote: %@ ", iter, currQuote);
+    }//eofl
+    
+    NSLog(@"quotes now has '%d' elements ", self.quotes.count);
+    
+    return indexPaths;
+}//eom
+    
+-(NSArray *)IndexPathForAddingRows:(NSInteger)numOfCellsToPushOnTable
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    
+    for (NSInteger iter = numOfCellsToPushOnTable-1; iter >= 0; iter--)
+    {
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:iter inSection:0];
+        [indexPaths addObject:currPath];
+        NSLog(@"[adding] row: %d | section:0",iter);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+-(NSArray *)IndexPathForRemovingRows:(NSInteger)numOfCellsToRemoveFromTable
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    
+    for (NSInteger iter = 1; iter <= numOfCellsToRemoveFromTable; iter++)
+    {
+        NSInteger currRow = (self.quotes.count - iter);
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        
+        
+        NSLog(@"[removing] row: %d | section:0",currRow);
     }//eofl
     
     return indexPaths;

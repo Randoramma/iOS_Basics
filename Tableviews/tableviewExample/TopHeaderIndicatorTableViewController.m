@@ -71,7 +71,7 @@
     
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    NSLog(@"\n\n");
+//    NSLog(@"\n");
 //    NSLog(@"nav - height: %f",self.navigationController.navigationBar.bounds.size.height);
 //    NSLog(@"table header - height: %f",self.tableView.tableHeaderView.bounds.size.height);
 //    NSLog(@"table row - height: %f",self.tableView.rowHeight);
@@ -130,9 +130,9 @@
     
     //calculating how many cells need to be pushed on top
     NSInteger numOfCellsThatFitOnScreen = self.tableView.frame.size.height/self.tableView.rowHeight;
+    
     //removing one cell so you can see on the bottom
     NSInteger numOfCellsToPushOnTable = numOfCellsThatFitOnScreen-1;
-    
     
     //adding quotes
     NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
@@ -149,15 +149,11 @@
                                    @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
                                    nil];
     
-    
-    
-//    for (NSInteger iter = moreQuotes.count-1; iter >= 0; iter--)
     for(NSInteger iter = 1; iter <= numOfCellsToPushOnTable; iter++)
     {
         //adding random quote
         NSInteger currQuoteIndex = arc4random_uniform(moreQuotes.count);
         NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
-    
         [self.quotes insertObject:currQuote atIndex:0];
     
         //removing last item from data
