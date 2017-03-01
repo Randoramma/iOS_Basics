@@ -80,44 +80,14 @@
     BOOL reachedBottomOfData = scrollView.contentOffset.y + scrollView.frame.size.height == scrollView.contentSize.height;
     if (reachedBottomOfData)
     {
-        [self.tableView setTableFooterView:indicatorFooter];
-        [self refreshTableViewList];
+        [self bottomIndicator_show];
+        [self refreshTableViewList_Below];
     }
 }//eom
-    
-#pragma mark - refresh data
--(void)refreshTableViewList
-{
-    static BOOL fetchInProgress = FALSE;
-    
-    if (fetchInProgress)
-    return;
-    
-    typeof(self) __weak weakSelf = self;
-    
-    fetchInProgress = TRUE;
-    
-        // this simulates a background fetch; I'm just going to delay for a second
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        typeof(self) strongSelf = weakSelf;
-        if (strongSelf) {
-            NSArray *indexPaths = [strongSelf addSomeObjects];
-            [strongSelf.tableView beginUpdates];
-            [strongSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
-            fetchInProgress = FALSE;
-            [strongSelf.tableView endUpdates];
-            
-            [strongSelf.tableView.tableFooterView removeFromSuperview];
-            [strongSelf.tableView setTableFooterView:nil];
-        }
-    });
-}//eom
 
-- (NSArray *)addSomeObjects {
-    
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    
-    NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
+#pragma mark - Refresh Data | Helper
+    -(NSArray *)getSomeData:(NSInteger) howManyDataToGet{
+        NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
            @"impossible is nothing",
            @"do or do not there is no try",
            @"Whether you think you can or you think you can't, you're right.",
@@ -148,24 +118,254 @@
            @"All men are created equal, some work harder in pre-season.",
            @"When you come to the end of your rope, tie a knot and hang on.",
            @"Don't make a priority out of someone that has you as an option.",
-          nil];
-    
-    for (NSInteger iter = 0; iter < moreQuotes.count; iter++)
-    {
-        //quotes added
+           nil];
+        
+        NSMutableArray * new_data = [NSMutableArray array];
+        
+        for(NSInteger iter = 0; iter < howManyDataToGet; iter++)
+        {
         NSInteger currQuoteIndex = arc4random_uniform(moreQuotes.count);
         NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
-        [self.quotes addObject:currQuote];
+        [new_data addObject:currQuote];
+        
+        NSLog(@"[%d] quote: %@",iter, currQuote);
+        }//eofl
+        
+        NSLog(@"[new quotes] with '%d' elements ", new_data.count);
+        
+        return new_data;
+    }//eom
     
-        //tableview updated
-        NSInteger currIndex = (self.quotes.count - 1);
-        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currIndex inSection:0];
-        [indexPaths addObject:currPath];
+-(NSInteger)numberOfCellsThatFitOnScreen {
+    NSInteger numOfCellsThatFitOnScreen = self.tableView.frame.size.height/self.tableView.rowHeight;
+    return numOfCellsThatFitOnScreen;
+}//eom
     
-        NSLog(@"[adding quote] in index %d quote: %@ ", iter, currQuote);
+#pragma mark - Top refresh data
+-(void)refreshTableViewList_Below
+    {
+    static BOOL topfetchInProgress = FALSE;
+    
+    if (topfetchInProgress)
+    return;
+    
+    typeof(self) __weak weakSelf = self;
+    
+    topfetchInProgress = TRUE;
+    
+        //simulating a background fetch
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            NSLog(@"-------------------------------------------");
+            
+                //new data
+            NSArray * newData               = [strongSelf getSomeData:17];
+            
+            NSInteger data_limit            = 25;
+            NSInteger rows_to_delete        = 0;
+            NSInteger rows_to_add           = newData.count;
+            NSInteger existing_data_count   = strongSelf.quotes.count;
+            NSInteger new_data_count        = newData.count;
+            NSInteger updated_data_count    = new_data_count + existing_data_count;
+            BOOL removeExcessData           = false;
+            
+            if (newData.count > 0)
+            {
+                //A. would adding the new data exceed the limit?
+            NSInteger diff_in_size = data_limit - updated_data_count;
+            if (diff_in_size < 0) {
+                rows_to_delete = (-1) * diff_in_size;
+                removeExcessData = true;
+            }
+            
+                //B. creating indexes for cells to remove/add
+            NSArray * indexPathsAdding      = [strongSelf IndexPath_addRows_Bottom:rows_to_add];
+            NSArray * indexPathsRemoving    = [strongSelf
+                IndexPath_addRows_Top:rows_to_delete];
+            
+                //C. Update table
+            [strongSelf.tableView beginUpdates];
+            
+                //D. add new data to existing data
+            [strongSelf addData_bottom:newData andExcessAmount:rows_to_delete];
+            
+                //removing cells
+            if (indexPathsRemoving.count > 0) {
+                [strongSelf.tableView deleteRowsAtIndexPaths:indexPathsRemoving withRowAnimation:UITableViewRowAnimationNone];
+            }
+            
+                //adding cells
+            [strongSelf.tableView insertRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationNone];
+            
+            NSLog(@"data_limit: %d | updated_data_count: %d | diff_in_size: %d " , data_limit, updated_data_count, diff_in_size );
+            NSLog(@"Removing Excess? %d | rows_to_delete: %d | rows_to_add: %d " , removeExcessData, rows_to_delete, rows_to_add );
+            NSLog(@"rows: %d | data: %d", ([strongSelf.tableView numberOfRowsInSection:0] - indexPathsRemoving.count + indexPathsAdding.count),
+                  strongSelf.quotes.count);
+            
+            [strongSelf.tableView endUpdates];
+        }
+            
+            topfetchInProgress = FALSE;
+            
+                //hide indicator
+            [strongSelf.tableView.tableFooterView removeFromSuperview];
+            [strongSelf.tableView setTableFooterView:nil];
+        }
+    });
+}//eom
+    
+#pragma mark - Add data Top/Below
+-(NSInteger)addData_top:(NSArray *)new_data
+        andExcessAmount:(NSInteger)excessAmount
+    {
+    NSInteger amountToRemove = excessAmount;
+    for (NSInteger iter = 1; iter <= new_data.count; iter++) {
+        NSInteger lastIndex = new_data.count - iter;
+        id currData = [new_data objectAtIndex:lastIndex];
+        [self.quotes insertObject:currData atIndex:0];
+        
+        NSLog(@"[adding data] on index %d", lastIndex);
+        if (amountToRemove > 0) {
+            [self.quotes removeLastObject];
+            NSLog(@"[removing excess data] on index %d", self.quotes.count);
+            amountToRemove = amountToRemove - 1;
+        }
+        
     }//eofl
     
-    NSLog(@"quotes now has '%d' elements ", self.quotes.count);
+    NSLog(@"total data: %d", self.quotes.count);
+    return self.quotes.count;
+    }//eom
+    
+-(NSInteger)addData_bottom:(NSArray *)new_data
+           andExcessAmount:(NSInteger)excessAmount
+{
+    NSInteger amountToRemove = excessAmount;
+    for (NSInteger iter = 0; iter < new_data.count; iter++) {
+        id currData = [new_data objectAtIndex:iter];
+        [self.quotes addObject:currData];
+        
+        if (amountToRemove > 0) {
+            [self.quotes removeObjectAtIndex:0];
+            NSLog(@"[removing excess data] on index %d", 0);
+            amountToRemove = amountToRemove - 1;
+        }
+        
+        NSLog(@"[adding data] on index %d", iter);
+    }//eofl
+    
+    NSLog(@"total data: %d", self.quotes.count);
+    return self.quotes.count;
+}//eom
+    
+#pragma mark - Show/Hide Header Indicator
+-(void)bottomIndicator_show
+{
+    [self.tableView setTableFooterView:indicatorFooter];
+}//eom
+    
+-(void)bottomIndicator_hide
+{
+    [self.tableView.tableFooterView removeFromSuperview];
+    [self.tableView setTableFooterView:nil];
+}//eom
+    
+#pragma mark - IndexPath Add
+-(NSArray *)IndexPath_addRows_Top:(NSInteger)cellsToAdd
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    
+    for (NSInteger iter = 0; iter < cellsToAdd; iter++)
+    {
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:iter inSection:0];
+        [indexPaths addObject:currPath];
+        NSLog(@"[adding cell] row: %d | section:0",iter);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+-(NSArray *)IndexPath_addRows_Bottom:(NSInteger)cellsToAdd
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    
+    for (NSInteger iter = 1; iter <= cellsToAdd; iter++)
+    {
+        NSInteger currRow = (self.quotes.count - iter);
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        
+        NSLog(@"[adding cell] row: %d | section:0",iter);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+#pragma mark - IndexPath Remove
+-(NSArray *)IndexPath_removeRows_Top:(NSInteger)cellsToRemove
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    
+    for (NSInteger iter = 0; iter < cellsToRemove; iter++)
+    {
+        NSInteger currRow = iter;
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        
+        NSLog(@"[removing cell] row: %d | section:0",currRow);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+-(NSArray *)IndexPath_removeRows_Bottom:(NSInteger)cellsToRemove
+{
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (NSInteger iter = 1; iter <= cellsToRemove; iter++)
+    {
+        NSInteger currRow = (self.quotes.count - iter);
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        
+        NSLog(@"[removing cell] row: %d | section:0",currRow);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+#pragma mark - IndexPath Reloading
+-(NSArray *)IndexPath_Reloading_Top:(NSInteger)numOfCellsShowing
+                andNumOfCellsAdding:(NSInteger)numOfCellsAdding
+{
+    NSInteger starting = numOfCellsAdding - numOfCellsShowing;
+    
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (NSInteger iter = 1; iter <= numOfCellsShowing; iter++)
+    {
+        NSInteger currRow = starting + iter;
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        NSLog(@"[reloading cell] row: %d | section:0",currRow);
+    }//eofl
+    
+    return indexPaths;
+}//eom
+    
+-(NSArray *)IndexPath_Reloading_Bottom:(NSInteger)numOfCellsShowing
+                  withNumOfCellsAdding:(NSInteger)numOfCellsAdding
+                          andTotalData:(NSInteger)totalData
+{
+    NSInteger starting = totalData - numOfCellsAdding;
+    
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (NSInteger iter = starting; iter <= numOfCellsShowing; iter++)
+    {
+        NSInteger currRow = iter;
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
+        [indexPaths addObject:currPath];
+        NSLog(@"[reloading cell] row: %d | section:0",currRow);
+    }//eofl
     
     return indexPaths;
 }//eom

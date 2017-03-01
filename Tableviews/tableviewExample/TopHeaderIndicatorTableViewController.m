@@ -141,7 +141,7 @@
     return numOfCellsThatFitOnScreen;
 }//eom
     
-#pragma mark - Previous refresh data
+#pragma mark - Top refresh data
 -(void)refreshTableViewList_OnTop
 {
     static BOOL topfetchInProgress = FALSE;
@@ -160,17 +160,18 @@
             NSLog(@"-------------------------------------------");
             
                 //new data
-            NSArray * newData = [strongSelf getSomeData:7];
+            NSArray * newData               = [strongSelf getSomeData:17];
             
-            NSInteger data_limit        = 20;
-            NSInteger rows_to_delete    = 0;
-            NSInteger rows_to_add       = newData.count;
+            NSInteger data_limit            = 25;
+            NSInteger rows_to_delete        = 0;
+            NSInteger rows_to_add           = newData.count;
             NSInteger existing_data_count   = strongSelf.quotes.count;
             NSInteger new_data_count        = newData.count;
             NSInteger updated_data_count    = new_data_count + existing_data_count;
-            BOOL removeExcessData = false;
+            BOOL removeExcessData           = false;
             
-            if (newData.count > 0) {
+            if (newData.count > 0)
+            {
                     //A. would adding the new data exceed the limit?
                 NSInteger diff_in_size = data_limit - updated_data_count;
                 if (diff_in_size < 0) {
@@ -178,17 +179,9 @@
                     removeExcessData = true;
                 }
                 
-                NSLog(@"data_limit: %d | updated_data_count: %d | diff_in_size: %d " , data_limit ,updated_data_count   , diff_in_size );
-                NSLog(@"Removing Excess? %d | rows_to_delete: %d | rows_to_add: %d " , removeExcessData ,rows_to_delete, rows_to_add );
-                
-                    //B.
-                NSInteger numOfCellsToShow = [self numberOfCellsThatFitOnScreen] - 1;
-                
                     //B. creating indexes for cells to remove/add
                 NSArray * indexPathsAdding      = [strongSelf IndexPath_addRows_Top:rows_to_add];
                 NSArray * indexPathsRemoving    = [strongSelf IndexPath_removeRows_Bottom:rows_to_delete];
-                NSArray * indexPathsReloading   = [strongSelf IndexPath_Reloading_Top:numOfCellsToShow
-                                                                  andNumOfCellsAdding:new_data_count];
                 
                     //C. Update table
                 [strongSelf.tableView beginUpdates];
@@ -196,40 +189,38 @@
                     //D. add new data to existing data
                 [strongSelf addData_top:newData andExcessAmount:rows_to_delete];
                 
-                    //removing
+                    //removing cells
                 if (indexPathsRemoving.count > 0) {
                     [strongSelf.tableView deleteRowsAtIndexPaths:indexPathsRemoving withRowAnimation:UITableViewRowAnimationNone];
                 }
                 
-                    //adding
+                    //adding cells
                 [strongSelf.tableView insertRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationNone];
                 
-                    //reloading
-//                [strongSelf.tableView reloadRowsAtIndexPaths:indexPathsReloading withRowAnimation:UITableViewRowAnimationMiddle];
-                
-                NSLog(@"rows: %d | data: %d", ([strongSelf.tableView numberOfRowsInSection:0] - indexPathsRemoving.count + indexPathsAdding.count), strongSelf.quotes.count);
-                
-                
+                    //moving scrollview back down
                 NSInteger estimatedRow = strongSelf.tableView.rowHeight * ( (indexPathsAdding.count) - 2);
-                
-                NSLog(@"estimatedRow: %d",estimatedRow);
-                
                 [strongSelf.tableView setContentOffset:CGPointMake(0, estimatedRow)];
                 
+                NSLog(@"data_limit: %d | updated_data_count: %d | diff_in_size: %d " , data_limit, updated_data_count, diff_in_size );
+                NSLog(@"Removing Excess? %d | rows_to_delete: %d | rows_to_add: %d " , removeExcessData, rows_to_delete, rows_to_add );
+                NSLog(@"rows: %d | data: %d", ([strongSelf.tableView numberOfRowsInSection:0] - indexPathsRemoving.count + indexPathsAdding.count),
+                      strongSelf.quotes.count);
+                NSLog(@"estimatedRow: %d ",estimatedRow);
+                
                 [strongSelf.tableView endUpdates];
-           
-            }
+        }
             
             topfetchInProgress = FALSE;
             
                 //hide indicator
             [strongSelf.tableView.tableHeaderView removeFromSuperview];
             [strongSelf.tableView setTableHeaderView:nil];
-            
         }
     });
 }//eom
     
+    
+#pragma mark - Add data Top/Below
 -(NSInteger)addData_top:(NSArray *)new_data andExcessAmount:(NSInteger)excessAmount
 {
     NSInteger amountToRemove = excessAmount;
@@ -380,104 +371,6 @@
     
     return indexPaths;
 }//eom
-    
-    
-        //-(void)refreshTableViewList{
-        //    static BOOL fetchInProgress = FALSE;
-        //
-        //    if (fetchInProgress)
-        //    return;
-        //
-        //    typeof(self) __weak weakSelf = self;
-        //
-        //    fetchInProgress = TRUE;
-        //
-        //        // this simulates a background fetch; I'm just going to delay for a second
-        //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //        typeof(self) strongSelf = weakSelf;
-        //        if (strongSelf) {
-        //            NSArray *indexPathsAdding = [strongSelf addObjectsOnTop];
-        //            NSArray *indexPathsRemoving = [strongSelf IndexPathForRemovingRows:indexPathsAdding.count];
-        //
-        //            [strongSelf.tableView beginUpdates];
-        //
-        //                //add cells
-        //            [strongSelf.tableView insertRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationNone];
-        //
-        //                //remove cells
-        //            [strongSelf.tableView deleteRowsAtIndexPaths:indexPathsRemoving withRowAnimation:UITableViewRowAnimationNone];
-        //
-        //                //reload cells
-        //            [strongSelf.tableView reloadRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationTop];
-        //
-        //            fetchInProgress = FALSE;
-        //            [strongSelf.tableView endUpdates];
-        //
-        //            [strongSelf.tableView.tableHeaderView removeFromSuperview];
-        //            [strongSelf.tableView setTableHeaderView:nil];
-        //        }
-        //    });
-        //}//eom
-        //
-        //- (NSArray *)addObjectsOnTop {
-        //
-        //    //calculating how many cells need to be pushed on top
-        //    NSInteger numOfCellsThatFitOnScreen = [self numberOfCellsThatFitOnScreen];
-        //
-        //    //removing one cell so you can see on the bottom
-        //    NSInteger numOfCellsToPushOnTable = numOfCellsThatFitOnScreen-1;
-        //
-        //    //adding quotes
-        //    NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
-        //           @"impossible is nothing",
-        //           @"do or do not there is no try",
-        //           @"Whether you think you can or you think you can't, you're right.",
-        //           @"Excuses sound best to those making them",
-        //           @"Although the world is full of suffering, it is also full of the overcoming of it.",
-        //           @"The struggle ends when the gratitude begins.",
-        //           @"The future depends on what we do in the present.",
-        //           @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
-        //           @"If you’re going through hell, keep going.",
-        //           @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
-        //           @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
-        //           @"If you change nothing, nothing will change.",
-        //           @"A goal without a plan is only a wish.",
-        //           @"Rules for happiness: something to do, someone to love, something to hope for.",
-        //           @"When you judge others, you do not define them; you define yourself.",
-        //           @"Keep your goals away from the trolls.",
-        //           @"You don't have to live your life the way other people expect you to.",
-        //           @"Always remember that the future comes one day at a time.",
-        //           @"It always seems impossible until it's done.",
-        //           @"Do not wish for an easy life. Wish for the strength to endure a difficult one.",
-        //           @"If you stand for nothing, you fall for anything",
-        //           @"When Anger rises, think of consequences.",
-        //           @"Before you embark on a journey of revenge, dig two caves.",
-        //           @"Don't cry because it's over, smile because it happened.",
-        //           @"Today you are You, that is truer than true. There is no one alive who is Youer than You.",
-        //           @"Sometimes the questions are complicated and the answers are simple.",
-        //           @"When you want to succeed as bad as you want to breathe, that's when you will be successful.",
-        //           @"All men are created equal, some work harder in pre-season.",
-        //           @"When you come to the end of your rope, tie a knot and hang on.",
-        //           @"Don't make a priority out of someone that has you as an option.",
-        //           nil];
-        //
-        //    for(NSInteger iter = 1; iter <= numOfCellsToPushOnTable; iter++)
-        //    {
-        //        //adding random quote
-        //        NSInteger currQuoteIndex = arc4random_uniform(moreQuotes.count);
-        //        NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
-        //        [self.quotes insertObject:currQuote atIndex:0];
-        //    
-        //        //removing last item from data
-        //        [self.quotes removeLastObject];
-        //    
-        //        NSLog(@"[adding quote] in index %d quote: %@ ", iter, currQuote);
-        //    }//eofl
-        //    
-        //    NSArray *indexPaths = [self IndexPathForAddingRows:numOfCellsToPushOnTable];
-        //    
-        //    return indexPaths;
-        //}//eom
     
 #pragma mark - Memory
 - (void)didReceiveMemoryWarning {
