@@ -21,19 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    quotes = [[NSMutableArray alloc] initWithObjects:
-              @"impossible is nothing",
-              @"do or do not there is no try",
-              @"Whether you think you can or you think you can't, you're right.",
-              @"Excuses sound best to those making them",
-              @"Although the world is full of suffering, it is also full of the overcoming of it.",
-              @"The struggle ends when the gratitude begins.",
-              @"The future depends on what we do in the present.",
-              @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
-              @"If you’re going through hell, keep going.",
-              @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
-              @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
-               nil];
+    quotes = [[NSMutableArray alloc]
+              initWithObjects:
+              @"If it ain't fun, don't do it.",
+              @"To escape criticism: do nothing, say nothing, be nothing.",
+              @"What the caterpillar calls the end, the rest of the world calls a butterfly.",
+              @"Failure is success if you learn from it.",
+              @"Don't limit your challenges - challenge your limits.",
+              @"Change in all things are sweet.",
+              @"Insanity: doing the same thing over and over again and expecting different results.",
+              @"If a cluttered desk is a sign of a cluttered mind, of what, then, is an empty desk a sign?",
+              @"The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.",
+              @"Emancipate yourselves from mental slavery.None but ourselves can free our minds",
+           nil];
     
     [self initializeRefreshControl];
 }//eom
@@ -118,23 +118,41 @@
     NSMutableArray *indexPaths = [NSMutableArray array];
     
     NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
-              @"impossible is nothing",
-              @"do or do not there is no try",
-              @"Whether you think you can or you think you can't, you're right.",
-              @"Excuses sound best to those making them",
-              @"Although the world is full of suffering, it is also full of the overcoming of it.",
-              @"The struggle ends when the gratitude begins.",
-              @"The future depends on what we do in the present.",
-              @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
-              @"If you’re going through hell, keep going.",
-              @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
-              @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
-              nil];
+           @"impossible is nothing",
+           @"do or do not there is no try",
+           @"Whether you think you can or you think you can't, you're right.",
+           @"Excuses sound best to those making them",
+           @"Although the world is full of suffering, it is also full of the overcoming of it.",
+           @"The struggle ends when the gratitude begins.",
+           @"The future depends on what we do in the present.",
+           @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
+           @"If you’re going through hell, keep going.",
+           @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
+           @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
+           @"If you change nothing, nothing will change.",
+           @"A goal without a plan is only a wish.",
+           @"Rules for happiness: something to do, someone to love, something to hope for.",
+           @"When you judge others, you do not define them; you define yourself.",
+           @"Keep your goals away from the trolls.",
+           @"You don't have to live your life the way other people expect you to.",
+           @"Always remember that the future comes one day at a time.",
+           @"It always seems impossible until it's done.",
+           @"Do not wish for an easy life. Wish for the strength to endure a difficult one.",
+           @"If you stand for nothing, you fall for anything",
+           @"When Anger rises, think of consequences.",
+           @"Before you embark on a journey of revenge, dig two caves.",
+           @"Don't cry because it's over, smile because it happened.",
+           @"Today you are You, that is truer than true. There is no one alive who is Youer than You.",
+           @"Sometimes the questions are complicated and the answers are simple.",
+           @"When you want to succeed as bad as you want to breathe, that's when you will be successful.",
+           @"All men are created equal, some work harder in pre-season.",
+           @"When you come to the end of your rope, tie a knot and hang on.",
+           @"Don't make a priority out of someone that has you as an option.",
+          nil];
     
     for (NSInteger iter = 0; iter < moreQuotes.count; iter++)
     {
         //quotes added
-    
         NSInteger currQuoteIndex = arc4random_uniform(moreQuotes.count);
         NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
         [self.quotes addObject:currQuote];
@@ -148,37 +166,6 @@
     }//eofl
     
     NSLog(@"quotes now has '%d' elements ", self.quotes.count);
-    
-    return indexPaths;
-}//eom
-    
--(NSArray *)IndexPathForAddingRows:(NSInteger)numOfCellsToPushOnTable
-{
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    
-    for (NSInteger iter = numOfCellsToPushOnTable-1; iter >= 0; iter--)
-    {
-        NSIndexPath * currPath = [NSIndexPath indexPathForRow:iter inSection:0];
-        [indexPaths addObject:currPath];
-        NSLog(@"[adding] row: %d | section:0",iter);
-    }//eofl
-    
-    return indexPaths;
-}//eom
-    
--(NSArray *)IndexPathForRemovingRows:(NSInteger)numOfCellsToRemoveFromTable
-{
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    
-    for (NSInteger iter = 1; iter <= numOfCellsToRemoveFromTable; iter++)
-    {
-        NSInteger currRow = (self.quotes.count - iter);
-        NSIndexPath * currPath = [NSIndexPath indexPathForRow:currRow inSection:0];
-        [indexPaths addObject:currPath];
-        
-        
-        NSLog(@"[removing] row: %d | section:0",currRow);
-    }//eofl
     
     return indexPaths;
 }//eom

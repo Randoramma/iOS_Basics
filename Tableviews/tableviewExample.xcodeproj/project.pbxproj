@@ -25,6 +25,7 @@
 		DECB6E241E63E2A300316432 /* QuoteBottomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E231E63E2A300316432 /* QuoteBottomTableViewController.swift */; };
 		DECB6E281E63EBA800316432 /* BottomFooterIndicatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E271E63EBA800316432 /* BottomFooterIndicatorTableViewController.m */; };
 		DECB6E2C1E63F64400316432 /* TopHeaderIndicatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */; };
+		DECB6E2F1E64F42C00316432 /* TopAndBottomIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB6E2E1E64F42C00316432 /* TopAndBottomIndicatorTableViewController.swift */; };
 		DEFACFA81BE0584F00BAAAE2 /* BasicView2DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFA71BE0584F00BAAAE2 /* BasicView2DetailViewController.m */; };
 		DEFACFAB1BE0586600BAAAE2 /* BasicView2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFAA1BE0586600BAAAE2 /* BasicView2TableViewController.m */; };
 		DEFACFAE1BE0587A00BAAAE2 /* BasicView2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFACFAD1BE0587A00BAAAE2 /* BasicView2TableViewCell.m */; };
@@ -72,6 +73,7 @@
 		DECB6E271E63EBA800316432 /* BottomFooterIndicatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomFooterIndicatorTableViewController.m; sourceTree = "<group>"; };
 		DECB6E2A1E63F64400316432 /* TopHeaderIndicatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopHeaderIndicatorTableViewController.h; sourceTree = "<group>"; };
 		DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopHeaderIndicatorTableViewController.m; sourceTree = "<group>"; };
+		DECB6E2E1E64F42C00316432 /* TopAndBottomIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAndBottomIndicatorTableViewController.swift; sourceTree = "<group>"; };
 		DEFACFA61BE0584F00BAAAE2 /* BasicView2DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView2DetailViewController.h; sourceTree = "<group>"; };
 		DEFACFA71BE0584F00BAAAE2 /* BasicView2DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView2DetailViewController.m; sourceTree = "<group>"; };
 		DEFACFA91BE0586600BAAAE2 /* BasicView2TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView2TableViewController.h; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				DECB6E251E63EB6F00316432 /* NOT USING OR WORKING */,
+				DECB6E2D1E64F37F00316432 /* 9 Header and Footer Indicator (Pull to Refresh) */,
 				DECB6E1C1E63C12F00316432 /* 8 Top Pull to Refresh */,
 				DECB6E291E63F35600316432 /* 7 Header Indicator (Top pull to refresh) */,
 				DECB6E091E63AA2300316432 /* 6 Footer Indicator (Bottom Pull to refresh) */,
@@ -266,6 +269,14 @@
 				DECB6E2B1E63F64400316432 /* TopHeaderIndicatorTableViewController.m */,
 			);
 			name = "7 Header Indicator (Top pull to refresh)";
+			sourceTree = "<group>";
+		};
+		DECB6E2D1E64F37F00316432 /* 9 Header and Footer Indicator (Pull to Refresh) */ = {
+			isa = PBXGroup;
+			children = (
+				DECB6E2E1E64F42C00316432 /* TopAndBottomIndicatorTableViewController.swift */,
+			);
+			name = "9 Header and Footer Indicator (Pull to Refresh)";
 			sourceTree = "<group>";
 		};
 		DEFACFA21BE0580E00BAAAE2 /* 3 View with TableView Header */ = {
@@ -383,6 +394,7 @@
 				DE91F1161BE00DE2007F892D /* AppDelegate.m in Sources */,
 				DE91F14A1BE02BC4007F892D /* BasicView1TableViewCell.m in Sources */,
 				DE91F1131BE00DE2007F892D /* main.m in Sources */,
+				DECB6E2F1E64F42C00316432 /* TopAndBottomIndicatorTableViewController.swift in Sources */,
 				DECB6E2C1E63F64400316432 /* TopHeaderIndicatorTableViewController.m in Sources */,
 				DECB6E111E63B5DE00316432 /* BottomRefreshCellTableViewController.m in Sources */,
 				DE91F14D1BE0457A007F892D /* BasicView1DetailViewController.m in Sources */,
