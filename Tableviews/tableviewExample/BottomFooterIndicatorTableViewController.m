@@ -168,7 +168,6 @@
             NSInteger existing_data_count   = strongSelf.quotes.count;
             NSInteger new_data_count        = newData.count;
             NSInteger updated_data_count    = new_data_count + existing_data_count;
-            BOOL removeExcessData           = false;
             
             if (newData.count > 0)
             {
@@ -176,13 +175,12 @@
             NSInteger diff_in_size = data_limit - updated_data_count;
             if (diff_in_size < 0) {
                 rows_to_delete = (-1) * diff_in_size;
-                removeExcessData = true;
             }
             
                 //B. creating indexes for cells to remove/add
             NSArray * indexPathsAdding      = [strongSelf IndexPath_addRows_Bottom:rows_to_add];
             NSArray * indexPathsRemoving    = [strongSelf
-                IndexPath_addRows_Top:rows_to_delete];
+                IndexPath_removeRows_Top:rows_to_delete];
             
                 //C. Update table
             [strongSelf.tableView beginUpdates];
@@ -199,7 +197,7 @@
             [strongSelf.tableView insertRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationNone];
             
             NSLog(@"data_limit: %d | updated_data_count: %d | diff_in_size: %d " , data_limit, updated_data_count, diff_in_size );
-            NSLog(@"Removing Excess? %d | rows_to_delete: %d | rows_to_add: %d " , removeExcessData, rows_to_delete, rows_to_add );
+            NSLog(@" rows_to_delete: %d | rows_to_add: %d ", rows_to_delete, rows_to_add );
             NSLog(@"rows: %d | data: %d", ([strongSelf.tableView numberOfRowsInSection:0] - indexPathsRemoving.count + indexPathsAdding.count),
                   strongSelf.quotes.count);
             
@@ -218,7 +216,7 @@
 #pragma mark - Add data Top/Below
 -(NSInteger)addData_top:(NSArray *)new_data
         andExcessAmount:(NSInteger)excessAmount
-    {
+{
     NSInteger amountToRemove = excessAmount;
     for (NSInteger iter = 1; iter <= new_data.count; iter++) {
         NSInteger lastIndex = new_data.count - iter;
@@ -236,7 +234,7 @@
     
     NSLog(@"total data: %d", self.quotes.count);
     return self.quotes.count;
-    }//eom
+}//eom
     
 -(NSInteger)addData_bottom:(NSArray *)new_data
            andExcessAmount:(NSInteger)excessAmount

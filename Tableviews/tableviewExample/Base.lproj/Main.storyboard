@@ -242,6 +242,33 @@
                                             <segue destination="fIf-gh-1HU" kind="push" id="QFn-Fa-IDk"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mainCell8" textLabel="JWp-Fo-SYB" detailTextLabel="Kqc-4Q-gUF" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="waX-jr-beV">
+                                        <rect key="frame" x="0.0" y="397" width="375" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waX-jr-beV" id="Xh9-4N-kXr">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Top and Bottom Pull to Refresh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWp-Fo-SYB">
+                                                    <rect key="frame" x="15" y="13" width="238" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Indicator from Header/Footer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kqc-4Q-gUF" userLabel="Indicator from valueChanged selector">
+                                                    <rect key="frame" x="15" y="34" width="165" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ImZ-oh-6xV" kind="push" id="fyj-mx-6Pc"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -948,6 +975,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLI-0q-4wV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1022" y="-1066"/>
+        </scene>
+        <!--Top And Bottom Indicator Table View Controller-->
+        <scene sceneID="rD3-Z4-Zau">
+            <objects>
+                <tableViewController id="ImZ-oh-6xV" customClass="TopAndBottomIndicatorTableViewController" customModule="tableviewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="onE-da-cWI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuoteCell" textLabel="2CN-Qv-Rhg" rowHeight="95" style="IBUITableViewCellStyleDefault" id="qda-y6-70m">
+                                <rect key="frame" x="0.0" y="28" width="375" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qda-y6-70m" id="pMJ-p4-wW9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2CN-Qv-Rhg">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ImZ-oh-6xV" id="hrp-Iu-ZyI"/>
+                            <outlet property="delegate" destination="ImZ-oh-6xV" id="KFu-CC-3oL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rzS-KO-RbF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2f-j1-ifk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888" y="-1065"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

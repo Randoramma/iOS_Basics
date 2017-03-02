@@ -88,37 +88,37 @@
 #pragma mark - Refresh Data | Helper
     -(NSArray *)getSomeData:(NSInteger) howManyDataToGet{
     NSMutableArray * moreQuotes = [[NSMutableArray alloc] initWithObjects:
-                   @"impossible is nothing",
-                   @"do or do not there is no try",
-                   @"Whether you think you can or you think you can't, you're right.",
-                   @"Excuses sound best to those making them",
-                   @"Although the world is full of suffering, it is also full of the overcoming of it.",
-                   @"The struggle ends when the gratitude begins.",
-                   @"The future depends on what we do in the present.",
-                   @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
-                   @"If you’re going through hell, keep going.",
-                   @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
-                   @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
-                   @"If you change nothing, nothing will change.",
-                   @"A goal without a plan is only a wish.",
-                   @"Rules for happiness: something to do, someone to love, something to hope for.",
-                   @"When you judge others, you do not define them; you define yourself.",
-                   @"Keep your goals away from the trolls.",
-                   @"You don't have to live your life the way other people expect you to.",
-                   @"Always remember that the future comes one day at a time.",
-                   @"It always seems impossible until it's done.",
-                   @"Do not wish for an easy life. Wish for the strength to endure a difficult one.",
-                   @"If you stand for nothing, you fall for anything",
-                   @"When Anger rises, think of consequences.",
-                   @"Before you embark on a journey of revenge, dig two caves.",
-                   @"Don't cry because it's over, smile because it happened.",
-                   @"Today you are You, that is truer than true. There is no one alive who is Youer than You.",
-                   @"Sometimes the questions are complicated and the answers are simple.",
-                   @"When you want to succeed as bad as you want to breathe, that's when you will be successful.",
-                   @"All men are created equal, some work harder in pre-season.",
-                   @"When you come to the end of your rope, tie a knot and hang on.",
-                   @"Don't make a priority out of someone that has you as an option.",
-                   nil];
+       @"impossible is nothing",
+       @"do or do not there is no try",
+       @"Whether you think you can or you think you can't, you're right.",
+       @"Excuses sound best to those making them",
+       @"Although the world is full of suffering, it is also full of the overcoming of it.",
+       @"The struggle ends when the gratitude begins.",
+       @"The future depends on what we do in the present.",
+       @"If you don`t like something, change it. If you can`t change it, change your attitude. Don`t complain.",
+       @"If you’re going through hell, keep going.",
+       @"I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
+       @"Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic.",
+       @"If you change nothing, nothing will change.",
+       @"A goal without a plan is only a wish.",
+       @"Rules for happiness: something to do, someone to love, something to hope for.",
+       @"When you judge others, you do not define them; you define yourself.",
+       @"Keep your goals away from the trolls.",
+       @"You don't have to live your life the way other people expect you to.",
+       @"Always remember that the future comes one day at a time.",
+       @"It always seems impossible until it's done.",
+       @"Do not wish for an easy life. Wish for the strength to endure a difficult one.",
+       @"If you stand for nothing, you fall for anything",
+       @"When Anger rises, think of consequences.",
+       @"Before you embark on a journey of revenge, dig two caves.",
+       @"Don't cry because it's over, smile because it happened.",
+       @"Today you are You, that is truer than true. There is no one alive who is Youer than You.",
+       @"Sometimes the questions are complicated and the answers are simple.",
+       @"When you want to succeed as bad as you want to breathe, that's when you will be successful.",
+       @"All men are created equal, some work harder in pre-season.",
+       @"When you come to the end of your rope, tie a knot and hang on.",
+       @"Don't make a priority out of someone that has you as an option.",
+       nil];
     
     NSMutableArray * new_data = [NSMutableArray array];
     
@@ -197,7 +197,7 @@
                     //adding cells
                 [strongSelf.tableView insertRowsAtIndexPaths:indexPathsAdding withRowAnimation:UITableViewRowAnimationNone];
                 
-                    //moving scrollview back down
+                    //moving scrollview back to location prior insertion
                 NSInteger estimatedRow = strongSelf.tableView.rowHeight * ( (indexPathsAdding.count) - 2);
                 [strongSelf.tableView setContentOffset:CGPointMake(0, estimatedRow)];
                 

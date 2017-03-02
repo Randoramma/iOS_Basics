@@ -10,8 +10,10 @@ import UIKit
 
 class TopAndBottomIndicatorTableViewController: UITableViewController {
 
-    private let busyIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    private var busyIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     private var quotes:[String] = []
+    private var fetchInProgress = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,27 +29,41 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
                   "If you’re going through hell, keep going.",
                   "I know where I’m going and I know the truth, and I don’t have to be what you want me to be. I’m free to be what I want.",
                   "Never be afraid to try something new. Remember, amateurs built the ark; professionals built the Titanic."]
+        
+        self.setupIndicator()
     }//eom
 
-
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }
+    }//eom
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
-    }
-
+    }//eom
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteCell", for: indexPath)
         
-
+        cell.textLabel?.text = quotes[indexPath.row]
+        
         return cell
-    }
+    }//eom
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let reachedTop:Bool = scrollView.contentOffset.y < (-64.0 - self.tableView.rowHeight);
+        let reachedBottom:Bool = (scrollView.contentOffset.y + scrollView.frame.size.height) == scrollView.contentSize.height;
+        
+        if reachedTop
+        {
+            self.refreshTable(top: true)
+        }
+        else if reachedBottom
+        {
+            self.refreshTable(top: false)
+        }
+    }//eom
     
     //MARK: - Add Data Top/Bottom
     func getSomeData(dataToAdd:Int)->[String]
@@ -88,11 +104,11 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         var newData:[String] = []
         for iter in 0..<dataToAdd
         {
-//            let randomIndex:UInt32 = arc4random_uniform(totalExtraQuotes)
-//            let aRandomQuote:String = extraQuotes[randomIndex]
-//            newData.append(aRandomQuote)
-//            
-//            print("[\(iter)] quote: \(aRandomQuote)")
+            let randomIndex:Int = Int(arc4random_uniform(totalExtraQuotes))
+            let aRandomQuote:String = extraQuotes[randomIndex]
+            newData.append(aRandomQuote)
+            
+            print("[\(iter)] quote: \(aRandomQuote)")
         }//eom
         
         print("[new quotes] with '\(newData.count)' elements")
@@ -101,65 +117,327 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     }//eom
     
     //MARK: - Show/Hide Indicators
+    func setupIndicator()
+    {
+        let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 44)
+        busyIndicator = UIActivityIndicatorView(frame: frame)
+        busyIndicator.color = UIColor.black
+        busyIndicator.startAnimating()
+    }//eom
+    
     func topIndicator_show()
     {
-        self.tableView.tableHeaderView = busyIndicator
+        DispatchQueue.main.async {
+            self.tableView.tableHeaderView = self.busyIndicator
+        }
     }//eom
     
     func topIndicator_hide()
     {
-        self.tableView.tableHeaderView?.removeFromSuperview()
-        self.tableView.tableHeaderView = nil
+        DispatchQueue.main.async {
+            self.tableView.tableHeaderView?.removeFromSuperview()
+            self.tableView.tableHeaderView = nil
+        }
     }//eom
     
     func bottomIndicator_show()
     {
-        self.tableView.tableFooterView = busyIndicator
+        DispatchQueue.main.async {
+            self.tableView.tableFooterView = self.busyIndicator
+        }
     }//eom
     
     func bottomIndicator_hide()
     {
-        self.tableView.tableFooterView?.removeFromSuperview()
-        self.tableView.tableFooterView = nil
+        DispatchQueue.main.async {
+            self.tableView.tableFooterView?.removeFromSuperview()
+            self.tableView.tableFooterView = nil
+        }
+    }//eom
+    
+    //MARK: - refresh table
+    func refreshTable(top:Bool)
+    {
+        if fetchInProgress {
+            return;
+        }
+        
+        fetchInProgress = true
+        
+        if top
+        {
+            self.topIndicator_show()
+            self.refreshTable_top()
+        }
+        else
+        {
+            self.bottomIndicator_show()
+            self.refreshTable_below()
+        }
+    }//eom
+    
+    func refreshTable_top()
+    {
+        let newData:[String] = self.getSomeData(dataToAdd: 17)
+        
+        let data_limit:Int          = 25;
+        //
+        let existing_data_count:Int = self.quotes.count
+        let new_data_count:Int      = newData.count
+        let updated_data_count:Int  = new_data_count + existing_data_count
+        
+        var rows_to_delete:Int      = 0
+        let rows_to_add:Int         = new_data_count
+        let diff_in_size            = (data_limit - updated_data_count)
+        
+        //A. would adding the new data exceed the limit?
+        if  diff_in_size < 0
+        {
+            rows_to_delete = (-1) * diff_in_size
+        }//eom
+        
+        //B. creating indexes for cells to remove/add
+        let indexPathToAdd:[IndexPath] = self.indexPath_addRows_top(section: 0,
+                                                cellsToAdd: rows_to_add)
+        let indexPathToRemove:[IndexPath] = self.indexPath_removeRows_bottom(section: 0,
+                                                 currentCellSum: self.quotes.count,
+                                                 cellsToRemove: rows_to_delete)
+        
+        //simulating a background fetch
+        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 2.0))
+        { [weak self] in
+            
+            //START
+            self?.tableView.beginUpdates()
+            
+            //add new data with existing data
+            self?.addData_top(newData: newData, excessAmount: rows_to_delete)
+            
+            //remove cells
+            if indexPathToRemove.count > 0
+            {
+                self?.tableView.deleteRows(at: indexPathToRemove,
+                                           with: UITableViewRowAnimation.none)
+            }
+            
+            //add cells
+            self?.tableView.insertRows(at: indexPathToAdd,
+                                       with: UITableViewRowAnimation.none)
+            
+            //moving scrollview back to location prior insertion
+            if let tableviewRowHeight:CGFloat = self?.tableView.rowHeight
+            {
+                let estimatedRow:Int = Int(tableviewRowHeight) * (indexPathToAdd.count - 2)
+                let estimatedPoint:CGPoint = CGPoint(x: 0, y: estimatedRow)
+                self?.tableView .setContentOffset(estimatedPoint, animated: false)
+            }
+            
+            
+            //END
+            self?.tableView.endUpdates()
+            
+            self?.fetchInProgress = false
+            
+            self?.topIndicator_hide()
+        }
+    }//eom
+    
+    func refreshTable_below()
+    {
+        let newData:[String] = self.getSomeData(dataToAdd: 17)
+        
+        let data_limit:Int          = 25;
+        //
+        let existing_data_count:Int = self.quotes.count
+        let new_data_count:Int      = newData.count
+        let updated_data_count:Int  = new_data_count + existing_data_count
+        
+        var rows_to_delete:Int      = 0
+        let rows_to_add:Int         = new_data_count
+        let diff_in_size            = (data_limit - updated_data_count)
+        
+        //A. would adding the new data exceed the limit?
+        if  diff_in_size < 0
+        {
+            rows_to_delete = (-1) * diff_in_size
+        }//eom
+        
+        //B. creating indexes for cells to remove/add
+        let indexPathToAdd:[IndexPath] = self.indexPath_addRows_bottom(section: 0,
+                                            currentCellSum: self.quotes.count,
+                                            cellsToAdd: rows_to_add)
+        let indexPathToRemove:[IndexPath] = self.indexPath_removeRows_top(section: 0,
+                                                cellsToRemove: rows_to_delete)
+        
+        //simulating a background fetch
+        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 2.0))
+        { [weak self] in
+            
+            //START
+            self?.tableView.beginUpdates()
+            
+            //add new data with existing data
+            self?.addData_below(newData: newData, excessAmount: rows_to_delete)
+            
+            //remove cells
+            if indexPathToRemove.count > 0
+            {
+                self?.tableView.deleteRows(at: indexPathToRemove,
+                                           with: UITableViewRowAnimation.none)
+            }
+            
+            //add cells
+            self?.tableView.insertRows(at: indexPathToAdd,
+                                       with: UITableViewRowAnimation.none)
+            
+            //END
+            self?.tableView.endUpdates()
+            
+            self?.fetchInProgress = false
+            
+            self?.bottomIndicator_hide()
+        }
+    }//eom
+    
+    func addData_top(newData:[String], excessAmount:Int)
+    {
+        var amountToRemove:Int = excessAmount
+        for iter in 1...newData.count
+        {
+            //insert on top of data
+            let lastIndex:Int = newData.count - iter
+            let currData:String = newData[lastIndex]
+            self.quotes .insert(currData, at: 0)
+            
+            //removing excess data
+            if amountToRemove > 0
+            {
+                self.quotes .removeLast()
+                amountToRemove = amountToRemove - 1
+            }
+        }//eofl
+    }//eom
+    
+    func addData_below(newData:[String], excessAmount:Int)
+    {
+        var amountToRemove:Int = excessAmount
+        for iter in 0..<newData.count
+        {
+            //insert on top of data
+            let currData:String = newData[iter]
+            self.quotes .append(currData)
+            
+            //removing excess data
+            if amountToRemove > 0
+            {
+                self.quotes .removeFirst()
+                amountToRemove = amountToRemove - 1
+            }
+        }//eofl
+    }//eom
+    
+    //MARK: - IndexPath Helpers
+    func numberOfCellsThatFitOnScreen()->Int
+    {
+        let calcCells:CGFloat = self.tableView.frame.size.height / self.tableView.rowHeight
+        let cellsFitOnScreen:Int = Int(calcCells)
+        
+        return cellsFitOnScreen
     }//eom
     
     //MARK: - IndexPath Add
-//    func indexPath_addRows_top(cellsToAdd:NSInteger)->NSArray
-//    {
-//        
-//    }//eom
-//    
-//    func indexPath_addRows_bottom(cellsToAdd:NSInteger)->NSArray
-//    {
-//        
-//    }//eom
-//    
-//    //MARK: - IndexPath Remove
-//    func indexPath_removeRows_top(cellsToRemove:NSInteger)->NSArray
-//    {
-//    
-//    }//eom
-//    
-//    func indexPath_removeRows_bottom(cellsToRemove:NSInteger)->NSArray
-//    {
-//        
-//    }//eom
-//    
-//    //MARK: - IndexPath Reloading
-//    func indexPath_reloadingTop(cellsToShow:NSInteger,
-//                                cellsToAdd:NSInteger,
-//                                totalData:NSInteger)->NSArray
-//    {
-//        
-//    }//eom
-//    
-//    func indexPath_reloadingBottom(cellsToShow:NSInteger,
-//                                   cellsToAdd:NSInteger,
-//                                   totalData:NSInteger)->NSArray
-//    {
-//        
-//    }//eom
-
+    func indexPath_addRows_top(section:Int, cellsToAdd:Int)->[IndexPath]
+    {
+        var indexPaths:[IndexPath] = []
+        for iter in 0..<cellsToAdd
+        {
+            let currPath:IndexPath = IndexPath(row: iter, section: section)
+            indexPaths .append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
+    
+    func indexPath_addRows_bottom(section:Int,
+                                  currentCellSum:Int,
+                                  cellsToAdd:Int)->[IndexPath]
+    {
+        var indexPaths:[IndexPath] = []
+        for iter in 1...cellsToAdd
+        {
+            let currRow:Int = currentCellSum - iter
+            let currPath:IndexPath = IndexPath(row: currRow, section: section)
+            indexPaths .append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
+    
+    //MARK: - IndexPath Remove
+    func indexPath_removeRows_top(section:Int,
+                                  cellsToRemove:Int)->[IndexPath]
+    {
+        var indexPaths:[IndexPath] = []
+        for iter in 0..<cellsToRemove
+        {
+            let currRow:Int = iter
+            let currPath:IndexPath = IndexPath(row: currRow, section: section)
+            indexPaths.append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
+    
+    func indexPath_removeRows_bottom(section:Int,
+                                     currentCellSum:Int,
+                                     cellsToRemove:Int)->[IndexPath]
+    {
+        var indexPaths:[IndexPath] = []
+        for iter in 1...cellsToRemove
+        {
+            let currRow:Int = currentCellSum - iter
+            let currPath:IndexPath = IndexPath(row: currRow, section: section)
+            indexPaths.append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
+    
+    //MARK: - IndexPath Reloading
+    func indexPath_reloadingTop(section:Int,
+                                cellsToShow:Int,
+                                cellsToAdd:Int)->[IndexPath]
+    {
+        let starting:Int = cellsToAdd - cellsToShow
+        
+        var indexPaths:[IndexPath] = []
+        for iter in 1...cellsToShow
+        {
+            let currRow:Int = starting + iter
+            let currPath:IndexPath = IndexPath(row: currRow, section: section)
+            indexPaths.append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
+    
+    func indexPath_reloadingBottom(section:Int,
+                                   cellsToShow:NSInteger,
+                                   cellsToAdd:NSInteger,
+                                   totalData:NSInteger)->[IndexPath]
+    {
+        let starting:Int = totalData - cellsToAdd
+        
+        var indexPaths:[IndexPath] = []
+        for iter in starting...cellsToShow
+        {
+            let currRow:Int = iter
+            let currPath:IndexPath = IndexPath(row: currRow, section: section)
+            indexPaths.append(currPath)
+        }
+        
+        return indexPaths
+    }//eom
     
     //MARK: - Memory
     override func didReceiveMemoryWarning() {
