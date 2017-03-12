@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="keychain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-QL-jLV">
+                                <rect key="frame" x="26" y="298.5" width="323" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwH-4c-b5Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Fnt-mO-06K"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="aRK-OT-FDK"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrQ-PQ-0Ak">
+                                        <rect key="frame" x="0.0" y="40" width="323" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2op-JH-uOH"/>
+                                        </constraints>
+                                        <state key="normal" title="Save Password"/>
+                                        <connections>
+                                            <action selector="savePasswordRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgG-TQ-xGi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LwH-4c-b5Y" firstAttribute="leading" secondItem="FIW-QL-jLV" secondAttribute="leading" id="TDE-n6-dtW"/>
+                                    <constraint firstAttribute="trailing" secondItem="LwH-4c-b5Y" secondAttribute="trailing" id="mVt-UF-h6p"/>
+                                    <constraint firstItem="UrQ-PQ-0Ak" firstAttribute="leading" secondItem="FIW-QL-jLV" secondAttribute="leading" id="vag-cH-XZz"/>
+                                    <constraint firstAttribute="trailing" secondItem="UrQ-PQ-0Ak" secondAttribute="trailing" id="zJW-0v-zen"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="flO-mg-YbL">
+                                <rect key="frame" x="16" y="388.5" width="343" height="268.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="FIW-QL-jLV" secondAttribute="trailing" constant="10" id="G0B-ep-hEE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="flO-mg-YbL" secondAttribute="trailing" id="GQo-Kr-UpR"/>
+                            <constraint firstItem="flO-mg-YbL" firstAttribute="top" secondItem="FIW-QL-jLV" secondAttribute="bottom" constant="20" id="eMK-UG-QVD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="flO-mg-YbL" secondAttribute="bottom" constant="10" id="fNt-at-s7B"/>
+                            <constraint firstItem="FIW-QL-jLV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ffR-Fb-GVM"/>
+                            <constraint firstItem="FIW-QL-jLV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ijr-eR-dSt"/>
+                            <constraint firstItem="FIW-QL-jLV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="us0-nG-mg3"/>
+                            <constraint firstItem="flO-mg-YbL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vGs-92-AJc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextfield" destination="LwH-4c-b5Y" id="tPn-md-qvh"/>
+                        <outlet property="passwordTextview" destination="flO-mg-YbL" id="GhY-ET-487"/>
+                        <outlet property="savePasswordButton" destination="UrQ-PQ-0Ak" id="qy8-mp-Vpy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
