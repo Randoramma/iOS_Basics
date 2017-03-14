@@ -5,7 +5,6 @@
 //  Created by lu on 3/10/17.
 //  Copyright © 2017 lu. All rights reserved.
 //
-
 import Foundation
 
 struct KeychainPasswordItem {
@@ -18,24 +17,49 @@ struct KeychainPasswordItem {
         case unhandledError(status: OSStatus)
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     let service: String
     let accessGroup: String?
     
-    private(set) var account: String
+    fileprivate(set) var account: String
     
     
-    // MARK: _ Intialization
+    // MARK: - Intialization
     init(service: String, account: String, accessGroup: String? = nil) {
         self.service = service
         self.account = account
         self.accessGroup = accessGroup
     }
     
-    // MARK: - Retrieve
+    // MARK: - Query Helper
+    fileprivate static func keychainQuery(withService service: String,
+                                          account: String? = nil,
+                                          accessGroup: String? = nil) -> [String : AnyObject] {
+        
+        var query                           = [String : AnyObject]()
+        query[kSecClass as String]          = kSecClassGenericPassword
+        query[kSecAttrService as String]    = service as AnyObject?
+        
+        if let account = account {
+            query[kSecAttrAccount as String] = account as AnyObject?
+        }
+        
+        if let accessGroup = accessGroup {
+            query[kSecAttrAccessGroup as String] = accessGroup as AnyObject?
+        }
+        
+        return query
+    }
+}
+
+
+// MARK: - Retrieve
+extension KeychainPasswordItem{
     func readPassword() throws -> String  {
         // Build a query to find the item
-        var query = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+        var query = KeychainPasswordItem.keychainQuery(withService: service,
+                                                       account: account,
+                                                       accessGroup: accessGroup)
         query[kSecMatchLimit as String]         = kSecMatchLimitOne
         query[kSecReturnAttributes as String]   = kCFBooleanTrue
         query[kSecReturnData as String]         = kCFBooleanTrue
@@ -65,7 +89,8 @@ struct KeychainPasswordItem {
         return password
     }
     
-    static func passwordItems(forService service: String, accessGroup: String? = nil) throws -> [KeychainPasswordItem] {
+    static func passwordItems(forService service: String,
+                              accessGroup: String? = nil) throws -> [KeychainPasswordItem] {
         // Build a query for all items that match the service and access group
         var query = KeychainPasswordItem.keychainQuery(withService: service, accessGroup: accessGroup)
         query[kSecMatchLimit as String]         = kSecMatchLimitAll
@@ -83,7 +108,7 @@ struct KeychainPasswordItem {
             return []
         }
         
-        // Throw an error if an unexpected status was returned
+        // Throw an error if an unexpected status occurred
         if status != noErr  {
             throw KeychainError.unhandledError(status: status)
         }
@@ -100,14 +125,18 @@ struct KeychainPasswordItem {
                 throw KeychainError.unexpectedItemData
             }
             
-            let passwordItem = KeychainPasswordItem(service: service, account: account, accessGroup: accessGroup)
+            let passwordItem = KeychainPasswordItem(service: service,
+                                                    account: account,
+                                                    accessGroup: accessGroup)
             passwordItems.append(passwordItem)
         }
         
         return passwordItems
     }
-    
-    //MARK: - Store
+}
+
+//MARK: - Store
+extension KeychainPasswordItem{
     func savePassword(_ password: String) throws {
         // Encode the password into an Data object.
         let encodedPassword = password.data(using: String.Encoding.utf8)!
@@ -120,75 +149,67 @@ struct KeychainPasswordItem {
             var attributesToUpdate = [String : AnyObject]()
             attributesToUpdate[kSecValueData as String] = encodedPassword as AnyObject?
             
-            let query   = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+            let query   = KeychainPasswordItem.keychainQuery(withService: service,
+                                                             account: account,
+                                                             accessGroup: accessGroup)
             let status  = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
             
-            // Throw an error if an unexpected status was returned
+            // Throw an error if an unexpected status occurred
             if status != noErr  {
                 throw KeychainError.unhandledError(status: status)
             }
         }
         catch KeychainError.noPassword {
             //no password found, create dictionary for new item
-            var newItem = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+            var newItem = KeychainPasswordItem.keychainQuery(withService: service,
+                                                             account: account,
+                                                             accessGroup: accessGroup)
             newItem[kSecValueData as String] = encodedPassword as AnyObject?
             
             // Add a the new item to the keychain
             let status = SecItemAdd(newItem as CFDictionary, nil)
             
-            // Throw an error if an unexpected status was returned
+            // Throw an error if an unexpected status occurred
             if status != noErr {
                 throw KeychainError.unhandledError(status: status)
             }
         }
     }
-   
-    //MARK: - Delete
+}
+
+//MARK: - Delete
+extension KeychainPasswordItem{
     func deleteItem() throws {
         // Delete the existing item
-        let query = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
+        let query = KeychainPasswordItem.keychainQuery(withService: service,
+                                                       account: account,
+                                                       accessGroup: accessGroup)
         let status = SecItemDelete(query as CFDictionary)
         
-        // Throw an error if an unexpected status was returned.
+        // Throw an error if an unexpected status occurred
         guard status == noErr || status == errSecItemNotFound else {
             throw KeychainError.unhandledError(status: status)
         }
     }
-    
-    //MARK: - Rename Account
+}
+
+//MARK: - Rename Account
+extension KeychainPasswordItem{
     mutating func renameAccount(_ newAccountName: String) throws {
         // Try to update an existing item with the new account name
         var attributesToUpdate = [String : AnyObject]()
         attributesToUpdate[kSecAttrAccount as String] = newAccountName as AnyObject?
         
-        let query = KeychainPasswordItem.keychainQuery(withService: service, account: self.account, accessGroup: accessGroup)
+        let query = KeychainPasswordItem.keychainQuery(withService: service,
+                                                       account: self.account,
+                                                       accessGroup: accessGroup)
         let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
         
-        // Throw an error if an unexpected status was returned
+        // Throw an error if an unexpected status occurred
         guard status == noErr || status == errSecItemNotFound else {
             throw KeychainError.unhandledError(status: status)
         }
         
         self.account = newAccountName
-    }
-    
-    // MARK: - Query Helper
-    private static func keychainQuery(withService service: String,
-                                      account: String? = nil,
-                                      accessGroup: String? = nil) -> [String : AnyObject] {
-        
-        var query                           = [String : AnyObject]()
-        query[kSecClass as String]          = kSecClassGenericPassword
-        query[kSecAttrService as String]    = service as AnyObject?
-        
-        if let account = account {
-            query[kSecAttrAccount as String] = account as AnyObject?
-        }
-        
-        if let accessGroup = accessGroup {
-            query[kSecAttrAccessGroup as String] = accessGroup as AnyObject?
-        }
-        
-        return query
     }
 }

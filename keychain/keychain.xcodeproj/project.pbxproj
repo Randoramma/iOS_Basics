@@ -14,6 +14,7 @@
 		891303431E7307EE00552260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891303411E7307EE00552260 /* LaunchScreen.storyboard */; };
 		8913034F1E7308E800552260 /* keychainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913034E1E7308E800552260 /* keychainConfig.swift */; };
 		891303511E7308FF00552260 /* keychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891303501E7308FF00552260 /* keychainPasswordItem.swift */; };
+		8913035D1E73344400552260 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913035C1E73344400552260 /* Password.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		891303441E7307EE00552260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8913034E1E7308E800552260 /* keychainConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keychainConfig.swift; sourceTree = "<group>"; };
 		891303501E7308FF00552260 /* keychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keychainPasswordItem.swift; sourceTree = "<group>"; };
+		8913035C1E73344400552260 /* Password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,25 @@
 		891303371E7307EE00552260 /* keychain */ = {
 			isa = PBXGroup;
 			children = (
-				8913034E1E7308E800552260 /* keychainConfig.swift */,
-				891303501E7308FF00552260 /* keychainPasswordItem.swift */,
 				891303381E7307EE00552260 /* AppDelegate.swift */,
 				8913033A1E7307EE00552260 /* ViewController.swift */,
 				8913033C1E7307EE00552260 /* Main.storyboard */,
 				8913033F1E7307EE00552260 /* Assets.xcassets */,
 				891303411E7307EE00552260 /* LaunchScreen.storyboard */,
 				891303441E7307EE00552260 /* Info.plist */,
+				8913035B1E73342A00552260 /* Models */,
 			);
 			path = keychain;
+			sourceTree = "<group>";
+		};
+		8913035B1E73342A00552260 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8913034E1E7308E800552260 /* keychainConfig.swift */,
+				891303501E7308FF00552260 /* keychainPasswordItem.swift */,
+				8913035C1E73344400552260 /* Password.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +113,7 @@
 				TargetAttributes = {
 					891303341E7307EE00552260 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 369WKK9M7N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,6 +157,7 @@
 				8913033B1E7307EE00552260 /* ViewController.swift in Sources */,
 				891303511E7308FF00552260 /* keychainPasswordItem.swift in Sources */,
 				8913034F1E7308E800552260 /* keychainConfig.swift in Sources */,
+				8913035D1E73344400552260 /* Password.swift in Sources */,
 				891303391E7307EE00552260 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 369WKK9M7N;
 				INFOPLIST_FILE = keychain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lc.keychain;
@@ -279,7 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 369WKK9M7N;
 				INFOPLIST_FILE = keychain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lc.keychain;
@@ -307,6 +320,7 @@
 				891303491E7307EE00552260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

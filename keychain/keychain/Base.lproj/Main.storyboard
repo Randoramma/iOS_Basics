@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-QL-jLV">
-                                <rect key="frame" x="26" y="298.5" width="323" height="70"/>
+                                <rect key="frame" x="26" y="278.5" width="323" height="110"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwH-4c-b5Y">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
@@ -48,6 +48,19 @@
                                             <action selector="savePasswordRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgG-TQ-xGi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-jZ-Ibw">
+                                        <rect key="frame" x="104" y="80" width="115" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WwU-R1-hvN"/>
+                                        </constraints>
+                                        <state key="normal" title="Delete Password">
+                                            <color key="titleColor" red="1" green="0.30621154465751599" blue="0.19849668353214212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deletePasswordRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hj3-yj-kop"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LwH-4c-b5Y" firstAttribute="leading" secondItem="FIW-QL-jLV" secondAttribute="leading" id="TDE-n6-dtW"/>
@@ -57,7 +70,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="flO-mg-YbL">
-                                <rect key="frame" x="16" y="388.5" width="343" height="268.5"/>
+                                <rect key="frame" x="16" y="408.5" width="343" height="248.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

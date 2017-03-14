@@ -13,17 +13,16 @@ class ViewController: UIViewController {
     //MARK: - Ui Properties
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var savePasswordButton: UIButton!
+    @IBOutlet weak var deletePasswordButton: UIButton!
     @IBOutlet weak var passwordTextview: UITextView!
     
     //MARK: - Properties
-    var password:String?
-    fileprivate var accountName:String = ""
+    fileprivate var passwordKeychain:Password = Password()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
          resetTextview()
     }
 
@@ -32,9 +31,15 @@ class ViewController: UIViewController {
         savePassword()
     }
     
+    
+    @IBAction func deletePasswordRequest(_ sender: UIButton) {
+        passwordKeychain.deletePassword()
+        resetTextview()
+    }
+    
     fileprivate func savePassword(){
         if let updatedPassword:String = passwordTextfield.text{
-            savePassword(updatedPassword: updatedPassword)
+            passwordKeychain.savePassword(updatedPassword: updatedPassword)
             resetTextview()
         }
     }
@@ -51,9 +56,9 @@ extension ViewController{
     func resetTextview(){
         
         var passwordStrings = ""
-        let passwordItemsList = getAllPassword()
+        let passwordItemsList = passwordKeychain.getAllPasswords()
         for currPasswordItem:KeychainPasswordItem in passwordItemsList{
-            if let currPassword:String = getPassword(keychain_password_item: currPasswordItem) {
+            if let currPassword:String = passwordKeychain.getPassword(keychain_password_item: currPasswordItem) {
                 passwordStrings.append("\n \(currPassword)")
             }
         }
@@ -86,47 +91,3 @@ extension ViewController:UITextFieldDelegate{
         return true
     }
 }
-
-//MARK: - Keychain
-extension ViewController{
-    func savePassword(updatedPassword:String){
-        let password_item:KeychainPasswordItem = passwordItem()
-        do{
-            try password_item.savePassword(updatedPassword)
-        }
-        catch{
-            print("error saving password: ", error)
-        }
-    }
-    
-    func getPassword(keychain_password_item:KeychainPasswordItem? = nil)->String?{
-        
-        let provPasswordItem:KeychainPasswordItem = keychain_password_item ?? passwordItem()
-        
-        do{
-            let passwordRetrieved:String = try provPasswordItem.readPassword()
-            return passwordRetrieved
-        }
-        catch{
-            print("error retrieving password: ", error)
-        }
-        return nil
-    }
-    
-    func getAllPassword()->[KeychainPasswordItem]{
-        do{
-          let items = try  KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName)
-            return items
-        }
-        catch {
-            print("error retrieving all pasword items ", error)
-        }
-        return []
-    }
-    
-    //MARK: Helper
-    func passwordItem()->KeychainPasswordItem {
-        return KeychainPasswordItem.init(service: KeychainConfiguration.serviceName, account: accountName)
-    }
-}
-
