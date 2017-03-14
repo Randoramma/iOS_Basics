@@ -53,13 +53,7 @@
     [[self navigationItem] setBackBarButtonItem:NewButton];
     
     //change color of seperators
-    self.tableView.separatorColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:0.25];
-    
-    
-
-    
-
-    
+    self.tableView.separatorColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:0.25];  
 }
 
 - (void)didReceiveMemoryWarning {
