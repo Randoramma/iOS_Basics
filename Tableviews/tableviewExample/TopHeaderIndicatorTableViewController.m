@@ -128,7 +128,7 @@
         NSString * currQuote = [moreQuotes objectAtIndex:currQuoteIndex];
         [new_data addObject:currQuote];
     
-        NSLog(@"[%d] quote: %@",iter, currQuote);
+        NSLog(@"[%ld] quote: %@",(long)iter, currQuote);
     }//eofl
     
     NSLog(@"[new quotes] with '%d' elements ", new_data.count);
@@ -266,6 +266,9 @@
 -(void)topIndicator_show
 {
     [self.tableView setTableHeaderView:indicatorHeader];
+    
+    CGRect headerLocation = [self.tableView convertRect:self.tableView.tableHeaderView.bounds fromView:self.tableView.tableHeaderView];
+    [self.tableView scrollRectToVisible:headerLocation animated:YES];
 }//eom
     
 -(void)topIndicator_hide

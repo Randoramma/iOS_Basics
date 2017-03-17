@@ -129,6 +129,11 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     {
         DispatchQueue.main.async {
             self.tableView.tableHeaderView = self.busyIndicator
+            
+            if let headerBounds:CGRect = self.tableView.tableHeaderView?.bounds {
+                let headerLocation:CGRect = self.tableView.convert(headerBounds, from: self.tableView.tableHeaderView)
+                self.tableView.scrollRectToVisible(headerLocation, animated: true)
+            }
         }
     }//eom
     
@@ -144,6 +149,10 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     {
         DispatchQueue.main.async {
             self.tableView.tableFooterView = self.busyIndicator
+            if let headerBounds:CGRect = self.tableView.tableFooterView?.bounds {
+                let headerLocation:CGRect = self.tableView.convert(headerBounds, from: self.tableView.tableFooterView)
+                self.tableView.scrollRectToVisible(headerLocation, animated: true)
+            }
         }
     }//eom
     
@@ -172,7 +181,7 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         else
         {
             self.bottomIndicator_show()
-            self.refreshTable_below()
+//            self.refreshTable_below()
         }
     }//eom
     

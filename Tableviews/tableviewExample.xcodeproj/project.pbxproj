@@ -333,7 +333,6 @@
 				TargetAttributes = {
 					DE91F10D1BE00DE2007F892D = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = QLZS39CLDT;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -516,7 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QLZS39CLDT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = tableviewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.tableviewExample;
@@ -532,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QLZS39CLDT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = tableviewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevBros.tableviewExample;

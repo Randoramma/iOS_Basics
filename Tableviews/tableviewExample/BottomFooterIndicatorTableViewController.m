@@ -261,6 +261,9 @@
 -(void)bottomIndicator_show
 {
     [self.tableView setTableFooterView:indicatorFooter];
+    
+    CGRect footerLocation = [self.tableView convertRect:self.tableView.tableFooterView.bounds fromView:self.tableView.tableFooterView];
+    [self.tableView scrollRectToVisible:footerLocation animated:YES];
 }//eom
     
 -(void)bottomIndicator_hide
