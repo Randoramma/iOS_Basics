@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */; };
+		DE18D5131E7F2F3E00B00C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5111E7F2F3E00B00C1B /* Main.storyboard */; };
+		DE18D5151E7F2F3E00B00C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */; };
+		DE18D5181E7F2F3E00B00C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */; };
+		DE18D5291E7F374200B00C1B /* TableWithHeaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5221E7F374200B00C1B /* TableWithHeaderTableViewController.m */; };
+		DE18D52A1E7F374200B00C1B /* TableWithHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5241E7F374200B00C1B /* TableWithHeaderTableViewCell.m */; };
+		DE18D52B1E7F374200B00C1B /* TableWithHeaderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5261E7F374200B00C1B /* TableWithHeaderDetailViewController.m */; };
+		DE18D52C1E7F374200B00C1B /* TableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5281E7F374200B00C1B /* TableViewHeader.m */; };
+		DE18D5361E7F379E00B00C1B /* burj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D52E1E7F379E00B00C1B /* burj.jpg */; };
+		DE18D5371E7F379E00B00C1B /* Eiffel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D52F1E7F379E00B00C1B /* Eiffel.jpg */; };
+		DE18D5381E7F379E00B00C1B /* empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5301E7F379E00B00C1B /* empire.jpg */; };
+		DE18D5391E7F379E00B00C1B /* kingdomtower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5311E7F379E00B00C1B /* kingdomtower.jpg */; };
+		DE18D53A1E7F379E00B00C1B /* Taipei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5321E7F379E00B00C1B /* Taipei.jpg */; };
+		DE18D53B1E7F379E00B00C1B /* Header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5331E7F379E00B00C1B /* Header.jpg */; };
+		DE18D53C1E7F379E00B00C1B /* Header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5341E7F379E00B00C1B /* Header@2x.jpg */; };
+		DE18D53D1E7F379E00B00C1B /* Header@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5351E7F379E00B00C1B /* Header@3x.jpg */; };
+		DE18D53F1E7F39B500B00C1B /* places.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE18D53E1E7F39B500B00C1B /* places.plist */; };
+		DE18D5421E7F3CB900B00C1B /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5411E7F3CB900B00C1B /* Place.m */; };
+		DE18D5461E7F56F000B00C1B /* CenteredPagingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5441E7F56F000B00C1B /* CenteredPagingTableViewController.swift */; };
+		DE18D5471E7F56F000B00C1B /* CenteredPagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5451E7F56F000B00C1B /* CenteredPagingTableViewCell.swift */; };
+		DE18D54E1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D54D1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift */; };
+		DE18D5541E7F585200B00C1B /* BottomRefreshCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5511E7F585200B00C1B /* BottomRefreshCellTableViewController.m */; };
+		DE18D5551E7F585200B00C1B /* LoadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5531E7F585200B00C1B /* LoadingTableViewCell.m */; };
+		DE18D5581E7F5AEC00B00C1B /* TopIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE18D5571E7F5AEC00B00C1B /* TopIndicatorViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE18D50A1E7F2F3E00B00C1B /* tableviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE18D5121E7F2F3E00B00C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE18D5171E7F2F3E00B00C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE18D5191E7F2F3E00B00C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE18D5201E7F374100B00C1B /* tableviews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tableviews-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE18D5211E7F374200B00C1B /* TableWithHeaderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableWithHeaderTableViewController.h; sourceTree = "<group>"; };
+		DE18D5221E7F374200B00C1B /* TableWithHeaderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableWithHeaderTableViewController.m; sourceTree = "<group>"; };
+		DE18D5231E7F374200B00C1B /* TableWithHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableWithHeaderTableViewCell.h; sourceTree = "<group>"; };
+		DE18D5241E7F374200B00C1B /* TableWithHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableWithHeaderTableViewCell.m; sourceTree = "<group>"; };
+		DE18D5251E7F374200B00C1B /* TableWithHeaderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableWithHeaderDetailViewController.h; sourceTree = "<group>"; };
+		DE18D5261E7F374200B00C1B /* TableWithHeaderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableWithHeaderDetailViewController.m; sourceTree = "<group>"; };
+		DE18D5271E7F374200B00C1B /* TableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeader.h; sourceTree = "<group>"; };
+		DE18D5281E7F374200B00C1B /* TableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeader.m; sourceTree = "<group>"; };
+		DE18D52E1E7F379E00B00C1B /* burj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burj.jpg; sourceTree = "<group>"; };
+		DE18D52F1E7F379E00B00C1B /* Eiffel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eiffel.jpg; sourceTree = "<group>"; };
+		DE18D5301E7F379E00B00C1B /* empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empire.jpg; sourceTree = "<group>"; };
+		DE18D5311E7F379E00B00C1B /* kingdomtower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kingdomtower.jpg; sourceTree = "<group>"; };
+		DE18D5321E7F379E00B00C1B /* Taipei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Taipei.jpg; sourceTree = "<group>"; };
+		DE18D5331E7F379E00B00C1B /* Header.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Header.jpg; sourceTree = "<group>"; };
+		DE18D5341E7F379E00B00C1B /* Header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Header@2x.jpg"; sourceTree = "<group>"; };
+		DE18D5351E7F379E00B00C1B /* Header@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Header@3x.jpg"; sourceTree = "<group>"; };
+		DE18D53E1E7F39B500B00C1B /* places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = places.plist; sourceTree = "<group>"; };
+		DE18D5401E7F3CB900B00C1B /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		DE18D5411E7F3CB900B00C1B /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DE18D5441E7F56F000B00C1B /* CenteredPagingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredPagingTableViewController.swift; sourceTree = "<group>"; };
+		DE18D5451E7F56F000B00C1B /* CenteredPagingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredPagingTableViewCell.swift; sourceTree = "<group>"; };
+		DE18D54D1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAndBottomIndicatorTableViewController.swift; sourceTree = "<group>"; };
+		DE18D5501E7F585200B00C1B /* BottomRefreshCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomRefreshCellTableViewController.h; sourceTree = "<group>"; };
+		DE18D5511E7F585200B00C1B /* BottomRefreshCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomRefreshCellTableViewController.m; sourceTree = "<group>"; };
+		DE18D5521E7F585200B00C1B /* LoadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingTableViewCell.h; sourceTree = "<group>"; };
+		DE18D5531E7F585200B00C1B /* LoadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingTableViewCell.m; sourceTree = "<group>"; };
+		DE18D5561E7F5AEC00B00C1B /* TopIndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopIndicatorViewController.h; sourceTree = "<group>"; };
+		DE18D5571E7F5AEC00B00C1B /* TopIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopIndicatorViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE18D5071E7F2F3E00B00C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE18D5011E7F2F3E00B00C1B = {
+			isa = PBXGroup;
+			children = (
+				DE18D50C1E7F2F3E00B00C1B /* tableviews */,
+				DE18D50B1E7F2F3E00B00C1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE18D50B1E7F2F3E00B00C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D50A1E7F2F3E00B00C1B /* tableviews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE18D50C1E7F2F3E00B00C1B /* tableviews */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */,
+				DE18D5111E7F2F3E00B00C1B /* Main.storyboard */,
+				DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */,
+				DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */,
+				DE18D5191E7F2F3E00B00C1B /* Info.plist */,
+				DE18D5201E7F374100B00C1B /* tableviews-Bridging-Header.h */,
+				DE18D54C1E7F57BD00B00C1B /* 5.Top and Bottom Header Refresh */,
+				DE18D54F1E7F581A00B00C1B /* 4. Bottom Refreshing with Cell */,
+				DE18D5481E7F577400B00C1B /* 3.Top Indicator */,
+				DE18D5431E7F4F0D00B00C1B /* 2. Center Pagination */,
+				DE18D51F1E7F371200B00C1B /* 1. Table with Header */,
+			);
+			path = tableviews;
+			sourceTree = "<group>";
+		};
+		DE18D51F1E7F371200B00C1B /* 1. Table with Header */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5211E7F374200B00C1B /* TableWithHeaderTableViewController.h */,
+				DE18D5221E7F374200B00C1B /* TableWithHeaderTableViewController.m */,
+				DE18D5231E7F374200B00C1B /* TableWithHeaderTableViewCell.h */,
+				DE18D5241E7F374200B00C1B /* TableWithHeaderTableViewCell.m */,
+				DE18D5251E7F374200B00C1B /* TableWithHeaderDetailViewController.h */,
+				DE18D5261E7F374200B00C1B /* TableWithHeaderDetailViewController.m */,
+				DE18D5271E7F374200B00C1B /* TableViewHeader.h */,
+				DE18D5281E7F374200B00C1B /* TableViewHeader.m */,
+				DE18D53E1E7F39B500B00C1B /* places.plist */,
+				DE18D5401E7F3CB900B00C1B /* Place.h */,
+				DE18D5411E7F3CB900B00C1B /* Place.m */,
+				DE18D52D1E7F379000B00C1B /* Images */,
+			);
+			name = "1. Table with Header";
+			sourceTree = "<group>";
+		};
+		DE18D52D1E7F379000B00C1B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D52E1E7F379E00B00C1B /* burj.jpg */,
+				DE18D52F1E7F379E00B00C1B /* Eiffel.jpg */,
+				DE18D5301E7F379E00B00C1B /* empire.jpg */,
+				DE18D5311E7F379E00B00C1B /* kingdomtower.jpg */,
+				DE18D5321E7F379E00B00C1B /* Taipei.jpg */,
+				DE18D5331E7F379E00B00C1B /* Header.jpg */,
+				DE18D5341E7F379E00B00C1B /* Header@2x.jpg */,
+				DE18D5351E7F379E00B00C1B /* Header@3x.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DE18D5431E7F4F0D00B00C1B /* 2. Center Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5441E7F56F000B00C1B /* CenteredPagingTableViewController.swift */,
+				DE18D5451E7F56F000B00C1B /* CenteredPagingTableViewCell.swift */,
+			);
+			name = "2. Center Pagination";
+			sourceTree = "<group>";
+		};
+		DE18D5481E7F577400B00C1B /* 3.Top Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5561E7F5AEC00B00C1B /* TopIndicatorViewController.h */,
+				DE18D5571E7F5AEC00B00C1B /* TopIndicatorViewController.m */,
+			);
+			name = "3.Top Indicator";
+			sourceTree = "<group>";
+		};
+		DE18D54C1E7F57BD00B00C1B /* 5.Top and Bottom Header Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D54D1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift */,
+			);
+			name = "5.Top and Bottom Header Refresh";
+			sourceTree = "<group>";
+		};
+		DE18D54F1E7F581A00B00C1B /* 4. Bottom Refreshing with Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5501E7F585200B00C1B /* BottomRefreshCellTableViewController.h */,
+				DE18D5511E7F585200B00C1B /* BottomRefreshCellTableViewController.m */,
+				DE18D5521E7F585200B00C1B /* LoadingTableViewCell.h */,
+				DE18D5531E7F585200B00C1B /* LoadingTableViewCell.m */,
+			);
+			name = "4. Bottom Refreshing with Cell";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE18D5091E7F2F3E00B00C1B /* tableviews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE18D51C1E7F2F3E00B00C1B /* Build configuration list for PBXNativeTarget "tableviews" */;
+			buildPhases = (
+				DE18D5061E7F2F3E00B00C1B /* Sources */,
+				DE18D5071E7F2F3E00B00C1B /* Frameworks */,
+				DE18D5081E7F2F3E00B00C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tableviews;
+			productName = tableviews;
+			productReference = DE18D50A1E7F2F3E00B00C1B /* tableviews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE18D5021E7F2F3E00B00C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = lc;
+				TargetAttributes = {
+					DE18D5091E7F2F3E00B00C1B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QLZS39CLDT;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DE18D5051E7F2F3E00B00C1B /* Build configuration list for PBXProject "tableviews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE18D5011E7F2F3E00B00C1B;
+			productRefGroup = DE18D50B1E7F2F3E00B00C1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE18D5091E7F2F3E00B00C1B /* tableviews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE18D5081E7F2F3E00B00C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE18D5181E7F2F3E00B00C1B /* LaunchScreen.storyboard in Resources */,
+				DE18D53D1E7F379E00B00C1B /* Header@3x.jpg in Resources */,
+				DE18D53F1E7F39B500B00C1B /* places.plist in Resources */,
+				DE18D53C1E7F379E00B00C1B /* Header@2x.jpg in Resources */,
+				DE18D5381E7F379E00B00C1B /* empire.jpg in Resources */,
+				DE18D53B1E7F379E00B00C1B /* Header.jpg in Resources */,
+				DE18D5371E7F379E00B00C1B /* Eiffel.jpg in Resources */,
+				DE18D5151E7F2F3E00B00C1B /* Assets.xcassets in Resources */,
+				DE18D5361E7F379E00B00C1B /* burj.jpg in Resources */,
+				DE18D53A1E7F379E00B00C1B /* Taipei.jpg in Resources */,
+				DE18D5391E7F379E00B00C1B /* kingdomtower.jpg in Resources */,
+				DE18D5131E7F2F3E00B00C1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE18D5061E7F2F3E00B00C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE18D5541E7F585200B00C1B /* BottomRefreshCellTableViewController.m in Sources */,
+				DE18D52B1E7F374200B00C1B /* TableWithHeaderDetailViewController.m in Sources */,
+				DE18D5291E7F374200B00C1B /* TableWithHeaderTableViewController.m in Sources */,
+				DE18D54E1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift in Sources */,
+				DE18D5581E7F5AEC00B00C1B /* TopIndicatorViewController.m in Sources */,
+				DE18D5461E7F56F000B00C1B /* CenteredPagingTableViewController.swift in Sources */,
+				DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */,
+				DE18D5551E7F585200B00C1B /* LoadingTableViewCell.m in Sources */,
+				DE18D5421E7F3CB900B00C1B /* Place.m in Sources */,
+				DE18D5471E7F56F000B00C1B /* CenteredPagingTableViewCell.swift in Sources */,
+				DE18D52C1E7F374200B00C1B /* TableViewHeader.m in Sources */,
+				DE18D52A1E7F374200B00C1B /* TableWithHeaderTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE18D5111E7F2F3E00B00C1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE18D5121E7F2F3E00B00C1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE18D5171E7F2F3E00B00C1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE18D51A1E7F2F3E00B00C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE18D51B1E7F2F3E00B00C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE18D51D1E7F2F3E00B00C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
+				INFOPLIST_FILE = tableviews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lc.tableviews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tableviews/tableviews-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DE18D51E1E7F2F3E00B00C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = QLZS39CLDT;
+				INFOPLIST_FILE = tableviews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lc.tableviews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tableviews/tableviews-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE18D5051E7F2F3E00B00C1B /* Build configuration list for PBXProject "tableviews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE18D51A1E7F2F3E00B00C1B /* Debug */,
+				DE18D51B1E7F2F3E00B00C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE18D51C1E7F2F3E00B00C1B /* Build configuration list for PBXNativeTarget "tableviews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE18D51D1E7F2F3E00B00C1B /* Debug */,
+				DE18D51E1E7F2F3E00B00C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE18D5021E7F2F3E00B00C1B /* Project object */;
+}

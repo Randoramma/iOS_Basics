@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>record</key>
+		<string>Since 2010</string>
+		<key>cost</key>
+		<string>$1.5 billion</string>
+		<key>height</key>
+		<string>2722 ft</string>
+		<key>year</key>
+		<string>30 december 2009</string>
+		<key>title</key>
+		<string>Burj Khalifa</string>
+		<key>description</key>
+		<string>Dubai, UAE</string>
+		<key>image</key>
+		<string>burj.jpg</string>
+	</dict>
+	<dict>
+		<key>record</key>
+		<string>1889 to 1930</string>
+		<key>cost</key>
+		<string>$1.5 million</string>
+		<key>height</key>
+		<string>986 ft</string>
+		<key>year</key>
+		<string>15 March 1889</string>
+		<key>title</key>
+		<string>Eiffel Tower</string>
+		<key>description</key>
+		<string>Paris, France</string>
+		<key>image</key>
+		<string>Eiffel.jpg</string>
+	</dict>
+	<dict>
+		<key>record</key>
+		<string>1931 to 1970</string>
+		<key>cost</key>
+		<string>$40,948,900</string>
+		<key>height</key>
+		<string>1,454 ft</string>
+		<key>year</key>
+		<string>April 11, 1931</string>
+		<key>title</key>
+		<string>Empire State Building</string>
+		<key>description</key>
+		<string>New York, USA</string>
+		<key>image</key>
+		<string>empire.jpg</string>
+	</dict>
+	<dict>
+		<key>record</key>
+		<string>N/A</string>
+		<key>cost</key>
+		<string>$1.23 billion</string>
+		<key>height</key>
+		<string>3,304 ft</string>
+		<key>year</key>
+		<string>est 2020</string>
+		<key>title</key>
+		<string>Kingdom Tower</string>
+		<key>description</key>
+		<string>Jeddah, Saudi Arabia</string>
+		<key>image</key>
+		<string>kingdomtower.jpg</string>
+	</dict>
+	<dict>
+		<key>record</key>
+		<string>2004 to 2009</string>
+		<key>cost</key>
+		<string>$1.934 billion</string>
+		<key>height</key>
+		<string>1,671 ft</string>
+		<key>year</key>
+		<string>31 December 2004</string>
+		<key>title</key>
+		<string>Taipei 101</string>
+		<key>description</key>
+		<string>Taipei, Taiwan</string>
+		<key>image</key>
+		<string>Taipei.jpg</string>
+	</dict>
+</array>
+</plist>
