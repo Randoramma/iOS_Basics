@@ -15,6 +15,9 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     private var fetchInProgress = false
     
     
+    let data_limit:Int = 20
+    var lastNum = 100
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -181,15 +184,167 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         else
         {
             self.bottomIndicator_show()
-            self.refreshTable_below()
+            self.insertBottomBatch()
         }
     }//eom
+    
+    func insertBottomBatch() {
+        
+        let newData:[String] = getSomeData(dataToAdd: 5)
+       
+        let dataCountPriorInsertion = quotes.count
+        
+        /* APPROACH C: Deleting and Inserting Cells
+            - inserting and deleting indexpaths, if deleting moving the table/scrollview back to last location it was being presented
+         */
+        var insertStartIndex:Int    = dataCountPriorInsertion
+        var insertEndIndex:Int      = quotes.count + newData.count
+        var deleteStartIndex:Int    = 0
+        var deleteEndIndex:Int      = 0
+        
+        //does new data exceed limit?
+        var offset:Int = (data_limit - (quotes.count + newData.count) )
+        if offset <  0 {
+            offset = offset * -1
+           
+            insertStartIndex    = insertStartIndex - offset
+            insertEndIndex      = insertStartIndex + newData.count
+            deleteStartIndex = 0
+            deleteEndIndex   = offset
+        }
+        else {
+            offset = 0
+        }
+        
+        
+        let indexPathsInserting     = self.createIndexPaths(start: insertStartIndex, end: insertEndIndex)
+        let indexPathsDeleting      = self.createIndexPaths(start: deleteStartIndex, end: deleteEndIndex)
+
+        print("data inserting \(newData.count)")
+        print("prior insert \(dataCountPriorInsertion) | data total \(quotes.count)")
+        print("indexpath inserting: \(indexPathsInserting.count) | indexpath deleting: \(indexPathsDeleting.count)")
+
+        DispatchQueue.main.async {
+            self.tableView.isUserInteractionEnabled = false
+            self.tableView.beginUpdates()
+            
+            //adding new data
+            self.addData(newData)
+            
+            //removing excess data
+            self.removeData(fromTop: true, amountToRemove: offset)
+
+            
+            self.tableView.insertRows(at: indexPathsInserting, with: UITableViewRowAnimation.top)
+            
+            if indexPathsDeleting.count > 0 {
+                self.tableView.deleteRows(at: indexPathsDeleting, with: UITableViewRowAnimation.none)
+                
+                //moving scrollview back to location prior insertion
+                let numCellsFitOnScreen:Int = Int((self.view.frame.size.height - 44) / self.tableView.rowHeight)
+                let calcRow:Int = (self.quotes.count - indexPathsInserting.count - numCellsFitOnScreen)
+                let estimatedRow:Int = Int(self.tableView.rowHeight) * calcRow
+                let estimatedPoint:CGPoint = CGPoint(x: 0, y: estimatedRow)
+                self.tableView .setContentOffset(estimatedPoint, animated: false)
+            }
+            
+            self.fetchInProgress = false
+            self.tableView.isUserInteractionEnabled = true
+            self.tableView.endUpdates()
+        }
+        
+            //APPROACH B: reload all new cells & the cells that were on the screen prior new data, after reloading all cells then scroll to the last cell that was on the screen
+//            let numCellsFitOnScreen:Int = Int((self.view.frame.size.height - 44) / self.tableView.rowHeight)
+//            
+//            //reload all cells (new data & previous data on screen)
+//            var allIndexes:[IndexPath] = []
+//            let reloadLastIndex = quotes.count
+//            let reloadStartIndex = quotes.count - offset - numCellsFitOnScreen
+//            for iter in reloadStartIndex..<reloadLastIndex {
+//                let currIndex:IndexPath = IndexPath(row:iter, section:0)
+//                allIndexes.append(currIndex)
+//                print("[reload] row: \(iter)")
+//            }
+//            tableView.reloadRows(at: allIndexes, with: UITableViewRowAnimation.none)
+//
+//            //scrolling the last cell that was on screen prior the new data
+//            let desiredRow:Int = (quotes.count - offset - numCellsFitOnScreen + 1)
+//            let targetIndexPath:IndexPath = IndexPath(row: desiredRow, section:0)
+//            DispatchQueue.main.async {
+//                print("desiredRow: ", desiredRow)
+//                self.tableView.scrollToRow(at: targetIndexPath, at: UITableViewScrollPosition.none, animated: true)
+//            }
+           
+            //APPROACH A: Calculating the scrollview offset
+//            let rowTargeting:CGFloat = CGFloat( quotes.count - offset)
+//            let num:CGFloat = tableView.rowHeight * rowTargeting
+//            let targetPoint:CGPoint = CGPoint(x: 0, y: num)
+//
+//            tableView.reloadData()
+//            tableView.layoutIfNeeded()
+//
+//            DispatchQueue.main.async {
+//                if let indexPathToScrollTo: IndexPath = self.tableView.indexPathForRow(at: targetPoint)
+//                {
+//                    print("indexPathToScrollTo: ", indexPathToScrollTo)
+//                    self.tableView.scrollToRow(at: indexPathToScrollTo, at: UITableViewScrollPosition.bottom, animated: true)
+//                }
+//            }
+        
+        
+        self.bottomIndicator_hide()
+    }
+    
+    //MARK: - Helper
+    fileprivate func addData(_ data:[String]){
+        for currData in data {
+            quotes.append(currData)
+        }
+    }
+    
+    fileprivate func removeData(fromTop:Bool, amountToRemove:Int){
+        for _ in 0..<amountToRemove {
+            if fromTop {
+                self.quotes.removeFirst()
+            }
+            else {
+                self.quotes.removeLast()
+            }
+        }
+    }
+    
+    fileprivate func createIndexPaths(start:Int, end:Int)->[IndexPath]
+    {
+        var indexpaths:[IndexPath] = []
+        
+        for iter in start..<end {
+            let currIndex:IndexPath = IndexPath(row:iter,section:0)
+            indexpaths.append(currIndex)
+        }
+        
+        return indexpaths
+    }
+    
+    //MARK: - DEBUG
+     func debugIndexpath(paths:[IndexPath]){
+        for currPath:IndexPath in paths{
+            print(currPath)
+        }
+    }
+    
+    func debugCurrentData(){
+        var currIter = 0
+        for currItem in quotes {
+            print("[\(currIter)] \(currItem)")
+            currIter = currIter + 1
+        }
+    }
+
     
     func refreshTable_top()
     {
         let newData:[String] = self.getSomeData(dataToAdd: 17)
         
-        let data_limit:Int          = 25;
         //
         let existing_data_count:Int = self.quotes.count
         let new_data_count:Int      = newData.count
@@ -255,8 +410,6 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     {
         let newData:[String] = self.getSomeData(dataToAdd: 17)
         
-        let data_limit:Int          = 25;
-        //
         let existing_data_count:Int = self.quotes.count
         let updated_data_count:Int  = newData.count + existing_data_count
         

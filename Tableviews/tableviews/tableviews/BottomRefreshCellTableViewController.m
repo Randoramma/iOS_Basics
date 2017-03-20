@@ -91,11 +91,30 @@ returns an array of `NSIndexPath objects that we can use to refresh our table vi
     formatter.numberStyle = NSNumberFormatterSpellOutStyle;
     
     NSMutableArray *indexPaths = [NSMutableArray array];
+    NSInteger newData = 20;
     
-    for (NSInteger i = 0; i < 20; i++) {
-        [self.objects addObject:[formatter stringFromNumber:@([self.objects count] + 1)]];
-        [indexPaths addObject:[NSIndexPath indexPathForRow:self.objects.count - 1 inSection:0]];
+    
+    NSInteger prevDataCount = self.objects.count;
+    if (prevDataCount < 0) {
+        prevDataCount = 0;
     }
+    
+    //new data
+    for (NSInteger iter = 0; iter < newData; iter++) {
+        NSString * newData = [formatter stringFromNumber:@([self.objects count] + 1)];
+        [self.objects addObject:newData];
+    }
+    
+    
+    NSInteger newDataCount = self.objects.count;
+    
+    //indexpaths
+    for (NSInteger iter = prevDataCount; iter < newDataCount; iter++) {
+        NSIndexPath * currPath = [NSIndexPath indexPathForRow:iter inSection:0];
+        [indexPaths addObject:currPath];
+        NSLog(@"curr row: %ld",(long)iter);
+    }
+    
     
     return indexPaths;
 }
