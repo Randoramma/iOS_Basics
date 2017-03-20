@@ -179,7 +179,7 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         if top
         {
             self.topIndicator_show()
-            self.refreshTable_top()
+            self.insertTopBatch()
         }
         else
         {
@@ -187,6 +187,108 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             self.insertBottomBatch()
         }
     }//eom
+    
+    func insertTopBatch(){
+        let newData:[String] = getSomeData(dataToAdd: 5)
+        
+        let dataCountPriorInsertion = quotes.count
+        
+        /* APPROACH C: Deleting and Inserting Cells
+         - inserting and deleting indexpaths, if deleting moving the table/scrollview back to last location it was being presented
+         */
+        let insertStartIndex:Int    = 0
+        let insertEndIndex:Int      = newData.count
+        var deleteStartIndex:Int    = 0
+        var deleteEndIndex:Int      = 0
+        
+        //does new data exceed limit?
+        var offset:Int = (data_limit - (quotes.count + newData.count) )
+        if offset <  0 {
+            offset = offset * -1
+            
+            deleteStartIndex = quotes.count - offset
+            deleteEndIndex   = deleteStartIndex + offset
+        }
+        else {
+            offset = 0
+        }
+        
+        let indexPathsInserting     = self.createIndexPaths(start: insertStartIndex, end: insertEndIndex)
+        let indexPathsDeleting      = self.createIndexPaths(start: deleteStartIndex, end: deleteEndIndex)
+        
+        print("data inserting \(newData.count)")
+        print("prior insert \(dataCountPriorInsertion) | data total \(quotes.count)")
+        print("indexpath inserting: \(indexPathsInserting.count) | indexpath deleting: \(indexPathsDeleting.count)")
+        
+        DispatchQueue.main.async {
+            self.tableView.isUserInteractionEnabled = false
+            self.tableView.beginUpdates()
+            
+            //adding new data
+            self.addData(onTop: true, data: newData)
+            
+            //removing excess data
+            self.removeData(fromTop: false, amountToRemove: offset)
+            
+            self.tableView.insertRows(at: indexPathsInserting, with: UITableViewRowAnimation.none)
+            
+            
+            if indexPathsDeleting.count > 0 {
+                self.tableView.deleteRows(at: indexPathsDeleting, with: UITableViewRowAnimation.none)
+            }
+            
+            //moving scrollview back to location prior insertion
+            let calcRow:Int = indexPathsInserting.count + offset
+            let estimatedRow:Int = Int(self.tableView.rowHeight) * calcRow
+            let estimatedPoint:CGPoint = CGPoint(x: 0, y: estimatedRow)
+            self.tableView .setContentOffset(estimatedPoint, animated: false)
+            
+            self.fetchInProgress = false
+            self.tableView.isUserInteractionEnabled = true
+            self.tableView.endUpdates()
+        }
+        
+        //APPROACH B: reload all new cells & the cells that were on the screen prior new data, after reloading all cells then scroll to the last cell that was on the screen
+        //            let numCellsFitOnScreen:Int = Int((self.view.frame.size.height - 44) / self.tableView.rowHeight)
+        //
+        //            //reload all cells (new data & previous data on screen)
+        //            var allIndexes:[IndexPath] = []
+        //            let reloadLastIndex = quotes.count
+        //            let reloadStartIndex = quotes.count - offset - numCellsFitOnScreen
+        //            for iter in reloadStartIndex..<reloadLastIndex {
+        //                let currIndex:IndexPath = IndexPath(row:iter, section:0)
+        //                allIndexes.append(currIndex)
+        //                print("[reload] row: \(iter)")
+        //            }
+        //            tableView.reloadRows(at: allIndexes, with: UITableViewRowAnimation.none)
+        //
+        //            //scrolling the last cell that was on screen prior the new data
+        //            let desiredRow:Int = (quotes.count - offset - numCellsFitOnScreen + 1)
+        //            let targetIndexPath:IndexPath = IndexPath(row: desiredRow, section:0)
+        //            DispatchQueue.main.async {
+        //                print("desiredRow: ", desiredRow)
+        //                self.tableView.scrollToRow(at: targetIndexPath, at: UITableViewScrollPosition.none, animated: true)
+        //            }
+        
+        //APPROACH A: Calculating the scrollview offset
+        //            let rowTargeting:CGFloat = CGFloat( quotes.count - offset)
+        //            let num:CGFloat = tableView.rowHeight * rowTargeting
+        //            let targetPoint:CGPoint = CGPoint(x: 0, y: num)
+        //
+        //            tableView.reloadData()
+        //            tableView.layoutIfNeeded()
+        //
+        //            DispatchQueue.main.async {
+        //                if let indexPathToScrollTo: IndexPath = self.tableView.indexPathForRow(at: targetPoint)
+        //                {
+        //                    print("indexPathToScrollTo: ", indexPathToScrollTo)
+        //                    self.tableView.scrollToRow(at: indexPathToScrollTo, at: UITableViewScrollPosition.bottom, animated: true)
+        //                }
+        //            }
+        
+        
+        self.topIndicator_hide()
+    }
     
     func insertBottomBatch() {
         
@@ -216,7 +318,6 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             offset = 0
         }
         
-        
         let indexPathsInserting     = self.createIndexPaths(start: insertStartIndex, end: insertEndIndex)
         let indexPathsDeleting      = self.createIndexPaths(start: deleteStartIndex, end: deleteEndIndex)
 
@@ -229,7 +330,7 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             self.tableView.beginUpdates()
             
             //adding new data
-            self.addData(newData)
+            self.addData(onTop: false, data: newData)
             
             //removing excess data
             self.removeData(fromTop: true, amountToRemove: offset)
@@ -296,9 +397,17 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
     }
     
     //MARK: - Helper
-    fileprivate func addData(_ data:[String]){
-        for currData in data {
-            quotes.append(currData)
+    fileprivate func addData(onTop:Bool, data:[String]){
+        for iter in 0..<data.count {
+            if onTop {
+                let currLastIndex = (data.count - 1) - iter
+                let currItem = data[currLastIndex]
+                quotes.insert(currItem, at: 0)
+            }
+            else {
+                let currItem = data[iter]
+                quotes.append(currItem)
+            }
         }
     }
     
@@ -406,63 +515,6 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         }
     }//eom
     
-    func refreshTable_below()
-    {
-        let newData:[String] = self.getSomeData(dataToAdd: 17)
-        
-        let existing_data_count:Int = self.quotes.count
-        let updated_data_count:Int  = newData.count + existing_data_count
-        
-        var rows_to_delete:Int      = 0
-        let diff_in_size            = (data_limit - updated_data_count)
-        
-        //A. would adding the new data exceed the limit?
-        if  diff_in_size < 0
-        {
-            rows_to_delete = (-1) * diff_in_size
-        }//eom
-        
-        let rows_to_add:Int         = newData.count - rows_to_delete
-        
-        //B. creating indexes for cells to remove/add
-        let indexPathToAdd:[IndexPath] = self.indexPath_addRows_bottom(section: 0,
-                                            currentCellSum: existing_data_count,
-                                            cellsToAdd: rows_to_add)
-        let indexPathToRemove:[IndexPath] = self.indexPath_removeRows_top(section: 0,
-                                                cellsToRemove: rows_to_delete)
-        
-        //simulating a background fetch
-        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 2.0))
-        { [weak self] in
-            
-            //START
-            self?.tableView.beginUpdates()
-            
-            print("current sum: ", self?.quotes.count)
-            //add new data with existing data
-            self?.addData_below(newData: newData, excessAmount: rows_to_delete)
-            
-            print("updated sum: ", self?.quotes.count)
-            
-            //remove cells
-//            if indexPathToRemove.count > 0
-//            {
-//                self?.tableView.deleteRows(at: indexPathToRemove,with: UITableViewRowAnimation.none)
-//            }
-            
-            //add cells
-            self?.tableView.insertRows(at: indexPathToAdd,
-                                       with: UITableViewRowAnimation.none)
-            
-            //END
-            self?.tableView.endUpdates()
-            
-            self?.fetchInProgress = false
-            
-            self?.bottomIndicator_hide()
-        }
-    }//eom
-    
     func addData_top(newData:[String], excessAmount:Int)
     {
         var amountToRemove:Int = excessAmount
@@ -477,24 +529,6 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             if amountToRemove > 0
             {
                 self.quotes .removeLast()
-                amountToRemove = amountToRemove - 1
-            }
-        }//eofl
-    }//eom
-    
-    func addData_below(newData:[String], excessAmount:Int)
-    {
-        var amountToRemove:Int = excessAmount
-        for iter in 0..<newData.count
-        {
-            //insert on top of data
-            let currData:String = newData[iter]
-            self.quotes .append(currData)
-            
-            //removing excess data
-            if amountToRemove > 0
-            {
-                self.quotes .removeFirst()
                 amountToRemove = amountToRemove - 1
             }
         }//eofl
