@@ -258,11 +258,9 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         let data_limit:Int          = 25;
         //
         let existing_data_count:Int = self.quotes.count
-        let new_data_count:Int      = newData.count
-        let updated_data_count:Int  = new_data_count + existing_data_count
+        let updated_data_count:Int  = newData.count + existing_data_count
         
         var rows_to_delete:Int      = 0
-        let rows_to_add:Int         = new_data_count
         let diff_in_size            = (data_limit - updated_data_count)
         
         //A. would adding the new data exceed the limit?
@@ -271,9 +269,11 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             rows_to_delete = (-1) * diff_in_size
         }//eom
         
+        let rows_to_add:Int         = newData.count - rows_to_delete
+        
         //B. creating indexes for cells to remove/add
         let indexPathToAdd:[IndexPath] = self.indexPath_addRows_bottom(section: 0,
-                                            currentCellSum: self.quotes.count,
+                                            currentCellSum: existing_data_count,
                                             cellsToAdd: rows_to_add)
         let indexPathToRemove:[IndexPath] = self.indexPath_removeRows_top(section: 0,
                                                 cellsToRemove: rows_to_delete)
@@ -285,15 +285,17 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             //START
             self?.tableView.beginUpdates()
             
+            print("current sum: ", self?.quotes.count)
             //add new data with existing data
             self?.addData_below(newData: newData, excessAmount: rows_to_delete)
             
+            print("updated sum: ", self?.quotes.count)
+            
             //remove cells
-            if indexPathToRemove.count > 0
-            {
-                self?.tableView.deleteRows(at: indexPathToRemove,
-                                           with: UITableViewRowAnimation.none)
-            }
+//            if indexPathToRemove.count > 0
+//            {
+//                self?.tableView.deleteRows(at: indexPathToRemove,with: UITableViewRowAnimation.none)
+//            }
             
             //add cells
             self?.tableView.insertRows(at: indexPathToAdd,
@@ -362,6 +364,8 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         {
             let currPath:IndexPath = IndexPath(row: iter, section: section)
             indexPaths .append(currPath)
+            
+            print("[Adding] section: ", section, " row:", iter)
         }
         
         return indexPaths
@@ -372,11 +376,16 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
                                   cellsToAdd:Int)->[IndexPath]
     {
         var indexPaths:[IndexPath] = []
+        let offsetValue:Int = (currentCellSum-1) >= 0 ? (currentCellSum-1) : 0
+        
         for iter in 1...cellsToAdd
         {
-            let currRow:Int = currentCellSum - iter
+//            let currRow:Int = currentCellSum - iter
+            let currRow:Int = offsetValue + iter
             let currPath:IndexPath = IndexPath(row: currRow, section: section)
             indexPaths .append(currPath)
+            
+            print("[Adding] section: ", section, " row:", currRow)
         }
         
         return indexPaths
@@ -392,6 +401,7 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             let currRow:Int = iter
             let currPath:IndexPath = IndexPath(row: currRow, section: section)
             indexPaths.append(currPath)
+            print("[Removing] section: ", section, " row:", currRow)
         }
         
         return indexPaths
@@ -407,6 +417,7 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
             let currRow:Int = currentCellSum - iter
             let currPath:IndexPath = IndexPath(row: currRow, section: section)
             indexPaths.append(currPath)
+            print("[Removing] section: ", section, " row:", currRow)
         }
         
         return indexPaths

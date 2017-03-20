@@ -179,8 +179,7 @@
             
                 //B. creating indexes for cells to remove/add
             NSArray * indexPathsAdding      = [strongSelf IndexPath_addRows_Bottom:rows_to_add];
-            NSArray * indexPathsRemoving    = [strongSelf
-                IndexPath_removeRows_Top:rows_to_delete];
+            NSArray * indexPathsRemoving    = [strongSelf IndexPath_removeRows_Top:rows_to_delete];
             
                 //C. Update table
             [strongSelf.tableView beginUpdates];
