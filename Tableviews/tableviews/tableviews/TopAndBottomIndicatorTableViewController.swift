@@ -380,16 +380,14 @@ class TopAndBottomIndicatorTableViewController: UITableViewController {
         }
     }
     
-    func numberOfCellsThatFitOnScreen()->Int
-    {
+    func numberOfCellsThatFitOnScreen()->Int {
         let calcCells:CGFloat = self.tableView.frame.size.height / self.tableView.rowHeight
         let cellsFitOnScreen:Int = Int(calcCells)
         
         return cellsFitOnScreen
     }//eom
     
-    fileprivate func createIndexPaths(start:Int, end:Int)->[IndexPath]
-    {
+    fileprivate func createIndexPaths(start:Int, end:Int)->[IndexPath] {
         var indexpaths:[IndexPath] = []
         
         for iter in start..<end {

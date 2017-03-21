@@ -34,8 +34,13 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     {
         super.viewDidLoad()
 
-        self.getAllContactsFromAllContainers()
+        self.requestContactPermission()
     }//eom
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getAllContactsFromAllContainers()
+    }
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -43,7 +48,27 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         
     }//eom
     
+    
+    
     //MARK: - Load Contacts
+    func requestContactPermission(){
+        contactStore.requestAccess(for: CNEntityType.contacts) { (success:Bool, error:Error?) in
+            if let errorOccurred:Error = error{
+                print(errorOccurred.localizedDescription)
+            }else {
+                if success {
+                    print("permission granted")
+                }
+                else {
+                    print("permission unknown")
+                }
+            }
+            
+            
+        }
+    }
+    
+    
     func getAllContactsFromAllContainers()
     {
         // specific keys
@@ -162,7 +187,7 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
         
         
         contactsList = sortedList as NSArray
-        //self.printContacts()
+        self.printContacts()
         
         self.tableView .reloadData()
         
@@ -471,18 +496,20 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
     }//eom
     
     //MARK: - Debug
-//    func printContacts()
-//    {
-//        for (var iter = 0; iter < contactsList.count ; iter += 1)
-//        {
-//            print("\nContact#\(iter)")
+    func printContacts()
+    {
+        for iter in 0..<contactsList.count
+        {
+            print("\nContact#\(iter)")
+            
+            let currContact = contactsList .object(at: iter)
+            print(currContact)
 //            
-//            let currContact = contactsList .objectAtIndex(iter)
-//            if currContact.isKeyAvailable(CNContactGivenNameKey)
+//            if (currContact as AnyObject).isKeyAvailable(CNContactGivenNameKey)
 //            {
-//                print("GivenName: \(currContact.givenName)")
+//                print("GivenName: \((currContact as AnyObject).givenName)")
 //            }
-//            if currContact.isKeyAvailable(CNContactFamilyNameKey)
+//            if (currContact as AnyObject).isKeyAvailable(CNContactFamilyNameKey)
 //            {
 //                print("familyName: \(currContact.familyName)")
 //            }
@@ -490,12 +517,12 @@ class ListContactsTableViewController: UITableViewController, CNContactViewContr
 //            {
 //                print("organizationName: \(currContact.organizationName)")
 //            }
-//            
-//        }//eofl
-//        
-//        print("- - - - - - - - - - - - - - - - - - - - - - - - - - - ")
-//        
-//    }//eom
+            
+        }//eofl
+        
+        print("- - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+        
+    }//eom
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
