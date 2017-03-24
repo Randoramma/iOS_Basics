@@ -1,6 +1,5 @@
 //
-//  IndicatorTableViewController.swift
-//  tableviews
+//  IndicatiorTableInViewController.swift
 //
 //  Created by lu on 3/24/17.
 //  Copyright © 2017 lc. All rights reserved.
@@ -8,20 +7,13 @@
 
 import UIKit
 
-protocol IndicatorTableDelegate {
-    func reached(position:TablePosition)
-}
-
-enum TablePosition {
-    case Top
-    case Bottom
-}
-
-class IndicatorTableViewController: UITableViewController {
+class IndicatiorTableInViewController: UIViewController {
 
     //MARK: - Properties
     fileprivate var busyIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
-   
+    
+    var table: UITableView?
+    
     var fetchInProgress = false
     var topOffset:CGFloat = -64.0
     var queue:DispatchQueue = DispatchQueue.main
@@ -30,22 +22,36 @@ class IndicatorTableViewController: UITableViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+
+extension IndicatiorTableInViewController:UITableViewDelegate {
+    func setDelegates(table:UITableView){
+        self.table = table
         self.setupIndicator()
     }
+}
 
+extension IndicatiorTableInViewController:UITableViewDataSource {
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //NEED TO OVERRIDE
         return 0
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //NEED TO OVERRIDE
         return UITableViewCell()
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView){
-        let reachedTop:Bool = scrollView.contentOffset.y < (topOffset - self.tableView.rowHeight);
+     func scrollViewDidScroll(_ scrollView: UIScrollView){
+        
+        guard let tableView:UITableView = self.table else  {
+            return
+        }
+        
+        let reachedTop:Bool = scrollView.contentOffset.y < (topOffset - tableView.rowHeight);
         let reachedBottom:Bool = (scrollView.contentOffset.y + scrollView.frame.size.height) == scrollView.contentSize.height;
         
         if reachedTop {
@@ -55,7 +61,9 @@ class IndicatorTableViewController: UITableViewController {
             self.refreshTable(top: false)
         }
     }
-    
+}
+
+extension IndicatiorTableInViewController {
     //MARK: - refresh table
     func refreshTable(top:Bool){
         if fetchInProgress {
@@ -74,42 +82,54 @@ class IndicatorTableViewController: UITableViewController {
     
     //MARK: - Show/Hide Indicators
     func setupIndicator(){
-        let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 44)
+        guard let tableView:UITableView = self.table  else  {
+            return
+        }
+        
+        let frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 44)
         busyIndicator = UIActivityIndicatorView(frame: frame)
         busyIndicator.color = UIColor.black
         busyIndicator.startAnimating()
     }
     
     func topIndicator(show:Bool) {
+        guard let tableView:UITableView = self.table else  {
+            return
+        }
+        
         queue.async {
             if show {
-                self.tableView.tableHeaderView = self.busyIndicator
+                tableView.tableHeaderView = self.busyIndicator
                 
-                if let headerBounds:CGRect = self.tableView.tableHeaderView?.bounds {
-                    let headerLocation:CGRect = self.tableView.convert(headerBounds, from: self.tableView.tableHeaderView)
-                    self.tableView.scrollRectToVisible(headerLocation, animated: true)
+                if let headerBounds:CGRect = tableView.tableHeaderView?.bounds {
+                    let headerLocation:CGRect = tableView.convert(headerBounds, from: tableView.tableHeaderView)
+                    tableView.scrollRectToVisible(headerLocation, animated: true)
                 }
             }
             else {
-                self.tableView.tableHeaderView?.removeFromSuperview()
-                self.tableView.tableHeaderView = nil
-
+                tableView.tableHeaderView?.removeFromSuperview()
+                tableView.tableHeaderView = nil
+                
             }
         }
     }
     
     func bottomIndicator(show:Bool){
+        guard let tableView:UITableView = self.table else  {
+            return
+        }
+        
         queue.async {
             if show {
-                self.tableView.tableFooterView = self.busyIndicator
-                if let headerBounds:CGRect = self.tableView.tableFooterView?.bounds {
-                    let headerLocation:CGRect = self.tableView.convert(headerBounds, from: self.tableView.tableFooterView)
-                    self.tableView.scrollRectToVisible(headerLocation, animated: true)
+                tableView.tableFooterView = self.busyIndicator
+                if let headerBounds:CGRect = tableView.tableFooterView?.bounds {
+                    let headerLocation:CGRect = tableView.convert(headerBounds, from: tableView.tableFooterView)
+                    tableView.scrollRectToVisible(headerLocation, animated: true)
                 }
             }
             else {
-                self.tableView.tableFooterView?.removeFromSuperview()
-                self.tableView.tableFooterView = nil
+                tableView.tableFooterView?.removeFromSuperview()
+                tableView.tableFooterView = nil
             }
         }
     }
@@ -121,7 +141,11 @@ class IndicatorTableViewController: UITableViewController {
     
     //MARK: - Helpers
     func numberOfCellsThatFitOnScreen()->Int {
-        let calcCells:CGFloat = self.tableView.frame.size.height / self.tableView.rowHeight
+        guard let tableView = self.table  else  {
+            return 0
+        }
+        
+        let calcCells:CGFloat = tableView.frame.size.height / tableView.rowHeight
         
         return Int(calcCells)
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8926E5D11E8570D400DF9283 /* IndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */; };
+		8926E5DE1E85B8A000DF9283 /* IndicatiorTableInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */; };
 		DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */; };
 		DE18D5131E7F2F3E00B00C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5111E7F2F3E00B00C1B /* Main.storyboard */; };
 		DE18D5151E7F2F3E00B00C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorTableViewController.swift; sourceTree = "<group>"; };
+		8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatiorTableInViewController.swift; sourceTree = "<group>"; };
 		DE18D50A1E7F2F3E00B00C1B /* tableviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE18D5121E7F2F3E00B00C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		8926E5CF1E85707600DF9283 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */,
 				8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */,
 			);
 			name = Models;
@@ -293,6 +296,7 @@
 				DE18D52B1E7F374200B00C1B /* TableWithHeaderDetailViewController.m in Sources */,
 				DE18D5291E7F374200B00C1B /* TableWithHeaderTableViewController.m in Sources */,
 				DE18D54E1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift in Sources */,
+				8926E5DE1E85B8A000DF9283 /* IndicatiorTableInViewController.swift in Sources */,
 				DE18D5581E7F5AEC00B00C1B /* TopIndicatorViewController.m in Sources */,
 				DE18D5461E7F56F000B00C1B /* CenteredPagingTableViewController.swift in Sources */,
 				DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */,
