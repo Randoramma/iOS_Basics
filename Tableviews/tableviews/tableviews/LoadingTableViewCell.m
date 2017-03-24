@@ -3,7 +3,7 @@
 //  tableviewExample
 //
 //  Created by Luis Castillo on 2/26/17.
-//  Copyright © 2017 DevBros. All rights reserved.
+//  Copyright © 2017 lc. All rights reserved.
 //
 
 #import "LoadingTableViewCell.h"

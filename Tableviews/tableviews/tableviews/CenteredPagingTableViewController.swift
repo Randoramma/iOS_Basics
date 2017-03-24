@@ -3,7 +3,7 @@
 //  tableviewExample
 //
 //  Created by Luis Castillo on 2/26/17.
-//  Copyright © 2017 DevBros. All rights reserved.
+//  Copyright © 2017 lc. All rights reserved.
 //
 
 import UIKit
@@ -39,11 +39,11 @@ class CenteredPagingTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }//eom
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
-    }//eom
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -57,7 +57,7 @@ class CenteredPagingTableViewController: UITableViewController {
         }
         
         return UITableViewCell()
-    }//eom
+    }
     
     
     //MARK: Scrolling/Paging
@@ -66,7 +66,7 @@ class CenteredPagingTableViewController: UITableViewController {
         {
             self.scrollViewDidEndDecelerating(scrollView)
         }
-    }//eom
+    }
     
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
@@ -79,6 +79,6 @@ class CenteredPagingTableViewController: UITableViewController {
         {
             self.tableView.scrollToRow(at: indexPathToScrollTo, at: UITableViewScrollPosition.middle, animated: true)
         }
-    }//eom
+    }
 
 }

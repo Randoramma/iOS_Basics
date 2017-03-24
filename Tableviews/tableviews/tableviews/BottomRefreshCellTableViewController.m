@@ -3,7 +3,7 @@
 //  tableviewExample
 //
 //  Created by Luis Castillo on 2/26/17.
-//  Copyright © 2017 DevBros. All rights reserved.
+//  Copyright © 2017 lc. All rights reserved.
 //
 
 #import "BottomRefreshCellTableViewController.h"
@@ -23,13 +23,13 @@
     self.objects = [NSMutableArray array];
     
     [self addSomeObjects];
-}//eom
+}
     
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     return self.objects.count + 1;
-}//eom
+}
     
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,7 +48,7 @@
         
         return cell;
     }
-}//eom
+}
     
 #pragma mark - Data Fetching
     

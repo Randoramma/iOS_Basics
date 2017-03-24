@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891911C71E8190E000106664 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891911C61E8190E000106664 /* ContactModel.swift */; };
+		891911CE1E81A36B00106664 /* MessageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891911CD1E81A36B00106664 /* MessageResource.swift */; };
+		891911D01E81A5C600106664 /* ContactResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891911CF1E81A5C600106664 /* ContactResource.swift */; };
+		891911D21E81AD7F00106664 /* ContactParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891911D11E81AD7F00106664 /* ContactParse.swift */; };
 		F7EB23BB1C357A5B003A6EF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EB23BA1C357A5B003A6EF6 /* AppDelegate.swift */; };
 		F7EB23BF1C357A5B003A6EF6 /* SaveContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EB23BE1C357A5B003A6EF6 /* SaveContactViewController.swift */; };
 		F7EB23C21C357A5B003A6EF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EB23C01C357A5B003A6EF6 /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891911C61E8190E000106664 /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		891911CD1E81A36B00106664 /* MessageResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResource.swift; sourceTree = "<group>"; };
+		891911CF1E81A5C600106664 /* ContactResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactResource.swift; sourceTree = "<group>"; };
+		891911D11E81AD7F00106664 /* ContactParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactParse.swift; sourceTree = "<group>"; };
 		F7EB23B71C357A5B003A6EF6 /* contactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EB23BA1C357A5B003A6EF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7EB23BE1C357A5B003A6EF6 /* SaveContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveContactViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		891911CC1E81A33F00106664 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				891911CD1E81A36B00106664 /* MessageResource.swift */,
+				891911C61E8190E000106664 /* ContactModel.swift */,
+				891911CF1E81A5C600106664 /* ContactResource.swift */,
+				891911D11E81AD7F00106664 /* ContactParse.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F7EB23AE1C357A5B003A6EF6 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +77,7 @@
 		F7EB23B91C357A5B003A6EF6 /* contactList */ = {
 			isa = PBXGroup;
 			children = (
+				891911CC1E81A33F00106664 /* Models */,
 				F7EB23D01C35871F003A6EF6 /* Views */,
 				F7EB23CF1C358718003A6EF6 /* Controllers */,
 				F7EB23CE1C358711003A6EF6 /* Application */,
@@ -176,8 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7EB23D61C35AD02003A6EF6 /* ContactTableViewCell.swift in Sources */,
+				891911CE1E81A36B00106664 /* MessageResource.swift in Sources */,
 				F7EB23D41C358992003A6EF6 /* ListContactsTableViewController.swift in Sources */,
 				F7EB23BF1C357A5B003A6EF6 /* SaveContactViewController.swift in Sources */,
+				891911D21E81AD7F00106664 /* ContactParse.swift in Sources */,
+				891911D01E81A5C600106664 /* ContactResource.swift in Sources */,
+				891911C71E8190E000106664 /* ContactModel.swift in Sources */,
 				F7EB23BB1C357A5B003A6EF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
