@@ -62,11 +62,15 @@ extension TopAndBottomIndicatorTableViewController:IndicatorTableDelegate {
         switch position {
         case .Top:
             self.topIndicator(show: true)
-            self.insertTopBatch()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: UInt64(3.0)), execute: {
+                self.insertTopBatch()
+            })
             break
         case .Bottom:
             self.bottomIndicator(show: true)
-            self.insertBottomBatch()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: UInt64(3.0)), execute: {
+                self.insertBottomBatch()
+            })
             break
         }
     }
