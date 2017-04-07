@@ -50,7 +50,9 @@ class PagedScrollViewController: UIViewController, UIScrollViewDelegate {
         print(" current frame size: \(scrollView.frame)")
         print(" current description: \(scrollView.debugDescription)")
         print("")
-        print(" current description: \(scrollView.gestureRecognizers?.debugDescription)")
+        let debugInfo:String = (scrollView.gestureRecognizers?.debugDescription != nil) ? (scrollView.gestureRecognizers!.debugDescription) : "no info"
+        
+        print(" current description: \(debugInfo)")
         
         
         // 5

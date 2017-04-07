@@ -21,6 +21,7 @@ class scrollviewImagesContinuosViewController: UIViewController, UIScrollViewDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        scrollView.isUserInteractionEnabled = true
         
         self.setup()
     }

@@ -107,8 +107,8 @@ class scrollviewWithActionsViewController: UIViewController {
         for iter in 0 ..< scrollviewsSubviews.count
         {
             let currView = scrollviewsSubviews[iter]
-//            print("[\(iter)]  \(currView)")
-//            print("")
+            print("[\(iter)]  \(currView)")
+            print("")
         }//eofl
     }//eom
     

@@ -162,7 +162,6 @@
 			children = (
 				DE483CF41C34DD9400F46E4B /* Images */,
 				DE78648E1BFC407300FFE21B /* Controllers */,
-				DE78648D1BFC406E00FFE21B /* Models */,
 				DE78648C1BFC406800FFE21B /* Views */,
 				DE78648B1BFC406400FFE21B /* App */,
 				DE7864721BFC403C00FFE21B /* Assets.xcassets */,
@@ -189,13 +188,6 @@
 				F7496D8C1DC7E63B0054852A /* Other */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		DE78648D1BFC406E00FFE21B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		DE78648E1BFC407300FFE21B /* Controllers */ = {
@@ -318,8 +310,8 @@
 		F7496DF51DC8E2CF0054852A /* Swift version - works but not being used */ = {
 			isa = PBXGroup;
 			children = (
-				F7496DF61DC8E2E10054852A /* PopOverViewController.swift */,
 				F7496DF71DC8E2E10054852A /* VCThatCallsPopOverViewController.swift */,
+				F7496DF61DC8E2E10054852A /* PopOverViewController.swift */,
 			);
 			name = "Swift version - works but not being used";
 			sourceTree = "<group>";

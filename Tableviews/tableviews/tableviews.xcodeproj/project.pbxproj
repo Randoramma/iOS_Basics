@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8926E5D11E8570D400DF9283 /* IndicatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */; };
-		8926E5DE1E85B8A000DF9283 /* IndicatiorTableInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */; };
+		89587D481E96EFB600DB6900 /* TableWithSearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D471E96EFB600DB6900 /* TableWithSearchBarViewController.swift */; };
+		89587D4E1E9702A000DB6900 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D4C1E9702A000DB6900 /* BaseTableViewCell.swift */; };
+		89587D521E9702E200DB6900 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D511E9702E200DB6900 /* ReusableView.swift */; };
+		89587D541E9702F600DB6900 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D531E9702F600DB6900 /* NibLoadableView.swift */; };
+		89587D571E9703F900DB6900 /* UITableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D561E9703F900DB6900 /* UITableview.swift */; };
+		89587D591E9706E500DB6900 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D581E9706E500DB6900 /* ResultsTableViewController.swift */; };
+		89587D5C1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D5B1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift */; };
+		89587D5E1E97EE2D00DB6900 /* TableWithIndexListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D5D1E97EE2D00DB6900 /* TableWithIndexListTableViewCell.swift */; };
+		89587D631E97F51100DB6900 /* SearchBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D611E97F51100DB6900 /* SearchBaseTableViewController.swift */; };
+		89587D641E97F51100DB6900 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D621E97F51100DB6900 /* SearchResultsViewController.swift */; };
+		89587D661E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D651E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift */; };
 		DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */; };
 		DE18D5131E7F2F3E00B00C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5111E7F2F3E00B00C1B /* Main.storyboard */; };
 		DE18D5151E7F2F3E00B00C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */; };
@@ -36,8 +45,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorTableViewController.swift; sourceTree = "<group>"; };
-		8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatiorTableInViewController.swift; sourceTree = "<group>"; };
+		89587D471E96EFB600DB6900 /* TableWithSearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableWithSearchBarViewController.swift; sourceTree = "<group>"; };
+		89587D4C1E9702A000DB6900 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		89587D511E9702E200DB6900 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		89587D531E9702F600DB6900 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		89587D561E9703F900DB6900 /* UITableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableview.swift; sourceTree = "<group>"; };
+		89587D581E9706E500DB6900 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		89587D5B1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableWithIndexListTableViewController.swift; sourceTree = "<group>"; };
+		89587D5D1E97EE2D00DB6900 /* TableWithIndexListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableWithIndexListTableViewCell.swift; sourceTree = "<group>"; };
+		89587D611E97F51100DB6900 /* SearchBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseTableViewController.swift; sourceTree = "<group>"; };
+		89587D621E97F51100DB6900 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		89587D651E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarEmbeddedTableViewController.swift; sourceTree = "<group>"; };
 		DE18D50A1E7F2F3E00B00C1B /* tableviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE18D5121E7F2F3E00B00C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,22 +104,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8926E5CE1E85705400DF9283 /* Views */ = {
+		89587D461E96EC2700DB6900 /* NOT USING table with search bar */ = {
 			isa = PBXGroup;
 			children = (
-				DE18D5111E7F2F3E00B00C1B /* Main.storyboard */,
-				DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */,
+				89587D471E96EFB600DB6900 /* TableWithSearchBarViewController.swift */,
+				89587D581E9706E500DB6900 /* ResultsTableViewController.swift */,
+				89587D491E97005700DB6900 /* New Group */,
 			);
-			name = Views;
+			name = "NOT USING table with search bar";
 			sourceTree = "<group>";
 		};
-		8926E5CF1E85707600DF9283 /* Models */ = {
+		89587D491E97005700DB6900 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				8926E5DD1E85B8A000DF9283 /* IndicatiorTableInViewController.swift */,
-				8926E5D01E8570D400DF9283 /* IndicatorTableViewController.swift */,
+				89587D4C1E9702A000DB6900 /* BaseTableViewCell.swift */,
 			);
-			name = Models;
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		89587D501E9702BF00DB6900 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				89587D511E9702E200DB6900 /* ReusableView.swift */,
+				89587D531E9702F600DB6900 /* NibLoadableView.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		89587D551E9703E900DB6900 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89587D561E9703F900DB6900 /* UITableview.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		89587D5A1E97EC7A00DB6900 /* 7. table with indexlist */ = {
+			isa = PBXGroup;
+			children = (
+				89587D5B1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift */,
+				89587D5D1E97EE2D00DB6900 /* TableWithIndexListTableViewCell.swift */,
+			);
+			name = "7. table with indexlist";
+			sourceTree = "<group>";
+		};
+		89587D5F1E97F4D900DB6900 /* 6. table with search bar */ = {
+			isa = PBXGroup;
+			children = (
+				89587D651E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift */,
+				89587D601E97F4FE00DB6900 /* base controllers */,
+			);
+			name = "6. table with search bar";
+			sourceTree = "<group>";
+		};
+		89587D601E97F4FE00DB6900 /* base controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89587D611E97F51100DB6900 /* SearchBaseTableViewController.swift */,
+				89587D621E97F51100DB6900 /* SearchResultsViewController.swift */,
+			);
+			name = "base controllers";
 			sourceTree = "<group>";
 		};
 		DE18D5011E7F2F3E00B00C1B = {
@@ -125,10 +187,15 @@
 			children = (
 				DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */,
 				DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */,
+				89587D461E96EC2700DB6900 /* NOT USING table with search bar */,
 				DE18D5191E7F2F3E00B00C1B /* Info.plist */,
 				DE18D5201E7F374100B00C1B /* tableviews-Bridging-Header.h */,
-				8926E5CF1E85707600DF9283 /* Models */,
-				8926E5CE1E85705400DF9283 /* Views */,
+				DE18D5111E7F2F3E00B00C1B /* Main.storyboard */,
+				DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */,
+				89587D501E9702BF00DB6900 /* Protocols */,
+				89587D551E9703E900DB6900 /* Extensions */,
+				89587D5A1E97EC7A00DB6900 /* 7. table with indexlist */,
+				89587D5F1E97F4D900DB6900 /* 6. table with search bar */,
 				DE18D54C1E7F57BD00B00C1B /* 5.Top and Bottom Header Refresh */,
 				DE18D54F1E7F581A00B00C1B /* 4. Bottom Refreshing with Cell */,
 				DE18D5481E7F577400B00C1B /* 3.Top Indicator */,
@@ -295,17 +362,26 @@
 				DE18D5541E7F585200B00C1B /* BottomRefreshCellTableViewController.m in Sources */,
 				DE18D52B1E7F374200B00C1B /* TableWithHeaderDetailViewController.m in Sources */,
 				DE18D5291E7F374200B00C1B /* TableWithHeaderTableViewController.m in Sources */,
+				89587D641E97F51100DB6900 /* SearchResultsViewController.swift in Sources */,
 				DE18D54E1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift in Sources */,
-				8926E5DE1E85B8A000DF9283 /* IndicatiorTableInViewController.swift in Sources */,
 				DE18D5581E7F5AEC00B00C1B /* TopIndicatorViewController.m in Sources */,
 				DE18D5461E7F56F000B00C1B /* CenteredPagingTableViewController.swift in Sources */,
+				89587D5C1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift in Sources */,
+				89587D631E97F51100DB6900 /* SearchBaseTableViewController.swift in Sources */,
+				89587D5E1E97EE2D00DB6900 /* TableWithIndexListTableViewCell.swift in Sources */,
+				89587D481E96EFB600DB6900 /* TableWithSearchBarViewController.swift in Sources */,
+				89587D541E9702F600DB6900 /* NibLoadableView.swift in Sources */,
 				DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */,
 				DE18D5551E7F585200B00C1B /* LoadingTableViewCell.m in Sources */,
-				8926E5D11E8570D400DF9283 /* IndicatorTableViewController.swift in Sources */,
+				89587D591E9706E500DB6900 /* ResultsTableViewController.swift in Sources */,
 				DE18D5421E7F3CB900B00C1B /* Place.m in Sources */,
+				89587D521E9702E200DB6900 /* ReusableView.swift in Sources */,
 				DE18D5471E7F56F000B00C1B /* CenteredPagingTableViewCell.swift in Sources */,
 				DE18D52C1E7F374200B00C1B /* TableViewHeader.m in Sources */,
+				89587D4E1E9702A000DB6900 /* BaseTableViewCell.swift in Sources */,
+				89587D661E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift in Sources */,
 				DE18D52A1E7F374200B00C1B /* TableWithHeaderTableViewCell.m in Sources */,
+				89587D571E9703F900DB6900 /* UITableview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

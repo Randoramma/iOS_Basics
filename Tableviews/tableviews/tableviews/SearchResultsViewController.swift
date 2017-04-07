@@ -3,7 +3,7 @@
 //  SearchBar
 //
 //  Created by Luis Castillo on 12/28/15.
-//  Copyright © 2015 DevBros. All rights reserved.
+//  Copyright © 2015. All rights reserved.
 //
 
 import UIKit
