@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3C91AE1E9954F700801220 /* PopOverPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C91AD1E9954F700801220 /* PopOverPresentationViewController.swift */; };
 		DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE483CF51C34DDA400F46E4B /* starWars.jpg */; };
 		DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78646B1BFC403C00FFE21B /* AppDelegate.swift */; };
 		DE7864711BFC403C00FFE21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE78646F1BFC403C00FFE21B /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE3C91AD1E9954F700801220 /* PopOverPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopOverPresentationViewController.swift; path = "Presentations Option 0 Pop Over/Presentation PopOver/PopOverPresentationViewController.swift"; sourceTree = "<group>"; };
 		DE483CF51C34DDA400F46E4B /* starWars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starWars.jpg; sourceTree = "<group>"; };
 		DE7864681BFC403C00FFE21B /* LoadingViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE78646B1BFC403C00FFE21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE483CF31C34DC3700F46E4B /* 0 Pop Up Controller */ = {
+		DE3C91AC1E99541100801220 /* 0 PopOverController */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C91AD1E9954F700801220 /* PopOverPresentationViewController.swift */,
+			);
+			name = "0 PopOverController";
+			sourceTree = "<group>";
+		};
+		DE483CF31C34DC3700F46E4B /* 1 Custom Pop Up Controller */ = {
 			isa = PBXGroup;
 			children = (
 				F7496DF01DC7F02B0054852A /* VCThatCallsPopOverViewController.h */,
@@ -118,7 +128,7 @@
 				F7496DEE1DC7F02B0054852A /* PopOverViewController.m */,
 				F7496DF51DC8E2CF0054852A /* Swift version - works but not being used */,
 			);
-			name = "0 Pop Up Controller";
+			name = "1 Custom Pop Up Controller";
 			sourceTree = "<group>";
 		};
 		DE483CF41C34DD9400F46E4B /* Images */ = {
@@ -268,7 +278,8 @@
 		F7496DB61DC7ECCF0054852A /* Presentations (Animations) */ = {
 			isa = PBXGroup;
 			children = (
-				DE483CF31C34DC3700F46E4B /* 0 Pop Up Controller */,
+				DE3C91AC1E99541100801220 /* 0 PopOverController */,
+				DE483CF31C34DC3700F46E4B /* 1 Custom Pop Up Controller */,
 			);
 			name = "Presentations (Animations)";
 			sourceTree = "<group>";
@@ -402,6 +413,7 @@
 				F7496DF91DC8E2E10054852A /* VCThatCallsPopOverViewController.swift in Sources */,
 				F7496DE71DC7EFF20054852A /* TableViewController.swift in Sources */,
 				F7496DE51DC7EFF20054852A /* TableViewCell.swift in Sources */,
+				DE3C91AE1E9954F700801220 /* PopOverPresentationViewController.swift in Sources */,
 				F7496DDF1DC7EEFF0054852A /* SegmentedTableViewCell.m in Sources */,
 				F7496DC51DC7EDFA0054852A /* ProfileVCViewController.m in Sources */,
 				F7496DC41DC7EDFA0054852A /* MenuVCViewController.m in Sources */,

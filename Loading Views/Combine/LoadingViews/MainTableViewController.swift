@@ -27,8 +27,9 @@ class MainTableViewController: UITableViewController {
     
     enum cell_presentations:Int {
         case popOver = 0
+        case customPopOver = 1
         
-        static let total:Int = 1
+        static let total:Int = 2
     }
     
     enum cell_other:Int {
@@ -39,15 +40,12 @@ class MainTableViewController: UITableViewController {
         static let total:Int = 3
     }
     
-    
-    
     //MARK: View Loading
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }//eo-view
-
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView,
@@ -83,6 +81,8 @@ class MainTableViewController: UITableViewController {
                 switch cellNum
                 {
                     case cell_presentations.popOver.rawValue:
+                        break
+                    case cell_presentations.customPopOver.rawValue:
                         break
                     default:
                         break
