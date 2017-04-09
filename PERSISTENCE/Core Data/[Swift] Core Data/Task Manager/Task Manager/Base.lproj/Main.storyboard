@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uof-cF-2lb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task Manager-->
+        <scene sceneID="tpN-cf-Azl">
+            <objects>
+                <tableViewController id="Deu-X6-NBY" customClass="TaskManagerTableViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="4IR-9Q-VBX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="95" id="6hz-vw-hfA" customClass="TaskManagerTableViewCell" customModule="Task_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hz-vw-hfA" id="tMA-af-ouO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cwM-y9-bj6" kind="push" identifier="editTask" id="xs2-Mk-uUv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Deu-X6-NBY" id="esZ-Bf-y8a"/>
+                            <outlet property="delegate" destination="Deu-X6-NBY" id="Id8-sP-h4a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Task Manager" id="umC-jW-M8N">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jzw-kE-cty">
+                            <connections>
+                                <segue destination="cwM-y9-bj6" kind="push" identifier="addTask" id="haK-Ow-U6y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwR-Dx-wxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="429"/>
+        </scene>
+        <!--Task Detail-->
+        <scene sceneID="oEN-dG-umB">
+            <objects>
+                <viewController id="cwM-y9-bj6" customClass="TaskDetailViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="put-rJ-23m"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ca-qJ-67T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJe-54-LQK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R78-CT-JJQ">
+                                <rect key="frame" x="39" y="111" width="248" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cwM-y9-bj6" id="Hbn-Th-kcu"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R78-CT-JJQ" firstAttribute="leading" secondItem="TJe-54-LQK" secondAttribute="leadingMargin" constant="23" id="XzK-jK-ZO2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R78-CT-JJQ" secondAttribute="trailing" constant="17" id="gqg-no-vlY"/>
+                            <constraint firstItem="R78-CT-JJQ" firstAttribute="top" secondItem="put-rJ-23m" secondAttribute="bottom" constant="47" id="tgM-VZ-ceA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Task Detail" id="jF0-cu-iBb">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="FmE-zk-Od4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bJV-de-Ob9">
+                            <connections>
+                                <action selector="cancel:" destination="cwM-y9-bj6" id="saS-jw-md3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="OJm-PH-MBA">
+                            <connections>
+                                <action selector="done:" destination="cwM-y9-bj6" id="FDZ-LN-Tdx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtDesc" destination="R78-CT-JJQ" id="u1j-Ay-aru"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BkC-Sj-5yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vPj-VB-bKT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uof-cF-2lb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rc6-Ar-pOQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Deu-X6-NBY" kind="relationship" relationship="rootViewController" id="ccz-00-hud"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcr-Il-Uhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195.19999999999999" y="429.78666666666669"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="haK-Ow-U6y"/>
+    </inferredMetricsTieBreakers>
+</document>

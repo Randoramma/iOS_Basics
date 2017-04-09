@@ -267,7 +267,8 @@ __Assign__
 
 //methods
 - (void)setAddressString:(NSString*)newAddressString
-{         
+{
+        
    address = newAddressString;
 } 
 ```
@@ -290,10 +291,14 @@ __Retain__ (in Non-ARC, for ARC use __Strong__)
 
 //methods
 - (void)setString:(NSString*)newString
-{          
-       [newString retain];          
-       [string release];            
-       string = newString;         
+{
+         
+       [newString retain];
+         
+       [string release];
+           
+       string = newString;
+        
 }
 ```
 
@@ -388,11 +393,15 @@ __Copy__
  * the object will be cloned with duplicate values. It is not shared with any one else.
 ```objective-c
 - (void)setString:(NSString*)newString
-{            
+{
+           
    if(string!=newString)
-   {              
-      [string release];              
-      string = [newString copy];            
+   {
+             
+      [string release];
+             
+      string = [newString copy];
+           
    }
 }
 ```
@@ -530,6 +539,58 @@ __release__ - Decreases the retain count of an object by 1. Relinquishes ownersh
 
 
 :black_large_square:  _Core Data_
+
+__Managed Object__
+
+*an Instance or subclass of NSManagedObject*
+
+__*A model object that represents a record from a persistent store; is  registered with a managed context.*__
+
+
+
+__Fetched Results Controller__
+
+*an instance of NSFetchedResultsController*
+
+__*Used to provide data to a UItableview object in order to displau the results of a fetch request on a table*__
+
+
+
+__Context__
+
+*an instance of NSManagedObjectContext*
+
+__*Represents a single object space in Core Data app; used to manage a collection of managed objects (create and fetch them, and managed their undo and redo operations).*__
+
+
+__Store Coordinator__
+
+*an instance of NSPersistentStoreCoordinator*
+
+__*Manages different object stores making them appear as a single one to the rest of the application.*__
+
+
+__Store__
+
+__*A repository in which managed objects may be stored in disk*__
+
+
+__Managed Object Model__
+
+*instance of NSManagedObjectModel*
+
+__*A set of objects that together form a blueprint describing the managed objects you use in your application.*__
+
+
+__Fetch Request__
+
+*an instance of NSFetchRequest*
+
+__*Tells a managed object context the entity of the managed objects that you want to fetch*__
+
+
+
+
 
 
 
