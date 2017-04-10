@@ -13,6 +13,7 @@ class CustomSearchBar: UISearchBar {
     //MARK: - Properties
     var preferredFont: UIFont!
     var preferredTextColor: UIColor!
+    var preferredTintColor: UIColor!
     let lineLayerWidth:CGFloat      = 2.5
     
     var topAndBottomStart:CGFloat   = 5.0 {
@@ -27,15 +28,21 @@ class CustomSearchBar: UISearchBar {
     }
     
     //MARK: - Init
-    init(frame: CGRect, font: UIFont, textColor: UIColor) {
+    init(frame: CGRect,
+         font: UIFont,
+         textColor: UIColor,
+         tintColor: UIColor,
+         style:UISearchBarStyle,
+         translucent:Bool) {
         super.init(frame: frame)
         
         self.frame          = frame
         preferredFont       = font
         preferredTextColor  = textColor
+        preferredTintColor  = tintColor
         
-        searchBarStyle      = UISearchBarStyle.prominent
-        isTranslucent       = false
+        isTranslucent       = translucent
+        searchBarStyle      = style
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +96,6 @@ class CustomSearchBar: UISearchBar {
         textfield.textColor   = preferredTextColor
         
         //background color
-        textfield.backgroundColor = barTintColor
+        textfield.backgroundColor = preferredTintColor
     }
 }

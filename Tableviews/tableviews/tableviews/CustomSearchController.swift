@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol CustomSearchControllerDelegate {
     func didStartSearching()
     func didTapOnSearchButton()
@@ -40,7 +39,9 @@ class CustomSearchController: UISearchController {
          searchBarTextColor: UIColor,
          searchBarTintColor: UIColor,
          hasBookmark:Bool = false,
-         hasCancel:Bool = true) {
+         hasCancel:Bool = true,
+         barStyle:UISearchBarStyle,
+         isTranslucent: Bool = true) {
         super.init(searchResultsController: searchResultsController)
         
         configureSearchBar(frame:searchBarFrame,
@@ -48,7 +49,9 @@ class CustomSearchController: UISearchController {
                            textColor: searchBarTextColor,
                            bgColor: searchBarTintColor,
                            hasBookmark: hasBookmark,
-                           hasCancel:hasCancel)
+                           hasCancel:hasCancel,
+                           style: barStyle,
+                           isTranslucent: isTranslucent)
     }
     
     
@@ -66,13 +69,16 @@ class CustomSearchController: UISearchController {
                             textColor: UIColor,
                             bgColor: UIColor,
                             hasBookmark:Bool,
-                            hasCancel:Bool) {
+                            hasCancel:Bool,
+                            style: UISearchBarStyle,
+                            isTranslucent: Bool) {
         customSearchBar = CustomSearchBar(frame: frame,
                                           font: font ,
-                                          textColor: textColor)
+                                          textColor: textColor,
+                                          tintColor: bgColor,
+                                          style: style,
+                                          translucent: isTranslucent)
         
-        customSearchBar.barTintColor        = bgColor
-        customSearchBar.tintColor           = textColor
         customSearchBar.showsBookmarkButton = hasBookmark
         customSearchBar.showsCancelButton   = hasCancel
         customSearchBar.delegate            = self

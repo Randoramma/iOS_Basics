@@ -57,8 +57,8 @@ extension TableWithCustomSearchBar:CustomSearchControllerDelegate {
                            y: 0.0,
                            width: tblSearchResults.frame.size.width,
                            height: 50.0)
-        let barTextColor = UIColor.orange
-        let barTintColor = UIColor.black
+        let barTextColor = UIColor.blue
+        let barTintColor = UIColor.gray
         
         //setup
         customSearchController = CustomSearchController(searchResultsController: self,
@@ -67,7 +67,8 @@ extension TableWithCustomSearchBar:CustomSearchControllerDelegate {
                                                         searchBarTextColor: barTextColor,
                                                         searchBarTintColor: barTintColor,
                                                         hasBookmark: false,
-                                                        hasCancel:true )
+                                                        hasCancel:true,
+                                                        barStyle: UISearchBarStyle.minimal)
         
         customSearchController.customSearchBar.placeholder = "Search in this awesome bar..."
         customSearchController.customDelegate = self
