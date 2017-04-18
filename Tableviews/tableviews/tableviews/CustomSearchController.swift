@@ -36,19 +36,25 @@ class CustomSearchController: UISearchController {
     init(searchResultsController: UIViewController!,
          searchBarFrame: CGRect,
          searchBarFont: UIFont,
-         searchBarTextColor: UIColor,
+         searchBarPlaceholderTextColor:UIColor = UIColor.lightGray,
          searchBarTintColor: UIColor,
+         searchBarBackgroundTintColor: UIColor,
+         searchBarBackgroundColor: UIColor,
+         seperatorColor: UIColor? = nil,
          hasBookmark:Bool = false,
          hasCancel:Bool = true,
-         barStyle:UISearchBarStyle,
+         barStyle:UISearchBarStyle = .prominent,
          isTranslucent: Bool = true) {
         super.init(searchResultsController: searchResultsController)
         
         configureSearchBar(frame:searchBarFrame,
                            font: searchBarFont,
-                           textColor: searchBarTextColor,
-                           bgColor: searchBarTintColor,
-                           hasBookmark: hasBookmark,
+                           placeholderTextColor: searchBarPlaceholderTextColor,
+                           tintColor: searchBarTintColor,
+                           bgTintColor: searchBarBackgroundTintColor,
+                           bgColor: searchBarBackgroundColor,
+                           seperatorColor: seperatorColor,
+                           hasBookmark:hasBookmark,
                            hasCancel:hasCancel,
                            style: barStyle,
                            isTranslucent: isTranslucent)
@@ -66,18 +72,26 @@ class CustomSearchController: UISearchController {
     // MARK: - Custom functions
     func configureSearchBar(frame: CGRect,
                             font: UIFont,
-                            textColor: UIColor,
+                            placeholderTextColor: UIColor,
+                            tintColor: UIColor,
+                            bgTintColor: UIColor,
                             bgColor: UIColor,
+                            seperatorColor: UIColor?,
                             hasBookmark:Bool,
                             hasCancel:Bool,
                             style: UISearchBarStyle,
                             isTranslucent: Bool) {
+        
         customSearchBar = CustomSearchBar(frame: frame,
-                                          font: font ,
-                                          textColor: textColor,
-                                          tintColor: bgColor,
+                                          font: font,
+                                          placeholderTextColor: placeholderTextColor,
+                                          tintColor: tintColor,
+                                          backgroundTintColor: bgTintColor,
+                                          backgroundColor: bgColor,
+                                          clearBackground: false,
+                                          seperatorColor: seperatorColor,
                                           style: style,
-                                          translucent: isTranslucent)
+                                          isTranslucent: isTranslucent)
         
         customSearchBar.showsBookmarkButton = hasBookmark
         customSearchBar.showsCancelButton   = hasCancel
