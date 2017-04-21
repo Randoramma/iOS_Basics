@@ -34,16 +34,11 @@ class TextfieldInPickerViewController: UIViewController {
     }
 }
 
-//MARK: - Textfield Delegate
-extension TextfieldInPickerViewController{
-    func setupTextfield(){
-        optionsTextfield.inputView = pickerView
-    }
-}
-
 //MARK: - Picker
 extension TextfieldInPickerViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     func setPicker(){
+        optionsTextfield.inputView = pickerView
+        
         pickerView.delegate = self
         
         pickerView.contentMode      = .center
