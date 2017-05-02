@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896C50C01EB9112F00EA83EA /* TransitionFadeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C50BF1EB9112E00EA83EA /* TransitionFadeMainViewController.swift */; };
+		896C50C21EB9114900EA83EA /* TransitionSubviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C50C11EB9114900EA83EA /* TransitionSubviewViewController.swift */; };
+		896C50C41EB92C2600EA83EA /* TransitionSubviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896C50C31EB92C2600EA83EA /* TransitionSubviewViewController.xib */; };
+		896C50C91EB92F8A00EA83EA /* TransitionSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C50C81EB92F8A00EA83EA /* TransitionSlideViewController.swift */; };
 		DE3C91AE1E9954F700801220 /* PopOverPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C91AD1E9954F700801220 /* PopOverPresentationViewController.swift */; };
 		DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE483CF51C34DDA400F46E4B /* starWars.jpg */; };
 		DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78646B1BFC403C00FFE21B /* AppDelegate.swift */; };
@@ -45,6 +49,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		896C50BF1EB9112E00EA83EA /* TransitionFadeMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFadeMainViewController.swift; sourceTree = "<group>"; };
+		896C50C11EB9114900EA83EA /* TransitionSubviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubviewViewController.swift; sourceTree = "<group>"; };
+		896C50C31EB92C2600EA83EA /* TransitionSubviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransitionSubviewViewController.xib; sourceTree = "<group>"; };
+		896C50C81EB92F8A00EA83EA /* TransitionSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSlideViewController.swift; sourceTree = "<group>"; };
 		DE3C91AD1E9954F700801220 /* PopOverPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopOverPresentationViewController.swift; path = "Presentations Option 0 Pop Over/Presentation PopOver/PopOverPresentationViewController.swift"; sourceTree = "<group>"; };
 		DE483CF51C34DDA400F46E4B /* starWars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starWars.jpg; sourceTree = "<group>"; };
 		DE7864681BFC403C00FFE21B /* LoadingViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +119,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		896C50BC1EB910C500EA83EA /* 2 | 3 Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				896C50C51EB92F5600EA83EA /* Fade */,
+				896C50C71EB92F6400EA83EA /* Slide */,
+				896C50C61EB92F5D00EA83EA /* Shared */,
+			);
+			name = "2 | 3 Transitions";
+			path = "Presentations Option 0 Pop Over/Transition";
+			sourceTree = "<group>";
+		};
+		896C50C51EB92F5600EA83EA /* Fade */ = {
+			isa = PBXGroup;
+			children = (
+				896C50BF1EB9112E00EA83EA /* TransitionFadeMainViewController.swift */,
+			);
+			name = Fade;
+			sourceTree = "<group>";
+		};
+		896C50C61EB92F5D00EA83EA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				896C50C11EB9114900EA83EA /* TransitionSubviewViewController.swift */,
+				896C50C31EB92C2600EA83EA /* TransitionSubviewViewController.xib */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		896C50C71EB92F6400EA83EA /* Slide */ = {
+			isa = PBXGroup;
+			children = (
+				896C50C81EB92F8A00EA83EA /* TransitionSlideViewController.swift */,
+			);
+			name = Slide;
+			sourceTree = "<group>";
+		};
 		DE3C91AC1E99541100801220 /* 0 PopOverController */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +324,7 @@
 			children = (
 				DE3C91AC1E99541100801220 /* 0 PopOverController */,
 				DE483CF31C34DC3700F46E4B /* 1 Custom Pop Up Controller */,
+				896C50BC1EB910C500EA83EA /* 2 | 3 Transitions */,
 			);
 			name = "Presentations (Animations)";
 			sourceTree = "<group>";
@@ -388,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7864761BFC403C00FFE21B /* LaunchScreen.storyboard in Resources */,
+				896C50C41EB92C2600EA83EA /* TransitionSubviewViewController.xib in Resources */,
 				F7496DEC1DC7F00B0054852A /* StoryboardTwo.storyboard in Resources */,
 				DE483CF61C34DDA400F46E4B /* starWars.jpg in Resources */,
 				F7496DE61DC7EFF20054852A /* TableViewCell.xib in Resources */,
@@ -406,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896C50C21EB9114900EA83EA /* TransitionSubviewViewController.swift in Sources */,
 				F7496DF41DC7F02B0054852A /* VCThatCallsPopOverViewController.m in Sources */,
 				F7496DDE1DC7EEFF0054852A /* SegmentedMainViewController.m in Sources */,
 				F7496DF81DC8E2E10054852A /* PopOverViewController.swift in Sources */,
@@ -422,10 +469,12 @@
 				F7496DDD1DC7EEFF0054852A /* SegmentedFirstViewController.m in Sources */,
 				F7496DE01DC7EEFF0054852A /* SegmentedTableViewController.m in Sources */,
 				DE78646C1BFC403C00FFE21B /* AppDelegate.swift in Sources */,
+				896C50C91EB92F8A00EA83EA /* TransitionSlideViewController.swift in Sources */,
 				F7496DC21DC7EDF90054852A /* ContainerVCViewController.m in Sources */,
 				F7496DEB1DC7F00B0054852A /* ADiffSBViewController.swift in Sources */,
 				DE78649B1BFC414800FFE21B /* MainTableViewController.swift in Sources */,
 				F7496DCA1DC7EE1C0054852A /* AViewController.swift in Sources */,
+				896C50C01EB9112F00EA83EA /* TransitionFadeMainViewController.swift in Sources */,
 				F7496DDC1DC7EEFF0054852A /* SegmentedControlSettings.m in Sources */,
 				F7496DD01DC7EEAC0054852A /* ShareSetting.m in Sources */,
 				F7496DC31DC7EDF90054852A /* MainVCViewController.m in Sources */,

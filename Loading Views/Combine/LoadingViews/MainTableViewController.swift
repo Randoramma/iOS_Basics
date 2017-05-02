@@ -28,8 +28,10 @@ class MainTableViewController: UITableViewController {
     enum cell_presentations:Int {
         case popOver = 0
         case customPopOver = 1
+        case transitionFade = 2
+        case transitionSlide = 3
         
-        static let total:Int = 2
+        static let total:Int = 4
     }
     
     enum cell_other:Int {
@@ -83,6 +85,10 @@ class MainTableViewController: UITableViewController {
                     case cell_presentations.popOver.rawValue:
                         break
                     case cell_presentations.customPopOver.rawValue:
+                        break
+                    case cell_presentations.transitionFade.rawValue:
+                        break
+                    case cell_presentations.transitionSlide.rawValue:
                         break
                     default:
                         break
