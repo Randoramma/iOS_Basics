@@ -73,12 +73,6 @@ extension TransitionSlideViewController {
     }
     
     func dismissSubView(){
-        print("dismiss")
-        
-        print("screen height: ", UIScreen.main.bounds.size.height)
-        print("view height: ", self.view.frame.height)
-        
-        
         UIView.animate(withDuration: 0.9) {
             let bottomFrame = CGRect(x: 0,
                                      y: self.view.frame.height,
@@ -87,7 +81,6 @@ extension TransitionSlideViewController {
             self.subview.frame = bottomFrame
         }
         subviewPresented = false
-        
     }
     
     func presentSubView(){

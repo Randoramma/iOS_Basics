@@ -24,28 +24,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jd-2w-ROU">
-                                <rect key="frame" x="16" y="60" width="343" height="40"/>
+                                <rect key="frame" x="16" y="60" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5TC-yt-8HX"/>
+                                    <constraint firstAttribute="height" constant="60" id="5TC-yt-8HX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXe-yF-roq">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <rect key="frame" x="16" y="303" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xWD-ME-r2B"/>
+                                    <constraint firstAttribute="height" constant="60" id="xWD-ME-r2B"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oy-FV-gds">
-                                <rect key="frame" x="16" y="485.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="470.5" width="343" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xnn-FZ-iSo"/>
+                                    <constraint firstAttribute="height" constant="60" id="xnn-FZ-iSo"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Oy-FV-gds" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MvP-BW-1OL"/>
                             <constraint firstItem="rXe-yF-roq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="N3J-uU-OgQ"/>

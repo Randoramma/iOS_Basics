@@ -9,9 +9,16 @@
 import UIKit
 import QuartzCore
 
+protocol RangeSliderDelegate:class {
+    func leftValueChanged(slider:RangeSlider, value:Double, point:CGPoint)
+    func rightValueChanged(slider:RangeSlider, value:Double, point:CGPoint)
+}
+
+
 class RangeSlider: UIControl {
-    
     //MARK: - Properties
+    weak var delegate:RangeSliderDelegate?
+    
     fileprivate let trackLayer          = RangeSliderTrackLayer()
     fileprivate let leftLayer           = RangeSliderLayer()
     fileprivate let rightLayer          = RangeSliderLayer()
@@ -19,6 +26,14 @@ class RangeSlider: UIControl {
     
     var handleWidth: CGFloat {
         return CGFloat(bounds.height)
+    }
+    
+    var leftLocation: CGPoint {
+        return leftLayer.frame.origin
+    }
+    
+    var rightLocation: CGPoint {
+        return rightLayer.frame.origin
     }
     
     //MARK: Properties (Setters)
@@ -88,7 +103,6 @@ class RangeSlider: UIControl {
         }
     }
     
-    
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -116,6 +130,7 @@ class RangeSlider: UIControl {
 //MARK: - Updates
 extension RangeSlider{
     func updateLayerFrames() {
+        
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -147,10 +162,10 @@ extension RangeSlider{
     }
     
     func positionForValue(_ value: Double) -> Double {
-        let halfWidthDouble:Double  = Double(handleWidth / 2.0)
         let boundWidthDiff:Double   = Double(bounds.width - handleWidth)
         let minValueDiff:Double     = (value - minimumValue)
         let maxValueDiff:Double     = (maximumValue - minimumValue)
+        let halfWidthDouble:Double  = Double(handleWidth / 2.0)
         return boundWidthDiff * minValueDiff / maxValueDiff + halfWidthDouble
     }
 }
@@ -188,11 +203,19 @@ extension RangeSlider{
             leftValue = boundValue(leftValue,
                                    leftValue: minimumValue,
                                    rightValue: rightValue)
+            
+            delegate?.leftValueChanged(slider: self,
+                                       value: leftValue,
+                                       point: location)
         } else if rightLayer.highlighted {
             rightValue += deltaValue
             rightValue = boundValue(rightValue,
                                     leftValue: leftValue,
                                     rightValue: maximumValue)
+            
+            delegate?.rightValueChanged(slider: self,
+                                        value: rightValue,
+                                        point: location)
         }
         
         return true
