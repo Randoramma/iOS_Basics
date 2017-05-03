@@ -10,8 +10,8 @@ import UIKit
 import QuartzCore
 
 protocol RangeSliderDelegate:class {
-    func leftValueChanged(slider:RangeSlider, value:Double, point:CGPoint)
-    func rightValueChanged(slider:RangeSlider, value:Double, point:CGPoint)
+    func sliderLeftChanged(slider:RangeSlider)
+    func sliderRightChanged(slider:RangeSlider)
 }
 
 
@@ -204,18 +204,14 @@ extension RangeSlider{
                                    leftValue: minimumValue,
                                    rightValue: rightValue)
             
-            delegate?.leftValueChanged(slider: self,
-                                       value: leftValue,
-                                       point: location)
+            delegate?.sliderLeftChanged(slider: self)
         } else if rightLayer.highlighted {
             rightValue += deltaValue
             rightValue = boundValue(rightValue,
                                     leftValue: leftValue,
                                     rightValue: maximumValue)
             
-            delegate?.rightValueChanged(slider: self,
-                                        value: rightValue,
-                                        point: location)
+            delegate?.sliderRightChanged(slider: self)
         }
         
         return true

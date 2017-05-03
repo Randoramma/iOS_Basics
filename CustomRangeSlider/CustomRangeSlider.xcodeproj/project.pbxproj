@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8955141A1EB95F06001F8DDE /* RangeSliderWithLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895514191EB95F06001F8DDE /* RangeSliderWithLabels.swift */; };
+		8955141F1EB95FFB001F8DDE /* RangeSliderWithLabels.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8955141E1EB95FFB001F8DDE /* RangeSliderWithLabels.xib */; };
 		89713FB31EB7EE840004D704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89713FB21EB7EE840004D704 /* AppDelegate.swift */; };
 		89713FB51EB7EE840004D704 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89713FB41EB7EE840004D704 /* ViewController.swift */; };
 		89713FB81EB7EE840004D704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89713FB61EB7EE840004D704 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		895514191EB95F06001F8DDE /* RangeSliderWithLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderWithLabels.swift; sourceTree = "<group>"; };
+		8955141E1EB95FFB001F8DDE /* RangeSliderWithLabels.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderWithLabels.xib; sourceTree = "<group>"; };
 		89713FAF1EB7EE840004D704 /* CustomRangeSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomRangeSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89713FB21EB7EE840004D704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89713FB41EB7EE840004D704 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8955141B1EB95FB9001F8DDE /* RangeSliderWithLabels */ = {
+			isa = PBXGroup;
+			children = (
+				895514191EB95F06001F8DDE /* RangeSliderWithLabels.swift */,
+				8955141E1EB95FFB001F8DDE /* RangeSliderWithLabels.xib */,
+			);
+			name = RangeSliderWithLabels;
+			sourceTree = "<group>";
+		};
 		89713FA61EB7EE840004D704 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		89713FB11EB7EE840004D704 /* CustomRangeSlider */ = {
 			isa = PBXGroup;
 			children = (
+				8955141B1EB95FB9001F8DDE /* RangeSliderWithLabels */,
 				89713FC41EB7EE9B0004D704 /* RangeSlider */,
 				89713FB21EB7EE840004D704 /* AppDelegate.swift */,
 				89713FB41EB7EE840004D704 /* ViewController.swift */,
@@ -141,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89713FBD1EB7EE840004D704 /* LaunchScreen.storyboard in Resources */,
+				8955141F1EB95FFB001F8DDE /* RangeSliderWithLabels.xib in Resources */,
 				89713FBA1EB7EE840004D704 /* Assets.xcassets in Resources */,
 				89713FB81EB7EE840004D704 /* Main.storyboard in Resources */,
 			);
@@ -154,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89713FC81EB7F21C0004D704 /* RangeSliderTrackLayer.swift in Sources */,
+				8955141A1EB95F06001F8DDE /* RangeSliderWithLabels.swift in Sources */,
 				89713FB51EB7EE840004D704 /* ViewController.swift in Sources */,
 				89713FC61EB7EEE10004D704 /* RangeSlider.swift in Sources */,
 				89713FCA1EB7F2B20004D704 /* RangeSliderLayer.swift in Sources */,
@@ -319,6 +335,7 @@
 				89713FC31EB7EE840004D704 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

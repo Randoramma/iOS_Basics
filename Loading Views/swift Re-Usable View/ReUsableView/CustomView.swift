@@ -9,28 +9,26 @@
 import UIKit
 
 class CustomView: UIView {
-
-    @IBOutlet weak var myLabel: UILabel!
     
+    //MARK: - UI Properties
+    @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myButton: UIButton!
     
+    //MARK: - Properties
     var view:UIView!
     
-    override init(frame: CGRect)
-    {
+    //MARK: - Init
+    override init(frame: CGRect){
         super.init(frame: frame)
         setup()
     }
     
-    required init(coder aDecoder: NSCoder)
-    {
+    required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         setup()
     }
     
-    
-    func setup()
-    {
+    func setup(){
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -38,9 +36,7 @@ class CustomView: UIView {
         addSubview(view)
     }
     
-    
-    func loadViewFromNib() -> UIView
-    {
+    func loadViewFromNib() -> UIView{
         let bundle = Bundle(for:type(of: self))
         let nib = UINib(nibName: "CustomView", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
@@ -48,9 +44,8 @@ class CustomView: UIView {
         return view
     }
 
-    
-    @IBAction func changeBackgroundColor(_ sender: Any)
-    {
+    //MARK: - Actions
+    @IBAction func changeBackgroundColor(_ sender: Any){
         let color = UIColor(red: random(),
                             green: random(),
                             blue:  random(),

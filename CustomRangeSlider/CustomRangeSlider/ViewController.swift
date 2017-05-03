@@ -11,16 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var sliderView: UIView!
-    
     @IBOutlet weak var slider2View: UIView!
-    @IBOutlet weak var slider3View: UIView!
+    @IBOutlet weak var sliderViewWithLabels: RangeSliderWithLabels!
     
     //MARK: - Properties
-    let slider1LeftLabel: UILabel = UILabel(frame: CGRect.zero)
-    let slider1RightLabel: UILabel = UILabel(frame: CGRect.zero)
+    let slider1LeftLabel: UILabel   = UILabel(frame: CGRect.zero)
+    let slider1RightLabel: UILabel  = UILabel(frame: CGRect.zero)
     let range1Slider    = RangeSlider(frame: CGRect.zero)
-    let range2Slider    = RangeSlider(frame: CGRect.zero)
-    let range3Slider    = RangeSlider(frame: CGRect.zero)
+    
+    let sliderWithNoLabels = RangeSlider(frame: CGRect.zero)
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,12 +29,19 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        //slider 1
+        setSliderWithLabelsManuallyRelocated()
+        
+        setSliderWithNoLabels()
+        
+        setSliderWithLabelsAutoRelocated()
+    }
+    
+    func setSliderWithLabelsManuallyRelocated(){
         range1Slider.delegate = self
         range1Slider.frame = CGRect(x: 0.0,
-                                   y: sliderView.frame.size.height/2,
-                                   width: sliderView.frame.size.width,
-                                   height: sliderView.frame.size.height/2)
+                                    y: sliderView.frame.size.height/2,
+                                    width: sliderView.frame.size.width,
+                                    height: sliderView.frame.size.height/2)
         sliderView.addSubview(range1Slider)
         
         //adding labels
@@ -50,9 +56,9 @@ class ViewController: UIViewController {
         
         
         slider1RightLabel.frame = CGRect(x: range1Slider.rightLocation.x,
-                                        y: 0.0,
-                                        width: 100,
-                                        height: sliderView.frame.size.height/2)
+                                         y: 0.0,
+                                         width: 100,
+                                         height: sliderView.frame.size.height/2)
         
         //updating labels values
         let slider1LeftValue:Double = round(range1Slider.leftValue * 100) / 100
@@ -60,97 +66,96 @@ class ViewController: UIViewController {
         
         let slider1RightValue:Double = round(range1Slider.rightValue * 100) / 100
         slider1RightLabel.text = "\(slider1RightValue)"
+    }
+    
+    func setSliderWithLabelsAutoRelocated(){
+        sliderViewWithLabels.delegate = self
+        sliderViewWithLabels.slider.curvaceousness = 2.0
+        sliderViewWithLabels.slider.handleTintColor = .cyan
+        sliderViewWithLabels.slider.trackTintColor = .blue
+        sliderViewWithLabels.setNeedsLayout()
+        sliderViewWithLabels.layoutIfNeeded()
         
+        //get initial values
+        sliderViewWithLabels.requestUpdatedValues()
+    }
+    
+    
+    /*
+     Ideal for sliders that no label is desired
+     */
+    func setSliderWithNoLabels(){
+        sliderWithNoLabels.delegate = self
+        sliderWithNoLabels.frame = CGRect(x: 0.0,
+                                          y: slider2View.frame.size.height/2,
+                                          width: slider2View.frame.size.width,
+                                          height: slider2View.frame.size.height/2)
+        slider2View.addSubview(sliderWithNoLabels)
         
-        //slider 2
-        range2Slider.delegate = self
-        range2Slider.frame = CGRect(x: 0.0,
-                                   y: slider2View.frame.size.height/2,
-                                   width: slider2View.frame.size.width,
-                                   height: slider2View.frame.size.height/2)
-        slider2View.addSubview(range2Slider)
-        
-        range2Slider.trackTintColor = UIColor.darkGray
-        range2Slider.handleTintColor = UIColor.blue
-        range2Slider.trackHighlightTintColor = UIColor.red
-        range2Slider.curvaceousness = 0.0
+        sliderWithNoLabels.trackTintColor = UIColor.darkGray
+        sliderWithNoLabels.handleTintColor = UIColor.blue
+        sliderWithNoLabels.trackHighlightTintColor = UIColor.red
+        sliderWithNoLabels.curvaceousness = 0.0
+    }
+}
 
-        //slider 3
-        range3Slider.delegate = self
-        range3Slider.frame = CGRect(x: 0.0,
-                                    y: slider3View.frame.size.height/2,
-                                    width: slider3View.frame.size.width,
-                                    height: slider3View.frame.size.height/2)
-        slider3View.addSubview(range3Slider)
+//MARK: - RangeSliderWithLabelsDelegate
+extension ViewController: RangeSliderWithLabelsDelegate {
+    func sliderValueChanged(slider: RangeSlider,
+                            label: UILabel,
+                            value: Double) {
+        if slider == sliderViewWithLabels.slider {
+            let valueRounded = round(value * 10) / 10
+            label.text = String("#")?.appending(String(valueRounded))
+        }
     }
 }
 
 //MARK: - RangeSliderDelegate
 extension ViewController: RangeSliderDelegate {
-    func leftValueChanged(slider:RangeSlider,
-                          value:Double,
-                          point:CGPoint){
+    func sliderLeftChanged(slider:RangeSlider){
+        
+        let leftLocation = slider.leftLocation
+        let leftValue:Double = round(slider.leftValue * 100) / 100
+        
         if slider == self.range1Slider{
             print("slider 1!")
             
-            let slider1LeftValue:Double = round(range1Slider.leftValue * 100) / 100
-            slider1LeftLabel.text = "\(slider1LeftValue)"
+            slider1LeftLabel.text = "\(leftValue)"
             
-            slider1LeftLabel.frame = CGRect(x: range1Slider.leftLocation.x,
+            slider1LeftLabel.frame = CGRect(x: leftLocation.x,
                                             y: 0.0,
                                             width: 100,
                                             height: sliderView.frame.size.height/2)
         }
-        else if slider == self.range2Slider {
-            print("slider 2!")
+        else if slider == self.sliderWithNoLabels {
+            print("sliderWithNoLabels!")
         }
-        else if slider == self.range3Slider {
-            print("slider 3!")
-        }
-        print("left value: ", value)
-        print("left point: ", point)
+        
+        print("left value: ", leftValue)
+        print("left point: ", leftLocation)
     }
     
-    func rightValueChanged(slider:RangeSlider,
-                           value:Double,
-                           point:CGPoint){
+    func sliderRightChanged(slider:RangeSlider){
+        
+        let rightLocation:CGPoint = slider.rightLocation
+        let rightValue:Double = round(slider.rightValue * 100) / 100
+        
         if slider == self.range1Slider{
             print("slider 1!")
             
-            let slider1RightValue:Double = round(range1Slider.rightValue * 100) / 100
-            slider1RightLabel.text = "\(slider1RightValue)"
+            slider1RightLabel.text = "\(rightValue)"
             
-            slider1RightLabel.frame = CGRect(x: range1Slider.rightLocation.x,
+            slider1RightLabel.frame = CGRect(x: rightLocation.x,
                                              y: 0.0,
                                              width: 100,
                                              height: sliderView.frame.size.height/2)
         }
-        else if slider == self.range2Slider {
-            print("slider 2!")
-        }
-        else if slider == self.range3Slider {
-            print("slider 3!")
-        }
-        print("right value: ", value)
-        print("right point: ", point)
-    }
-}
-
-//MARK: - Notifications
-extension ViewController {
-    func rangeSliderValueChanged(_ rangeSlider: RangeSlider) {
-        if rangeSlider == self.range1Slider{
-            print("slider 1!")
-        }
-        else if rangeSlider == self.range2Slider {
-            print("slider 2!")
-        }
-        else if rangeSlider == self.range3Slider {
-            print("slider 3!")
+        else if slider == self.sliderWithNoLabels {
+            print("sliderWithNoLabels!")
         }
         
-        print("left: ", rangeSlider.leftValue)
-        print("right: ", rangeSlider.rightValue)
+        print("right value: ", rightValue)
+        print("right point: ", rightLocation)
     }
 }
-
