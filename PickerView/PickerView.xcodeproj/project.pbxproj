@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896E8E391EBB7A0500876B68 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E8E381EBB7A0500876B68 /* DatePickerViewController.swift */; };
+		896E8E3B1EBB7A1D00876B68 /* DatePickerInTextfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E8E3A1EBB7A1D00876B68 /* DatePickerInTextfieldViewController.swift */; };
 		89C7BCCD1EA58EFE00009AB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7BCCC1EA58EFE00009AB6 /* AppDelegate.swift */; };
 		89C7BCCF1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C7BCCE1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift */; };
 		89C7BCD21EA58EFE00009AB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C7BCD01EA58EFE00009AB6 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		896E8E381EBB7A0500876B68 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		896E8E3A1EBB7A1D00876B68 /* DatePickerInTextfieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerInTextfieldViewController.swift; sourceTree = "<group>"; };
 		89C7BCC91EA58EFE00009AB6 /* PickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7BCCC1EA58EFE00009AB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C7BCCE1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldInPickerViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		896E8E351EBB78F100876B68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89C7BCCE1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift */,
+				896E8E381EBB7A0500876B68 /* DatePickerViewController.swift */,
+				896E8E3A1EBB7A1D00876B68 /* DatePickerInTextfieldViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		896E8E361EBB790100876B68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89C7BCD81EA58EFE00009AB6 /* Info.plist */,
+				89C7BCD31EA58EFE00009AB6 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		896E8E371EBB790900876B68 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				89C7BCD01EA58EFE00009AB6 /* Main.storyboard */,
+				89C7BCD51EA58EFE00009AB6 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		89C7BCC01EA58EFE00009AB6 = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				89C7BCCC1EA58EFE00009AB6 /* AppDelegate.swift */,
-				89C7BCCE1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift */,
-				89C7BCD01EA58EFE00009AB6 /* Main.storyboard */,
-				89C7BCD31EA58EFE00009AB6 /* Assets.xcassets */,
-				89C7BCD51EA58EFE00009AB6 /* LaunchScreen.storyboard */,
-				89C7BCD81EA58EFE00009AB6 /* Info.plist */,
+				896E8E351EBB78F100876B68 /* Controllers */,
+				896E8E371EBB790900876B68 /* Storyboard */,
+				896E8E361EBB790100876B68 /* Resources */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -138,6 +168,8 @@
 			files = (
 				89C7BCCF1EA58EFE00009AB6 /* TextfieldInPickerViewController.swift in Sources */,
 				89C7BCCD1EA58EFE00009AB6 /* AppDelegate.swift in Sources */,
+				896E8E391EBB7A0500876B68 /* DatePickerViewController.swift in Sources */,
+				896E8E3B1EBB7A1D00876B68 /* DatePickerInTextfieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +331,7 @@
 				89C7BCDD1EA58EFE00009AB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

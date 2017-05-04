@@ -14,7 +14,7 @@ class TextfieldInPickerViewController: UIViewController {
     
     //MARK: - Properties
     fileprivate let pickerView:UIPickerView = UIPickerView()
-    fileprivate let options:[String] = ["Option A",
+    fileprivate let options:[String] = [  "Option A",
                                           "Option D",
                                           "Option H",
                                           "Option K",
@@ -24,18 +24,24 @@ class TextfieldInPickerViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextfield()
         setPicker()
     }
+}
 
-    //MARK: - Memory
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//MARK: - Actions
+extension TextfieldInPickerViewController{
+    func doneButtonPressed(_ sender: UIBarButtonItem) {
+        optionsTextfield.resignFirstResponder()
+    }
+    
+    func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        optionsTextfield.text = ""
+        optionsTextfield.resignFirstResponder()
     }
 }
 
 //MARK: - Picker
-extension TextfieldInPickerViewController:UIPickerViewDelegate,UIPickerViewDataSource{
+extension TextfieldInPickerViewController{
     func setPicker(){
         optionsTextfield.inputView = pickerView
         
@@ -89,20 +95,14 @@ extension TextfieldInPickerViewController:UIPickerViewDelegate,UIPickerViewDataS
         optionsTextfield.inputAccessoryView = toolBar
     }
     
-    //MARK: Actions
-    func doneButtonPressed(_ sender: UIBarButtonItem) {
-        optionsTextfield.resignFirstResponder()
-    }
-    
-    func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        optionsTextfield.text = ""
-        optionsTextfield.resignFirstResponder()
-    }
-    
     //MARK:  Helper
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+}
+
+//MARK: - UIPickerViewDelegate,UIPickerViewDataSource
+extension TextfieldInPickerViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     
     //MARK:  Picker Delegates
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
