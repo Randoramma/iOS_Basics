@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var slider2View: UIView!
-    @IBOutlet weak var sliderViewWithLabels: RangeSliderWithLabels!
+    @IBOutlet weak var sliderViewWithLabelsOnTopAndBottom: RangeSliderWithLabels!
+    @IBOutlet weak var sliderViewWithLabelsOnTop: RangeSliderWithLabels!
     
     //MARK: - Properties
     let slider1LeftLabel: UILabel   = UILabel(frame: CGRect.zero)
@@ -69,15 +70,32 @@ class ViewController: UIViewController {
     }
     
     func setSliderWithLabelsAutoRelocated(){
-        sliderViewWithLabels.delegate = self
-        sliderViewWithLabels.slider.curvaceousness = 2.0
-        sliderViewWithLabels.slider.handleTintColor = .cyan
-        sliderViewWithLabels.slider.trackTintColor = .blue
-        sliderViewWithLabels.setNeedsLayout()
-        sliderViewWithLabels.layoutIfNeeded()
+        /* top and bottom */
+        sliderViewWithLabelsOnTopAndBottom.delegate = self
+        sliderViewWithLabelsOnTopAndBottom.slider.curvaceousness = 2.0
+        sliderViewWithLabelsOnTopAndBottom.slider.handleTintColor = .cyan
+        sliderViewWithLabelsOnTopAndBottom.slider.trackTintColor = .blue
+        
+        sliderViewWithLabelsOnTopAndBottom.leftLabelTopLocation = true
+        sliderViewWithLabelsOnTopAndBottom.rightLabelTopLocation = false
+        sliderViewWithLabelsOnTopAndBottom.labelWidth = 100
         
         //get initial values
-        sliderViewWithLabels.requestUpdatedValues()
+        sliderViewWithLabelsOnTopAndBottom.requestUpdatedValues()
+        
+        /* top only */
+        sliderViewWithLabelsOnTop.delegate = self
+        sliderViewWithLabelsOnTop.slider.curvaceousness = 2.0
+        sliderViewWithLabelsOnTop.slider.handleTintColor = .cyan
+        sliderViewWithLabelsOnTop.slider.trackTintColor = .blue
+        
+        
+        sliderViewWithLabelsOnTop.leftLabelTopLocation = true
+        sliderViewWithLabelsOnTop.rightLabelTopLocation = true
+        
+        //get initial values
+        sliderViewWithLabelsOnTop.requestUpdatedValues()
+        
     }
     
     
@@ -104,7 +122,18 @@ extension ViewController: RangeSliderWithLabelsDelegate {
     func sliderValueChanged(slider: RangeSlider,
                             label: UILabel,
                             value: Double) {
-        if slider == sliderViewWithLabels.slider {
+        if slider == sliderViewWithLabelsOnTopAndBottom.slider {
+            let valueRounded:Int = Int(round(value * 10000))
+            
+            let numFormater = NumberFormatter()
+            numFormater.numberStyle = .currency
+            
+            let numValue:NSNumber = NSNumber(value:valueRounded)
+            let numString:String = numFormater.string(from: numValue ) ?? ""
+            
+            label.text = numString
+        }
+        else if slider == sliderViewWithLabelsOnTop.slider {
             let valueRounded = round(value * 10) / 10
             label.text = String("#")?.appending(String(valueRounded))
         }

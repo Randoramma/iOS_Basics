@@ -51,7 +51,7 @@
 				895514191EB95F06001F8DDE /* RangeSliderWithLabels.swift */,
 				8955141E1EB95FFB001F8DDE /* RangeSliderWithLabels.xib */,
 			);
-			name = RangeSliderWithLabels;
+			path = RangeSliderWithLabels;
 			sourceTree = "<group>";
 		};
 		89713FA61EB7EE840004D704 = {
@@ -92,7 +92,7 @@
 				89713FC71EB7F21C0004D704 /* RangeSliderTrackLayer.swift */,
 				89713FC91EB7F2B20004D704 /* RangeSliderLayer.swift */,
 			);
-			name = RangeSlider;
+			path = RangeSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

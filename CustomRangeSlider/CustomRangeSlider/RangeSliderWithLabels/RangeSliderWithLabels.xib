@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RangeSliderWithLabels" customModule="CustomRangeSlider" customModuleProvider="target">
+            <connections>
+                <outlet property="labelBottomContainerView" destination="xtc-ug-fZT" id="oQj-ZX-G7P"/>
+                <outlet property="labelTopContainerView" destination="joA-so-K6V" id="Q6Z-ej-Kon"/>
+                <outlet property="sliderContainerView" destination="flZ-c1-8dK" id="e5F-1r-jor"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0ge-i2-r94">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joA-so-K6V">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Gx5-8I-uzU"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flZ-c1-8dK">
+                            <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                            <color key="backgroundColor" red="0.12941176469999999" green="0.76078431369999999" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Oia-tn-MYF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-ug-fZT">
+                            <rect key="frame" x="0.0" y="60" width="375" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Kc8-3k-2g8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0ge-i2-r94" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CHV-c2-5be"/>
+                <constraint firstAttribute="trailing" secondItem="0ge-i2-r94" secondAttribute="trailing" id="JDq-4e-YuA"/>
+                <constraint firstItem="0ge-i2-r94" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rpY-Ns-8iC"/>
+                <constraint firstAttribute="bottom" secondItem="0ge-i2-r94" secondAttribute="bottom" id="zjH-mq-eBY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="20.5" y="-222"/>
+        </view>
+    </objects>
+</document>
