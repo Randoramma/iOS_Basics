@@ -19,6 +19,7 @@
 		89587D631E97F51100DB6900 /* SearchBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D611E97F51100DB6900 /* SearchBaseTableViewController.swift */; };
 		89587D641E97F51100DB6900 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D621E97F51100DB6900 /* SearchResultsViewController.swift */; };
 		89587D661E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89587D651E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift */; };
+		89EF4B581EBCC37900F0FD2C /* TableWithActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4B571EBCC37900F0FD2C /* TableWithActionsTableViewController.swift */; };
 		DE18D50E1E7F2F3E00B00C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */; };
 		DE18D5131E7F2F3E00B00C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5111E7F2F3E00B00C1B /* Main.storyboard */; };
 		DE18D5151E7F2F3E00B00C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		89587D611E97F51100DB6900 /* SearchBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseTableViewController.swift; sourceTree = "<group>"; };
 		89587D621E97F51100DB6900 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		89587D651E97F51900DB6900 /* SearchBarEmbeddedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarEmbeddedTableViewController.swift; sourceTree = "<group>"; };
+		89EF4B571EBCC37900F0FD2C /* TableWithActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableWithActionsTableViewController.swift; sourceTree = "<group>"; };
 		DE18D50A1E7F2F3E00B00C1B /* tableviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE18D5121E7F2F3E00B00C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,33 @@
 			name = "base controllers";
 			sourceTree = "<group>";
 		};
+		89EF4B541EBCC33200F0FD2C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5111E7F2F3E00B00C1B /* Main.storyboard */,
+				DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		89EF4B551EBCC34500F0FD2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */,
+				DE18D5191E7F2F3E00B00C1B /* Info.plist */,
+				DE18D5201E7F374100B00C1B /* tableviews-Bridging-Header.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		89EF4B561EBCC35900F0FD2C /* 9. table with actions */ = {
+			isa = PBXGroup;
+			children = (
+				89EF4B571EBCC37900F0FD2C /* TableWithActionsTableViewController.swift */,
+			);
+			name = "9. table with actions";
+			sourceTree = "<group>";
+		};
 		DE18D5011E7F2F3E00B00C1B = {
 			isa = PBXGroup;
 			children = (
@@ -189,13 +218,11 @@
 			isa = PBXGroup;
 			children = (
 				DE18D50D1E7F2F3E00B00C1B /* AppDelegate.swift */,
-				DE18D5141E7F2F3E00B00C1B /* Assets.xcassets */,
-				DE18D5191E7F2F3E00B00C1B /* Info.plist */,
-				DE18D5201E7F374100B00C1B /* tableviews-Bridging-Header.h */,
+				89EF4B551EBCC34500F0FD2C /* Resources */,
+				89EF4B541EBCC33200F0FD2C /* Storyboards */,
 				89587D551E9703E900DB6900 /* Extensions */,
 				89587D501E9702BF00DB6900 /* Protocols */,
-				DE18D5111E7F2F3E00B00C1B /* Main.storyboard */,
-				DE18D5161E7F2F3E00B00C1B /* LaunchScreen.storyboard */,
+				89EF4B561EBCC35900F0FD2C /* 9. table with actions */,
 				890AF8051E9837750042E390 /* 8. table with Custom Searchbar */,
 				89587D5A1E97EC7A00DB6900 /* 7. table with indexlist */,
 				89587D5F1E97F4D900DB6900 /* 6. table with search bar */,
@@ -371,6 +398,7 @@
 				DE18D54E1E7F57E800B00C1B /* TopAndBottomIndicatorTableViewController.swift in Sources */,
 				890AF8091E983CFD0042E390 /* CustomSearchController.swift in Sources */,
 				DE18D5581E7F5AEC00B00C1B /* TopIndicatorViewController.m in Sources */,
+				89EF4B581EBCC37900F0FD2C /* TableWithActionsTableViewController.swift in Sources */,
 				DE18D5461E7F56F000B00C1B /* CenteredPagingTableViewController.swift in Sources */,
 				89587D5C1E97ECA900DB6900 /* TableWithIndexListTableViewController.swift in Sources */,
 				89587D631E97F51100DB6900 /* SearchBaseTableViewController.swift in Sources */,
